@@ -1,0 +1,231 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{minted}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=blue,urlcolor=blue"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Cahier des charges/brouillon/brainsto/fourre tout
+\end_layout
+
+\begin_layout Part*
+Présentation du projet
+\end_layout
+
+\begin_layout Section*
+Contexte 
+\end_layout
+
+\begin_layout Standard
+Avec l’avènement de l’intelligence artificielle, l’essor des objets connectés
+ et l’augmentation des capacités technologiques, nombreuses sont les recherches
+ tentant de simuler le comportement humain et également de reproduire ses
+ capacités cognitives.
+ 
+\end_layout
+
+\begin_layout Standard
+Dans ce contexte, le Deep Learning, particulièrement les réseaux de neurones,
+ sont actuellement un des axes de recherche les plus explorés.
+\end_layout
+
+\begin_layout Standard
+Un réseau de neurones artificiels ou Neural Network est un système informatique
+ s’inspirant du fonctionnement du cerveau humain pour apprendre.
+ Son utilisation est aujourd'hui indispensable dans de nombreux domaines
+ comme la reconnaissance d'images, la prédiction de données, les classifications
+ de textes ou d’images, le filtrage d'un set de données...
+\end_layout
+
+\begin_layout Section*
+Objectifs
+\end_layout
+
+\begin_layout Standard
+Notre objectif pour ce projet est de créer 
+\series bold
+notre propre réseau de neurones
+\series default
+ à l'aide des outils du langage C++.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Nous le testerons dans une seconde partie sur 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+JSP!!!!!!
+\end_layout
+
+\begin_layout Part*
+Expression des besoins
+\end_layout
+
+\begin_layout Standard
+Afin de réaliser ce réseau de neurones, nous allons devoir disposer de certaines
+ classes et méthodes pour le faire fonctionner :
+\end_layout
+
+\begin_layout Section*
+Classes
+\end_layout
+
+\begin_layout Itemize
+réseau : fct d'activation en var d'instance + ensemble de neurones et/ou
+ de couches
+\end_layout
+
+\begin_layout Itemize
+échantillon d'apprentissage ? 
+\end_layout
+
+\begin_layout Itemize
+neurone : tableau de liaison ?
+\end_layout
+
+\begin_layout Itemize
+couche : ensemble de neurones (tableau/liste/map ?) est ce que tous les
+ réseaux ont des couches ? Si non => héritage avec une classe couche
+\end_layout
+
+\begin_layout Section*
+Méthodes/fonctionnalités
+\end_layout
+
+\begin_layout Itemize
+construction d'un réseau de neurones (quel type, combien de neurones) =>
+ héritage avec méthode 
+\emph on
+construction()
+\emph default
+ différentes en fct du type du réseau (1D, 2D, réseau d’Hopfield, 
+\end_layout
+
+\begin_layout Itemize
+def des entrées sortie (type, interpretation...), utilisation de template pour
+ pouvoir utiliser plusieurs type d'entrée/sortie ?
+\end_layout
+
+\begin_layout Itemize
+échantillon d'aprentissage
+\end_layout
+
+\begin_layout Itemize
+méthode d'apprentissage (descente du gradient &co) => héritage ?
+\end_layout
+
+\end_body
+\end_document
