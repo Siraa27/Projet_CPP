@@ -111,259 +111,7 @@ customHeadersFooters
 
 \begin_body
 
-\begin_layout Title
-Cahier des charges 
-\begin_inset Newline newline
-\end_inset
-
-Projet c++
-\begin_inset Newline newline
-\end_inset
-
-Implémentation d'un réseau de neuronnes
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Author
-Amina El Bachari, Camille Goujet, 
-\begin_inset Newline newline
-\end_inset
-
-Israa Ben Sassi, Rafael Quilbier et Mehdi Helal
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Part
-Objectifs et fonctionnalités 
-\end_layout
-
-\begin_layout Section
-Création et manipulation d’un réseau de neurones 
-\end_layout
-
-\begin_layout Itemize
-Création des couches, 
-\end_layout
-
-\begin_layout Itemize
-Liaison des couches ###### J'ai oublié ce qu'on a dit sur cette partie ouppps
- (comm Isra)
-\end_layout
-
-\begin_layout Section
-Appliquer un réseau de neurones à un exemple de la liste suivante : 
-\end_layout
-
-\begin_layout Subsection
-Identification des objets
-\end_layout
-
-\begin_layout Standard
-Les applications reposant sur des modèles de détection d’objets se sont
- beaucoup développées dernièrement : comptage d’objets pour l’analyse du
- trafic routier, détection des panneaux de signalisation pour la voiture
- autonome, détection de défauts sur infrastructure… .
-\end_layout
-
-\begin_layout Standard
-L’objectif ici n’est plus de classifier une image, mais de détecter les
- objets au sein de celle-ci, en dessinant un rectangle (on parle de bounding
- box) entourant le plus précisément les objets présents.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Illustration
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-La reconnaissance d’image
-\end_layout
-
-\begin_layout Standard
-La reconnaissance d’image est de plus en plus utilisée de nos jours, que
- ce soit par exemple pour déverrouiller son téléphone, la sécurité et la
- surveillance, la géolocalisation visuelle ou la reconnaissance d'objets
- etc… .
- Donc Avec la quantité d’images qui s’accumulent sur internet, les scientifiques
- qui travaillaient dans le domaine de la vision par ordinateur ont saisi
- l’opportunité d’utiliser toutes ces bases de données pour créer des modèles
- de reconnaissance d’image.
- Un modèle de réseaux de neurones profond est capable aujourd’hui de reconnaître
- chaque élément d’une scène pourvu qu’il ait été entraîné pour cela.
- À partir de la sémantique de cette reconnaissance, un réseau de neurones
- profond peut même générer une légende à cette scène.
- Par exemple, aujourd’hui il est assez courant de pouvoir obtenir le résultat
- suivant automatiquement : 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Illustration avec des fruit et légumes
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Les classifications de texte ou image : 
-\end_layout
-
-\begin_layout Standard
-L'objectif est d'élaborer un système capable d' affecter à une image ou
- d’associer un texte non-structuré à un tag, qui correspond à une classe
- bien précise.
- On cite deux exemple d’utilisation très important, d’une part La classification
- de documents imprimés est une tâche cruciale dans de nombreuses chaînes
- de traitements comme pour l’automatisation de tâches bureautiques Afin
- de classifier les documents imprimés selon des catégories telles que :
- lettres, publicités, plans et cartes, articles de presse, etc… il faut
- tous d’abord extraire les données textuelles ou les images utilisées ensuite
- les classifier d’autre part La reconnaissance des émotions qui est très
- utilisée sur les réseaux sociaux qu’il s’agisse de la détection de comportement
- violent à travers un text ou une image (DeepBreath) , analyse de l’impact
- émotionnel sur des compagnes de marketing etc… 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Illustration avec les visages
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Illustration avec le classifieur
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-
-\series bold
+\begin_layout Section*
 Reconnaissance vocal
 \end_layout
 
@@ -404,7 +152,7 @@ D'autres recherches sur l'utilisation de réseaux de neurones dit
  ! 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section*
 Prédiction de données
 \end_layout
 
@@ -430,11 +178,7 @@ Les réseaux de neurones sont très utilisés pour mettre au point des modèles
  de neurones dans la prédiction de phénomène non-linéaires.
 \end_layout
 
-\begin_layout Part
-Bibliographie
-\end_layout
-
-\begin_layout Section
+\begin_layout Section*
 Fonctionnement d'un réseau de neurones
 \end_layout
 
@@ -560,7 +304,7 @@ Au fur et à mesure des itérations, les poids sont modifiés par apprentissage.
  
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Architecture des réseaux de neurones
 \end_layout
 
@@ -599,7 +343,7 @@ Le choix de telle ou telle architecture est une question essentielle lors
  Voyons plus en détails ces 4 architectures.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Réseaux de neurones Feed Forward
 \end_layout
 
@@ -656,7 +400,7 @@ Réseau Feed-Forward
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Réseaux de neurones récurrent
 \end_layout
 
@@ -710,7 +454,7 @@ Réseau récurrent de type Elman
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Réseaux de neurones à résonance
 \end_layout
 
@@ -736,7 +480,7 @@ L'appellation de ce type de réseaux fait référence à son fonctionnement.
  lieu à un surapprentissage.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Réseaux de neurones auto-organisés
 \end_layout
 
