@@ -27,8 +27,8 @@ citecolor=red, urlcolor=blue]{hyperref}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.2pt}
 
-\title{Projet de M8 : Le mystère des Pokémon}
-\refproj{Le Mystère des Pokemon - Projet de M8 réalisé par Catheline PARISOT et Mehdi HELAL}
+\title{}
+\refproj{}
 
 \pagestyle{plain}
 \end_preamble
