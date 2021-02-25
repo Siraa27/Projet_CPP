@@ -1,0 +1,282 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+\usepackage{minted}
+\usepackage[breaklinks,colorlinks=true,linkcolor=black,
+citecolor=red, urlcolor=blue]{hyperref}
+
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{fncychap}
+\usepackage{lettrine}
+
+\definecolor{gris}{cmyk}{0.7,0.6,0.5,0.3}
+\definecolor{bleu}{cmyk}{1,0.9,0.1,0}
+
+\newcommand{\insertrefproj}[1]{}
+\newcommand{\refproj}[1]{\renewcommand{\insertrefproj}{\textbf{\color{gris}#1}}}
+
+\fancyhead[R]{\color{gris}\thepage}
+\fancyfoot[L]{\insertrefproj}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.2pt}
+
+\title{Projet de M8 : Le mystère des Pokémon}
+\refproj{Le Mystère des Pokemon - Projet de M8 réalisé par Catheline PARISOT et Mehdi HELAL}
+
+\pagestyle{plain}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 3cm
+\bottommargin 4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Reconnaissance vocal
+\end_layout
+
+\begin_layout Standard
+Les réseaux de neurones sont également développés pour effectuer de la reconnais
+sance d'un signal vocal ! Pour faire simple, il leur est possible de décomposer
+ les audios en phrases puis en mots et utilisent un modèle de langage pour
+ calculer la probabilité d'une phrase donnée.
+ 
+\begin_inset Newline newline
+\end_inset
+
+D'ailleurs, pour la saisie vocal de son application de clavier virtuel Gboard,
+ Google a recemment déployé une nouvelle technologie entièrement pilotée
+ par des réseaux de neurones récurrents 
+\begin_inset Formula $RNN$
+\end_inset
+
+ (que nous expliquerons dans la suite).
+ Elle prédit directement la sortie de caractère en fonction de l'entrée
+ vocal de façon très précise.
+ 
+\begin_inset Newline newline
+\end_inset
+
+D'autres recherches sur l'utilisation de réseaux de neurones dit 
+\begin_inset Quotes fld
+\end_inset
+
+à décharges
+\begin_inset Quotes frd
+\end_inset
+
+ sont menées.
+ Selon une étude de Loiselle Stéphane de l'Université du Québec de Chicoutimi,
+ ils devraient permettre d'effectuer une reconnaissance vocale indépendamment
+ du locuteur et sans avoir à réaliser une longue période d'apprentissage
+ ! 
+\end_layout
+
+\begin_layout Section*
+Fonctionnement d'un réseau de neurones
+\end_layout
+
+\begin_layout Standard
+Pour comprendre son fonctionnement, étudions un modèle mathématiques simple
+ d'un neurone biologique : le modèle de McCulloch et Pitts (1943).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Considérons 
+\begin_inset Formula $n$
+\end_inset
+
+ entrées 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\mathbb{R}$
+\end_inset
+
+.
+ Un neurone fonctionne en 2 phases.
+ Tout d'abord, il effectue la somme pondérée des entrées 
+\begin_inset Formula 
+\[
+I=\sum_{i=1}^{n}\omega_{i}x_{i}
+\]
+
+\end_inset
+
+avec 
+\begin_inset Formula $\omega_{i}\in\mathbb{R}$
+\end_inset
+
+ le poids de la 
+\begin_inset Formula $i^{ème}$
+\end_inset
+
+ entrée.
+ Ensuite, la fonction d'activation 
+\begin_inset Formula $f$
+\end_inset
+
+ vérifie si la valeur calculée est supérieure au seuil requis et détermine
+ si le neurone est actif ou non.
+ Pour ce faire, on compare 
+\begin_inset Formula $I$
+\end_inset
+
+ à un seuil 
+\begin_inset Formula $T$
+\end_inset
+
+ : si 
+\begin_inset Formula $I\geq T$
+\end_inset
+
+ alors le neurone est actif et transmet le signal, sinon il est inactif.
+ Dans le modèle de McCulloch et Pitts, on retrouve
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(I)=\begin{cases}
+1 & si\,I\geq T\\
+-1 & sinon
+\end{cases}
+\]
+
+\end_inset
+
+Notons que lorsque les neurones sont reliés uniquement par des connexions
+ directes (i.e vers un neurones de la couche suivante), l’activation des
+ différentes couches est réalisée de manière synchrone : la sortie de tous
+ les neurones de la 
+\begin_inset Formula $1^{ère}$
+\end_inset
+
+ couche est calculée, puis celle de la 
+\begin_inset Formula $2^{e}$
+\end_inset
+
+...
+ Dans le cas d’un réseau possédant des connexions latérales (de haut en
+ bas vers un neurone d'une même couche ou bien vers un neurone d'une couche
+ précédente), l’ordre de mise à jour des sorties des différents neurones
+ est important, car chaque nouvelle sortie va pouvoir modifier le calcul
+ de la sortie d’un autre neurone.
+ On peut mettre à jour des sorties de manière asynchrone et aléatoire (i.e
+ les neurones sont choisis aléatoirement) ou bien de manière synchrone (toutes
+ les sorties sont mises à jour en même temps).
+\end_layout
+
+\begin_layout Standard
+Au fur et à mesure des itérations, les poids sont modifiés par apprentissage.
+ Il les calcule en fonction des couples entrée/sortie désirées (on parle
+ d'apprentissage supervisé) ou indépendamment d'une sortie désirée (on parle
+ d'auto-organisation) par des petites adaptations successives.
+ Soit 
+\begin_inset Formula $\omega_{ij}$
+\end_inset
+
+ le poids de la connexion entre les neurones 
+\begin_inset Formula $i$
+\end_inset
+
+ et 
+\begin_inset Formula $j$
+\end_inset
+
+ à un instant donné discret 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Après une intération d'apprentissage, la nouvelle valeur est 
+\begin_inset Formula $\omega_{ij}(t+1)=\omega_{ij}(t)+\Delta\omega_{ij}$
+\end_inset
+
+.
+ Il existe plusieurs règles d'apprentissage courantes comme la règle de
+ Hebb, la règle d'apprentissage compétitif...
+ que nous détaillerons dans notre projet lorsque nous les utiliserons.
+ 
+\end_layout
+
+\end_body
+\end_document
