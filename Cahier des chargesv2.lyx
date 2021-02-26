@@ -112,15 +112,15 @@ customHeadersFooters
 \begin_body
 
 \begin_layout Title
-Cahier des charges 
+CAHIER DES CHARGES 
 \begin_inset Newline newline
 \end_inset
 
-Projet c++
+PROJET C++
 \begin_inset Newline newline
 \end_inset
 
-Implémentation d'un réseau de neuronnes
+Implémentation d'un réseau de neurones
 \begin_inset Newline newline
 \end_inset
 
@@ -162,17 +162,12 @@ LatexCommand tableofcontents
 Objectifs et fonctionnalités 
 \end_layout
 
+\begin_layout Standard
+Tout au long de ce projet, nos objectifs seront les suivants :
+\end_layout
+
 \begin_layout Section
 Création et manipulation d’un réseau de neurones 
-\end_layout
-
-\begin_layout Itemize
-Création des couches, 
-\end_layout
-
-\begin_layout Itemize
-Liaison des couches ###### J'ai oublié ce qu'on a dit sur cette partie ouppps
- (comm Isra)
 \end_layout
 
 \begin_layout Section
@@ -186,14 +181,21 @@ Identification des objets
 \begin_layout Standard
 Les applications reposant sur des modèles de détection d’objets se sont
  beaucoup développées dernièrement : comptage d’objets pour l’analyse du
- trafic routier, détection des panneaux de signalisation pour la voiture
- autonome, détection de défauts sur infrastructure… .
+ traffic routier, détection des panneaux de signalisation pour la voiture
+ autonome, détection de défauts sur infrastructure… 
 \end_layout
 
 \begin_layout Standard
 L’objectif ici n’est plus de classifier une image, mais de détecter les
- objets au sein de celle-ci, en dessinant un rectangle (on parle de bounding
- box) entourant le plus précisément les objets présents.
+ objets au sein de celle-ci, en dessinant un rectangle (on parle de 
+\begin_inset Quotes fld
+\end_inset
+
+bounding box
+\begin_inset Quotes frd
+\end_inset
+
+) entourant le plus précisément les objets présents.
  
 \end_layout
 
@@ -203,10 +205,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -237,12 +235,15 @@ La reconnaissance d’image
 La reconnaissance d’image est de plus en plus utilisée de nos jours, que
  ce soit par exemple pour déverrouiller son téléphone, la sécurité et la
  surveillance, la géolocalisation visuelle ou la reconnaissance d'objets
- etc… .
- Donc Avec la quantité d’images qui s’accumulent sur internet, les scientifiques
- qui travaillaient dans le domaine de la vision par ordinateur ont saisi
- l’opportunité d’utiliser toutes ces bases de données pour créer des modèles
- de reconnaissance d’image.
- Un modèle de réseaux de neurones profond est capable aujourd’hui de reconnaître
+ etc… Donc avec la quantité d’images qui s’accumulent sur internet, les
+ scientifiques qui travaillaient dans le domaine de la vision par ordinateur
+ ont saisi l’opportunité d’utiliser toutes ces bases de données pour créer
+ des modèles de reconnaissance d’image.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Un modèle de réseau de neurones profond est capable aujourd’hui de reconnaître
  chaque élément d’une scène pourvu qu’il ait été entraîné pour cela.
  À partir de la sémantique de cette reconnaissance, un réseau de neurones
  profond peut même générer une légende à cette scène.
@@ -256,10 +257,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -287,19 +284,43 @@ Les classifications de texte ou image :
 \end_layout
 
 \begin_layout Standard
-L'objectif est d'élaborer un système capable d' affecter à une image ou
- d’associer un texte non-structuré à un tag, qui correspond à une classe
- bien précise.
- On cite deux exemple d’utilisation très important, d’une part La classification
- de documents imprimés est une tâche cruciale dans de nombreuses chaînes
- de traitements comme pour l’automatisation de tâches bureautiques Afin
- de classifier les documents imprimés selon des catégories telles que :
- lettres, publicités, plans et cartes, articles de presse, etc… il faut
- tous d’abord extraire les données textuelles ou les images utilisées ensuite
- les classifier d’autre part La reconnaissance des émotions qui est très
- utilisée sur les réseaux sociaux qu’il s’agisse de la détection de comportement
- violent à travers un text ou une image (DeepBreath) , analyse de l’impact
- émotionnel sur des compagnes de marketing etc… 
+L'objectif est d'élaborer un système capable d'affecter à une image ou à
+ un texte non-structuré, un tag qui correspond à une classe bien précise.
+ 
+\begin_inset Newline newline
+\end_inset
+
+On cite deux exemples d’utilisation très importants.
+ 
+\begin_inset Newline newline
+\end_inset
+
+D’une part, la classification de documents imprimés est une tâche cruciale
+ dans de nombreuses chaînes de traitement; par exemple, l’automatisation
+ de tâches bureautiques afin de classifier les documents imprimés selon
+ des catégories telles que : lettres, publicités, plans et cartes, articles
+ de presse, etc… 
+\begin_inset Newline newline
+\end_inset
+
+Il faut tout d’abord extraire les données textuelles ou les images utilisées
+ pour ensuite les classifier.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+D’autre part, la reconnaissance des émotions, très utilisée sur les réseaux
+ sociaux.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Qu’il s’agisse de la détection de comportement violent à travers un texte
+ ou une image (DeepBreath) ou de l'analyse de l’impact émotionnel sur des
+ compagnes de marketing, etc… 
 \end_layout
 
 \begin_layout Standard
@@ -364,27 +385,36 @@ Illustration avec le classifieur
 \begin_layout Subsection
 
 \series bold
-Reconnaissance vocal
+Reconnaissance vocale
 \end_layout
 
 \begin_layout Standard
 Les réseaux de neurones sont également développés pour effectuer de la reconnais
-sance d'un signal vocal ! Pour faire simple, il leur est possible de décomposer
- les audios en phrases puis en mots et utilisent un modèle de langage pour
- calculer la probabilité d'une phrase donnée.
+sance de signal vocal.
  
 \begin_inset Newline newline
 \end_inset
 
-D'ailleurs, pour la saisie vocal de son application de clavier virtuel Gboard,
- Google a recemment déployé une nouvelle technologie entièrement pilotée
- par des réseaux de neurones récurrents 
+Pour faire simple, il leur est possible de décomposer les audios en phrases
+ puis en mots et utilisent un modèle de langage pour calculer la probabilité
+ d'une phrase donnée.
+ 
+\begin_inset Newline newline
+\end_inset
+
+D'ailleurs, pour la saisie vocale depuis son clavier virtuel Gboard, Google
+ a récemment déployé une nouvelle technologie entièrement pilotée par des
+ réseaux de neurones récurrents 
 \begin_inset Formula $RNN$
 \end_inset
 
  (que nous expliquerons dans la suite).
- Elle prédit directement la sortie de caractère en fonction de l'entrée
- vocal de façon très précise.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Elle prédit directement la sortie de caractères en fonction de l'entrée
+ vocale de façon très précise.
  
 \begin_inset Newline newline
 \end_inset
@@ -416,16 +446,19 @@ Les réseaux de neurones sont très utilisés pour mettre au point des modèles
  automatisés à l’aide d’algorithmes informatiques ».
  Aujourd'hui, cet outil fournit d'excellents résultats dans le domaine de
  détection des entreprises en future difficulté.
- Les réseaux de neurones peuvent aussi prédire des phénomènes qui nous semblent
- plus aléatoires et non linéaires tout en prenant en compte d'éventuels
- imprécisions des données fourni en entrée.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Les réseaux de neurones peuvent aussi prédire des phénomènes qui nous semblent
+ plus aléatoires et non linéaires tout en prenant en compte d'éventuelles
+ imprécisions des données fournies en entrée.
  Une équipe de scientifiques s'est intéressée à la prévision des crues du
- bassin-versant de l’Eure à la station de Louviers en Normandie par des
- réseaux de neurones.
- Le modèle pluie-débit en résultant a permit de prendre en compte l'imprécision
- des données fourni en entrée du réseau et ainsi d'établir des prévisions
- fiables en quelques secondes sur les grandes crues à venir dans les 48
- h.
+ bassin-versant de l’Eure à la station de Louviers en Normandie grâce à
+ des réseaux de neurones.
+ Le modèle pluie-débit en résultant a permis de prendre en compte l'imprécision
+ des données fournies en entrée et ainsi d'établir des prévisions fiables
+ en quelques secondes sur les grandes crues à venir dans les 48 heures.
  Cet exemple illustre parfaitement l'importance que peuvent avoir les réseaux
  de neurones dans la prédiction de phénomène non-linéaires.
 \end_layout
@@ -439,7 +472,7 @@ Fonctionnement d'un réseau de neurones
 \end_layout
 
 \begin_layout Standard
-Pour comprendre son fonctionnement, étudions un modèle mathématiques simple
+Pour comprendre son fonctionnement, étudions un modèle mathématique simple
  d'un neurone biologique : le modèle de McCulloch et Pitts (1943).
  
 \begin_inset Newline newline
@@ -455,7 +488,7 @@ Considérons
 
 .
  Un neurone fonctionne en 2 phases.
- Tout d'abord, il effectue la somme pondérée des entrées 
+ Tout d'abord, il effectue la somme pondérée des entrées :
 \begin_inset Formula 
 \[
 I=\sum_{i=1}^{n}\omega_{i}x_{i}
@@ -472,7 +505,11 @@ avec
 \end_inset
 
  entrée.
- Ensuite, la fonction d'activation 
+ 
+\begin_inset Newline newline
+\end_inset
+
+Ensuite, la fonction d'activation 
 \begin_inset Formula $f$
 \end_inset
 
@@ -491,7 +528,7 @@ avec
 \end_inset
 
  alors le neurone est actif et transmet le signal, sinon il est inactif.
- Dans le modèle de McCulloch et Pitts, on retrouve
+ Dans le modèle de McCulloch et Pitts, on a :
 \end_layout
 
 \begin_layout Standard
@@ -506,9 +543,9 @@ f(I)=\begin{cases}
 \end_inset
 
 Notons que lorsque les neurones sont reliés uniquement par des connexions
- directes (i.e vers un neurones de la couche suivante), l’activation des
- différentes couches est réalisée de manière synchrone : la sortie de tous
- les neurones de la 
+ directes (i.e vers un neurone de la couche suivante), l’activation des différent
+es couches est réalisée de manière synchrone : la sortie de tous les neurones
+ de la 
 \begin_inset Formula $1^{ère}$
 \end_inset
 
@@ -532,7 +569,11 @@ Au fur et à mesure des itérations, les poids sont modifiés par apprentissage.
  Il les calcule en fonction des couples entrée/sortie désirées (on parle
  d'apprentissage supervisé) ou indépendamment d'une sortie désirée (on parle
  d'auto-organisation) par des petites adaptations successives.
- Soit 
+ 
+\begin_inset Newline newline
+\end_inset
+
+Soit 
 \begin_inset Formula $\omega_{ij}$
 \end_inset
 
@@ -549,14 +590,18 @@ Au fur et à mesure des itérations, les poids sont modifiés par apprentissage.
 \end_inset
 
 .
- Après une intération d'apprentissage, la nouvelle valeur est 
+ Après une itération d'apprentissage, la nouvelle valeur est 
 \begin_inset Formula $\omega_{ij}(t+1)=\omega_{ij}(t)+\Delta\omega_{ij}$
 \end_inset
 
 .
- Il existe plusieurs règles d'apprentissage courantes comme la règle de
- Hebb, la règle d'apprentissage compétitif...
- que nous détaillerons dans notre projet lorsque nous les utiliserons.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Il existe plusieurs règles d'apprentissage courantes comme la règle de Hebb,
+ la règle d'apprentissage compétitif, etc que nous détaillerons dans notre
+ projet lorsque nous les utiliserons.
  
 \end_layout
 
@@ -566,24 +611,32 @@ Architecture des réseaux de neurones
 
 \begin_layout Standard
 On appelle architecture d'un réseau de neurones sa forme.
- On distingue 4 types de réseaux de neurones :
-\end_layout
-
-\begin_layout Standard
--réseaux de neurones Fedd forwarded
-\end_layout
-
-\begin_layout Standard
--réseaux de neurones récurrents(RNN)
-\end_layout
-
-\begin_layout Standard
--réseaux de neurones à résonnance
-\end_layout
-
-\begin_layout Standard
--réseaux de neurones auto-organisés.
  
+\begin_inset Newline newline
+\end_inset
+
+On distingue 4 types de réseaux de neurones :
+\end_layout
+
+\begin_layout Standard
+- les réseaux de neurones Feed-forwarded
+\end_layout
+
+\begin_layout Standard
+- les réseaux de neurones récurrents (RNN)
+\end_layout
+
+\begin_layout Standard
+- les réseaux de neurones à résonance
+\end_layout
+
+\begin_layout Standard
+- les réseaux de neurones auto-organisés.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -592,33 +645,60 @@ Le choix de telle ou telle architecture est une question essentielle lors
  Chacune possède ses forces et ses faiblesses.
  Ainsi, en fonction de l'application que l'on souhaite faire de notre algorithme
 , on se portera sur une architecture en particulier.
- On peut aussi souligner que souvent, afin d'obtenir un meilleur résultat,
+ 
+\begin_inset Newline newline
+\end_inset
+
+On peut aussi souligner que souvent, afin d'obtenir un meilleur résultat,
  plusieurs types d'architectures sont combinées.
  Nous avons préalablement cité 4 grandes familles d'architectures, mais
  il existe des dizaines de réseaux particuliers pour chacune d'elles.
- Voyons plus en détails ces 4 architectures.
+ Voyons plus en détails ces 4 architectures :
 \end_layout
 
 \begin_layout Subsection
-Réseaux de neurones Feed Forward
+Réseaux de neurones feed forwarded
 \end_layout
 
 \begin_layout Standard
 L'appellation Feed-Forward signifie que l'information traverse le réseau
  de neurones de l'entrée à la sortie sans retour en arrière.
- En français, il est nommé, réseau de neurones à propagation avant.
+ En français, il est nommé : 
+\begin_inset Quotes fld
+\end_inset
+
+réseau de neurones à propagation avant
+\begin_inset Quotes frd
+\end_inset
+
+.
  Dans ce type de réseaux, on distingue les réseaux monocouches et les réseaux
  multicouches.
- Dans les réseaux monocouche le perceptron est dit simple, car il ne possède
- qu'une couche d'entrée et une couche de sortie.
- À l'inverse dans les réseaux multicouches les perceptrons sont qualifiés
+ 
+\begin_inset Newline newline
+\end_inset
+
+Dans les réseaux monocouches, le perceptron est dit 
+\begin_inset Quotes fld
+\end_inset
+
+simple
+\begin_inset Quotes frd
+\end_inset
+
+, car il est constitué que d'une couche d'entrée et une couche de sortie.
+ 
+\begin_inset Newline newline
+\end_inset
+
+À l'inverse, dans les réseaux multicouches, les perceptrons sont qualifiés
  de multicouches, car ils disposent de plusieurs couches cachées entre l'entrée
  et la sortie.
 \end_layout
 
 \begin_layout Standard
 Ces 2 types de réseaux de neurones ont des intérêts différents : le réseau
- multicouche est plus adapté pour traiter des informations non-linéaire.
+ multicouche est plus adapté pour traiter des informations non-linéaires.
 \end_layout
 
 \begin_layout Standard
@@ -639,7 +719,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Réseau Feed-Forward
+Réseau Feed-Forwarded
 \end_layout
 
 \end_inset
@@ -657,7 +737,7 @@ Réseau Feed-Forward
 \end_layout
 
 \begin_layout Subsection
-Réseaux de neurones récurrent
+Réseaux de neurones récurrents
 \end_layout
 
 \begin_layout Standard
@@ -666,9 +746,9 @@ Plus complexe et moins intuitif, les réseaux de neurones récurrents traitent
  Un réseau est qualifié de récurrent si sa structure possède au moins un
  cycle.
  Contrairement l'architecture de type Feed Forwarded, dans les réseaux récurrent
-s l'information circulent dans les deux sens.
+s, l'information circule dans les deux sens.
  Ils peuvent posséder une couche ou plusieurs.
- L'intérêt permet de conserver de l'information en mémoire et de la laisser
+ L'intérêt est de conserver de l'information en mémoire et de la laisser
  accessible à tout instant ultérieur.
  C'est pourquoi les réseaux de neurones récurrents sont particulièrement
  bien adaptés aux applications faisant intervenir un contexte, comme la
@@ -718,20 +798,40 @@ Réseaux de neurones à résonance
 L'appellation de ce type de réseaux fait référence à son fonctionnement.
  Lorsqu'un neurone est activé, son activation est renvoyée à tous les autres
  neurones du réseau.
- Cela provoque des oscillations, d'où l'emploi du terme résonance.
- Pour mieux l'objectif de cette architecture étudions le modèle ART (Adaptative
- Resonance Theory) conçu par Gail Carpenter et Stephen Grossberg.
- Il existe de nombreux modèle ART, (ART1, ART2, fuzzy ART etc.) qui utilisent
+ Cela provoque des oscillations, d'où l'emploi du terme 
+\begin_inset Quotes fld
+\end_inset
+
+résonance
+\begin_inset Quotes frd
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Pour mieux comprendre l'objectif de cette architecture, étudions le modèle
+ ART (Adaptative Resonance Theory) conçu par Gail Carpenter et Stephen Grossberg.
+ Il existe de nombreux modèles ART, (ART1, ART2, fuzzy ART etc.) qui utilisent
  l'apprentissage supervisé, ou non supervisé.
  L'objectif général des modèles ART est de résoudre le dilemme entre stabilité
  et plasticité.
- Selon un article du laboratoire d'Analyse Cognitive de l'information à
- Montréal «la plasticité rend compte de la capacité du réseau à s'adapter
- aux informations nouvelles, et la stabilisation mesure la capacité du réseau
- à organiser les informations connues en ensembles stables.» .
- Finalement, le principe des modèles ART est d'apprendre de manière autonome,
- de s'adapter, et de se stabiliser en même temps.
- Ainsi, ces modèles sont capables de choisir entre une information pertinente,
+ 
+\begin_inset Newline newline
+\end_inset
+
+Selon un article du laboratoire d'Analyse Cognitive de l'information à Montréal
+ : «la plasticité rend compte de la capacité du réseau à s'adapter aux informati
+ons nouvelles, et la stabilisation mesure la capacité du réseau à organiser
+ les informations connues en ensembles stables.».
+ 
+\begin_inset Newline newline
+\end_inset
+
+Finalement, le principe des modèles ART est d'apprendre de manière autonome,
+ à s'adapter, et à se stabiliser en même temps.
+ Ainsi, ces modèles sont capables de choisir entre une information pertinente
  à prendre en compte, et une information superflue, qui pourrait donner
  lieu à un surapprentissage.
 \end_layout
@@ -746,6 +846,218 @@ ons spéciales.
  En effet grâce à des méthodes d'apprentissage non supervisé, ce type de
  réseau est capable de répartir en différentes classes de grands espaces
  de données.
+\end_layout
+
+\begin_layout Section
+Définitions importantes 
+\end_layout
+
+\begin_layout Subsection
+Réseau de neurones : 
+\end_layout
+
+\begin_layout Standard
+Un réseau de neurones est en général composé d'une succession de couches
+ dont chacune prend ses entrées sur les sorties de la précédente.
+ Chaque couche (i) est composée de Ni neurones, prenant leurs entrées sur
+ les Ni-1 neurones de la couche précédente.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Illustration d'un réseau de neurones simple
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Neurone dit formel ou artificiel : 
+\end_layout
+
+\begin_layout Standard
+Le neurone formel est l'unité élémentaire des réseaux de neurones artificiels
+ dans lesquels il est associé à ses semblables pour calculer des fonctions
+ arbitrairement complexes, utilisées pour diverses applications en intelligence
+ artificielle.
+ Mathématiquement, le neurone formel est une fonction à plusieurs variables
+ et à valeurs réelles.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schématisation algorithmique d’un neurone artificiel 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette représentation est appelée le perceptron, un algorithme d’apprentissage
+ supervisé pour les classifications binaires linéaires.
+ Cela fait beaucoup de mots inconnus alors arrêtons nous un instant sur
+ chacun de ces termes car ils seront importants pour la suite ! Algorithme
+ : le perceptron est une suite d’opérations et de calcul = la somme des
+ entrées, leur pondération, la vérification d’une condition et la production
+ d’un résultat d’activation.
+ Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu’en fonction
+ d’une prédiction voulue, le poids des différentes entrées va évoluer et
+ il faudra trouver une valeur optimale pour chacune.
+ Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
+ d’une base de données d’exemples dont on connaît déjà la prédiction.
+ Par exemple on a une base de données de photos de banane et on “règle”
+ notre algorithme jusqu’à ce que chaque photo (ou presque) soit classé comme
+ banane.
+ Classification : l’algorithme permet de prédire une caractéristique en
+ sortie et cette caractéristique sert à classer les différentes entrées
+ entre elles.
+ Par exemple, trouver toutes les bananes dans un panel de photos de fruits.
+ 
+\end_layout
+
+\begin_layout Subsection
+Couche : 
+\end_layout
+
+\begin_layout Standard
+En effet, un réseau de neurones est composé d’une couche d’entrées ( “inputs
+ layer”), d’une couche de sortie (“outputs layers”) et d’au moins une couche
+ cachée (“hidden layer”) qui fait le lien entre entrée et sortie.
+ Toutes ces couches sont composés de plusieurs neurones qui sont eux-mêmes
+ reliés les uns aux autres par des poids.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Illustration des différentes couches
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fonction d’activation : 
+\end_layout
+
+\begin_layout Standard
+La fonction d’activation (ou fonction de seuillage, ou encore fonction de
+ transfert) sert à introduire une non-linéarité dans le fonctionnement du
+ neurone.
+ Les fonctions de seuillage présentent généralement trois intervalles :
+ en dessous du seuil, le neurone est non-actif (souvent dans ce cas, sa
+ sortie vaut 0 ou -1) ; aux alentours du seuil, une phase de transition
+ ; au-dessus du seuil, le neurone est actif (souvent dans ce cas, sa sortie
+ vaut 1).
+ Des exemples classiques de fonctions d’activation sont : 
+\end_layout
+
+\begin_layout Standard
+- La fonction sigmoïde.
+ 
+\end_layout
+
+\begin_layout Standard
+- La fonction tangente hyperbolique.
+ 
+\end_layout
+
+\begin_layout Standard
+- La fonction de Heaviside.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Différentes fonctions d'activation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
