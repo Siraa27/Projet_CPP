@@ -428,7 +428,7 @@ centering
 
 
 \begin_inset Graphics
-	filename classifieur.png
+	filename Classifieur.png
 	scale 60
 
 \end_inset
@@ -467,9 +467,9 @@ sance de signal vocal.
 \begin_inset Newline newline
 \end_inset
 
-Pour faire simple, il leur est possible de décomposer les audios en phrases
- puis en mots et utilisent un modèle de langage pour calculer la probabilité
- d'une phrase donnée.
+Pour faire simple, ils leurs est possible de décomposer les audios en phrases
+ puis en mots, aussi ils peuvent utiliser un modèle de langage pour calculer
+ la probabilité d'une phrase donnée.
  
 \begin_inset Newline newline
 \end_inset
@@ -533,10 +533,6 @@ Les réseaux de neurones peuvent aussi prédire des phénomènes qui nous semble
  en quelques secondes sur les grandes crues à venir dans les 48 heures.
  Cet exemple illustre parfaitement l'importance que peuvent avoir les réseaux
  de neurones dans la prédiction de phénomène non-linéaires.
-\end_layout
-
-\begin_layout Subsection
-Tester le réseau de neurones sur un échantillon test
 \end_layout
 
 \begin_layout Section
@@ -609,21 +605,35 @@ Schématisation algorithmique d’un neurone artificiel
 Cette représentation est appelée le perceptron, un algorithme d’apprentissage
  supervisé pour les classifications binaires linéaires.
  Cela fait beaucoup de mots inconnus alors arrêtons nous un instant sur
- chacun de ces termes car ils seront importants pour la suite ! Algorithme
- : le perceptron est une suite d’opérations et de calcul = la somme des
- entrées, leur pondération, la vérification d’une condition et la production
- d’un résultat d’activation.
- Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu’en fonction
+ chacun de ces termes car ils seront importants pour la suite ! 
+\end_layout
+
+\begin_layout Standard
+Algorithme : le perceptron est une suite d’opérations et de calcul = la
+ somme des entrées, leur pondération, la vérification d’une condition et
+ la production d’un résultat d’activation.
+ 
+\end_layout
+
+\begin_layout Standard
+Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu’en fonction
  d’une prédiction voulue, le poids des différentes entrées va évoluer et
  il faudra trouver une valeur optimale pour chacune.
- Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
+ 
+\end_layout
+
+\begin_layout Standard
+Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
  d’une base de données d’exemples dont on connaît déjà la prédiction.
  Par exemple on a une base de données de photos de banane et on “règle”
  notre algorithme jusqu’à ce que chaque photo (ou presque) soit classé comme
  banane.
- Classification : l’algorithme permet de prédire une caractéristique en
- sortie et cette caractéristique sert à classer les différentes entrées
- entre elles.
+ 
+\end_layout
+
+\begin_layout Standard
+Classification : l’algorithme permet de prédire une caractéristique en sortie
+ et cette caractéristique sert à classer les différentes entrées entre elles.
  Par exemple, trouver toutes les bananes dans un panel de photos de fruits.
  
 \end_layout
@@ -1254,8 +1264,8 @@ construction des liaisons entre neurones.
 \end_inset
 
  si le i-ème neurone est connecté au j-ième neurone et 0 sinon.
- L’information peut n’aller dans un sens unique ; autrement dit, il est
- possible d’avoir (M)ij=1 et (M)ji=0 pour i,j fixé.
+ L’information peut n’aller que dans un sens unique ; autrement dit, il
+ est possible d’avoir (M)ij=1 et (M)ji=0 pour i,j fixé.
  On pourra éventuellement avoir une matrice par couche.
  
 \end_layout
@@ -1277,7 +1287,11 @@ attribution de poids aux liaisons : en notant m le nombre de liaisons, on
 \end_inset
 
 .
- -définition d’une fonction d’activation commune à tous les neurones 
+ 
+\end_layout
+
+\begin_layout Itemize
+définition d’une fonction d’activation commune à tous les neurones 
 \end_layout
 
 \begin_layout Itemize
