@@ -1347,158 +1347,72 @@ Donner les entrées au programme : l’utilisateur indiquera le fichier sur
  
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-1"
+\begin_layout Section
+Sources
+\end_layout
 
-\end_inset
-
+\begin_layout Itemize
 http://benoit.decoux.free.fr/ENSEIGNEMENT/PROGRAMMATION/projet_RN_CPP.pdf 
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-2"
-
-\end_inset
-
+\begin_layout Itemize
 https://www.juripredis.com/fr/blog/id-19-demystifier-le-machine-learning-partie-2-
 les-reseaux-de-neurones-artificiels
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-3"
-
-\end_inset
-
+\begin_layout Itemize
 https://www.lebigdata.fr/perceptron-machine-learning
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-4"
-
-\end_inset
-
+\begin_layout Itemize
 https://www.youtube.com/watch?v=sK9AbJ4P8ao
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-5"
-
-\end_inset
-
+\begin_layout Itemize
 https://zestedesavoir.com/forums/sujet/6567/classe-generique-pour-des-reseaux-de-
 neurones-en-c/
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-6"
-
-\end_inset
-
+\begin_layout Itemize
 https://openclassrooms.com/fr/courses/4470406-utilisez-des-modeles-supervises-non
 -lineaires/4730716-entrainez-un-reseau-de-neurones-simple
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-7"
-
-\end_inset
-
+\begin_layout Itemize
 http://lexicometrica.univ-paris3.fr/jadt/jadt2000/pdf/47/47.pdf
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-8"
-
-\end_inset
-
+\begin_layout Itemize
 http://nicolascormier.com/documentation/ia/cours_IA/node102.html
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-9"
-
-\end_inset
-
+\begin_layout Itemize
 https://dataanalyticspost.com/Lexique/reseaux-de-neurones-recurrents/
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-10"
-
-\end_inset
-
+\begin_layout Itemize
 https://halshs.archives-ouvertes.fr/halshs-02096266/document
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-11"
-
-\end_inset
-
+\begin_layout Itemize
 https://www.tandfonline.com/doi/pdf/
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-12"
-
-\end_inset
-
+\begin_layout Itemize
 https://www.rncan.gc.ca/cartes-outils-publications/imagerie-satellitaire-photos-aer
 /tutoriels-sur-la-teledetection/analyse-interpretation-dimages/classification-et
 -analyse-des-images/9362
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-13"
-
-\end_inset
-
+\begin_layout Itemize
 https://weave.eu/deep-learning-service-de-linformatique-affective/
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-14"
-
-\end_inset
-
+\begin_layout Itemize
 https://ledatascientist.com/introduction-a-la-categorisation-de-textes/
 \end_layout
 
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-15"
-
-\end_inset
-
+\begin_layout Itemize
 https://www.aquiladata.fr/classification-dimages-et-detection-dobjets-par-cnn/
 \end_layout
 
