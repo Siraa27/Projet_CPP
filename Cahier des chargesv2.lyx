@@ -158,7 +158,7 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
 Objectifs et fonctionnalités 
 \end_layout
 
@@ -166,15 +166,15 @@ Objectifs et fonctionnalités
 Tout au long de ce projet, nos objectifs seront les suivants :
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Création et manipulation d’un réseau de neurones 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Appliquer un réseau de neurones à un exemple de la liste suivante : 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Identification des objets
 \end_layout
 
@@ -247,7 +247,7 @@ Contours d'objet
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 La reconnaissance d’image
 \end_layout
 
@@ -319,7 +319,7 @@ Illustration avec des fruit et légumes
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Les classifications de texte ou image : 
 \end_layout
 
@@ -354,11 +354,7 @@ Il faut tout d’abord extraire les données textuelles ou les images utilisées
 
 D’autre part, la reconnaissance des émotions, très utilisée sur les réseaux
  sociaux.
- 
-\begin_inset Newline newline
-\end_inset
-
-Qu’il s’agisse de la détection de comportement violent à travers un texte
+ Qu’il s’agisse de la détection de comportement violent à travers un texte
  ou une image (DeepBreath) ou de l'analyse de l’impact émotionnel sur des
  compagnes de marketing, etc… 
 \end_layout
@@ -458,7 +454,7 @@ Illustration avec le classifieur
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 
 \series bold
 Reconnaissance vocale
@@ -510,13 +506,13 @@ D'autres recherches sur l'utilisation de réseaux de neurones dit
  ! 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Prédiction de données
 \end_layout
 
 \begin_layout Standard
-Les réseaux de neurones sont très utilisés pour mettre au point des modèles
- de prédictions à partir d'échantillons de données.
+Enfin les réseaux de neurones sont très utilisés pour mettre au point des
+ modèles de prédictions à partir d'échantillons de données.
  La prédiction d'indicateurs financiers est un exemple très parlant.
  En effet « en 2011, 40 % des ordres donnés sur le CAC40 sont totalement
  automatisés à l’aide d’algorithmes informatiques ».
@@ -539,11 +535,290 @@ Les réseaux de neurones peuvent aussi prédire des phénomènes qui nous semble
  de neurones dans la prédiction de phénomène non-linéaires.
 \end_layout
 
-\begin_layout Part
-Bibliographie
+\begin_layout Subsection
+Tester le réseau de neurones sur un échantillon test
 \end_layout
 
 \begin_layout Section
+Bibliographie
+\end_layout
+
+\begin_layout Subsection
+Définitions importantes 
+\end_layout
+
+\begin_layout Subsubsection
+Neurone dit formel ou artificiel : 
+\end_layout
+
+\begin_layout Standard
+Le neurone formel est l'unité élémentaire des réseaux de neurones artificiels
+ dans lesquels il est associé à ses semblables pour calculer des fonctions
+ arbitrairement complexes, utilisées pour diverses applications en intelligence
+ artificielle.
+ Mathématiquement, le neurone formel est une fonction à plusieurs variables
+ et à valeurs réelles.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Neurone.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schématisation algorithmique d’un neurone artificiel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette représentation est appelée le perceptron, un algorithme d’apprentissage
+ supervisé pour les classifications binaires linéaires.
+ Cela fait beaucoup de mots inconnus alors arrêtons nous un instant sur
+ chacun de ces termes car ils seront importants pour la suite ! Algorithme
+ : le perceptron est une suite d’opérations et de calcul = la somme des
+ entrées, leur pondération, la vérification d’une condition et la production
+ d’un résultat d’activation.
+ Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu’en fonction
+ d’une prédiction voulue, le poids des différentes entrées va évoluer et
+ il faudra trouver une valeur optimale pour chacune.
+ Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
+ d’une base de données d’exemples dont on connaît déjà la prédiction.
+ Par exemple on a une base de données de photos de banane et on “règle”
+ notre algorithme jusqu’à ce que chaque photo (ou presque) soit classé comme
+ banane.
+ Classification : l’algorithme permet de prédire une caractéristique en
+ sortie et cette caractéristique sert à classer les différentes entrées
+ entre elles.
+ Par exemple, trouver toutes les bananes dans un panel de photos de fruits.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Réseau de neurones : 
+\end_layout
+
+\begin_layout Standard
+Un réseau de neurones est en général composé d'une succession de couches
+ dont chacune prend ses entrées sur les sorties de la précédente.
+ Chaque couche (i) est composée de Ni neurones, prenant leurs entrées sur
+ les Ni-1 neurones de la couche précédente.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ReseauNeurones.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Illustration d'un réseau de neurones simple
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Couche : 
+\end_layout
+
+\begin_layout Standard
+En effet, un réseau de neurones est composé d’une couche d’entrées ( “inputs
+ layer”), d’une couche de sortie (“outputs layers”) et d’au moins une couche
+ cachée (“hidden layer”) qui fait le lien entre entrée et sortie.
+ Toutes ces couches sont composés de plusieurs neurones qui sont eux-mêmes
+ reliés les uns aux autres par des poids.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Couches.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Illustration des différentes couches
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Fonction d’activation : 
+\end_layout
+
+\begin_layout Standard
+La fonction d’activation (ou fonction de seuillage, ou encore fonction de
+ transfert) sert à introduire une non-linéarité dans le fonctionnement du
+ neurone.
+ Les fonctions de seuillage présentent généralement trois intervalles :
+ en dessous du seuil, le neurone est non-actif (souvent dans ce cas, sa
+ sortie vaut 0 ou -1) ; aux alentours du seuil, une phase de transition
+ ; au-dessus du seuil, le neurone est actif (souvent dans ce cas, sa sortie
+ vaut 1).
+ Des exemples classiques de fonctions d’activation sont : 
+\end_layout
+
+\begin_layout Standard
+- La fonction sigmoïde.
+ 
+\end_layout
+
+\begin_layout Standard
+- La fonction tangente hyperbolique.
+ 
+\end_layout
+
+\begin_layout Standard
+- La fonction de Heaviside.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fonctions-dactivation.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Différentes fonctions d'activation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Fonctionnement d'un réseau de neurones
 \end_layout
 
@@ -681,7 +956,7 @@ Il existe plusieurs règles d'apprentissage courantes comme la règle de Hebb,
  
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Architecture des réseaux de neurones
 \end_layout
 
@@ -732,7 +1007,7 @@ On peut aussi souligner que souvent, afin d'obtenir un meilleur résultat,
  Voyons plus en détails ces 4 architectures :
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Réseaux de neurones feed forwarded
 \end_layout
 
@@ -816,16 +1091,12 @@ Réseau Feed-Forwarded
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Réseaux de neurones récurrents
 \end_layout
 
@@ -883,16 +1154,12 @@ Réseau récurrent de type Elman
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Réseaux de neurones à résonance
 \end_layout
 
@@ -938,7 +1205,7 @@ Finalement, le principe des modèles ART est d'apprendre de manière autonome,
  lieu à un surapprentissage.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Réseaux de neurones auto-organisés
 \end_layout
 
@@ -948,297 +1215,6 @@ ons spéciales.
  En effet grâce à des méthodes d'apprentissage non supervisé, ce type de
  réseau est capable de répartir en différentes classes de grands espaces
  de données.
-\end_layout
-
-\begin_layout Section
-Définitions importantes 
-\end_layout
-
-\begin_layout Subsection
-Réseau de neurones : 
-\end_layout
-
-\begin_layout Standard
-Un réseau de neurones est en général composé d'une succession de couches
- dont chacune prend ses entrées sur les sorties de la précédente.
- Chaque couche (i) est composée de Ni neurones, prenant leurs entrées sur
- les Ni-1 neurones de la couche précédente.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ReseauNeurones.png
-	scale 40
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Illustration d'un réseau de neurones simple
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Neurone dit formel ou artificiel : 
-\end_layout
-
-\begin_layout Standard
-Le neurone formel est l'unité élémentaire des réseaux de neurones artificiels
- dans lesquels il est associé à ses semblables pour calculer des fonctions
- arbitrairement complexes, utilisées pour diverses applications en intelligence
- artificielle.
- Mathématiquement, le neurone formel est une fonction à plusieurs variables
- et à valeurs réelles.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename Neurone.png
-	scale 50
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Schématisation algorithmique d’un neurone artificiel 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Cette représentation est appelée le perceptron, un algorithme d’apprentissage
- supervisé pour les classifications binaires linéaires.
- Cela fait beaucoup de mots inconnus alors arrêtons nous un instant sur
- chacun de ces termes car ils seront importants pour la suite ! Algorithme
- : le perceptron est une suite d’opérations et de calcul = la somme des
- entrées, leur pondération, la vérification d’une condition et la production
- d’un résultat d’activation.
- Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu’en fonction
- d’une prédiction voulue, le poids des différentes entrées va évoluer et
- il faudra trouver une valeur optimale pour chacune.
- Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
- d’une base de données d’exemples dont on connaît déjà la prédiction.
- Par exemple on a une base de données de photos de banane et on “règle”
- notre algorithme jusqu’à ce que chaque photo (ou presque) soit classé comme
- banane.
- Classification : l’algorithme permet de prédire une caractéristique en
- sortie et cette caractéristique sert à classer les différentes entrées
- entre elles.
- Par exemple, trouver toutes les bananes dans un panel de photos de fruits.
- 
-\end_layout
-
-\begin_layout Subsection
-Couche : 
-\end_layout
-
-\begin_layout Standard
-En effet, un réseau de neurones est composé d’une couche d’entrées ( “inputs
- layer”), d’une couche de sortie (“outputs layers”) et d’au moins une couche
- cachée (“hidden layer”) qui fait le lien entre entrée et sortie.
- Toutes ces couches sont composés de plusieurs neurones qui sont eux-mêmes
- reliés les uns aux autres par des poids.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename Couches.png
-	scale 50
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Illustration des différentes couches
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Fonction d’activation : 
-\end_layout
-
-\begin_layout Standard
-La fonction d’activation (ou fonction de seuillage, ou encore fonction de
- transfert) sert à introduire une non-linéarité dans le fonctionnement du
- neurone.
- Les fonctions de seuillage présentent généralement trois intervalles :
- en dessous du seuil, le neurone est non-actif (souvent dans ce cas, sa
- sortie vaut 0 ou -1) ; aux alentours du seuil, une phase de transition
- ; au-dessus du seuil, le neurone est actif (souvent dans ce cas, sa sortie
- vaut 1).
- Des exemples classiques de fonctions d’activation sont : 
-\end_layout
-
-\begin_layout Standard
-- La fonction sigmoïde.
- 
-\end_layout
-
-\begin_layout Standard
-- La fonction tangente hyperbolique.
- 
-\end_layout
-
-\begin_layout Standard
-- La fonction de Heaviside.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename fonctions-dactivation.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Différentes fonctions d'activation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -1258,7 +1234,7 @@ ion des couches des perceptrons).
 \end_layout
 
 \begin_layout Itemize
--construction des instances de la classe Neurone 
+construction des instances de la classe Neurone 
 \end_layout
 
 \begin_layout Itemize
@@ -1369,6 +1345,37 @@ Donner les entrées au programme : l’utilisateur indiquera le fichier sur
  Le fichier doit correspondre à l’application choisie précédemment (par
  exemple, donner une image dans le cas d’une application en traitement d’image).
  
+\end_layout
+
+\begin_layout Section
+Sources
+\end_layout
+
+\begin_layout Itemize
+http://benoit.decoux.free.fr/ENSEIGNEMENT/PROGRAMMATION/projet_RN_CPP.pdf 
+\end_layout
+
+\begin_layout Itemize
+https://www.juripredis.com/fr/blog/id-19-demystifier-le-machine-learning-partie-2-
+les-reseaux-de-neurones-artificiels
+\end_layout
+
+\begin_layout Itemize
+https://www.lebigdata.fr/perceptron-machine-learning
+\end_layout
+
+\begin_layout Itemize
+https://www.youtube.com/watch?v=sK9AbJ4P8ao
+\end_layout
+
+\begin_layout Itemize
+https://zestedesavoir.com/forums/sujet/6567/classe-generique-pour-des-reseaux-de-
+neurones-en-c/
+\end_layout
+
+\begin_layout Itemize
+https://openclassrooms.com/fr/courses/4470406-utilisez-des-modeles-supervises-non
+-lineaires/4730716-entrainez-un-reseau-de-neurones-simple
 \end_layout
 
 \end_body
