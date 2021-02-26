@@ -204,13 +204,33 @@ bounding box
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename contours.png
+	scale 30
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Illustration
+Contours d'objet
 \end_layout
 
 \end_inset
@@ -256,9 +276,29 @@ Un modèle de réseau de neurones profond est capable aujourd’hui de reconnaî
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename classification_legumes.png
+	scale 30
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -328,9 +368,29 @@ Qu’il s’agisse de la détection de comportement violent à travers un texte
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename expressions_visages.png
+	scale 30
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -355,13 +415,29 @@ Illustration avec les visages
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+centering
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
+
+\begin_inset Graphics
+	filename classifieur.png
+	scale 30
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -709,8 +785,21 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
-	filename /home/uilisateur/Documents/INSA/GM/S8/Machine Learning/ResForward.png
+	filename ResForward.png
 	scale 50
 
 \end_inset
@@ -763,9 +852,22 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
-	filename /home/uilisateur/Documents/INSA/GM/S8/C++/Projet/Elman_ReseauRecurrent.png
-	scale 50
+	filename Elman_ReseauRecurrent.png
+	scale 30
 
 \end_inset
 
@@ -875,6 +977,26 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ReseauNeurones.png
+	scale 40
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -916,6 +1038,26 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Neurone.png
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -979,6 +1121,26 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Couches.png
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1036,6 +1198,25 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename fonctions-dactivation.png
+	scale 50
+
+\end_inset
+
 
 \end_layout
 
@@ -1058,6 +1239,136 @@ Différentes fonctions d'activation
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Implémentation
+\end_layout
+
+\begin_layout Subsection
+Fonctionnement du système
+\end_layout
+
+\begin_layout Standard
+La première étape consiste en la construction d’un réseau de neurones (construct
+ion des couches des perceptrons).
+ Une fois les caractéristiques saisies par l’utilisateur, le programme doit
+ construire un réseau de neurones correspondant.
+ Nous proposons le procédé suivant : 
+\end_layout
+
+\begin_layout Itemize
+-construction des instances de la classe Neurone 
+\end_layout
+
+\begin_layout Itemize
+construction des instances de la classe Couche : on attribue les objets
+ précédemment créés à une couche.
+ 
+\end_layout
+
+\begin_layout Itemize
+construction des liaisons entre neurones.
+ On pourra utiliser par exemple des matrices 
+\begin_inset Formula $M$
+\end_inset
+
+ avec 
+\begin_inset Formula $M_{ij}=1$
+\end_inset
+
+ si le i-ème neurone est connecté au j-ième neurone et 0 sinon.
+ L’information peut n’aller dans un sens unique ; autrement dit, il est
+ possible d’avoir (M)ij=1 et (M)ji=0 pour i,j fixé.
+ On pourra éventuellement avoir une matrice par couche.
+ 
+\end_layout
+
+\begin_layout Itemize
+attribution de poids aux liaisons : en notant m le nombre de liaisons, on
+ pourra construire un vecteur de poids 
+\begin_inset Formula $W$
+\end_inset
+
+ de dimension m.
+ On modifiera alors la matrice précédente en remplaçant les coefficients
+ 
+\begin_inset Formula $M_{ij}=1$
+\end_inset
+
+ par 
+\begin_inset Formula $W_{k}$
+\end_inset
+
+.
+ -définition d’une fonction d’activation commune à tous les neurones 
+\end_layout
+
+\begin_layout Itemize
+regroupement des objets précédent dans une instance de classe Réseau
+\end_layout
+
+\begin_layout Standard
+Une fois le réseau initial construit, il reste quelques étapes à effectuer
+ afin que le réseau réalise son objectif : 
+\end_layout
+
+\begin_layout Itemize
+apprentissage du réseau : plusieurs méthodes pourront être définies suivant
+ la fonction du réseau et/ou le type de réseau
+\end_layout
+
+\begin_layout Itemize
+construction du vecteur des entrées : plusieurs méthodes pourront être définies
+ suivant le type de données utilisé (image, signal…) 
+\end_layout
+
+\begin_layout Itemize
+construction du vecteur des sorties : utilisation d’une méthode qui prend
+ en entrées le réseau à l’issu de l’apprentissage et le vecteur des entrées
+ et qui retourne un vecteur des sorties.
+ 
+\end_layout
+
+\begin_layout Itemize
+fournir une sortie à l’utilisateur : comme pour le vecteur des entrées,
+ il y aura une étape d'interprétation du vecteur des sorties en fonction
+ de la sortie attendue (image, signal, prédiction…) 
+\end_layout
+
+\begin_layout Subsection
+Manuel d'utilisation préliminaire
+\end_layout
+
+\begin_layout Itemize
+Choisir une application : l’utilisateur devra dans un premier temps choisir
+ la fonctionnalité qui l’intéresse parmi une liste (voir la liste non exhaustive
+ des applications précédentes).
+ 
+\end_layout
+
+\begin_layout Itemize
+Choisir un type de réseau : cela permettra de comparer différents types
+ de réseau sur une même application.
+ Cela permettra aussi de simplifier la construction et la manipulation du
+ réseau de neurones en utilisant l’encapsulation.
+ 
+\end_layout
+
+\begin_layout Itemize
+Saisir les caractéristiques du réseau : l’utilisateur devra saisir le nombre
+ de couches ainsi que le nombre de neurones par couches.
+ De manière optionnelle, il pourra également choisir la fonction d’activation
+ et les poids initiaux (de manière aléatoire, tous égaux, par ordre croissant…).
+ 
+\end_layout
+
+\begin_layout Itemize
+Donner les entrées au programme : l’utilisateur indiquera le fichier sur
+ lequel le réseau doit travailler.
+ Le fichier doit correspondre à l’application choisie précédemment (par
+ exemple, donner une image dans le cas d’une application en traitement d’image).
+ 
 \end_layout
 
 \end_body
