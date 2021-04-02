@@ -1,0 +1,927 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Cahier de spécification
+\end_layout
+
+\begin_layout Author
+Camille Mehdi Amina Raf Isra
+\begin_inset Newline newline
+\end_inset
+
+à l'attention de Koto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Vision du projet 
+\end_layout
+
+\begin_layout Enumerate
+Création et manipulation d'un réseau de neurones 
+\end_layout
+
+\begin_layout Enumerate
+Appliquer un réseau de neurones à un exemple de la liste suivante : 
+\end_layout
+
+\begin_layout Itemize
+Identification des objets (contours d’objet) 
+\end_layout
+
+\begin_layout Itemize
+La reconnaissance d'image 
+\end_layout
+
+\begin_layout Itemize
+Les classifications de texte, d’images ou autre.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prédiction de données 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Les entrées possibles : 
+\end_layout
+
+\begin_layout Itemize
+une image 
+\end_layout
+
+\begin_layout Itemize
+des données “brutes” 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Les sorties possibles : 
+\end_layout
+
+\begin_layout Itemize
+des valeurs (prédiction, classification) 
+\end_layout
+
+\begin_layout Itemize
+une image (identification d’objet, de contours d’objet) 
+\end_layout
+
+\begin_layout Paragraph
+Dans un premier temps, nous nous concentrerons sur les applications “classificat
+ion” puis si il nous reste du temps nous élargirons à la prédiction.
+ Nous choisissons de ne pas implémenter d'autres méthodes pour les autres
+ applications "reconnaissance d’image” et ‘identification des objets”.
+ De plus nous nous concentrerons tout d’abord sur les méthodes supervisées,
+ puis si nous avons le temps nous essayerons d’implémenter des méthodes
+ non supervisées.
+ 
+\end_layout
+
+\begin_layout Section
+Amorce de la solution en termes de composants
+\end_layout
+
+\begin_layout Subsection
+Classe réseau 
+\end_layout
+
+\begin_layout Standard
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Itemize
+tableau de neurones
+\end_layout
+
+\begin_layout Itemize
+tableau de couches
+\end_layout
+
+\begin_layout Itemize
+matrice de poids,
+\end_layout
+
+\begin_layout Itemize
+fonction erreur pour faire varier les poids selon le besoin
+\end_layout
+
+\begin_layout Subsection
+Classe Neurone
+\end_layout
+
+\begin_layout Standard
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Itemize
+couche à laquelle il appartient
+\end_layout
+
+\begin_layout Itemize
+entier indice
+\end_layout
+
+\begin_layout Subsection
+Classe Couche
+\end_layout
+
+\begin_layout Standard
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Itemize
+vecteur/tableau de neurones
+\end_layout
+
+\begin_layout Itemize
+fonction d’activation
+\end_layout
+
+\begin_layout Itemize
+sous-matrice des liaisons des entrées
+\end_layout
+
+\begin_layout Subsection
+classe Entrées/Sorties/CoucheCachée
+\end_layout
+
+\begin_layout Standard
+Ce sont des classes qui héritent de la classe Couche, 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pour la classe Entrées
+\series default
+ : l’objectif de la couche des entrées est de récupérer les données fournies
+ (images, données brutes etc) de les interpréter et de fournir des sorties
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pour la classe Sorties 
+\series default
+: variable d’instance : une matrice des entrées, une fonction d'activation
+ spécifique à la couche de sortie 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pour la classe CoucheCachée
+\series default
+ : variable d’instance : une matrice des liaisons pour les entrées, 
+\end_layout
+
+\begin_layout Section
+Fonctionnalités
+\end_layout
+
+\begin_layout Subsection
+Diagramme de cas d’utilisation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename DiagrammeCasUtilisation.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de cas d'utilisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Descriptions résumés des cas d’utilisation
+\end_layout
+
+\begin_layout Itemize
+Fournir les données d’entrées : Pour faire ceci, on construit un tableau
+ de la dimension adéquate correspondant à celle des données que l’on donne
+ au réseau.
+ Si nos données sont sous forme .csv ou autre, il faut les convertir en tableau
+ c++ avant de pouvoir les utiliser.
+ 
+\end_layout
+
+\begin_layout Itemize
+Choix des fonctionnalités, des paramètres et du type de réseau : Notre programme
+ propose par le biais de fonctions “cout” et “cin” les différentes options
+ et lance la partie du programme correspondant au choix de l’utilisateur
+ 
+\end_layout
+
+\begin_layout Section
+Spécifications détaillées des fonctionnalités par cas d’utilisation
+\end_layout
+
+\begin_layout Subsection
+Les choix possibles (pour nous c’est le vert) 
+\end_layout
+
+\begin_layout Standard
+Dès que l’utilisateur compilera le code il va se retrouver à faire plusieur
+ choix illustrés dans le diagramme ci-dessous : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename diagramme des choix.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme des choix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Le choix des données 
+\end_layout
+
+\begin_layout Standard
+Une fois que l'utilisateur a fait ses choix, il doit maintenant fournir
+ les données en entrée.
+ Pour le moment, nous allons considérer le choix d’application : classification
+ des données.
+ Voyons cela sur l’exemple des iris de Fisher (pour le moment).
+ 
+\end_layout
+
+\begin_layout Standard
+Les Iris de Fisher correspondent à 150 fleurs décrites par 4 variables quantitat
+ives: 
+\end_layout
+
+\begin_layout Itemize
+longueur du sépale 
+\end_layout
+
+\begin_layout Itemize
+largeur du sépale 
+\end_layout
+
+\begin_layout Itemize
+longueur du pétale 
+\end_layout
+
+\begin_layout Itemize
+largeur du pétale 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les 150 fleurs sont réparties en 3 différentes espèces : 
+\end_layout
+
+\begin_layout Itemize
+iris setosa 
+\end_layout
+
+\begin_layout Itemize
+iris versicolor 
+\end_layout
+
+\begin_layout Itemize
+iris virginica.
+ 
+\end_layout
+
+\begin_layout Standard
+le fichier va être sous la forme suivante : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Fichier données iris.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+exemple du fichier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+On peut donc voir nos données (entrée du programme) comme : 
+\end_layout
+
+\begin_layout Itemize
+Pour une fleur ( entrée du réseau) : un vecteur de dimension 4
+\begin_inset Formula 
+\[
+f=(x_{1},x_{2},x_{3},x_{4})^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Pour les classe ( la sortie du réseau): un vecteur de dimension 3 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula 
+\[
+  c=(y_{1},y_{2},y_{3})^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+il faut donc lire les mesures, les mettre en entrée du réseau, calculer
+ le résultat en propageant l’information de l’entrée vers la sortie couche
+ par couche, prendre la sortie maximale parmi les neurones de sortie et
+ afficher le résultat.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donc notre réseau va ressembler à quelque chose comme ça : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename reseau neuronne Fisher.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Réseau de neuronnes appliqué aux iris de Fisher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Se pose le problème suivant : comment à partir des mesures réalisées sur
+ une fleur inconnue trouver le type d’iris à l'aide d’un réseau de neurones
+ ? 
+\end_layout
+
+\begin_layout Subsection
+Mise en place 
+\end_layout
+
+\begin_layout Standard
+Pour mettre en place ce type d’outil d’apprentissage supervisé, il y a deux
+ étapes : 
+\end_layout
+
+\begin_layout Enumerate
+apprentissage à partir d’un grand ensemble de données déjà classées, pour
+ régler les poids qui lient les différents neurones d’une couche aux neurones
+ de la couche suivante
+\end_layout
+
+\begin_layout Enumerate
+Utilisation du réseau dont les poids ont été appris à de nouvelles données
+ 
+\end_layout
+
+\begin_layout Section
+Description du domaine (diagramme de classes)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de Classe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interactions entre les composants (associations)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Séquence.jpeg
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tests d’intégration
+\end_layout
+
+\begin_layout Standard
+Ici, on explicite tous les différents scénarios possibles engageant un réseau
+ de neurones.
+ Cela nous permettra de n’oublier aucune fonctionnalité dans notre code
+ et dans nos diagrammes.
+ Ces scénarios seront ensuite repris à la fin pour effectuer différents
+ tests, et ainsi vérifier le bon fonctionnement de notre programme.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios de création d’un réseau : 
+\end_layout
+
+\begin_layout Subsubsection
+Réseau vide :
+\end_layout
+
+\begin_layout Standard
+Si dans le choix des paramètres, on choisit 0 neurone et donc 0 couche,
+ les utilisations que l’on pourra faire de ce réseau seront très limitées
+ pour ne pas dire inexistantes.
+ Pas de couche d'entrée, ni d’arrivée.
+ Il serait utile de prévoir une exception pour éviter ce cas de figure/de
+ potentielles erreurs.
+\end_layout
+
+\begin_layout Subsubsection
+Perceptron simple : 
+\end_layout
+
+\begin_layout Standard
+On entre en machine : 2 pour le nombre de couches, autant de neurones que
+ l’on veut pour la couche d’entrée et un seul neurone sur la couche de sortie.
+ Le perceptron simple est un modèle de prédiction (supervisé) linéaire.
+ Ce schéma simple a un effet plus éducatif qu’autre chose, il sert de modèle
+ pour le perceptron multicouches qui permet de régler des problèmes plus
+ complexes.
+\end_layout
+
+\begin_layout Subsubsection
+Perceptron multicouche : 
+\end_layout
+
+\begin_layout Standard
+L’utilisateur entre en machine un nombre de couches supérieures à 2.
+ Notons tout de même que choisir au dela de 6 à 10 couches entraine très
+ souvent des problèmes d’overfitting, aussi appelée surapprentissage (le
+ réseau est incapable se généraliser, car il est trop adapté aux données
+ d’appretissage).
+ Il serait peut être bon de définir un nombre de couches par défaut pour
+ orienter les utilisateurs novices.
+ Puis l’utilisateur saisit de manière itérative le nombre de neurones pour
+ chaque couche y compris la couche de sortie qui peut comporter plusieurs
+ neurones.
+ Ensuite les neurones des couches i seront reliés à la couche i+1 suivant
+ le type de réseau sélectionné par l’utilisateur.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios relatifs aux fonctions d’activation : 
+\end_layout
+
+\begin_layout Standard
+Ici, il est très difficile de délimiter notre projet puisqu’il n’existe
+ pas de règles propres au choix de la fonction d’activation utilisée pour
+ telle couche, tel réseau ou telle fonctionnalité de ce réseau.
+ 
+\end_layout
+
+\begin_layout Standard
+On peut tout de même émettre quelques pistes : 
+\end_layout
+
+\begin_layout Standard
+Dans le cas d'un problème de régression, il n'est pas nécessaire de transformer
+ la somme pondérée reçue en entrée.
+ La fonction d'activation est la fonction identité, elle retourne ce qu'elle
+ a reçu en entier.
+ (pour un perceptron simple)
+\end_layout
+
+\begin_layout Standard
+Dans le cas d'un problème de classification binaire, on peut utiliser une
+ fonction de seuil : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s\left(w_{0}+\stackrel[j=1]{p}{\sum}w_{j}x_{j}\right)=\begin{cases}
+0 & si\,\left(w_{0}+\stackrel[j=1]{p}{\sum}w_{j}x_{j}\right)<0\\
+1 & sinon
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comme dans le cas de la 
+\series bold
+régression logistique
+\series default
+, on peut aussi utiliser une fonction 
+\series bold
+sigmoïde
+\series default
+ pour prédire la 
+\begin_inset Formula $probabilité$
+\end_inset
+
+ d'appartenir à la classe positive.
+ 
+\end_layout
+
+\begin_layout Standard
+Dans le cas d'un problème de 
+\series bold
+classification multi-classe,
+\series default
+ nous allons modifier l'architecture du perceptron.
+ Au lieu d'utiliser une seule unité de sortie, il va en utiliser autant
+ que de classes.
+ Chacune de ces unités sera connectée à toutes les unités d'entrée.
+ On aura donc ainsi 
+\begin_inset Formula $K(p+1)$
+\end_inset
+
+ poids de connexion, où 
+\begin_inset Formula $K$
+\end_inset
+
+ est le nombre de classes.
+ On peut alors utiliser comme fonction d'activation la fonction 
+\series bold
+softmax
+\series default
+.
+ Il s'agit d'une généralisation de la sigmoïde.
+\end_layout
+
+\begin_layout Standard
+Si la sortie pour la classe 
+\begin_inset Formula $k$
+\end_inset
+
+ est suffisamment plus grande que celles des autres classes, son activation
+ sera proche de
+\begin_inset Formula $1$
+\end_inset
+
+ tandis que l'activation des autres sera proche de
+\begin_inset Formula $0.$
+\end_inset
+
+ On peut donc aussi considérer qu'il s'agit d'une version différentiable
+ du maximum, ce qui nous aidera grandement pour l'apprentissage.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios relatifs aux poids :
+\end_layout
+
+\begin_layout Standard
+Pour entraîner un perceptron, c'est-à-dire apprendre les poids de connexion,
+ nous allons chercher à minimiser l'erreur de prédiction sur le jeu d'entraîneme
+nt.
+ On peut initialiser les poids de différentes manières, soit on initialise
+ les poids manuellement (souvent on prend la valeur 0,5 (valeur moyenne
+ entre 0 et 1)) soit on initialise les poids en créant une fonction qui
+ nous renverra un nombre aléatoire entre 0 et 1 pour chaque poids.
+ 
+\end_layout
+
+\begin_layout Standard
+Puis pour les faire évoluer à chaque itération jusqu’à convergence de l’algorith
+me, on implémente la méthode de descente du gradient.
+ Grâce à celle-ci, le poids à l’étape (i) devient à l’étape (i+1) : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Courbe erreur poids.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Courbe de l'erreur en fonction du poids
+\begin_inset Newline newline
+\end_inset
+
+où ɳ est la vitesse d’apprentissage.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
