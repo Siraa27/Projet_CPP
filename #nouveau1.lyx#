@@ -111,7 +111,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Vision du projet (objectifs et organisation métier)
+Vision du projet 
 \end_layout
 
 \begin_layout Enumerate
@@ -186,7 +186,7 @@ ion” puis si il nous reste du temps nous élargirons à la prédiction.
 \end_layout
 
 \begin_layout Section
-Amorce de la solution en termes de composants (futurs modules)
+Amorce de la solution en termes de composants
 \end_layout
 
 \begin_layout Subsection
@@ -285,8 +285,7 @@ Pour la classe CoucheCachée
 \end_layout
 
 \begin_layout Section
-Fonctionnalités (diagramme de cas d’utilisation et descriptions résumés
- des cas d’utilisation) 
+Fonctionnalités
 \end_layout
 
 \begin_layout Subsection
@@ -298,9 +297,15 @@ Diagramme de cas d’utilisation
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename DiagrammeCasUtilisation.png
+	scale 30
+
+\end_inset
+
 
 \end_layout
 
@@ -501,19 +506,35 @@ On peut donc voir nos données (entrée du programme) comme :
 \end_layout
 
 \begin_layout Itemize
-Pour une fleur ( entrée du réseau) : un vecteur de dimension 4 
-\begin_inset Formula $f=(x_{1},x_{2},x_{3},x_{4})^{T}$
+Pour une fleur ( entrée du réseau) : un vecteur de dimension 4
+\begin_inset Formula 
+\[
+f=(x_{1},x_{2},x_{3},x_{4})^{T}
+\]
+
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Itemize
 Pour les classe ( la sortie du réseau): un vecteur de dimension 3 
-\begin_inset Formula $c=(y_{1},y_{2},y_{3})^{T}$
+\begin_inset space ~
 \end_inset
 
- 
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula 
+\[
+  c=(y_{1},y_{2},y_{3})^{T}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -528,6 +549,14 @@ il faut donc lire les mesures, les mettre en entrée du réseau, calculer
  le résultat en propageant l’information de l’entrée vers la sortie couche
  par couche, prendre la sortie maximale parmi les neurones de sortie et
  afficher le résultat.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -554,7 +583,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Réseau de neuronnes appliquées aux iris de Fisher
+Réseau de neuronnes appliqué aux iris de Fisher
 \end_layout
 
 \end_inset
@@ -598,7 +627,7 @@ Utilisation du réseau dont les poids ont été appris à de nouvelles données
 \end_layout
 
 \begin_layout Section
-Description du domaine (diagramme de classes)
+Description du domaine
 \end_layout
 
 \begin_layout Standard
@@ -630,7 +659,7 @@ Diagramme de Classe
 \end_layout
 
 \begin_layout Section
-Interactions entre les composants (associations)
+Interactions entre les composants 
 \end_layout
 
 \begin_layout Standard
@@ -668,8 +697,7 @@ Diagramme de séquence
 \end_layout
 
 \begin_layout Section
-Tests d’intégration (vérifier la communication entre les composants par
- des scénarios)
+Tests d’intégration
 \end_layout
 
 \begin_layout Standard
