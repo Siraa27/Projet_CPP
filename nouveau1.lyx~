@@ -567,7 +567,7 @@ Donc notre réseau va ressembler à quelque chose comme ça :
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -697,8 +697,7 @@ Diagramme de séquence
 \end_layout
 
 \begin_layout Section
-Tests d’intégration (vérifier la communication entre les composants par
- des scénarios)
+Tests d’intégration
 \end_layout
 
 \begin_layout Standard
