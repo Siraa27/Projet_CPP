@@ -1,0 +1,1240 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Cahier de spécification
+\end_layout
+
+\begin_layout Author
+Camille GOUJET, Mehdi HELAL, Amina EL BACHARI, 
+\begin_inset Newline newline
+\end_inset
+
+Rafael QUIBLIER et Isra BEN SASSI
+\begin_inset Newline newline
+\end_inset
+
+à l'attention de Jean-Philippe KOTOWICZ
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Vision du projet 
+\end_layout
+
+\begin_layout Enumerate
+Création et manipulation d'un réseau de neurones 
+\end_layout
+
+\begin_layout Enumerate
+Appliquer un réseau de neurones à un exemple de la liste suivante : 
+\end_layout
+
+\begin_layout Itemize
+Identification de contours d’objets
+\end_layout
+
+\begin_layout Itemize
+La reconnaissance d'images
+\end_layout
+
+\begin_layout Itemize
+Les classifications de textes, d’images ou autre.
+ 
+\end_layout
+
+\begin_layout Itemize
+Prédiction de données 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Les entrées possibles : 
+\end_layout
+
+\begin_layout Itemize
+une image 
+\end_layout
+
+\begin_layout Itemize
+des données “brutes” 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Les sorties possibles : 
+\end_layout
+
+\begin_layout Itemize
+des valeurs (prédiction, classification) 
+\end_layout
+
+\begin_layout Itemize
+une image (identification d’objet, de contours d’objet) 
+\end_layout
+
+\begin_layout Standard
+Dans un premier temps, nous nous concentrerons sur les applications “classificat
+ion” puis si il nous reste du temps, nous élargirons à la prédiction.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Nous choisissons de ne pas implémenter d'autres méthodes pour les autres
+ applications "reconnaissance d’image” et ‘identification des objets”.
+ De plus, nous nous concentrerons tout d’abord sur les méthodes supervisées,
+ puis si nous avons le temps nous essayerons d’implémenter des méthodes
+ non supervisées.
+ 
+\end_layout
+
+\begin_layout Section
+Amorce de la solution en termes de composants
+\end_layout
+
+\begin_layout Subsection
+Classe Réseau 
+\end_layout
+
+\begin_layout Standard
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Itemize
+tableau de couches
+\end_layout
+
+\begin_layout Itemize
+nombre de couches
+\end_layout
+
+\begin_layout Itemize
+matrice de poids
+\end_layout
+
+\begin_layout Itemize
+fonction erreur() servant lors de l'apprentissage pour faire varier les
+ poids
+\end_layout
+
+\begin_layout Subsection
+Classe Couche
+\end_layout
+
+\begin_layout Standard
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Itemize
+nombre de neurones
+\end_layout
+
+\begin_layout Itemize
+vecteur de neurones
+\end_layout
+
+\begin_layout Itemize
+indice de la couche
+\end_layout
+
+\begin_layout Itemize
+fonction d’activation
+\end_layout
+
+\begin_layout Subsection
+Classes Entrées/Sorties/CoucheCachée
+\end_layout
+
+\begin_layout Standard
+Ce sont des classes qui héritent de la classe Couche 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pour la classe Entrées
+\series default
+ : l’objectif de la couche des entrées est de récupérer les données fournies
+ (images, données brutes etc) afin de les convertir au bon format
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pour la classe CoucheCachée
+\series default
+ : couches définies par un biais.
+ Elles ont à la fois des entrées et sorties
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pour la classe Sorties 
+\series default
+: elle dispose d'une fonction d'activation spécifique à la couche de sortie.
+ Cette couche donne le résultat à partir des données finales 
+\end_layout
+
+\begin_layout Subsection
+Classe Neurone
+\end_layout
+
+\begin_layout Standard
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Itemize
+indice du neurone
+\end_layout
+
+\begin_layout Itemize
+sortie du neurone
+\end_layout
+
+\begin_layout Section
+Fonctionnalités
+\end_layout
+
+\begin_layout Subsection
+Diagramme de cas d’utilisation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename DiagrammeCasUtilisation2.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de cas d'utilisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Descriptions des cas d’utilisation
+\end_layout
+
+\begin_layout Itemize
+Fournir les données d’entrées : pour faire ceci, on construit un tableau
+ de la dimension adéquate correspondant à celle des données que l’on donne
+ au réseau.
+ Si nos données sont sous forme .csv ou autre, il faut les convertir en tableau
+ 
+\begin_inset Formula $C++$
+\end_inset
+
+ avant de pouvoir les utiliser.
+ Ce travail sera fait dans la classe Entrées.
+ 
+\end_layout
+
+\begin_layout Itemize
+Choix des fonctionnalités, des paramètres et du type de réseau : Notre programme
+ propose par le biais de fonctions “cout” et “cin” les différentes options
+ et lance la partie du programme correspondant au choix de l’utilisateur
+ 
+\end_layout
+
+\begin_layout Section
+Spécifications détaillées des fonctionnalités par cas d’utilisation
+\end_layout
+
+\begin_layout Subsection
+Les choix possibles
+\end_layout
+
+\begin_layout Standard
+Dès que l’utilisateur compilera le code il va se retrouver à faire plusieur
+ choix illustrés dans le diagramme ci-dessous : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename diagramme des choix.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme des choix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Notre programme proposera les choix en vert et davantage si nous avons
+ le temps.
+\end_layout
+
+\begin_layout Subsection
+Le choix des données 
+\end_layout
+
+\begin_layout Standard
+Pour le moment, nous allons se concentrer sur une classification supervisée
+ des données.
+ Voyons cela sur l’exemple des iris de Fisher.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les Iris de Fisher correspondent à 150 fleurs décrites par 4 variables quantitat
+ives : 
+\end_layout
+
+\begin_layout Itemize
+longueur du sépale 
+\end_layout
+
+\begin_layout Itemize
+largeur du sépale 
+\end_layout
+
+\begin_layout Itemize
+longueur du pétale 
+\end_layout
+
+\begin_layout Itemize
+largeur du pétale 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les 150 fleurs sont réparties en 3 différentes espèces : 
+\end_layout
+
+\begin_layout Itemize
+iris setosa 
+\end_layout
+
+\begin_layout Itemize
+iris versicolor 
+\end_layout
+
+\begin_layout Itemize
+iris virginica.
+ 
+\end_layout
+
+\begin_layout Standard
+Le fichier va être sous la forme suivante : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Fichier données iris.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+exemple du fichier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+On peut donc voir nos données (entrée du programme) comme : 
+\end_layout
+
+\begin_layout Itemize
+Pour une fleur (entrée du réseau) : un vecteur de dimension 4 représentant
+ les 4 variables explicatives d'une fleur
+\begin_inset Formula 
+\[
+f=(x_{1},x_{2},x_{3},x_{4})^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Pour les classe (la sortie du réseau): un vecteur de dimension 3 représentant
+ les probabilités des 3 potentielles classes d'appartenance (setosa, versicolor,
+ virginica)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula 
+\[
+  c=(y_{1},y_{2},y_{3})^{T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il faut donc lire les mesures, les mettre en entrée du réseau, calculer
+ le résultat en propageant l’information de l’entrée vers la sortie couche
+ par couche, prendre la sortie maximale parmi les neurones de sortie et
+ afficher le résultat.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donc notre réseau, cela ressemblera à quelque chose comme ça : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename reseau neuronne Fisher.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Réseau de neurones appliqué aux iris de Fisher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se pose le problème suivant : comment à partir des mesures réalisées sur
+ une fleur inconnue trouver le type d’iris à l'aide d’un réseau de neurones
+ ? 
+\end_layout
+
+\begin_layout Subsection
+Mise en place 
+\end_layout
+
+\begin_layout Standard
+Pour mettre en place ce type d’outil d’apprentissage supervisé, il y a deux
+ étapes : 
+\end_layout
+
+\begin_layout Enumerate
+apprentissage à partir d’un grand ensemble de données déjà classées, pour
+ régler les poids qui lient les différents neurones d’une couche aux neurones
+ de la couche suivante
+\end_layout
+
+\begin_layout Enumerate
+Utilisation du réseau avec des poids fixés lors de l'apprentissage 
+\end_layout
+
+\begin_layout Section
+Description du domaine
+\end_layout
+
+\begin_layout Standard
+Voici notre diagramme de classe : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Class diagram.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de Classe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrammes de séquence 
+\end_layout
+
+\begin_layout Standard
+Afin de visualiser les interactions entre les composants, nous avons réalisé
+ plusieurs diagrammes de séquence pour chaque phase.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Nous commençons avec un diagramme de séquence assez général :
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename General.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Ensuite, nous avons détaillé les différentes phases du premier diagramme.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Notamment, pour la création d'un réseau : 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename CreationReseau.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ ainsi que pour l'initialisation d'un réseau prédéfini dans un fichier 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ChoisiPredef.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Finalement, nous avons réalisé un diagramme de séquence lorsqu'un utilisateur
+ formule sa requête : 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename FormulerRequete.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tests d’intégration
+\end_layout
+
+\begin_layout Standard
+Ici, on explicite tous les différents scénarios possibles engageant un réseau
+ de neurones.
+ Cela nous permettra de n’oublier aucune fonctionnalité dans notre code
+ et dans nos diagrammes.
+ Ces scénarios seront ensuite repris à la fin pour effectuer différents
+ tests, et ainsi vérifier le bon fonctionnement de notre programme.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios de création d’un réseau : 
+\end_layout
+
+\begin_layout Subsubsection
+Réseau vide :
+\end_layout
+
+\begin_layout Standard
+Si dans le choix des paramètres, on choisit 0 neurone et donc 0 couche,
+ les utilisations que l’on pourra faire de ce réseau seront très limitées
+ pour ne pas dire inexistantes.
+ Pas de couche d'entrée, ni d’arrivée.
+ Il serait utile de prévoir une exception pour éviter ce cas de figure/de
+ potentielles erreurs.
+\end_layout
+
+\begin_layout Subsubsection
+Perceptron simple : 
+\end_layout
+
+\begin_layout Standard
+On entre en machine : 2 pour le nombre de couches, autant de neurones que
+ l’on veut pour la couche d’entrée et un seul neurone sur la couche de sortie.
+ Le perceptron simple est un modèle de prédiction (supervisé) linéaire.
+ Ce schéma simple a un effet plus éducatif qu’autre chose, il sert de modèle
+ pour le perceptron multicouches qui permet de régler des problèmes plus
+ complexes.
+\end_layout
+
+\begin_layout Subsubsection
+Perceptron multicouche : 
+\end_layout
+
+\begin_layout Standard
+L’utilisateur entre en machine un nombre de couches supérieures à 2.
+ Notons tout de même que choisir au dela de 6 à 10 couches entraine très
+ souvent des problèmes d’overfitting, aussi appelée surapprentissage (le
+ réseau est incapable se généraliser, car il est trop adapté aux données
+ d’appretissage).
+ Il serait peut être bon de définir un nombre de couches par défaut pour
+ orienter les utilisateurs novices.
+ Puis l’utilisateur saisit de manière itérative le nombre de neurones pour
+ chaque couche y compris la couche de sortie qui peut comporter plusieurs
+ neurones.
+ Ensuite les neurones des couches i seront reliés à la couche i+1 suivant
+ le type de réseau sélectionné par l’utilisateur.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios relatifs aux fonctions d’activation : 
+\end_layout
+
+\begin_layout Standard
+Ici, il est très difficile de délimiter notre projet puisqu’il n’existe
+ pas de règles propres au choix de la fonction d’activation utilisée pour
+ telle couche, tel réseau ou telle fonctionnalité de ce réseau.
+ 
+\begin_inset Newline newline
+\end_inset
+
+On peut tout de même émettre quelques pistes : 
+\end_layout
+
+\begin_layout Itemize
+Dans le cas d'un problème de 
+\emph on
+régression
+\emph default
+, il n'est pas nécessaire de transformer la somme pondérée reçue en entrée.
+ La fonction d'activation est la fonction identité, elle retourne ce qu'elle
+ a reçu en entier.
+ (pour un perceptron simple)
+\end_layout
+
+\begin_layout Itemize
+Dans le cas d'un problème de 
+\emph on
+classification binaire
+\emph default
+, on peut utiliser une fonction de seuil : 
+\begin_inset Formula 
+\[
+s\left(w_{0}+\stackrel[j=1]{p}{\sum}w_{j}x_{j}\right)=\begin{cases}
+0 & si\,\left(w_{0}+\stackrel[j=1]{p}{\sum}w_{j}x_{j}\right)<0\\
+1 & sinon
+\end{cases}
+\]
+
+\end_inset
+
+Comme dans le cas de la 
+\emph on
+régression logistique
+\emph default
+, on peut aussi utiliser une fonction 
+\series bold
+sigmoïde
+\series default
+ pour prédire la 
+\begin_inset Formula $probabilité$
+\end_inset
+
+ d'appartenir à la classe positive.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dans le cas d'un problème de 
+\emph on
+classification multi-classe,
+\emph default
+ nous allons modifier l'architecture du perceptron.
+ Au lieu d'utiliser une seule unité de sortie, il va en utiliser autant
+ que de classes.
+ Chacune de ces unités sera connectée à toutes les unités d'entrée.
+ On aura donc ainsi 
+\begin_inset Formula $K(p+1)$
+\end_inset
+
+ poids de connexion, où 
+\begin_inset Formula $K$
+\end_inset
+
+ est le nombre de classes.
+ On peut alors utiliser comme fonction d'activation la fonction 
+\series bold
+softmax
+\series default
+.
+ Il s'agit d'une généralisation de la sigmoïde.
+\begin_inset Newline newline
+\end_inset
+
+Si la sortie pour la classe 
+\begin_inset Formula $k$
+\end_inset
+
+ est suffisamment plus grande que celles des autres classes, son activation
+ sera proche de
+\begin_inset Formula $1$
+\end_inset
+
+ tandis que l'activation des autres sera proche de 
+\begin_inset Formula $0.$
+\end_inset
+
+ On peut donc aussi considérer qu'il s'agit d'une version différentiable
+ du maximum, ce qui nous aidera grandement pour l'apprentissage.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios relatifs aux poids :
+\end_layout
+
+\begin_layout Standard
+Pour entraîner un perceptron, c'est-à-dire apprendre les poids de connexion,
+ nous allons chercher à minimiser l'erreur de prédiction sur le jeu d'entraîneme
+nt.
+ On peut initialiser les poids de différentes manières, soit on initialise
+ les poids manuellement (souvent on prend la valeur 0,5 (valeur moyenne
+ entre 0 et 1)) soit on initialise les poids en créant une fonction qui
+ nous renverra un nombre aléatoire entre 0 et 1 pour chaque poids.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Puis pour les faire évoluer à chaque itération jusqu’à convergence de l’algorith
+me, on implémente la méthode de descente du gradient.
+ Grâce à celle-ci, le poids à l’étape 
+\begin_inset Formula $(i)$
+\end_inset
+
+ devient à l’étape 
+\begin_inset Formula $(i+1)$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Courbe erreur poids.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Courbe de l'erreur en fonction du poids
+\begin_inset Newline newline
+\end_inset
+
+où ɳ est la vitesse d’apprentissage.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Scénarios relatifs aux utilisations : 
+\end_layout
+
+\begin_layout Standard
+On compte 4 cas d’utilisations pour un réseau de neurones.
+ Nous nous sommes limités à proposer la prédiction de données et la classificati
+on.
+ Lorsque l’utilisateur saisit le type d'utilisation, un algorithme type
+ va se lancer.
+ Voyons chaque cas un par un en détail : 
+\end_layout
+
+\begin_layout Subsubsection
+Classification 
+\end_layout
+
+\begin_layout Standard
+Il est recommandé à l’utilisateur d’utiliser un perceptron multi-couches.
+ Puis deux modélisations lui sont proposées.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soit l’utilisateur saisit le nombre 
+\begin_inset Formula $K$
+\end_inset
+
+ de classes qui correspond au nombre de sorties du réseau de neurones.
+ Chaque neurone de sortie indique la probabilité d’appartenance à la 
+\begin_inset Formula $k^{ème}$
+\end_inset
+
+ classe.
+ La classe avec la probabilité la plus forte est la classe d’appartenance
+ de la donnée fournie en entrée.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soit l’utilisateur choisit de modéliser un réseau pour chaque classe 
+\begin_inset Formula $n=1..K$
+\end_inset
+
+.
+ Dans ce cas, il y a donc un unique neurone de sortie pour chacun des réseaux
+ indiquant la probabilité d’appartenance des données à la nième classe.
+ Dans cette modélisation, une donnée passe par 
+\begin_inset Formula $K$
+\end_inset
+
+ réseau de neurones.
+ Puis la construction du réseau débute, avec comme nombre de neurones dans
+ la couche d’entrée le cardinal des variables explicatives des données sélection
+nées et le nombre de neurones de la couche de sortie égale à 
+\begin_inset Formula $1$
+\end_inset
+
+ (pour 
+\begin_inset Formula $K$
+\end_inset
+
+ réseaux).
+ 
+\end_layout
+
+\begin_layout Standard
+Ensuite, l'utilisateur peut choisir un apprentissage supervisé ou non du
+ réseau.
+ S'il choisit un apprentissage supervisé il devra importer les données nécessair
+e (toujours au bon format et organisé).
+ Enfin, la dernière étape consiste à importer les données organisées au
+ bon format que l’on souhaite classifier, puis à lancer l’algorithme.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Prédiction
+\end_layout
+
+\begin_layout Standard
+Dans le cas d’une prédiction, nous considérons une unique modélisation.
+ La couche d’entrée comporte 
+\begin_inset Formula $n$
+\end_inset
+
+ neurones, égale à la cardinalité du nombre de variables explicatives, et
+ la couche de sortie possède un unique neurone qui retourne la valeur prédite.
+ L’utilisateur va donc saisir le nombre de variables explicatives que comporte
+ son jeu de données.
+ Puis la construction du réseau débute.
+ Un fois construit, l'utilisateur spécifie s'il souhaite faire apprendre
+ son réseau.
+ Si oui, il rentre le fichier de données d’apprentissage.
+ Une fois l’apprentissage effectué, il faut importer les valeurs des variables
+ explicatives de la donnée que l’utilisateur souhaite prédire, puis lancer
+ l’algorithme.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+https://openclassrooms.com/fr/courses/4470406-utilisez-des-modeles-supervises-non
+-lineaires/4730716-entrainez-un-reseau-de-neurones-simple 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+https://tdinfo.phelma.grenoble-inp.fr/1AS1/site/pdf/be/projetS12021.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+Introduction aux reseaux de neurones, Gérald PETITJEAN
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+https://www.juripredis.com/fr/blog/id-19-demystifier-le-machine-learning-partie-2-
+les-reseaux-de-neurones-artificiels
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+https://meritis.fr/deep-learning/
+\end_layout
+
+\end_body
+\end_document
