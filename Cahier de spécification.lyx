@@ -779,27 +779,17 @@ Ici, il est très difficile de délimiter notre projet puisqu’il n’existe
 On peut tout de même émettre quelques pistes : 
 \end_layout
 
-\begin_layout Itemize
-Dans le cas 
-\begin_inset Formula $\,d'un\,problème\,de\,régression$
-\end_inset
-
-, il n'est pas nécessaire de transformer la somme pondérée reçue en entrée.
+\begin_layout Standard
+Dans le cas d'un problème de régression, il n'est pas nécessaire de transformer
+ la somme pondérée reçue en entrée.
  La fonction d'activation est la fonction identité, elle retourne ce qu'elle
  a reçu en entier.
  (pour un perceptron simple)
 \end_layout
 
-\begin_layout Itemize
-Dans le cas 
-\begin_inset Formula $d'$
-\end_inset
-
-
-\begin_inset Formula $un\,problème\,de\,classification\,binaire$
-\end_inset
-
-, on peut utiliser une fonction de seuil : 
+\begin_layout Standard
+Dans le cas d'un problème de classification binaire, on peut utiliser une
+ fonction de seuil : 
 \end_layout
 
 \begin_layout Standard
@@ -833,14 +823,10 @@ sigmoïde
  
 \end_layout
 
-\begin_layout Itemize
-Dans le cas 
-\begin_inset Formula $d'un\,problème\,de\,classification\,multi-classe$
-\end_inset
-
-
+\begin_layout Standard
+Dans le cas d'un problème de 
 \series bold
-,
+classification multi-classe,
 \series default
  nous allons modifier l'architecture du perceptron.
  Au lieu d'utiliser une seule unité de sortie, il va en utiliser autant
