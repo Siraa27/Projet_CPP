@@ -25,10 +25,11 @@
 \use_dash_ligatures true
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -80,11 +82,11 @@ Cahier de spécification
 \end_layout
 
 \begin_layout Author
-Camille GOUJET, Mehdi HELAL, Amina EL BACHARI
+Camille GOUJET, Mehdi HELAL, Amina EL BACHARI, 
 \begin_inset Newline newline
 \end_inset
 
- Rafael QUIBLIER et Isra BEN SASSI
+Rafael QUIBLIER et Isra BEN SASSI
 \begin_inset Newline newline
 \end_inset
 
@@ -180,10 +182,14 @@ une image (identification d’objet, de contours d’objet)
 
 \begin_layout Paragraph
 Dans un premier temps, nous nous concentrerons sur les applications “classificat
-ion” puis si il nous reste du temps nous élargirons à la prédiction.
- Nous choisissons de ne pas implémenter d'autres méthodes pour les autres
+ion” puis si il nous reste du temps, nous élargirons à la prédiction.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Nous choisissons de ne pas implémenter d'autres méthodes pour les autres
  applications "reconnaissance d’image” et ‘identification des objets”.
- De plus nous nous concentrerons tout d’abord sur les méthodes supervisées,
+ De plus, nous nous concentrerons tout d’abord sur les méthodes supervisées,
  puis si nous avons le temps nous essayerons d’implémenter des méthodes
  non supervisées.
  
@@ -412,10 +418,18 @@ Le choix des données
 \begin_layout Standard
 Une fois que l'utilisateur a fait ses choix, il doit maintenant fournir
  les données en entrée.
- Pour le moment, nous allons considérer le choix d’application : classification
+ 
+\begin_inset Newline newline
+\end_inset
+
+Pour le moment, nous allons considérer le choix d’application : classification
  des données.
  Voyons cela sur l’exemple des iris de Fisher (pour le moment).
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -510,7 +524,8 @@ On peut donc voir nos données (entrée du programme) comme :
 \end_layout
 
 \begin_layout Itemize
-Pour une fleur ( entrée du réseau) : un vecteur de dimension 4
+Pour une fleur (entrée du réseau) : un vecteur de dimension 4 représentant
+ les 4 variables explicatives d'une fleur
 \begin_inset Formula 
 \[
 f=(x_{1},x_{2},x_{3},x_{4})^{T}
@@ -522,7 +537,9 @@ f=(x_{1},x_{2},x_{3},x_{4})^{T}
 \end_layout
 
 \begin_layout Itemize
-Pour les classe ( la sortie du réseau): un vecteur de dimension 3 
+Pour les classe (la sortie du réseau): un vecteur de dimension 3 représentant
+ les probabilités des 3 potentielles classes d'appartenance (setosa, versicolor,
+ virginica)
 \begin_inset space ~
 \end_inset
 
@@ -549,7 +566,7 @@ Pour les classe ( la sortie du réseau): un vecteur de dimension 3
 \end_layout
 
 \begin_layout Paragraph
-il faut donc lire les mesures, les mettre en entrée du réseau, calculer
+Il faut donc lire les mesures, les mettre en entrée du réseau, calculer
  le résultat en propageant l’information de l’entrée vers la sortie couche
  par couche, prendre la sortie maximale parmi les neurones de sortie et
  afficher le résultat.
@@ -564,14 +581,15 @@ il faut donc lire les mesures, les mettre en entrée du réseau, calculer
 \end_layout
 
 \begin_layout Standard
-Donc notre réseau va ressembler à quelque chose comme ça : 
+Donc notre réseau, cela ressemblera à quelque chose comme ça : 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -587,7 +605,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Réseau de neuronnes appliqué aux iris de Fisher
+Réseau de neurones appliqué aux iris de Fisher
 \end_layout
 
 \end_inset
@@ -639,9 +657,17 @@ Description du domaine
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Class diagram.png
+	scale 40
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -663,19 +689,28 @@ Diagramme de Classe
 \end_layout
 
 \begin_layout Section
-Interactions entre les composants 
+Diagrammes de séquence 
 \end_layout
 
 \begin_layout Standard
+Afin de visualiser les interactions entre les composants, nous avons réalisé
+ plusieurs diagrammes de séquence pour chaque phase.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Nous commençons avec un diagramme de séquence assez général :
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename Séquence.jpeg
-	scale 60
+	filename General.png
+	scale 55
 
 \end_inset
 
@@ -692,6 +727,108 @@ Diagramme de séquence
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+Ensuite, nous avons détailler les différentes phases du premier diagramme.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Notamment, pour la création d'un réseau : 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename CreationReseau.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ ainsi que pour l'initialisation d'un réseau prédéfini dans un fichier 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ChoisiPredef.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Finalement, nous avons réalisé un diagramme de séquence lorsqu'un utilisateur
+ formule sa requête : 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename FormulerRequete.png
+	scale 55
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme de séquence
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
