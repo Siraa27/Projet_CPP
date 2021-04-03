@@ -80,11 +80,12 @@ Cahier de spécification
 \end_layout
 
 \begin_layout Author
-Camille Mehdi Amina Raf Isra
+Camille GOUJET, Mehdi HELAL, Amina EL BACHARI Rafael QUIBLIER et Isra BEN
+ SASSI
 \begin_inset Newline newline
 \end_inset
 
-à l'attention de Koto
+à l'attention de Jean-Philippe KOTOWICZ
 \end_layout
 
 \begin_layout Standard
@@ -921,6 +922,81 @@ où ɳ est la vitesse d’apprentissage.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Scénarios relatifs aux utilisations : 
+\end_layout
+
+\begin_layout Standard
+On compte 4 cas d’utilisations pour un réseau de neurones.
+ Nous nous sommes limités à proposer la prédiction de données et la classificati
+on.
+ Lorsque l’utilisateur saisit le type d'utilisation, un algorithme type
+ va se lancer.
+ Voyons chaque cas un par un en détail : 
+\end_layout
+
+\begin_layout Subsubsection
+Dans le cas d’une Classification: 
+\end_layout
+
+\begin_layout Standard
+Il est recommandé à l’utilisateur d’utiliser un perceptron multi-couches.
+ Puis deux modélisations lui sont proposées.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soit l’utilisateur saisit le nombre K de classes qui correspond au nombre
+ de sorties du réseau de neurones.
+ Chaque neurone de sortie indique la probabilité d’appartenance à la kième
+ classe.
+ La classe avec la probabilité la plus forte est la classe d’appartenance
+ de la donnée fournie en entrée.
+ 
+\end_layout
+
+\begin_layout Itemize
+Soit l’utilisateur choisit de modéliser un réseau pour chaque classe n=1..K.
+ Dans ce cas, il y a donc un unique neurone de sortie pour chacun des réseaux
+ indiquant la probabilité d’appartenance des données à la nième classe.
+ Dans cette modélisation, une donnée passe par K réseau de neurones.
+ Puis la construction du réseau débute, avec comme nombre de neurones dans
+ la couche d’entrée le cardinal des variables explicatives des données sélection
+nées et le nombre de neurones de la couche de sortie égale à ou K.
+ 
+\end_layout
+
+\begin_layout Standard
+Ensuite, l'utilisateur peut choisir un apprentissage supervisé ou non du
+ réseau.
+ Si il choisit un apprentissage supervisé il devra importer les données
+ nécessaire (toujours au bon format et organisé).
+ Enfin, la dernière étape consiste à importer les données, que l’on souhaite
+ classifier, au format pris en compte et organisées, puis à lancer l’algorithme.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Prédiction
+\end_layout
+
+\begin_layout Standard
+Dans le cas d’une prédiction, nous considérons une unique modélisation.
+ La couche d’entrée comporte n neurones, égale à la cardinalité du nombre
+ de variables explicatives, et la couche de sortie possède un unique neurone
+ qui retourne la valeur prédite.
+ L’utilisateur va donc saisir le nombre de variables explicatives que comporte
+ son jeu de données.
+ Puis la construction du réseau débute.
+ Un fois construit, l'utilisateur spécifie s' il souhaite faire apprendre
+ son réseau.
+ Si oui il rentre le fichier de données d’apprentissage.
+ Une fois l’apprentissage effectué, il faut importer les valeurs des variables
+ explicatives de la donnée que l’utilisateur souhaite prédire, puis lancer
+ l’algorithme.
+ 
 \end_layout
 
 \end_body
