@@ -1,0 +1,53 @@
+\doxysection{Reseau Class Reference}
+\label{class_reseau}\index{Reseau@{Reseau}}
+
+
+Inheritance diagram for Reseau\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_reseau_a9a39323becd60cb54094eae5da5ade04}} 
+{\bfseries Compte} ()
+\item 
+\mbox{\label{class_reseau_ad78d4f3694651cf2debfab05493d3fe0}} 
+{\bfseries Compte} (double s)
+\item 
+\mbox{\label{class_reseau_a635efdc63d24fca5e7fcae6447ff48ed}} 
+void {\bfseries deposer} (double const x)
+\item 
+\mbox{\label{class_reseau_a20422f9778f3066403aa349eb062c7e7}} 
+void {\bfseries retirer} (double const x)
+\item 
+\mbox{\label{class_reseau_a60511c6195d263c5eed065d7e6d7e84f}} 
+double {\bfseries get\+Solde} () const
+\item 
+\mbox{\label{class_reseau_a0d942b9355f98a67d557850e72a1945c}} 
+int {\bfseries get\+Numero} () const
+\item 
+\mbox{\label{class_reseau_aa157fc6b856e5843e614826599d9b302}} 
+void {\bfseries ajouter\+Titulaire} (string nom)
+\item 
+\mbox{\label{class_reseau_a65f2ea93012df7df9a74c2b8be728163}} 
+bool {\bfseries retirer\+Titulaire} (int i)
+\item 
+\mbox{\label{class_reseau_ab4ba0844e7c9e0e912f6d909c2d8b2c7}} 
+string {\bfseries operator[$\,$]} (int i) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_reseau_aa3861a730c6bd5434c8e29d4fda7f083}} 
+static int {\bfseries nb\+Comptes} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_reseau_adb8a07d2426e4bb908311a99718ee0e6}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&flux, Compte const \&compte)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Les interfaces/Reseau.\+hpp\end{DoxyCompactItemize}
