@@ -3,6 +3,8 @@
 /*!
  * \file Couche.hpp
  * \brief Les propritées d'une couche : ses nombre de neurones ainsi que sa fonction d'activation
+ * \author Groupe projet A1
+ * \version 0.1
  */
 /*! \namespace Les_couches_du_réseau
  * une classe qui permets de créer des couches du réseau
