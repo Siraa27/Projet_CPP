@@ -30,12 +30,13 @@ namespace Les_couches_du_réseau
          *
          *  \param indice : le libelé d'un neurone dans une couche 
          */
-        Neurone (const indice); // le libelé d'un neurone dans une couche ne change pas une fois choisit au cours du programmes
+        Neurone (const int indice); // le libelé d'un neurone dans une couche ne change pas une fois choisit au cours du programmes
          /*! \fn calculSortie
          *  \brief 
          *  elle s'occupe de la pré-activation et de l'activation du neuronne 
          *  \return la valeur en sortie d'un neurone
          */
-        calculSortie(int entree);
-    }
-}
+        double calculSortie(int entree);
+    };
+};
+#endif 

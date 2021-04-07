@@ -1,5 +1,6 @@
 #ifndef COUCHE_HPP
 #define COUCHE_HPP
+#include "Neurone.hpp"
 /*!
  * \file Couche.hpp
  * \brief Les propritées d'une couche : ses nombre de neurones ainsi que sa fonction d'activation
@@ -32,7 +33,7 @@ namespace Les_couches_du_réseau
              *
              *  \param nbNeurones : le nombre de neurones par couche, qui est fixe d'ou le "const"
              */
-          Couche (const nbNeurones); // le nb de Neurones d'une couche ne change pas une fois choisit au cours du programmes
+          Couche (const int nbNeurones); // le nb de Neurones d'une couche ne change pas une fois choisit au cours du programmes
              /*!
              *  \brief Destructeur
              *

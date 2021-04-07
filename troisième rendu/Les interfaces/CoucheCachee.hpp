@@ -30,7 +30,7 @@ namespace Les_couches_du_réseau
              *  ELle retourne la valeur en sortie de la couche après l'activation 
              *  \return la valeur en sortie d'une couche 
              */
-         sortie();
+         void sortie();
     };
 };
 
