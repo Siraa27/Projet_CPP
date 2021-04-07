@@ -1,9 +1,9 @@
-#ifndef COUCHECACHEE_HPP
-#define COUCHECACHEE_HPP
+#ifndef COUCHEENTREES_HPP
+#define COUCHEENTREES_HPP
 #include "Couche.hpp"
 
 /*!
- * \file CoucheCachee.hpp
+ * \file CoucheEntrées.hpp
  * \brief C'est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais
  * \author Groupe projet A1
  * \version 0.1
@@ -20,9 +20,7 @@ namespace Les_couches_du_réseau
    *  La classe génère les couches du réseau
    */
     class CoucheCachee: public Couche{
-        //Les attributs
-        private :   double biais ; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
-
+        
         //Les méthodes
         public :
             /*! \fn sortie 
