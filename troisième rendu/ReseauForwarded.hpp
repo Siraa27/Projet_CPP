@@ -1,3 +1,5 @@
+
+
 class ReseauForwarded: public Reseau
 {
 	//Attributs
