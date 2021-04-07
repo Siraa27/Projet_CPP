@@ -17,13 +17,12 @@ namespace Les_couches_du_réseau
    *  La classe génère les couches du réseau
    */
     class Couche{
-         //Les attributs
-         private : 
+
+         protected : 
           int nbNeurones; /*!< Le nombre de neurones d'une couches*/
           Neurone Neurones[]; /*!< Le tableau qui contient tous les neurones d'une couche*/
           int indice ; /*!< L'indice d'un neurone*/
 
-         //Les méthodes
          public :
              /*!
              *  \brief Constructeur
@@ -40,13 +39,12 @@ namespace Les_couches_du_réseau
              */
           virtual ~Couche();
              /*!
-             *  \fn foncActivation()
              *  \brief La fonction d'activation 
              *
-             *  Methode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie
+             *  Methode qui permet d'avoir la sortie d'une couche
              *
-             *  \return la valeur du neurones après l'activation
-             * 
+             *  \return la valeur en sortie d'une couche 
+             *  pour l'exemple des iris de Fisher elle doit nous fournir un vecteur (1,0,0) si la fleur appartient à la classe 1
              */
           double foncActivation();
     };
