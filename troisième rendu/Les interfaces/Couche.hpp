@@ -1,4 +1,4 @@
--#ifndef COUCHE_HPP
+#ifndef COUCHE_HPP
 #define COUCHE_HPP
 /*!
  * \file Couche.hpp

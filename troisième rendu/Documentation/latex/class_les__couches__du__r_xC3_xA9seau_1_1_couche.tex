@@ -1,0 +1,108 @@
+\doxysection{Les\+\_\+couches\+\_\+du\+\_\+réseau\+::Couche Class Reference}
+\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche}\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+
+
+classe representant une couche  
+
+
+
+
+{\ttfamily \#include $<$Couche.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Couche} (const \textbf{ nb\+Neurones})
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+Couche} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+double \textbf{ fonc\+Activation} ()
+\begin{DoxyCompactList}\small\item\em La fonction d\textquotesingle{}activation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ nb\+Neurones}
+\item 
+Neurone \textbf{ Neurones} [$\,$]
+\item 
+int \textbf{ indice}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+classe representant une couche 
+
+La classe génère les couches du réseau 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche_a446b599417b173d3cd46705204c3fe0a}} 
+\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}!Couche@{Couche}}
+\index{Couche@{Couche}!Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+\doxysubsubsection{Couche()}
+{\footnotesize\ttfamily Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche\+::\+Couche (\begin{DoxyParamCaption}\item[{const}]{nb\+Neurones }\end{DoxyParamCaption})}
+
+
+
+Constructeur. 
+
+Constructeur de la classe \doxyref{Couche}{p.}{class_les__couches__du__r_xC3_xA9seau_1_1_couche}
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+Neurones} & \+: le nombre de neurones par couche, qui est fixe d\textquotesingle{}ou le \char`\"{}const\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche_a6b4480163fc7301b1a383d45c9eeb87c}} 
+\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}!````~Couche@{$\sim$Couche}}
+\index{````~Couche@{$\sim$Couche}!Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+\doxysubsubsection{$\sim$Couche()}
+{\footnotesize\ttfamily virtual Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche\+::$\sim$\+Couche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructeur. 
+
+Destructeur de la classe \doxyref{Couche}{p.}{class_les__couches__du__r_xC3_xA9seau_1_1_couche} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche_ab7d527c089d6e160a4c0f02cc98c9c0a}} 
+\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}!foncActivation@{foncActivation}}
+\index{foncActivation@{foncActivation}!Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+\doxysubsubsection{foncActivation()}
+{\footnotesize\ttfamily double Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche\+::fonc\+Activation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+La fonction d\textquotesingle{}activation. 
+
+Methode qui permet d\textquotesingle{}avoir la sortie d\textquotesingle{}une couche
+
+\begin{DoxyReturn}{Returns}
+la valeur en sortie d\textquotesingle{}une couche pour l\textquotesingle{}exemple des iris de Fisher elle doit nous fournir un vecteur (1,0,0) si la fleur appartient à la classe 1 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche_ad1e4b1e5dc134cc0b6007f4f22c8b6b2}} 
+\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}!indice@{indice}}
+\index{indice@{indice}!Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+\doxysubsubsection{indice}
+{\footnotesize\ttfamily int Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche\+::indice\hspace{0.3cm}{\ttfamily [protected]}}
+
+L\textquotesingle{}indice d\textquotesingle{}un neurone \mbox{\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche_a4478ba07788b9bd80923ebe41cd00210}} 
+\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}!nbNeurones@{nbNeurones}}
+\index{nbNeurones@{nbNeurones}!Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+\doxysubsubsection{nbNeurones}
+{\footnotesize\ttfamily int Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche\+::nb\+Neurones\hspace{0.3cm}{\ttfamily [protected]}}
+
+Le nombre de neurones d\textquotesingle{}une couches \mbox{\label{class_les__couches__du__r_xC3_xA9seau_1_1_couche_a2c7098e03a5a8f33b10bb1657c61b8fd}} 
+\index{Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}!Neurones@{Neurones}}
+\index{Neurones@{Neurones}!Les\_couches\_du\_réseau::Couche@{Les\_couches\_du\_réseau::Couche}}
+\doxysubsubsection{Neurones}
+{\footnotesize\ttfamily Neurone Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche\+::\+Neurones[$\,$]\hspace{0.3cm}{\ttfamily [protected]}}
+
+Le tableau qui contient tous les neurones d\textquotesingle{}une couche 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Les interfaces/\textbf{ Couche.\+hpp}\end{DoxyCompactItemize}
