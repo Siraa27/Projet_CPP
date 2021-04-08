@@ -354,16 +354,20 @@ Descriptions des cas d’utilisation
 Fournir les données d’entrées : pour faire ceci, on construit un tableau
  de la dimension adéquate correspondant à celle des données que l’on donne
  au réseau.
- Si nos données sont sous forme de fichier ou autre, il faut les convertir
- dans le langage utilisé avant de pouvoir les utiliser.
+ Si nos données sont sous forme .csv ou autre, il faut les convertir en tableau
+ 
+\begin_inset Formula $C++$
+\end_inset
+
+ avant de pouvoir les utiliser.
  Ce travail sera fait dans la classe Entrées.
  
 \end_layout
 
 \begin_layout Itemize
 Choix des fonctionnalités, des paramètres et du type de réseau : Notre programme
- propose les différentes options à l'utilisateur de manière intéractive
- pour lancer la partie du programme correspondant au choix de l’utilisateur.
+ propose par le biais de fonctions “cout” et “cin” les différentes options
+ et lance la partie du programme correspondant au choix de l’utilisateur
  
 \end_layout
 
