@@ -1,0 +1,11 @@
+digraph "Reseau.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Reseau.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Les propriétés d'un réseau : le nombre de couches qui le compose, ses couches, et sa matrice de liais..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ReseauForwarded.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_reseau_forwarded_8hpp.html",tooltip="C'est un classe qui permet de spécifier le type de réseau désiré, ici : type feed-forwarded,..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ReseauRecurrent.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_reseau_recurrent_8hpp.html",tooltip="C'est un classe qui permet de spécifier le type de réseau désiré, ici : type récurrent,..."];
+}

@@ -29,6 +29,7 @@ namespace Les_types_de_réseaux
 	public :
 		ReseauForwarded();
 	
+	};
 
 };
 

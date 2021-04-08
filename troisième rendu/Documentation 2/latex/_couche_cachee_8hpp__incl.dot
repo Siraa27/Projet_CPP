@@ -1,0 +1,11 @@
+digraph "CoucheCachee.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="CoucheCachee.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="C'est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Couche.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_couche_8hpp.html",tooltip="Les propriétés d'une couche : son nombre de neurones ainsi que sa fonction d'activation."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Neurone.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_neurone_8hpp.html",tooltip="Les propritées d'un neurone : son indice et so valeur."];
+}

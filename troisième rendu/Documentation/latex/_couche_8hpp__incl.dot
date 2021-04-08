@@ -1,0 +1,9 @@
+digraph "/home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Couche.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/Couche.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Les propritées d'une couche : ses nombre de neurones ainsi que sa fonction d'activation."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Neurone.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_neurone_8hpp.html",tooltip="Les propritées d'un neurone : son indice et so valeur."];
+}

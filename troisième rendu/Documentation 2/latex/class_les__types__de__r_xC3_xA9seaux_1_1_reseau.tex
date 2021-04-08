@@ -1,0 +1,162 @@
+\hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau}{}\doxysection{Les\+\_\+types\+\_\+de\+\_\+réseaux\+::Reseau Class Reference}
+\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau}\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+
+
+Classe représentant un réseau.  
+
+
+
+
+{\ttfamily \#include $<$Reseau.\+hpp$>$}
+
+
+
+Inheritance diagram for Les\+\_\+types\+\_\+de\+\_\+réseaux\+::Reseau\+:
+% FIG 0
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a462f03f48e2ce3390fcb5aa8b0192d78}{Reseau}} ()
+\begin{DoxyCompactList}\small\item\em Constructeurs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a7fc82afa4cb2b2ebef64c57b7cca98e0}{Reseau}} (const int \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ac929b0ba53174623546d3d155ec266b2}{nbC}})
+\item 
+\mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a5d528ab368a444de2fcf16016e1c0fb8}{$\sim$\+Reseau}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a36052058c94ed9d875bb3d0dbccc662a}{ajouter\+Couche}} (Couche c, int num\+Couche)
+\begin{DoxyCompactList}\small\item\em La fonction qui ajoute une couche au réseau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a20335fe2158b466b94664f1634b8fc79}{Apprentissage\+Non\+Supervisé}} (Fichier Données)
+\begin{DoxyCompactList}\small\item\em La fonction dirige le réseau vers un apprentissage non supervisé en prenant en argument les données fournis en entrée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Couche \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ab9b3087a7fdfb69e83682b73256e720c}{Couches}} \mbox{[}$\,$\mbox{]}
+\item 
+static int \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ac929b0ba53174623546d3d155ec266b2}{nbC}}
+\item 
+static double \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ab8397987e063d6a0597b83154624311a}{Matrice\+Liaisons}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant un réseau. 
+
+classe permettant de représenter un réseau quelconque
+
+Elle permet de générer un réseau
+
+La classe génère le réseau souhaité 
+
+Definition at line 22 of file Reseau.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a462f03f48e2ce3390fcb5aa8b0192d78}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a462f03f48e2ce3390fcb5aa8b0192d78}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!Reseau@{Reseau}}
+\index{Reseau@{Reseau}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{Reseau()}{Reseau()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::\+Reseau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructeurs. 
+
+Constructeurs de la classe Couche
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a7fc82afa4cb2b2ebef64c57b7cca98e0}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a7fc82afa4cb2b2ebef64c57b7cca98e0}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!Reseau@{Reseau}}
+\index{Reseau@{Reseau}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{Reseau()}{Reseau()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::\+Reseau (\begin{DoxyParamCaption}\item[{const int}]{nbC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em nbC} & \+: le nombre de couches qui est fixe d\textquotesingle{}où le \char`\"{}const\char`\"{} Constructeur pour le cas où l\textquotesingle{}utilisateur décide du nombre de couches \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a5d528ab368a444de2fcf16016e1c0fb8}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a5d528ab368a444de2fcf16016e1c0fb8}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!````~Reseau@{$\sim$Reseau}}
+\index{````~Reseau@{$\sim$Reseau}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{$\sim$Reseau()}{~Reseau()}}
+{\footnotesize\ttfamily Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::$\sim$\+Reseau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Destructeur. 
+
+Destructeur de la classe \mbox{\hyperlink{class_les__types__de__r_xC3_xA9seaux_1_1_reseau}{Reseau}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a36052058c94ed9d875bb3d0dbccc662a}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a36052058c94ed9d875bb3d0dbccc662a}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!ajouterCouche@{ajouterCouche}}
+\index{ajouterCouche@{ajouterCouche}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{ajouterCouche()}{ajouterCouche()}}
+{\footnotesize\ttfamily Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::ajouter\+Couche (\begin{DoxyParamCaption}\item[{Couche}]{c,  }\item[{int}]{num\+Couche }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+La fonction qui ajoute une couche au réseau. 
+
+Méthode permettant d\textquotesingle{}ajouter autant de couches que l\textquotesingle{}on veut ou qu\textquotesingle{}il est mentionné dans le programme.
+
+\begin{DoxyReturn}{Returns}
+Rien mais modifie le réseau 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a20335fe2158b466b94664f1634b8fc79}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_a20335fe2158b466b94664f1634b8fc79}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!ApprentissageNonSupervisé@{ApprentissageNonSupervisé}}
+\index{ApprentissageNonSupervisé@{ApprentissageNonSupervisé}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{ApprentissageNonSupervisé()}{ApprentissageNonSupervisé()}}
+{\footnotesize\ttfamily Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::\+Apprentissage\+Non\+Supervisé (\begin{DoxyParamCaption}\item[{Fichier}]{Données }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+La fonction dirige le réseau vers un apprentissage non supervisé en prenant en argument les données fournis en entrée. 
+
+Méthode permettant d\textquotesingle{}obtenir un réseau pour l\textquotesingle{}apprentissage non supervisé à partir d\textquotesingle{}un fichier donné
+
+\begin{DoxyReturn}{Returns}
+Rien mais modifie le réseau 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ab9b3087a7fdfb69e83682b73256e720c}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ab9b3087a7fdfb69e83682b73256e720c}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!Couches@{Couches}}
+\index{Couches@{Couches}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{Couches}{Couches}}
+{\footnotesize\ttfamily Couche Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::\+Couches\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+$<$ Pour que les classes filles aient également accès à ces attributs 
+
+Definition at line 27 of file Reseau.\+hpp.
+
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ab8397987e063d6a0597b83154624311a}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ab8397987e063d6a0597b83154624311a}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!MatriceLiaisons@{MatriceLiaisons}}
+\index{MatriceLiaisons@{MatriceLiaisons}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{MatriceLiaisons}{MatriceLiaisons}}
+{\footnotesize\ttfamily double Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::\+Matrice\+Liaisons\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 29 of file Reseau.\+hpp.
+
+\mbox{\Hypertarget{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ac929b0ba53174623546d3d155ec266b2}\label{class_les__types__de__r_xC3_xA9seaux_1_1_reseau_ac929b0ba53174623546d3d155ec266b2}} 
+\index{Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}!nbC@{nbC}}
+\index{nbC@{nbC}!Les\_types\_de\_réseaux::Reseau@{Les\_types\_de\_réseaux::Reseau}}
+\doxysubsubsection{\texorpdfstring{nbC}{nbC}}
+{\footnotesize\ttfamily int Les\+\_\+types\+\_\+de\+\_\+réseaux\+::\+Reseau\+::nbC\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 28 of file Reseau.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_reseau_8hpp}{Reseau.\+hpp}}\end{DoxyCompactItemize}

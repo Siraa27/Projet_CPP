@@ -9,15 +9,15 @@
  * \version 0.1
  */
 /*! \namespace Les_couches_du_réseau
- * une classe qui permet de créer des couches du réseau
+ * Classe qui permet de créer des couches du réseau
  */
 
 namespace Les_couches_du_réseau 
 {
    /*! \class Couche
-   * \brief classe representant une couche
+   * \brief Classe representant une couche
    *
-   *  La classe génère les couches du réseau
+   *  C'est la classe génère les couches du réseau
    */
     class CoucheSorties: public Couche{
         //Les attributs

@@ -1,0 +1,33 @@
+\hypertarget{_couche_8hpp}{}\doxysection{/home/camille/\+Bureau/\+G\+M4/\+C++/\+Projet\+\_\+\+C\+P\+P/troisième rendu/\+Couche.hpp File Reference}
+\label{_couche_8hpp}\index{/home/camille/Bureau/GM4/C++/Projet\_CPP/troisième rendu/Couche.hpp@{/home/camille/Bureau/GM4/C++/Projet\_CPP/troisième rendu/Couche.hpp}}
+
+
+Les propritées d\textquotesingle{}une couche \+: ses nombre de neurones ainsi que sa fonction d\textquotesingle{}activation.  
+
+
+{\ttfamily \#include \char`\"{}Neurone.\+hpp\char`\"{}}\newline
+Include dependency graph for Couche.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_les__couches__du__r_xC3_xA9seau_1_1_couche}{Les\+\_\+couches\+\_\+du\+\_\+réseau\+::\+Couche}}
+\begin{DoxyCompactList}\small\item\em Classe représentant une couche. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_les__couches__du__r_xC3_xA9seau}{Les\+\_\+couches\+\_\+du\+\_\+réseau}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Les propritées d\textquotesingle{}une couche \+: ses nombre de neurones ainsi que sa fonction d\textquotesingle{}activation. 
+
+\begin{DoxyAuthor}{Author}
+Groupe projet A1 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}

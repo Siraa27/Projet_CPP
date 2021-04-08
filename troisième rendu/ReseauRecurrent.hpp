@@ -28,3 +28,10 @@ namespace Les_types_de_réseaux
 	//Constructeurs
 	public :
 		ReseauRecurrent();
+		
+			
+	};
+
+};
+
+#endif

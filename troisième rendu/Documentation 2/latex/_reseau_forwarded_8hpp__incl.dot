@@ -1,0 +1,13 @@
+digraph "ReseauForwarded.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ReseauForwarded.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="C'est un classe qui permet de spécifier le type de réseau désiré, ici : type feed-forwarded,..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Reseau.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_reseau_8hpp.html",tooltip="Les propriétés d'un réseau : le nombre de couches qui le compose, ses couches, et sa matrice de liais..."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Couche.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_couche_8hpp.html",tooltip="Les propriétés d'une couche : son nombre de neurones ainsi que sa fonction d'activation."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Neurone.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_neurone_8hpp.html",tooltip="Les propritées d'un neurone : son indice et so valeur."];
+}

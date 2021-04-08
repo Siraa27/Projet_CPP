@@ -1,0 +1,19 @@
+digraph "/home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Couche.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/Couche.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Les propritées d'une couche : ses nombre de neurones ainsi que sa fonction d'activation."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/CoucheCachee.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_couche_cachee_8hpp.html",tooltip="C'est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/CoucheEntrées.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_couche_entr_xC3_xA9es_8hpp.html",tooltip="C'est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/CoucheSorties.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_couche_sorties_8hpp.html",tooltip="C'est un classe qui permet de créer la couche de sorties du réseau, ainsi que de définir leur biais."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/Reseau.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_reseau_8hpp.html",tooltip="Les propriétés d'un réseau : le nombre de couches qui le compose, ses couches, et sa matrice de liais..."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/ReseauForwarded.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_reseau_forwarded_8hpp.html",tooltip="C'est un classe qui permet de spécifier le type de réseau désiré, ici : type feed-forwarded,..."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="/home/camille/Bureau\l/GM4/C++/Projet_CPP/troisième\l rendu/ReseauRecurrent.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_reseau_recurrent_8hpp.html",tooltip="C'est un classe qui permet de spécifier le type de réseau désiré, ici : type récurrent,..."];
+}
