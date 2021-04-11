@@ -1,0 +1,5 @@
+<map id="ReseauForwarded.hpp" name="ReseauForwarded.hpp">
+<area shape="rect" id="node2" href="$_reseau_8hpp.html" title="Les propriétés d&#39;un réseau : le nombre de couches qui le compose, ses couches, et sa matrice de liais..." alt="" coords="36,80,128,107"/>
+<area shape="rect" id="node3" href="$_couche_8hpp.html" title="Les propriétés d&#39;une couche : son nombre de neurones ainsi que sa fonction d&#39;activation. " alt="" coords="36,155,128,181"/>
+<area shape="rect" id="node4" href="$_neurone_8hpp.html" title="Les propritées d&#39;un neurone : son indice et so valeur. " alt="" coords="34,229,130,256"/>
+</map>

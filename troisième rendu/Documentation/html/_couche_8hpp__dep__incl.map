@@ -1,0 +1,8 @@
+<map id="Couche.hpp" name="Couche.hpp">
+<area shape="rect" id="node2" href="$_couche_cachee_8hpp.html" title="C&#39;est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais..." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node3" href="$_couche_entrees_8hpp.html" title="la couche entrée permet de convertir nos données et d&#39;initialiser les entrées de notre réseau ..." alt="" coords="167,80,304,107"/>
+<area shape="rect" id="node4" href="$_couche_sorties_8hpp.html" title="C&#39;est un classe qui permet de créer la couche de sorties du réseau, ainsi que de définir leur biais..." alt="" coords="329,80,462,107"/>
+<area shape="rect" id="node5" href="$_reseau_8hpp.html" title="Les propriétés d&#39;un réseau : le nombre de couches qui le compose, ses couches, et sa matrice de liais..." alt="" coords="487,80,579,107"/>
+<area shape="rect" id="node6" href="$_reseau_forwarded_8hpp.html" title="C&#39;est un classe qui permet de spécifier le type de réseau désiré, ici : type feed&#45;forwarded, permet donc de préciser les arguments (forme du réseau) " alt="" coords="368,155,521,181"/>
+<area shape="rect" id="node7" href="$_reseau_recurrent_8hpp.html" title="C&#39;est un classe qui permet de spécifier le type de réseau désiré, ici : type récurrent, permet donc de préciser les arguments (forme du réseau spécifique) " alt="" coords="546,155,695,181"/>
+</map>

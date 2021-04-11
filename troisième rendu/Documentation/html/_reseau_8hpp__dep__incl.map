@@ -1,0 +1,4 @@
+<map id="Reseau.hpp" name="Reseau.hpp">
+<area shape="rect" id="node2" href="$_reseau_forwarded_8hpp.html" title="C&#39;est un classe qui permet de spécifier le type de réseau désiré, ici : type feed&#45;forwarded, permet donc de préciser les arguments (forme du réseau) " alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node3" href="$_reseau_recurrent_8hpp.html" title="C&#39;est un classe qui permet de spécifier le type de réseau désiré, ici : type récurrent, permet donc de préciser les arguments (forme du réseau spécifique) " alt="" coords="183,80,333,107"/>
+</map>
