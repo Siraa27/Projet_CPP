@@ -14,7 +14,10 @@
 
 namespace Les_couches_du_reseau 
 {
-
+  /*! \class CoucheSorties
+   * \brief Classe représentant la couche de sorties 
+   *
+   */
     class CoucheSorties: public Couche{
         //Les attributs
         private :   
@@ -33,8 +36,7 @@ namespace Les_couches_du_reseau
           virtual ~CoucheSorties();
           
             /*! \fn constructionSorties 
-             *  \brief 
-             * Elle calcule la sortie du réseau
+             *  \brief La fonction calcule la sortie du réseau
              *  \return résultat du reseau
              */
          void constructionSorties();

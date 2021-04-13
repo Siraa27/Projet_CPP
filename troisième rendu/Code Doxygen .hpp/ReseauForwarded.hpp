@@ -9,14 +9,13 @@
  * \version 0.1
  */
 /*! \namespace Les_types_de_reseaux
- * une classe qui permet de créer un certain type de réseau
+ * Classe qui permet de créer un certain type de réseau
  */
 
 namespace Les_types_de_reseaux 
 {
-   /*! \class Reseau
-   * \brief classe permettant de représenter un réseau quelconque
-   *  La classe génère le réseau souhaité
+   /*! \class ReseauForwarded
+   * \brief Classe permettant de représenter un réseau forwarded. 
    */
    class ReseauForwarded: public Reseau
 	{
