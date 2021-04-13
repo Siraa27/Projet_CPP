@@ -66,33 +66,32 @@ $(function() {
 <div class="title">CoucheCachee.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_couche_cachee_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef COUCHECACHEE_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define COUCHECACHEE_HPP</span></div>
+<a href="_couche_cachee_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef COUCHE_CACHEE_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define COUCHE_CACHEE_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_couche_8hpp.html">Couche.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_les__couches__du__reseau.html">Les_couches_du_reseau</a> </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_les__couches__du__reseau_1_1_couche_cachee.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html">CoucheCachee</a>: <span class="keyword">public</span> <a class="code" href="class_les__couches__du__reseau_1_1_couche.html">Couche</a>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//Les attributs</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        private :   <span class="keywordtype">double</span> biais ; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">//Les méthodes</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        public :</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;          <a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html#ae721a71bbab8bf2f9cc0f8ce581844da">CoucheCachee</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> nbNeurones); </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;          <span class="keyword">virtual</span> <a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html#a4e081306d26fbf7b7107aee73516f4b2">~CoucheCachee</a>(<a class="code" href="class_les__couches__du__reseau_1_1_couche.html">Couche</a> Entrées);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;          </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         <span class="keywordtype">void</span> <a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html#a923460491ae8902b4b69e659b2a51f31">calculSortie</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_les__couches__du__reseau.html">Les_couches_du_reseau</a> </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_les__couches__du__reseau_1_1_couche_cachee.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html">CoucheCachee</a> : <span class="keyword">public</span> <a class="code" href="class_les__couches__du__reseau_1_1_couche.html">Couche</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//Les méthodes</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        public :</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;          <a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html#ae721a71bbab8bf2f9cc0f8ce581844da">CoucheCachee</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> nbNeurones); </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          <span class="keyword">virtual</span> <a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html#a6277c5f276d60ed48d0a67768bab30d6">~CoucheCachee</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <span class="keywordtype">void</span> <a class="code" href="class_les__couches__du__reseau_1_1_couche_cachee.html#a87ee01348b318c64fb750e838584593d">calculSortie</a>(<a class="code" href="class_les__couches__du__reseau_1_1_couche.html">Couche</a> Entrees);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespace_les__couches__du__reseau_html"><div class="ttname"><a href="namespace_les__couches__du__reseau.html">Les_couches_du_reseau</a></div></div>
-<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html_ae721a71bbab8bf2f9cc0f8ce581844da"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html#ae721a71bbab8bf2f9cc0f8ce581844da">Les_couches_du_reseau::CoucheCachee::CoucheCachee</a></div><div class="ttdeci">CoucheCachee(const int nbNeurones)</div><div class="ttdoc">Constructeur de la classe CoucheCachée.</div></div>
+<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html_ae721a71bbab8bf2f9cc0f8ce581844da"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html#ae721a71bbab8bf2f9cc0f8ce581844da">Les_couches_du_reseau::CoucheCachee::CoucheCachee</a></div><div class="ttdeci">CoucheCachee(const int nbNeurones)</div><div class="ttdoc">Constructeur de la classe CoucheCachee.</div></div>
+<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html_a87ee01348b318c64fb750e838584593d"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html#a87ee01348b318c64fb750e838584593d">Les_couches_du_reseau::CoucheCachee::calculSortie</a></div><div class="ttdeci">void calculSortie(Couche Entrees)</div><div class="ttdoc">Elle retourne la valeur en sortie de la couche après la pré-activation et l'activation.</div></div>
 <div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_html"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche.html">Les_couches_du_reseau::Couche</a></div><div class="ttdoc">Classe représentant une couche.</div><div class="ttdef"><b>Definition:</b> <a href="_couche_8hpp_source.html#l00018">Couche.hpp:18</a></div></div>
-<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html_a4e081306d26fbf7b7107aee73516f4b2"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html#a4e081306d26fbf7b7107aee73516f4b2">Les_couches_du_reseau::CoucheCachee::~CoucheCachee</a></div><div class="ttdeci">virtual ~CoucheCachee(Couche Entrées)</div><div class="ttdoc">Destructeur de la classe Couche.</div></div>
-<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html_a923460491ae8902b4b69e659b2a51f31"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html#a923460491ae8902b4b69e659b2a51f31">Les_couches_du_reseau::CoucheCachee::calculSortie</a></div><div class="ttdeci">void calculSortie()</div><div class="ttdoc">Elle retourne la valeur en sortie de la couche après la pré-activation et l'activation.</div></div>
 <div class="ttc" id="a_couche_8hpp_html"><div class="ttname"><a href="_couche_8hpp.html">Couche.hpp</a></div><div class="ttdoc">Les propriétés d'une couche : son nombre de neurones ainsi que sa fonction d'activation.</div></div>
-<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html">Les_couches_du_reseau::CoucheCachee</a></div><div class="ttdef"><b>Definition:</b> <a href="_couche_cachee_8hpp_source.html#l00022">CoucheCachee.hpp:22</a></div></div>
+<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html_a6277c5f276d60ed48d0a67768bab30d6"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html#a6277c5f276d60ed48d0a67768bab30d6">Les_couches_du_reseau::CoucheCachee::~CoucheCachee</a></div><div class="ttdeci">virtual ~CoucheCachee()</div><div class="ttdoc">Destructeur de la classe CoucheCachee.</div></div>
+<div class="ttc" id="aclass_les__couches__du__reseau_1_1_couche_cachee_html"><div class="ttname"><a href="class_les__couches__du__reseau_1_1_couche_cachee.html">Les_couches_du_reseau::CoucheCachee</a></div><div class="ttdoc">Classe représentant la couche d'entrée.</div><div class="ttdef"><b>Definition:</b> <a href="_couche_cachee_8hpp_source.html#l00020">CoucheCachee.hpp:20</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

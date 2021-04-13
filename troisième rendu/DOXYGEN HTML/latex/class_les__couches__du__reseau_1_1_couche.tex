@@ -23,9 +23,9 @@ Inheritance diagram for Les\+\_\+couches\+\_\+du\+\_\+reseau\+::Couche\+:\begin{
 virtual \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_ad6b0be0bb3de03b0364a23cd64cfc052}{$\sim$\+Couche}} ()
 \begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche}{Couche}}. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_adf4750f513cd1235edfdadb97db4f749}{pre\+Activation}} ()
-\begin{DoxyCompactList}\small\item\em La fonction de pré activation \+: Méthode qui permet de faire la somme pondérée des entrées. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em La fonction de pré activation \+: méthode qui permet de faire la somme pondérée des entrées. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_a9b51a1bfb515f466695e1f512da418e6}{fonc\+Activation}} (const double sum)
-\begin{DoxyCompactList}\small\item\em La fonction d\textquotesingle{}activation \+: Méthode qui permet d\textquotesingle{}activer les neurones afin d\textquotesingle{}optimiser le biais et avoir le bon résultat en sortie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em La fonction d\textquotesingle{}activation \+: méthode qui permet d\textquotesingle{}activer les neurones afin d\textquotesingle{}optimiser le biais et avoir le bon résultat en sortie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -48,7 +48,7 @@ Constructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_co
 
 
 \begin{DoxyParams}{Parameters}
-{\em nb\+Neurones} & \+: nombre fixe de neurones par couche d\textquotesingle{}où le \char`\"{}const\char`\"{} Le nombre de neurones d\textquotesingle{}une couche ne change pas une fois choisi au cours du programme \\
+{\em const} & int nb\+Neurones \+: entier représentant le nombre de neurones d\textquotesingle{}une couche ne change pas une fois choisi au cours du programme \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_les__couches__du__reseau_1_1_couche_ad6b0be0bb3de03b0364a23cd64cfc052}\label{class_les__couches__du__reseau_1_1_couche_ad6b0be0bb3de03b0364a23cd64cfc052}} 
@@ -72,8 +72,13 @@ Destructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_cou
 
 
 
-La fonction d\textquotesingle{}activation \+: Méthode qui permet d\textquotesingle{}activer les neurones afin d\textquotesingle{}optimiser le biais et avoir le bon résultat en sortie. 
+La fonction d\textquotesingle{}activation \+: méthode qui permet d\textquotesingle{}activer les neurones afin d\textquotesingle{}optimiser le biais et avoir le bon résultat en sortie. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em const} & double sum \+: résultat de la fonction de pré-\/activation qui calcule la somme de tous les neurones de la couche précédente pondérée avec leur poids respectif et du biais associé au neurone \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 la valeur du neurone après l\textquotesingle{}activation 
 \end{DoxyReturn}
@@ -85,7 +90,7 @@ la valeur du neurone après l\textquotesingle{}activation
 
 
 
-La fonction de pré activation \+: Méthode qui permet de faire la somme pondérée des entrées. 
+La fonction de pré activation \+: méthode qui permet de faire la somme pondérée des entrées. 
 
 \begin{DoxyReturn}{Returns}
 Somme pondérée des entrées. Le résultat est passé en paramètre de la fonction d\textquotesingle{}activation 

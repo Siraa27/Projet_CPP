@@ -19,13 +19,13 @@ Inheritance diagram for Les\+\_\+types\+\_\+de\+\_\+reseaux\+::Reseau\+:\begin{f
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a793f474e4990cfef96ff6af55d146b96}{Reseau}} ()
-\begin{DoxyCompactList}\small\item\em Constructeurs. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructeur sans argument. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a8dc860aef218d1f48e9e5acb8badd2c9}{Reseau}} (Liste liste\+Parametres)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructeur prenant en compte les paramètres fourni par l\textquotesingle{}utilisateur via un fichier ou non. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_ac0ff95d39205854ba7bde14d2edba454}{$\sim$\+Reseau}} ()
 \begin{DoxyCompactList}\small\item\em Destructeur de \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau}{Reseau}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_ab254177ffab90f08faa97d7810182049}{ajouter\+Couche}} (Couche c, int num\+Couche)
-\begin{DoxyCompactList}\small\item\em La fonction ajoute une couche au réseau Méthode permettant d\textquotesingle{}ajouter autant de couches que l\textquotesingle{}on veut ou qu\textquotesingle{}il est mentionné dans le programme. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em La fonction permet d\textquotesingle{}ajouter une couche au réseau. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a3131c6094d9d98e8e124fbe696c27906}{back\+Propagation}} (Liste Entrées x, Liste Sorties y)
 \begin{DoxyCompactList}\small\item\em applique la méthode essentielle de la back\+Propagation \end{DoxyCompactList}\item 
 tableau \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a8280f9528a4c643bdc6a9c9f73f21883}{Calc\+GradC}} (Sorties s\+Attendues, Sorties s\+Calculées)
@@ -36,15 +36,13 @@ tableau \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a8280f9528a4c6
 Couche \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a5f2f8b87a174fbb7f8f886815adc8728}{Couches}} \mbox{[}$\,$\mbox{]}
 \item 
 int \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a990bd80e6670c5bf756aab07ec1a6be4}{nb\+Couche}}
-\item 
-double \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau_a8bbb482e67d52743d91d99912a8ad373}{Matrice\+Liaisons}} \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Classe représentant un réseau. 
 
-Definition at line 21 of file Reseau.\+hpp.
+Definition at line 20 of file Reseau.\+hpp.
 
 
 
@@ -57,7 +55,7 @@ Definition at line 21 of file Reseau.\+hpp.
 
 
 
-Constructeurs. 
+Constructeur sans argument. 
 
 Constructeurs de la classe \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau}{Reseau}} \mbox{\Hypertarget{class_les__types__de__reseaux_1_1_reseau_a8dc860aef218d1f48e9e5acb8badd2c9}\label{class_les__types__de__reseaux_1_1_reseau_a8dc860aef218d1f48e9e5acb8badd2c9}} 
 \index{Les\_types\_de\_reseaux::Reseau@{Les\_types\_de\_reseaux::Reseau}!Reseau@{Reseau}}
@@ -66,8 +64,12 @@ Constructeurs de la classe \mbox{\hyperlink{class_les__types__de__reseaux_1_1_re
 {\footnotesize\ttfamily Les\+\_\+types\+\_\+de\+\_\+reseaux\+::\+Reseau\+::\+Reseau (\begin{DoxyParamCaption}\item[{Liste}]{liste\+Parametres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
+
+Constructeur prenant en compte les paramètres fourni par l\textquotesingle{}utilisateur via un fichier ou non. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em liste\+Parametres} & \+: liste introduite par le biais de la classe Interface\+Utilisateur fournissant les parametres nécessaires à la construction du réseau Constructeur prenant en compte les paramètres fourni par l\textquotesingle{}utilisateur via un fichier ou non \\
+{\em liste\+Parametres} & \+: liste introduite par le biais de la classe Interface\+Utilisateur fournissant les parametres nécessaires à la construction du réseau \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_les__types__de__reseaux_1_1_reseau_ac0ff95d39205854ba7bde14d2edba454}\label{class_les__types__de__reseaux_1_1_reseau_ac0ff95d39205854ba7bde14d2edba454}} 
@@ -91,8 +93,18 @@ Destructeur de \mbox{\hyperlink{class_les__types__de__reseaux_1_1_reseau}{Reseau
 
 
 
-La fonction ajoute une couche au réseau Méthode permettant d\textquotesingle{}ajouter autant de couches que l\textquotesingle{}on veut ou qu\textquotesingle{}il est mentionné dans le programme. 
+La fonction permet d\textquotesingle{}ajouter une couche au réseau. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em Couche} & c \+: Objet de la classe Couche \\
+\hline
+{\em int} & num\+Couche \+: entier indiquant l\textquotesingle{}indice de la couche c. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rien mais modifie le réseau 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_les__types__de__reseaux_1_1_reseau_a3131c6094d9d98e8e124fbe696c27906}\label{class_les__types__de__reseaux_1_1_reseau_a3131c6094d9d98e8e124fbe696c27906}} 
 \index{Les\_types\_de\_reseaux::Reseau@{Les\_types\_de\_reseaux::Reseau}!backPropagation@{backPropagation}}
 \index{backPropagation@{backPropagation}!Les\_types\_de\_reseaux::Reseau@{Les\_types\_de\_reseaux::Reseau}}
@@ -103,6 +115,11 @@ La fonction ajoute une couche au réseau Méthode permettant d\textquotesingle{}
 
 applique la méthode essentielle de la back\+Propagation 
 
+
+\begin{DoxyParams}{Parameters}
+{\em Liste} & Entrées x, Liste Sorties y\\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Rien mais modifie le réseau 
 \end{DoxyReturn}
@@ -116,6 +133,11 @@ Rien mais modifie le réseau
 
 La fonction est celle de descente du gradient. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em Sorties} & s\+Attendues, Sorties s\+Calculées\\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 le vecteur correspondant au gradient de l\textquotesingle{}erreur par rapport à tous les poids et les biais à l\textquotesingle{}étape p+1 
 \end{DoxyReturn}
@@ -130,17 +152,7 @@ le vecteur correspondant au gradient de l\textquotesingle{}erreur par rapport à
 
 $<$ Pour que les classes filles aient également accès à ces attributs 
 
-Definition at line 26 of file Reseau.\+hpp.
-
-\mbox{\Hypertarget{class_les__types__de__reseaux_1_1_reseau_a8bbb482e67d52743d91d99912a8ad373}\label{class_les__types__de__reseaux_1_1_reseau_a8bbb482e67d52743d91d99912a8ad373}} 
-\index{Les\_types\_de\_reseaux::Reseau@{Les\_types\_de\_reseaux::Reseau}!MatriceLiaisons@{MatriceLiaisons}}
-\index{MatriceLiaisons@{MatriceLiaisons}!Les\_types\_de\_reseaux::Reseau@{Les\_types\_de\_reseaux::Reseau}}
-\doxysubsubsection{\texorpdfstring{MatriceLiaisons}{MatriceLiaisons}}
-{\footnotesize\ttfamily double Les\+\_\+types\+\_\+de\+\_\+reseaux\+::\+Reseau\+::\+Matrice\+Liaisons\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line 28 of file Reseau.\+hpp.
+Definition at line 25 of file Reseau.\+hpp.
 
 \mbox{\Hypertarget{class_les__types__de__reseaux_1_1_reseau_a990bd80e6670c5bf756aab07ec1a6be4}\label{class_les__types__de__reseaux_1_1_reseau_a990bd80e6670c5bf756aab07ec1a6be4}} 
 \index{Les\_types\_de\_reseaux::Reseau@{Les\_types\_de\_reseaux::Reseau}!nbCouche@{nbCouche}}
@@ -150,7 +162,7 @@ Definition at line 28 of file Reseau.\+hpp.
 
 
 
-Definition at line 27 of file Reseau.\+hpp.
+Definition at line 26 of file Reseau.\+hpp.
 
 
 
