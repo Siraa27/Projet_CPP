@@ -15,9 +15,8 @@
 namespace Les_couches_du_reseau 
 {
    /*! \class CoucheEntrees
-   * \brief Classe representant une couche
+   * \brief Classe représentant la couche d'entrée
    *
-   *  C'est la classe qui génère les couches du réseau
    */
     class CoucheEntrees : public Couche{
         
@@ -27,7 +26,7 @@ namespace Les_couches_du_reseau
              *  \brief Constructeur de la classe CoucheEntrees
              *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"
              */
-		  CoucheEntrees (const int nbNeurones); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
+		  CoucheEntrees (const int nbNeurones); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
              
              /*!
              *  \brief Destructeur de la classe CoucheEntrees
@@ -35,8 +34,7 @@ namespace Les_couches_du_reseau
           virtual ~CoucheEntrees();
         
             /*! \fn constructionSortie 
-             *  \brief 
-             *  initialise les données
+             *  \brief La fonction initialise les données en entrée
              *  \return Les entrées du réseau
              */
           void constructionSortie();

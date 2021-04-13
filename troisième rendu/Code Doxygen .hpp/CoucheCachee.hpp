@@ -9,13 +9,15 @@
  * \version 0.1
  */
 /*! \namespace Les_couches_du_reseau
- * Classe représentant les couches cachées du réseau
+ * Classe qui permet de créer des couches du réseau
  */
+
 
 namespace Les_couches_du_reseau 
 {
-   /*! \class CoucheCachée
-   * \brief Classe representant une couche
+   /*! \class CoucheCachees
+   * \brief Classe représentant une couche cachée
+   *
    */
     class CoucheCachee: public Couche{
         //Les attributs
@@ -32,14 +34,14 @@ namespace Les_couches_du_reseau
              /*!
              *  \brief Destructeur de la classe Couche
              */
-          virtual ~CoucheCachee();
+          virtual ~CoucheCachee(Couche Entrées);
           
-            /*! \fn sortie 
-             *  \brief 
-             *  ELle retourne la valeur en sortie de la couche après l'activation 
+            /*! \fn calculSortie 
+             *  \brief Elle retourne la valeur en sortie de la couche après la pré-activation et l'activation 
+             *  \param La couche en entrée
              *  \return la valeur en sortie d'une couche 
              */
-         void constructionSorties();
+         void calculSortie();
     };
 };
 

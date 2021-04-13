@@ -1,5 +1,6 @@
 #ifndef NEURONE_HPP
 #define NEURONE_HPP
+
 /*!
  * \file Neurone.hpp
  * \brief Les propritées d'un neurone : son indice et so valeur
@@ -18,7 +19,7 @@ namespace Les_couches_du_reseau
          //Les attributs
         private : 
          int indice ; /*!< Une couche peut contenir plusieurs neurones. Pour isoler un neurone, on lui assigne un indice */
-         double sortie ; 
+         double sortie ; /*!< Valeur que contient le neurone en sortie (donc après avoir appliqué la pré-activation et l'activation) */
         // Les méthodes
         public : 
          /*!
@@ -26,12 +27,12 @@ namespace Les_couches_du_reseau
          *  \param indice : le libellé d'un neurone dans une couche 
          */
         Neurone (const int indice); // le libellé d'un neurone dans une couche ne change pas une fois choisi au cours du programme
-         /*! \fn calculSortie
+         /*! \fn setSortie
          *  \brief 
-         *  elle s'occupe de la pré-activation et de l'activation du neurone 
+         *  elle modifie la valeur du neurone après application des fonctions de pré-activation et d'activation (présentes dans la fonction calculSortie() de la classe CoucheCachée)
          *  \return la valeur en sortie d'un neurone
          */
-        double calculSortie(double entree);
+        double setSortie(double entree);
     };
     
 };

@@ -14,8 +14,8 @@
 
 namespace Les_types_de_reseaux 
 {
-   /*! \class Reseau
-   * \brief classe permettant de représenter un réseau quelconque
+   /*! \class ReseauRecurrent
+   * \brief classe permettant de représenter un réseau récurrent
    *
    *  La classe génère le réseau souhaité
    */ 

@@ -17,7 +17,6 @@ namespace Les_types_de_reseaux
    /*! \class Reseau
    * \brief Classe représentant un réseau
    *
-   *  Elle permet de générer un réseau
    */
   class Reseau { 
  
@@ -32,24 +31,23 @@ namespace Les_types_de_reseaux
 	/*!
              *  \brief Constructeurs
              *
-             *  Constructeurs de la classe Couche
+             *  Constructeurs de la classe Reseau
              *
-             *	\param :
              */
           Reseau();
              /*! 
              *
-             *  \param nbC : le nombre de couches qui est fixe d'où le "const"
+             *  \param listeParametres : liste introduite par le biais de la classe InterfaceUtilisateur fournissant les parametres nécessaires à la construction du réseau
              */
-          Reseau(const int nbC); /*!< Constructeur pour le cas où l'utilisateur décide du nombre de couches */
+          Reseau(Liste listeParametres); /*!< Constructeur prenant en compte les paramètres fourni par l'utilisateur via un fichier ou non */
              /*!
-             *  \brief Destructeur de Couche
+             *  \brief Destructeur de Reseau
              */
           ~Reseau();
           
               /*!
              *  \fn ajouterCouche(Couche c, int numCouche)
-             *  \brief La fonction qui ajoute une couche au réseau 
+             *  \brief La fonction ajoute une couche au réseau 
              *  Méthode permettant d'ajouter autant de couches que l'on veut ou qu'il est mentionné dans le programme. 
              */
           void ajouterCouche(Couche c, int numCouche);
@@ -66,27 +64,36 @@ namespace Les_types_de_reseaux
 	      double erreur(Fichier SortiesAttendues)
           
              /*!
-             *  \fn ApprentissageSupervisé(Fichier Données);
-             *  \brief La fonction dirige le réseau vers un apprentissage supervisé en prenant en argument les données fournis en entrée
+             *  \fn Apprentissage(Fichier Données);
+             *  \brief La fonction permet l'apprentissage du réseau de neurone en prenant en argument les données fournis en entrée
              *
-             *  Methode permettant d'obtenir un réseau pour l'apprentissage supervisé à partir d'un fichier donné
+             *  Méthode permettant d'obtenir un réseau efficace à partir d'un fichier donné
              *
              *  \return Rien mais modifie le réseau
              * 
              */
-	      void ApprentissageSupervise(Fichier Données);
+	      void Apprentissage(Fichier Données);
           
             /*!
-             *  \fn ApprentissageNonSupervisé(Fichier Données);
-             *  \brief La fonction dirige le réseau vers un apprentissage non supervisé en prenant en argument les données fournis en entrée
+             *  \fn backPropagation(Liste Entrées x, Liste Sorties y);
+             *  \brief applique la méthode essentielle de la backPropagation
              *
-             *  Méthode permettant d'obtenir un réseau pour l'apprentissage non supervisé à partir d'un fichier donné
              *
              *  \return Rien mais modifie le réseau
              * 
              */
-	  void ApprentissageNonSupervisé(Fichier Données);
+	  void backPropagation(Liste Entrées x, Liste Sorties y);
+	  /*!
+             *  \fn CalcGradC(Sorties sAttendues, Sorties sCalculées);
+             *  \brief La fonction est celle de descente du gradient.
+             *
+             *
+             *  \return le vecteur correspondant au gradient de l'erreur par rapport à tous les poids et les biais à l'étape p+1
+             * 
+             */
+	  tableau CalcGradC(Sorties sAttendues, Sorties sCalculées);
 	}; 
+
 	  
 };
 #endif
