@@ -41,7 +41,7 @@ namespace Les_couches_du_reseau
              *  Méthode qui permet de faire la somme pondérée des entrées
              *  \return Somme pondérée des entrées. Le résultat est passé en paramètre de la fonction d'activation
              */
-          double preActivation(const double sum);
+          double preActivation();
             
              /*!
              *  \fn foncActivation(const double sum)
