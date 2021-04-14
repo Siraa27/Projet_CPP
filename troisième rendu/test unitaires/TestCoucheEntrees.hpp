@@ -19,20 +19,17 @@
 
 
 #include "Couche.hpp"
-#include "CoucheEntree.hpp"
-#include "CoucheCachee.hpp"
-#include "CoucheSortie.hpp"
+#include "CoucheEntrees.hpp"
+
 
 using namespace CppUnit;
 using namespace std;
 
 // La classe qui va faire le test 
-class TestCouche : public CppUnit::TestFixture{
-
-// Pour pouvoir tourner plusieurs tests aux même temps
+class TestCoucheEntrees : public CppUnit::TestFixture{
+    // Pour pouvoir tourner plusieurs tests aux même temps
     CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testPreActivation);
-    CPPUNIT_TEST(testActivation);
+    CPPUNIT_TEST(testConstructionSortie);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -41,33 +38,33 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
-	void testPreActivation(void);
-	void testActivation(void);
+	void testConstructionSortie(void);
 private:
-	Couche *C1;
-};
+	Couche *C1, *C2;
+}
 
 // Les test----------------------------------------------------------------------------------
 
-void TestCouche::testpreActivation(void)
-{
-    // CPPUNIT_ASSERT() ==> bool
-   CPPUNIT_ASSERT(6,87 == C->preActivation());
+void TestCoucheEntrees::testConstructionSortie(void)
+{   
+   if ( CPPUNIT_ASSERT( C2->nbNeurone ==4 ) ){
+        int i = 0 ; 
+        while ( CPPUNIT_ASSERT( C1->Neurone[i] == C2->Neurone[i] ) && i<4 ) {
+            i=i+1; 
+        }  
+   } 
 }
 
-void TestCouche::testactivation(void)
+void TestCoucheEntrees::setUp(void)
 {
-   CPPUNIT_ASSERT( 0.001 == C->activation(6,87));
+// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone])
+	C1 = new CoucheEntree(4,{6.3, 3.3, 6.0, 2,5});
+    C2 = new CoucheEntree(FILE données);
 }
-
-void TestCouche::setUp(void)
+void TestCoucheEntrees::tearDown(void)
 {
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
-	C = new Couche(4, {6.3, 3.3, 6.0, 2,5}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
-}
-void TestCouche::tearDown(void)
-{
-	delete C;
+	delete C1;
+    delete C2;
 }
 //-------------------------------------------------------------------------------------------
 
@@ -90,7 +87,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestCouche.xml");
+	ofstream xmlFileOut("cppTestCoucheEntrees.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful

@@ -18,21 +18,19 @@
 #include <netinet/in.h>
 
 
-#include "Couche.hpp"
-#include "CoucheEntree.hpp"
-#include "CoucheCachee.hpp"
-#include "CoucheSortie.hpp"
+#include "Interface.hpp"
+
 
 using namespace CppUnit;
 using namespace std;
 
 // La classe qui va faire le test 
-class TestCouche : public CppUnit::TestFixture{
+class TestInterface : public CppUnit::TestFixture{
 
 // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testPreActivation);
-    CPPUNIT_TEST(testActivation);
+    CPPUNIT_TEST_SUITE(TestInterface);
+    CPPUNIT_TEST(testLectureParam);
+    CPPUNIT_TEST(testLectureFichier);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -41,33 +39,41 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
-	void testPreActivation(void);
-	void testActivation(void);
+	void testLectureParam(void);
+	void testLectureFichier(void);
 private:
-	Couche *C1;
+	Interface *I1, *I2, *I3, *I4;
 };
 
 // Les test----------------------------------------------------------------------------------
 
-void TestCouche::testpreActivation(void)
+void TestInterface::testLectureParam(void)
 {
-    // CPPUNIT_ASSERT() ==> bool
-   CPPUNIT_ASSERT(6,87 == C->preActivation());
+
 }
 
-void TestCouche::testactivation(void)
+void TestInterface::testLectureFichier(void)
 {
-   CPPUNIT_ASSERT( 0.001 == C->activation(6,87));
+    CPPUNIT_ASSERT ( {0} == I1-> lectureFichier('TestVide.csv') ) // à vérifier le singleton 
+    CPPUNIT_ASSERT ( {-1} == I2-> lectureFichier('TestMalRempli.csv') )
+    CPPUNIT_ASSERT ( {-2} == I3-> lectureFichier('TestMauvaisFormat.csv') )
+    CPPUNIT_ASSERT ( {1, 1, 3, 2, 5, 2, 0} == I4-> lectureFichier('TestDonnees.csv') )
 }
 
-void TestCouche::setUp(void)
+void TestInterface::setUp(void)
 {
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
-	C = new Couche(4, {6.3, 3.3, 6.0, 2,5}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
+// à l'aide du constructeur Interface()
+	I1 = new Interface(String 'TestVide.csv');
+    I2 = new Interface(String 'TestMalRempli.csv');
+    I3 = new Interface(String 'TestMauvaisFormat.csv');
+    I4 = new Interface(Strinf 'TestDonnees.csv');
 }
 void TestCouche::tearDown(void)
 {
-	delete C;
+	delete I1;
+    delete I2;
+    delete I3;
+    delete I4;
 }
 //-------------------------------------------------------------------------------------------
 
@@ -90,7 +96,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestCouche.xml");
+	ofstream xmlFileOut("cppTestInterface.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful

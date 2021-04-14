@@ -19,20 +19,17 @@
 
 
 #include "Couche.hpp"
-#include "CoucheEntree.hpp"
-#include "CoucheCachee.hpp"
-#include "CoucheSortie.hpp"
+#include "CoucheSorties.hpp"
+
 
 using namespace CppUnit;
 using namespace std;
 
 // La classe qui va faire le test 
-class TestCouche : public CppUnit::TestFixture{
-
-// Pour pouvoir tourner plusieurs tests aux même temps
+class TestCoucheSorties : public CppUnit::TestFixture{
+    // Pour pouvoir tourner plusieurs tests aux même temps
     CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testPreActivation);
-    CPPUNIT_TEST(testActivation);
+    CPPUNIT_TEST(testConstructionSortie);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -41,33 +38,26 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
-	void testPreActivation(void);
-	void testActivation(void);
+	void testConstructionSortie(void);
 private:
-	Couche *C1;
-};
+	Couche *C;
+}
 
 // Les test----------------------------------------------------------------------------------
 
-void TestCouche::testpreActivation(void)
-{
-    // CPPUNIT_ASSERT() ==> bool
-   CPPUNIT_ASSERT(6,87 == C->preActivation());
+void TestCoucheSorties::testCalculortie(void)
+{   
+
 }
 
-void TestCouche::testactivation(void)
+void TestCoucheSorties::setUp(void)
 {
-   CPPUNIT_ASSERT( 0.001 == C->activation(6,87));
+// à l'aide du constructeur CoucheSortie()
+	C = new CoucheSortie();
 }
-
-void TestCouche::setUp(void)
+void TestCoucheSorties::tearDown(void)
 {
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
-	C = new Couche(4, {6.3, 3.3, 6.0, 2,5}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
-}
-void TestCouche::tearDown(void)
-{
-	delete C;
+	delete C ;
 }
 //-------------------------------------------------------------------------------------------
 
@@ -90,7 +80,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestCouche.xml");
+	ofstream xmlFileOut("cppTestCoucheSorties.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful
