@@ -1,5 +1,5 @@
-#ifndef COUCHECACHEE_HPP
-#define COUCHECACHEE_HPP
+#ifndef COUCHE_CACHEE_HPP
+#define COUCHE_CACHEE_HPP
 #include "Couche.hpp"
 
 /*!
@@ -9,39 +9,35 @@
  * \version 0.1
  */
 /*! \namespace Les_couches_du_reseau
- * Classe qui permet de créer des couches du réseau
  */
-
 
 namespace Les_couches_du_reseau 
 {
-   /*! \class CoucheCachees
+   /*! \class CoucheCachee
    * \brief Classe représentant une couche cachée
    *
    */
-    class CoucheCachee: public Couche{
-        //Les attributs
-        private :   double biais ; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
-
+    class CoucheCachee : public Couche{
+        
         //Les méthodes
         public :
              /*!
-             *  \brief Constructeur de la classe CoucheCachée
+             *  \brief Constructeur de la classe CoucheCachee
              *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"
              */
-		  CoucheCachee (const int nbNeurones); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
+		  CoucheCachee (const int nbNeurones); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
              
              /*!
-             *  \brief Destructeur de la classe Couche
+             *  \brief Destructeur de la classe CoucheCachee
              */
-          virtual ~CoucheCachee(Couche Entrées);
-          
-            /*! \fn calculSortie 
-             *  \brief Elle retourne la valeur en sortie de la couche après la pré-activation et l'activation 
+          virtual ~CoucheCachee();
+        
+            /*! \fn calculSortie
+             *  \brief Elle retourne la valeur en sortie de la couche après la pré-activation et l'activation
              *  \param La couche en entrée
              *  \return la valeur en sortie d'une couche 
              */
-         void calculSortie();
+          void calculSortie(Couche Entrees);
     };
 };
 

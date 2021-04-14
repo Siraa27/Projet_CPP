@@ -84,7 +84,7 @@ Inheritance diagram for Les_couches_du_reseau::Couche:</div>
  <div class="center">
   <img src="class_les__couches__du__reseau_1_1_couche.png" usemap="#Les_5Fcouches_5Fdu_5Freseau::Couche_map" alt=""/>
   <map id="Les_5Fcouches_5Fdu_5Freseau::Couche_map" name="Les_5Fcouches_5Fdu_5Freseau::Couche_map">
-<area href="class_les__couches__du__reseau_1_1_couche_cachee.html" alt="Les_couches_du_reseau::CoucheCachee" shape="rect" coords="0,56,248,80"/>
+<area href="class_les__couches__du__reseau_1_1_couche_cachee.html" title="Classe représentant la couche d&#39;entrée." alt="Les_couches_du_reseau::CoucheCachee" shape="rect" coords="0,56,248,80"/>
 <area href="class_les__couches__du__reseau_1_1_couche_entrees.html" title="Classe représentant la couche d&#39;entrée." alt="Les_couches_du_reseau::CoucheEntrees" shape="rect" coords="258,56,506,80"/>
 <area href="class_les__couches__du__reseau_1_1_couche_sorties.html" title="Classe représentant la couche de sorties." alt="Les_couches_du_reseau::CoucheSorties" shape="rect" coords="516,56,764,80"/>
   </map>
@@ -99,10 +99,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad6b0be0bb3de03b0364a23cd64cfc052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="class_les__couches__du__reseau_1_1_couche.html" title="Classe représentant une couche.">Couche</a>.  <a href="class_les__couches__du__reseau_1_1_couche.html#ad6b0be0bb3de03b0364a23cd64cfc052">More...</a><br /></td></tr>
 <tr class="separator:ad6b0be0bb3de03b0364a23cd64cfc052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf4750f513cd1235edfdadb97db4f749"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_les__couches__du__reseau_1_1_couche.html#adf4750f513cd1235edfdadb97db4f749">preActivation</a> ()</td></tr>
-<tr class="memdesc:adf4750f513cd1235edfdadb97db4f749"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction de pré activation : Méthode qui permet de faire la somme pondérée des entrées.  <a href="class_les__couches__du__reseau_1_1_couche.html#adf4750f513cd1235edfdadb97db4f749">More...</a><br /></td></tr>
+<tr class="memdesc:adf4750f513cd1235edfdadb97db4f749"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées.  <a href="class_les__couches__du__reseau_1_1_couche.html#adf4750f513cd1235edfdadb97db4f749">More...</a><br /></td></tr>
 <tr class="separator:adf4750f513cd1235edfdadb97db4f749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b51a1bfb515f466695e1f512da418e6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_les__couches__du__reseau_1_1_couche.html#a9b51a1bfb515f466695e1f512da418e6">foncActivation</a> (const double sum)</td></tr>
-<tr class="memdesc:a9b51a1bfb515f466695e1f512da418e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction d'activation : Méthode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie.  <a href="class_les__couches__du__reseau_1_1_couche.html#a9b51a1bfb515f466695e1f512da418e6">More...</a><br /></td></tr>
+<tr class="memdesc:a9b51a1bfb515f466695e1f512da418e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction d'activation : méthode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie.  <a href="class_les__couches__du__reseau_1_1_couche.html#a9b51a1bfb515f466695e1f512da418e6">More...</a><br /></td></tr>
 <tr class="separator:a9b51a1bfb515f466695e1f512da418e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructeur de la classe <a class="el" href="class_les__couches__du__reseau_1_1_couche.html" title="Classe représentant une couche.">Couche</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nbNeurones</td><td>: nombre fixe de neurones par couche d'où le "const" Le nombre de neurones d'une couche ne change pas une fois choisi au cours du programme </td></tr>
+    <tr><td class="paramname">const</td><td>int nbNeurones : entier représentant le nombre de neurones d'une couche ne change pas une fois choisi au cours du programme </td></tr>
   </table>
   </dd>
 </dl>
@@ -180,7 +180,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>La fonction d'activation : Méthode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie. </p>
+<p>La fonction d'activation : méthode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>double sum : résultat de la fonction de pré-activation qui calcule la somme de tous les neurones de la couche précédente pondérée avec leur poids respectif et du biais associé au neurone </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>la valeur du neurone après l'activation </dd></dl>
 
 </div>
@@ -200,7 +206,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>La fonction de pré activation : Méthode qui permet de faire la somme pondérée des entrées. </p>
+<p>La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées. </p>
 <dl class="section return"><dt>Returns</dt><dd>Somme pondérée des entrées. Le résultat est passé en paramètre de la fonction d'activation </dd></dl>
 
 </div>

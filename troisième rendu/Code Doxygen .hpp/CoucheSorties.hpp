@@ -19,9 +19,7 @@ namespace Les_couches_du_reseau
    *
    */
     class CoucheSorties: public Couche{
-        //Les attributs
-        private :   
-		 double biais ; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
+
 
         //Les méthodes
         public :

@@ -16,30 +16,28 @@ namespace Les_types_de_reseaux
 {
    /*! \class Reseau
    * \brief Classe représentant un réseau
-   *
    */
   class Reseau { 
  
 
 	// Les attributs
-	protected: 	 /*!< Pour que les classes filles aient également accès à ces attributs */
+	protected: 	 /*! < Pour que les classes filles aient également accès à ces attributs */
 		Couche Couches[];
 		int nbCouche;
-		double MatriceLiaisons[][];
 	
 	// Les constructeurs
 	/*!
-             *  \brief Constructeurs
+             *  \brief Constructeur sans argument
              *
              *  Constructeurs de la classe Reseau
              *
              */
           Reseau();
              /*! 
-             *
+             *  \brief Constructeur prenant en compte les paramètres fourni par l'utilisateur via un fichier ou non 
              *  \param listeParametres : liste introduite par le biais de la classe InterfaceUtilisateur fournissant les parametres nécessaires à la construction du réseau
              */
-          Reseau(Liste listeParametres); /*!< Constructeur prenant en compte les paramètres fourni par l'utilisateur via un fichier ou non */
+          Reseau(Liste listeParametres); 
              /*!
              *  \brief Destructeur de Reseau
              */
@@ -47,17 +45,17 @@ namespace Les_types_de_reseaux
           
               /*!
              *  \fn ajouterCouche(Couche c, int numCouche)
-             *  \brief La fonction ajoute une couche au réseau 
-             *  Méthode permettant d'ajouter autant de couches que l'on veut ou qu'il est mentionné dans le programme. 
+             *  \brief La fonction permet d'ajouter une couche au réseau.
+             *  \param Couche c : Objet de la classe Couche
+             *  \param int numCouche : entier indiquant l'indice de la couche c.
+             *  \return Rien mais modifie le réseau
              */
-          void ajouterCouche(Couche c, int numCouche);
+          void ajouterCouche(Couche c,int numCouche);
              
-              /*!
+             /*!
              *  \fn double erreur(Fichier SortiesAttendues)
-             *  \brief La fonction calcule l'erreur commise par le réseau donc indique sa précision
-             *
-             *  Méthode permettant de calculer l'erreur commise par le réseau à l'aide de l'algorithme de descente de gradient.
-             *
+             *  \brief La fonction calcule l'erreur commise par le réseau à l'aide de l'algorithme de descente de gradient et donc indique sa précision.
+             *  \param Fichier SortiesAttendues
              *  \return valeur de la mesure de l'erreur à l'instant t
              * 
              */
@@ -66,8 +64,7 @@ namespace Les_types_de_reseaux
              /*!
              *  \fn Apprentissage(Fichier Données);
              *  \brief La fonction permet l'apprentissage du réseau de neurone en prenant en argument les données fournis en entrée
-             *
-             *  Méthode permettant d'obtenir un réseau efficace à partir d'un fichier donné
+             *  \param Fichier Données
              *
              *  \return Rien mais modifie le réseau
              * 
@@ -77,7 +74,7 @@ namespace Les_types_de_reseaux
             /*!
              *  \fn backPropagation(Liste Entrées x, Liste Sorties y);
              *  \brief applique la méthode essentielle de la backPropagation
-             *
+             *  \param Liste Entrées x, Liste Sorties y
              *
              *  \return Rien mais modifie le réseau
              * 
@@ -86,7 +83,7 @@ namespace Les_types_de_reseaux
 	  /*!
              *  \fn CalcGradC(Sorties sAttendues, Sorties sCalculées);
              *  \brief La fonction est celle de descente du gradient.
-             *
+             *  \param Sorties sAttendues, Sorties sCalculées
              *
              *  \return le vecteur correspondant au gradient de l'erreur par rapport à tous les poids et les biais à l'étape p+1
              * 
