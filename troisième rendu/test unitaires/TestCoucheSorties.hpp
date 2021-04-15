@@ -47,7 +47,7 @@ private:
 
 void TestCoucheSorties::testCalculortie(void)
 {   
-
+	
 }
 
 void TestCoucheSorties::setUp(void)

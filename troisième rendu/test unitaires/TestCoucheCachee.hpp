@@ -30,6 +30,8 @@ class TestCoucheCachee : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
     CPPUNIT_TEST_SUITE(TestCouche);
     CPPUNIT_TEST(testCalculSortie);
+	CPPUNIT_TEST(testPreActivation);
+    CPPUNIT_TEST(testActivation);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -39,14 +41,46 @@ public:
 	void tearDown(void);
 protected:
 	void testCalculSortie(void);
+	void testPreActivation(void);
+	void testActivation(void);
 private:
-	Couche *C;
+	Couche *C1, *C2;
 }
 
 // Les test----------------------------------------------------------------------------------
+void TestCouche::testpreActivation(void)
+{
+    // CPPUNIT_ASSERT() ==> bool
+	double t[2];
+	t = C1->preActivation();
+   CPPUNIT_ASSERT( 6.87 == t[1] &&  8.98 == t[2]) ;
+}
+
+void TestCouche::testactivation(void)
+{
+	C1->activation(6,87)
+	C2->activation(8.98)
+
+   CPPUNIT_ASSERT( 0.001 == C1->activation(6,87) ); 
+   CPPUNIT_ASSERT( fabs( 0.0001258869 - C2->activation(8.98) ) < O.00OO1 ); 
+}
+
+void TestCouche::setUp(void)
+{
+// un contructeur avec que des zéro pour la matrice de laisiason et que des zéros pour les biais (la couche verte)
+	C1 = new Couche(4, {6.3, 3.3, 6.0, 2,5}, {0,0},  { {0, 0} , {0, 0}, {0, 0}, {0, 0} });
+// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
+	C2 = new Couche(2, {6.87, 8.98}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
+}
+void TestCouche::tearDown(void)
+{
+	delete C1;
+	delete C2;
+}
 
 void TestCoucheCachee::testCalculSortie(void)
 {   
+
 
 }
 
