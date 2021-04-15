@@ -42,7 +42,7 @@ protected:
 	void testLectureParam(void);
 	void testLectureFichier(void);
 private:
-	Interface *I1, *I2, *I3, *I4;
+	Interface *I1, *I2, *I3, *I4, *I5, *I6, *I7;
 };
 
 // Les test----------------------------------------------------------------------------------
@@ -55,18 +55,24 @@ void TestInterface::testLectureParam(void)
 void TestInterface::testLectureFichier(void)
 {
     CPPUNIT_ASSERT ( {0} == I1-> lectureFichier('TestVide.csv') ) // à vérifier le singleton 
-    CPPUNIT_ASSERT ( {-1} == I2-> lectureFichier('TestMalRempli.csv') )
-    CPPUNIT_ASSERT ( {-2} == I3-> lectureFichier('TestMauvaisFormat.csv') )
-    CPPUNIT_ASSERT ( {1, 1, 3, 2, 5, 2, 0} == I4-> lectureFichier('TestDonnees.csv') )
+    CPPUNIT_ASSERT ( {-1} == I2-> lectureFichier('TestMalRempliTypeReseau.csv') )
+    CPPUNIT_ASSERT ( {-1} == I3-> lectureFichier('TestMalRempliCasUtilisation.csv') )
+	CPPUNIT_ASSERT ( {-1} == I4-> lectureFichier('TestMalRempliNbCouche.csv') )
+	CPPUNIT_ASSERT ( {-1} == I5-> lectureFichier('TestMalRempliNbNeurone.csv') )
+    CPPUNIT_ASSERT ( {-2} == I6-> lectureFichier('TestMauvaisFormat.csv') )
+    CPPUNIT_ASSERT ( {1, 1, 3, 2, 5, 2, 0} == I7-> lectureFichier('TestDonnees.csv') )
 }
 
 void TestInterface::setUp(void)
 {
 // à l'aide du constructeur Interface()
 	I1 = new Interface(String 'TestVide.csv');
-    I2 = new Interface(String 'TestMalRempli.csv');
-    I3 = new Interface(String 'TestMauvaisFormat.csv');
-    I4 = new Interface(Strinf 'TestDonnees.csv');
+    I2 = new Interface(String 'TestMalRempliTypeReseau.csv');
+    I3 = new Interface(String 'TestMalRempliCasUtilisation.csv');
+    I4 = new Interface(String 'TestMalRempliNbCouche.csv');
+    I5 = new Interface(String 'TestMalRempliNbNeurone.csv');
+    I6 = new Interface(String 'TestMauvaisFormat.csv');
+    I7 = new Interface(String 'TestDonnees.csv');
 }
 void TestCouche::tearDown(void)
 {
@@ -74,6 +80,9 @@ void TestCouche::tearDown(void)
     delete I2;
     delete I3;
     delete I4;
+    delete I5;
+    delete I6;
+    delete I7;
 }
 //-------------------------------------------------------------------------------------------
 
