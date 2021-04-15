@@ -44,7 +44,7 @@ protected:
 	void testPreActivation(void);
 	void testActivation(void);
 private:
-	Couche *C1;
+	Couche *C;
 };
 
 // Les test----------------------------------------------------------------------------------
