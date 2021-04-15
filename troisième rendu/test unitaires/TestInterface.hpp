@@ -47,10 +47,11 @@ private:
 
 // Les test----------------------------------------------------------------------------------
 
-void TestInterface::testLectureParam(void)
+/*void TestInterface::testLectureParam(void)
 {
 
 }
+*/
 
 void TestInterface::testLectureFichier(void)
 {

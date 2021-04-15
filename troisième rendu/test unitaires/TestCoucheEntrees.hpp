@@ -61,7 +61,7 @@ void TestCoucheEntrees::setUp(void)
 {
 // à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone])
 	C1 = new CoucheEntree(4,{6.3, 3.3, 6.0, 2,5});
-    C2 = new CoucheEntree(FILE données);
+    C2 = new CoucheEntree('FichDonnee.csv');
 }
 void TestCoucheEntrees::tearDown(void)
 {
