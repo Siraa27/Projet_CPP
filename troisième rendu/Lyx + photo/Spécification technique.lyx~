@@ -1289,30 +1289,6 @@ C'est cette technique que l'on utilise ici pour le test concernant les poids
  initialisés à 0.5.
 \end_layout
 
-\begin_layout Subsection
-testAjouterCouche
-\end_layout
-
-\begin_layout Subsection
-testErreur
-\end_layout
-
-\begin_layout Subsection
-calcGradC
-\end_layout
-
-\begin_layout Subsection
-testApprentissage
-\end_layout
-
-\begin_layout Subsection
-testBackPropagation
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Section
 Module ResForwarded
 \end_layout

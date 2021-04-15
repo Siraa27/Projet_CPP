@@ -47,7 +47,7 @@ private:
 
 void TestCoucheEntrees::testConstructionSortie(void)
 {   
-	C1->constrcutionSortie();
+	C1->constructionSortie();
 	C2->constructionSortie();
    if ( CPPUNIT_ASSERT( C2->nbNeurone ==4 ) ){
         int i = 0 ; 

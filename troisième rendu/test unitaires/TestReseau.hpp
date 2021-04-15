@@ -18,7 +18,7 @@
 #include <netinet/in.h>
 
 
-#include "Matrice.hpp"
+#include "Reseau.hpp"
 
 
 using namespace CppUnit;
@@ -43,7 +43,7 @@ protected:
     void testbackPropagation(void);
     
 private:
-	Matrice *R1; 
+	Reseau *R1, *R2; 
 };
 
 // Les tests----------------------------------------------------------------------------------
@@ -51,27 +51,26 @@ private:
 void TestReseau::testConstructeurReseau(void)
 {
     // CPPUNIT_ASSERT() ==> bool
-   CPPUNIT_ASSERT({0}==int(listeParametres[0]));
-   CPPUNIT_ASSERT ( {-1} == M1-> produit(M3) );
+    //1 pour type Forwarded, 1 pour classification, 3 pour couche cachée, 2 pour neurone par couche, 0 pour init aléatoire des poids init
+   CPPUNIT_ASSERT({1}==int(Reseau(listeParametres[0])) && {1}==int(Reseau(listeParametres[1])) && {3}==int(Reseau(listeParametres[2])) &&){2}==int(Reseau(listeParametres[3])) && abs( float(Reseau(listeParametres[4])) - 0 ) < O.00OO1)
+   CPPUNIT_ASSERT({1}==int(Reseau(listeParametres[0])) && {2}==int(Reseau(listeParametres[1])) && {1}==int(Reseau(listeParametres[2])) &&){4}==int(Reseau(listeParametres[3])) && abs( float(Reseau(listeParametres[4])) - 0.5 ) < O.00OO1) //permet de tester un égalité entre flottants à epsilon près
    
 }  
    void TestReseau::testbackPropagation(void)
 {
     // CPPUNIT_ASSERT() ==> bool
    CPPUNIT_ASSERT( taille(x)==taille(y));
-   CPPUNIT_ASSERT ( {-1} == M1-> produit(M3) ); //la fonction produit renvoie -1 si on a une erreur de format : M1(nxp)*M2(pxq) == M(nxq)
-   CPPUNIT_ASSERT( {{22, 11, 22}} == M4->produit(M5)); 
+    
 
 }
 
 void TestReseau::setUp(void)
 {
 // à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
-	M1 = new Matrice({{1, 2, 3} , {4, 5, 6}, {7, 8, 9}});
-    M2 = new Matrice({{1, 2, 3} , {4, 5, 6}, {7, 8, 9}});
-    M3 = new Matrice({{1, 1} , {1, 1}}); //Création d'une matrice pour le test sur le mauvais format 
-    M4 = new Matrice({{3, 1}}); //les matrices M4 et M5 servent pour le 3e test, celui avec des matrices non carrées
-    M5 = new Matrice({{1, 8, 4} , {7, 1, 6}});
+	R1 = new Reseau('listeParam_Pour_ReseauForwarded_pour_classification_A_3_couches_2_neurones_par_couche_Et_Poids_Init_Aleatoirement');
+    R2 = new Reseau('listeParam_Pour_ReseauForwarded_pour_prediction__A_1_couches_4_neurones_par_couche_Et_Poids_Fixés_par_utilisateur');
+
+
 }
 void TestReseau::tearDown(void)
 {

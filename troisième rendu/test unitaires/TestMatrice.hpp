@@ -56,7 +56,7 @@ void TestMatrice::testProduit(void)
 
 void TestMatrice::setUp(void)
 {
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
+// à l'aide du constructeur Matrice
 	M1 = new Matrice({{1, 2, 3} , {4, 5, 6}, {7, 8, 9}});
     M2 = new Matrice({{1, 2, 3} , {4, 5, 6}, {7, 8, 9}});
     M3 = new Matrice({{1, 1} , {1, 1}}); //Création d'une matrice pour le test sur le mauvais format 
