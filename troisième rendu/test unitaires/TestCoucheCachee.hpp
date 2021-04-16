@@ -44,55 +44,53 @@ protected:
 	void testPreActivation(void);
 	void testActivation(void);
 private:
-	Couche *C1, *C2;
+	Couche *C1, *C2, *C3;
+
 }
 
 // Les test----------------------------------------------------------------------------------
-void TestCouche::testpreActivation(void)
+void TestCoucheCachee::testpreActivation(void)
 {
     // CPPUNIT_ASSERT() ==> bool
 	double t[2];
 	t = C1->preActivation();
-   CPPUNIT_ASSERT( 6.87 == t[1] &&  8.98 == t[2]) ;
+   CPPUNIT_ASSERT( fabs(6.87 - t[1]) < 0.00001 &&  fabs(8.98 - t[2]) < 0.00001) ;
 }
-
-void TestCouche::testactivation(void)
+/* C'est un peu la même chose que calcul sortie à revoir 
+void TestCoucheCachee::testactivation(void)
 {
-	C1->activation(6,87)
-	C2->activation(8.98)
+	C2->activation({6.87});
+	C2->activation({9,98});
 
-   CPPUNIT_ASSERT( 0.001 == C1->activation(6,87) ); 
+   CPPUNIT_ASSERT( fabs(0.001 -  C2->activation(6,87)) < 0.00001 ); 
    CPPUNIT_ASSERT( fabs( 0.0001258869 - C2->activation(8.98) ) < O.00OO1 ); 
 }
-
-void TestCouche::setUp(void)
-{
-// un contructeur avec que des zéro pour la matrice de laisiason et que des zéros pour les biais (la couche verte)
-	C1 = new Couche(4, {6.3, 3.3, 6.0, 2,5}, {0,0},  { {0, 0} , {0, 0}, {0, 0}, {0, 0} });
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
-	C2 = new Couche(2, {6.87, 8.98}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
-}
-void TestCouche::tearDown(void)
-{
-	delete C1;
-	delete C2;
-}
-
-void TestCoucheCachee::testCalculSortie(void)
-{   
-
-
-}
-
+*/
 void TestCoucheCachee::setUp(void)
 {
-// à l'aide du constructeur CoucheCachee()
-	C = new CoucheCachee();
+// un contructeur avec que des zéro pour la matrice de laisiason et que des zéros pour les biais (la couche verte)
+	C1 = new CoucheCachee(4, {6.3, 3.3, 6.0, 2,5}, {0,0},  { {0, 0} , {0, 0}, {0, 0}, {0, 0} });
+// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
+	C2 = new CoucheCachee(2, {6.87, 8.98}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
+	C3 = new CoucheCachee(2, {0.001, 0.0001258869}, {0,0}, { {0, 0} , {0, 0}, {0, 0}, {0, 0} });
 }
 void TestCoucheCachee::tearDown(void)
 {
-	delete C ;
+	delete C1;
+	delete C2;
+	delete C3;
 }
+
+void TestCoucheCachee::testCalculSortie(void)
+{  
+
+  C2.calculSortie();
+  int i = 0 ; 
+   while ( CPPUNIT_ASSERT( fabs(C2->Neurone[i] - C3->Neurone[i] ) < 0.00001) && i<4 ) {
+            i=i+1; 
+        }  
+}
+
 //-------------------------------------------------------------------------------------------
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
