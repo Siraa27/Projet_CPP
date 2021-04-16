@@ -791,7 +791,7 @@ Donc il faut créer un objet coucheEntrée qu’on initialise à l’aide d’un
 \end_layout
 
 \begin_layout Section
-module CoucheCachee
+module CoucheSortie et CoucheCachee
 \end_layout
 
 \begin_layout Standard
@@ -809,7 +809,7 @@ testPreactivation
 \begin_layout Standard
 
 \series bold
-prototype de la méthode: double preActivation()
+prototype de la méthode: double[] preActivation()
 \end_layout
 
 \begin_layout Standard
@@ -844,9 +844,16 @@ une couche cachée qui comprend 2 neurones n1 et n2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/israbensassi/Documents/GM4/Semestre8/Projet Semestriel/Projet_CPP/troisième rendu/Lyx + photo/TEST.png
+	scale 60
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -874,130 +881,43 @@ La fonction de préactivation doit donnée comme valeur pour n1 :
 
 \end_layout
 
-\begin_layout Subsection
-testActivation 
-\end_layout
-
 \begin_layout Standard
-
-\series bold
-prototype de la méthode: double activation(double)
-\end_layout
-
-\begin_layout Standard
-Nous allons considérer le cas de la fonction sigmoïde donnée par :
-\begin_inset Formula 
-\[
-f(x)=\frac{1}{1+e^{x}}
-\]
-
-\end_inset
-
-Il faut tester si elle renvoie la bonne valeur.
- 
-\begin_inset Newline newline
-\end_inset
-
-Pour cela, reprenons le résultat de la fonction de préactivation, on a alors
- :
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-f(6,87)=0.001
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-testCalculSortie
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-prototype de la méthode: void calculSortie(CoucheEntree ) 
-\end_layout
-
-\begin_layout Standard
-à demander ce que ça renvoie 
-\end_layout
-
-\begin_layout Section
-module CoucheSortie
-\end_layout
-
-\begin_layout Subsection
-testPreactivation
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-prototype de la méthode: double preActivation()
-\end_layout
-
-\begin_layout Standard
-Il faut tester si elle renvoie bien la somme des produits de la valeur du
- neurone avec le poids qui le relie au neurone étudié ajouté au biais de
- ce neurone.
- 
-\begin_inset Newline newline
+Pour n2 : 
+\begin_inset Formula ${\color{purple}\mathbf{8,98}}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Pour l'exemple des iris de Fisher :
-\end_layout
-
-\begin_layout Itemize
-une couche d’entrée qui comprend 4 entrées x1, x2, x3 et x4 
-\end_layout
-
-\begin_layout Itemize
-une couche cachée qui comprend 2 neurones n1 et n2
-\end_layout
-
-\begin_layout Standard
-⇒ Il y a alors 8 poids et 2 biais 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
+Donc on doit avoir 
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
+6,87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-Exemple des iris de Fisher
+8,98
 \end_layout
 
 \end_inset
+</cell>
+</row>
+</lyxtabular>
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La fonction de préactivation doit donnée comme valeur pour n1 : 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x1\times0,1+x2\times0,3+x3\times0,5+x4\times0,7+b1=0,63+0,99+3+1,75+0,5=\mathbf{{\color{purple}6,87}}$
 \end_inset
 
 
@@ -1010,7 +930,7 @@ testActivation
 \begin_layout Standard
 
 \series bold
-prototype de la méthode: double activation(double)
+prototype de la méthode: double activation(double[])
 \end_layout
 
 \begin_layout Standard
@@ -1049,17 +969,7 @@ testConstructionSortie
 \begin_layout Standard
 
 \series bold
-prototype de la méthode: void constructionSortie(CoucheEntree ) 
-\end_layout
-
-\begin_layout Standard
-j'ai une idée de test mais il faut qu'on change le type de retour de la
- fonction 
-\end_layout
-
-\begin_layout Standard
-on peut mettre que ça renvoie un tableau comme j'ai expliquée dans le point
- 4 de la spécification détailler 
+prototype de la méthode: void constructionSortie( ) 
 \end_layout
 
 \begin_layout Section
