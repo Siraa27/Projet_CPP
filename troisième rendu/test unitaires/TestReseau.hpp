@@ -66,7 +66,7 @@ void TestReseau::testConstructeurReseau(void)
 
 void TestReseau::setUp(void)
 {
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
+// à l'aide du constructeur 
 	R1 = new Reseau('listeParam_Pour_ReseauForwarded_pour_classification_A_3_couches_2_neurones_par_couche_Et_Poids_Init_Aleatoirement');
     R2 = new Reseau('listeParam_Pour_ReseauForwarded_pour_prediction__A_1_couches_4_neurones_par_couche_Et_Poids_Fixés_par_utilisateur');
 
@@ -75,6 +75,7 @@ void TestReseau::setUp(void)
 void TestReseau::tearDown(void)
 {
 	delete R1;
+	delete R2;
 
 
 }
@@ -99,7 +100,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestCouche.xml");
+	ofstream xmlFileOut("cppTestReseau.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful

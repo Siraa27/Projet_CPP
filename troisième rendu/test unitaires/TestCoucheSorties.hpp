@@ -1,3 +1,7 @@
+"cppUnitExplorer.executables": [{
+  "exePath": "/path/to/the/test_exe",
+  "xmlPath": "/path/to/the/results.xml"
+}]
 #include <iostream>
 #include <string>
 #include <list>
@@ -39,6 +43,8 @@ public:
 	void tearDown(void);
 protected:
 	void testConstructionSortie(void);
+	void testPreActivation(void);
+	void testActivation(void);
 private:
 	Couche *C;
 }
@@ -49,16 +55,49 @@ void TestCoucheSorties::testCalculortie(void)
 {   
 	
 }
+void TestCoucheSortie::testpreActivation(void)
+{
+    // CPPUNIT_ASSERT() ==> bool
+	double t[3];
+	t = C1->preActivation();
+    CPPUNIT_ASSERT( fabs(3.856 - t[1]) < 0.00001 &&  fabs(7.027 - t[2]) < 0.00001 && fabs(10,197 - t[3]) < 0.00001) ;
+}
+/* c'est la même chose que calcul sortie
+void TestCoucheSortie::testactivation(void)
+{
+	// nous allons utiliser ici une fonctin qui prednra le max 
+	C1->activation({3.856, 7.027, 10.197});
+    int i = 0 ; 
+    while ( CPPUNIT_ASSERT( C2->Neurone[i] == C1->Neurone[i] )  && i<3 ) {
+            i=i+1; 
+        }  
 
-void TestCoucheSorties::setUp(void)
-{
-// à l'aide du constructeur CoucheSortie()
-	C = new CoucheSortie();
 }
-void TestCoucheSorties::tearDown(void)
+*/
+void TestCoucheSortie::setUp(void)
 {
-	delete C ;
+// ça me parait bizarre de construire une coucheSortie vaec un tableau de neurone qui a comme valeur ceux  d'une coucheCachee
+	C1 = new CoucheSortie(3, {6.87, 8.98}, {0,0},  { {0.2,0.5,0.7}, {0.2,0.4,0.6} });
+
+	C2 = new CoucheSortie(3, {0,0,1}, {0,0}, { {0, 0,0} , {0, 0,0} });
+
 }
+void TestCouche::tearDown(void)
+{
+	delete C1;
+	delete C2;
+}
+
+void TestCoucheCachee::testCalculSortie(void)
+{  
+
+  C1.calculSortie();
+  int i = 0 ; 
+   while ( CPPUNIT_ASSERT( C2->Neurone[i] == C1->Neurone[i] ) && i<4 ) {
+            i=i+1; 
+        }  
+}
+
 //-------------------------------------------------------------------------------------------
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
