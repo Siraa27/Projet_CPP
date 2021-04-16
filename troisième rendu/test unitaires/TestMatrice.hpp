@@ -18,18 +18,18 @@
 #include <netinet/in.h>
 
 
-#include "Couche.hpp"
-#include "CoucheEntrees.hpp"
+#include "Matrice.hpp"
 
 
 using namespace CppUnit;
 using namespace std;
 
 // La classe qui va faire le test 
-class TestCoucheEntrees : public CppUnit::TestFixture{
-    // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testConstructionSortie);
+class TestMatrice : public CppUnit::TestFixture{
+
+// Pour pouvoir tourner plusieurs tests aux même temps
+    CPPUNIT_TEST_SUITE(TestMatrice);
+    CPPUNIT_TEST(testProduit);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -38,39 +38,43 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
-	void testConstructionSortie(void);
+	void testProduit(void);
 private:
-	Couche *C1, *C2;
-}
+	Matrice *M1, *M2, *M3, *M4, *M5; //jsp si y a besoin de l'*
+};
 
-// Les test----------------------------------------------------------------------------------
+// Les tests----------------------------------------------------------------------------------
 
-void TestCoucheEntrees::testConstructionSortie(void)
-{   
-	C1->constructionSortie();
-	C2->constructionSortie();
-   if ( CPPUNIT_ASSERT( C2->nbNeurone ==4 ) ){
-        int i = 0 ; 
-        while ( CPPUNIT_ASSERT( C1->Neurone[i] == C2->Neurone[i] ) && i<4 ) {
-            i=i+1; 
-        }  
-   } 
-}
-
-void TestCoucheEntrees::setUp(void)
+void TestMatrice::testProduit(void)
 {
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone])
-	C1 = new CoucheEntree(4,{6.3, 3.3, 6.0, 2,5});
-    C2 = new CoucheEntree('FichDonnee.csv');
+    // CPPUNIT_ASSERT() ==> bool
+   CPPUNIT_ASSERT( {{30, 36, 42} , {66, 81, 96}, {102, 126, 150}} == M1->produit(M2));
+   CPPUNIT_ASSERT ( {-1} == M1-> produit(M3) ); //la fonction produit renvoie -1 si on a une erreur de format : M1(nxp)*M2(pxq) == M(nxq)
+   CPPUNIT_ASSERT( {{22, 11, 22}} == M4->produit(M5)); 
+
 }
-void TestCoucheEntrees::tearDown(void)
+
+void TestMatrice::setUp(void)
 {
-	delete C1;
-    delete C2;
+// à l'aide du constructeur Matrice
+	M1 = new Matrice({{1, 2, 3} , {4, 5, 6}, {7, 8, 9}});
+    M2 = new Matrice({{1, 2, 3} , {4, 5, 6}, {7, 8, 9}});
+    M3 = new Matrice({{1, 1} , {1, 1}}); //Création d'une matrice pour le test sur le mauvais format 
+    M4 = new Matrice({{3, 1}}); //les matrices M4 et M5 servent pour le 3e test, celui avec des matrices non carrées
+    M5 = new Matrice({{1, 8, 4} , {7, 1, 6}});
+}
+void TestMatrice::tearDown(void)
+{
+	delete M1;
+    delete M2;
+    delete M3;
+    delete M4;
+    delete M5;
+
 }
 //-------------------------------------------------------------------------------------------
 
-CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
+CPPUNIT_TEST_SUITE_REGISTRATION( TestMatrice );
 int main(int argc, char* argv[])
 {
     // informs test-listener about testresults
@@ -89,7 +93,7 @@ int main(int argc, char* argv[])
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
 	compileroutputter.write ();
 	// Output XML for Jenkins CPPunit plugin
-	ofstream xmlFileOut("cppTestCoucheEntrees.xml");
+	ofstream xmlFileOut("cppTestMatrice.xml");
     XmlOutputter xmlOut(&collectedresults, xmlFileOut);
 	xmlOut.write();
 	// return 0 if tests were successful
