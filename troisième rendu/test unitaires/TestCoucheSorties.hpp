@@ -1,7 +1,4 @@
-"cppUnitExplorer.executables": [{
-  "exePath": "/path/to/the/test_exe",
-  "xmlPath": "/path/to/the/results.xml"
-}]
+
 #include <iostream>
 #include <string>
 #include <list>
