@@ -40,17 +40,24 @@ public:
 protected:
 	void testProduit(void);
 private:
-	Matrice *M1, *M2, *M3, *M4, *M5; //jsp si y a besoin de l'*
-};
+	Matrice *M1, *M2, *M3, *M4, *M5, *M6, *M7; 
 
 // Les tests----------------------------------------------------------------------------------
 
 void TestMatrice::testProduit(void)
 {
-    // CPPUNIT_ASSERT() ==> bool
-   CPPUNIT_ASSERT( {{30, 36, 42} , {66, 81, 96}, {102, 126, 150}} == M1->produit(M2));
+    //test matrices carrées :
+   for (i=0; i<=2; i=i+1) //le 2 correspond aux indices ligne pour la matrice résultat M6 à 3 lignes
+		for (j=0; j<=2; j=j+1) //le 2 correspond aux indices colonnes pour la matrice résultat M6 à 3 colonnes
+   			CPPUNIT_ASSERT( M6[i][j] == M1->produit(M2)[i][j]);
+			   
+	//test mauvais format de matrices 
    CPPUNIT_ASSERT ( {-1} == M1-> produit(M3) ); //la fonction produit renvoie -1 si on a une erreur de format : M1(nxp)*M2(pxq) == M(nxq)
-   CPPUNIT_ASSERT( {{22, 11, 22}} == M4->produit(M5)); 
+
+   //test matrices non carrées mais bon format:  M1(nxp)*M2(pxq) == M(nxq)
+   for (i=0; i<=0; i=i+1) //le zero correspond à l'unique indice ligne pour la matrice résultat M7 à 1 ligne
+		for (j=0; j<=2; j=j+1) //le 2 correspond aux indices colonnes pour la matrice résultat M7 à 3 colonnes
+   			CPPUNIT_ASSERT( M7[i][j] == M4->produit(M5)); 
 
 }
 
@@ -62,6 +69,8 @@ void TestMatrice::setUp(void)
     M3 = new Matrice({{1, 1} , {1, 1}}); //Création d'une matrice pour le test sur le mauvais format 
     M4 = new Matrice({{3, 1}}); //les matrices M4 et M5 servent pour le 3e test, celui avec des matrices non carrées
     M5 = new Matrice({{1, 8, 4} , {7, 1, 6}});
+	M6 = new Matrice({{30, 36, 42} , {66, 81, 96}, {102, 126, 150}}) //Matrice résultat du produit de matrices M1*M2
+	M7=new Matrice({22, 11, 22}); //Matrice résultat du produit de matrices M4*M5
 }
 void TestMatrice::tearDown(void)
 {
@@ -70,6 +79,8 @@ void TestMatrice::tearDown(void)
     delete M3;
     delete M4;
     delete M5;
+	delete M6;
+    delete M7;
 
 }
 //-------------------------------------------------------------------------------------------
