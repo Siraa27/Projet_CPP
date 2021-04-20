@@ -54,14 +54,15 @@ private:
 */
 
 void TestInterface::testLectureFichier(void)
+
 {
-    CPPUNIT_ASSERT ( {0} == I1-> lectureFichier('TestVide.csv') ) // à vérifier le singleton 
-    CPPUNIT_ASSERT ( {-1} == I2-> lectureFichier('TestMalRempliTypeReseau.csv') )
-    CPPUNIT_ASSERT ( {-1} == I3-> lectureFichier('TestMalRempliCasUtilisation.csv') )
-	CPPUNIT_ASSERT ( {-1} == I4-> lectureFichier('TestMalRempliNbCouche.csv') )
-	CPPUNIT_ASSERT ( {-1} == I5-> lectureFichier('TestMalRempliNbNeurone.csv') )
-    CPPUNIT_ASSERT ( {-2} == I6-> lectureFichier('TestMauvaisFormat.csv') )
-    CPPUNIT_ASSERT ( {1, 1, 3, 2, 5, 2, 0} == I7-> lectureFichier('TestDonnees.csv') )
+    CPPUNIT_ASSERT ( 0 == I1-> lectureFichier('TestVide.csv') ); // à vérifier le singleton 
+    CPPUNIT_ASSERT ( {-1} == I2-> lectureFichier('TestMalRempliTypeReseau.csv') );
+    CPPUNIT_ASSERT ( {-1} == I3-> lectureFichier('TestMalRempliCasUtilisation.csv') );
+	CPPUNIT_ASSERT ( {-1} == I4-> lectureFichier('TestMalRempliNbCouche.csv') );
+	CPPUNIT_ASSERT ( {-1} == I5-> lectureFichier('TestMalRempliNbNeurone.csv') );
+    CPPUNIT_ASSERT ( {-2} == I6-> lectureFichier('TestMauvaisFormat.csv') );
+    CPPUNIT_ASSERT ( {1, 1, 3, 2, 5, 2, 0} == I7-> lectureFichier('TestDonnees.csv') );
 }
 
 void TestInterface::setUp(void)
