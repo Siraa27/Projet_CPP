@@ -81,7 +81,7 @@ void TestCoucheCachee::tearDown(void)
 	delete C2;
 	delete C3;
 }
-
+// 
 //-------------------------------------------------------------------------------------------
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
