@@ -49,14 +49,15 @@ private:
 }
 
 // Les test----------------------------------------------------------------------------------
-void TestCoucheCachee::testpreActivation(void)
+void TestCoucheCachee::testpreActivation(void) 
 {
     // CPPUNIT_ASSERT() ==> bool
-	double t[2];
+	Matrice t; // à tester 
 	t = C1->preActivation();
+
    CPPUNIT_ASSERT( fabs(6.87 - t[1]) < 0.00001 &&  fabs(8.98 - t[2]) < 0.00001) ;
 }
-/* C'est un peu la même chose que calcul sortie à revoir 
+
 void TestCoucheCachee::testactivation(void)
 {
 	C2->activation({6.87});
@@ -65,7 +66,7 @@ void TestCoucheCachee::testactivation(void)
    CPPUNIT_ASSERT( fabs(0.001 -  C2->activation(6,87)) < 0.00001 ); 
    CPPUNIT_ASSERT( fabs( 0.0001258869 - C2->activation(8.98) ) < O.00OO1 ); 
 }
-*/
+
 void TestCoucheCachee::setUp(void)
 {
 // un contructeur avec que des zéro pour la matrice de laisiason et que des zéros pour les biais (la couche verte)
@@ -80,17 +81,7 @@ void TestCoucheCachee::tearDown(void)
 	delete C2;
 	delete C3;
 }
-
-void TestCoucheCachee::testCalculSortie(void)
-{  
-
-  C2.calculSortie();
-  int i = 0 ; 
-   while ( CPPUNIT_ASSERT( fabs(C2->Neurone[i] - C3->Neurone[i] ) < 0.00001) && i<4 ) {
-            i=i+1; 
-        }  
-}
-
+// 
 //-------------------------------------------------------------------------------------------
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
