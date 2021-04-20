@@ -46,7 +46,7 @@ protected:
 private:
 	Couche *C;
 };
-
+//
 // Les test----------------------------------------------------------------------------------
 
 void TestCouche::testpreActivation(void)
