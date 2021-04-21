@@ -9,7 +9,7 @@ CoucheCachee::CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec
 	LiaisonsEntrees = new Matrice(nbNeurones, nbNeuronesCouchePrec); //nb colonnes = nb neuronnes couche precedentes et nb lignes = nb neurones de notre coucheCachee
 }
 
-CoucheCachee::~CoucheCachee() // Couche::~Couche() pas besoin ? 
+CoucheCachee::~CoucheCachee()
 {
 	(*biais).~Matrice();
 	(*LiaisonsEntrees).~Matrice();

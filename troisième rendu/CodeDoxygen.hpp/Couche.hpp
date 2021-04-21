@@ -29,7 +29,7 @@
              *  \brief Constructeur de la classe Couche
              *  \param const int nbNeurones : entier représentant le nombre de neurones d'une couche ne change pas une fois choisi au cours du programme
              */
-		  Couche (const int nbN); 
+		    Couche (const int nbN); 
              /*!
              *  \brief Destructeur de la classe Couche 
              */
@@ -38,12 +38,12 @@
              *  \brief 
 			 *  Renvoie nombre total de neurones
 			 */
-		  int getNbNeurones() const;          
+		    int getNbNeurones() const;          
 		     /*! \fn getNeurone
              *  \brief 
 			 *  Retourne le ieme neurone
 			 */
-		  Neurone getNeurone(int i) const;   
+		    Neurone getNeurone(int i) const;   
     };
 //};
 #endif

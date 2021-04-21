@@ -1,6 +1,7 @@
 #ifndef COUCHEENTREES_HPP
 #define COUCHEENTREES_HPP
 #include "Couche.hpp"
+#include <string> 
 
 /*!
  * \file CoucheEntrees.hpp
@@ -12,8 +13,8 @@
  * Classe qui permet de créer des couches du réseau
  */
 
-namespace Les_couches_du_reseau 
-{
+//namespace Les_couches_du_reseau 
+//{
    /*! \class CoucheEntrees
    * \brief Classe représentant la couche d'entrée
    *
@@ -24,21 +25,21 @@ namespace Les_couches_du_reseau
         public :
              /*!
              *  \brief Constructeur de la classe CoucheEntrees
-             *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"
+             *  \param nbNeurones : nombre de neurones par couche
              */
-		  CoucheEntrees (const int nbNeurones); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
+		    CoucheEntrees (const int nbNeurones); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
              
              /*!
              *  \brief Destructeur de la classe CoucheEntrees
              */
-          virtual ~CoucheEntrees();
+          ~CoucheEntrees();
         
             /*! \fn constructionSortie 
              *  \brief La fonction initialise les données en entrée
              *  \return Les entrées du réseau
              */
-          void constructionSortie();
+          void constructionSortie(std::string nomFic);
     };
-};
+//};
 
 #endif

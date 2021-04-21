@@ -35,7 +35,7 @@
              /*!
              *  \brief Destructeur de la classe CoucheCachee
              */
-          virtual ~CoucheCachee();
+          ~CoucheCachee();
         
              /*!
              *  \fn preActivation()

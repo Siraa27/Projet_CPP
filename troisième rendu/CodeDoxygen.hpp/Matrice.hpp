@@ -30,12 +30,12 @@
              /*!
              *  \brief Constructeur Matrice par recopie
              */
-		  Matrice (const Matrice &);
+		    Matrice (const Matrice &);
           
              /*!
              *  \brief Destructeur Matrice
              */
-          virtual ~Matrice();
+          ~Matrice();
           
           /*!
           *  \fn initAleatoire()

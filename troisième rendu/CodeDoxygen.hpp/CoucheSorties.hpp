@@ -36,7 +36,7 @@
              /*!
              *  \brief Destructeur de la classe CoucheSorties
              */
-          virtual ~CoucheSorties();
+          ~CoucheSorties();
              /*!
              *  \fn preActivation()
              *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
