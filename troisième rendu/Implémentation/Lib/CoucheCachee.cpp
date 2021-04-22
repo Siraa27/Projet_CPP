@@ -3,21 +3,25 @@
 #include "Matrice.hpp"
 #include <math.h> 
 
+//Constructeur
 CoucheCachee::CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones)
 {
 	biais = new Matrice(nbNeurones, 1);
 	LiaisonsEntrees = new Matrice(nbNeurones, nbNeuronesCouchePrec); //nb colonnes = nb neuronnes couche precedentes et nb lignes = nb neurones de notre coucheCachee
 }
 
+//destructeur
 CoucheCachee::~CoucheCachee()
 {
 	(*biais).~Matrice();
 	(*LiaisonsEntrees).~Matrice();
 }
 
-Matrice CoucheCachee::preActivation()
+//Fontion de pre activation 
+Matrice CoucheCachee::preActivation(Couche couchePrec)
 {
-	Matrice res = (LiaisonsEntrees->operator *recupSortiesNeurones())->operator +(*biais);
+	//(Produit matriciel Liaison 
+	Matrice res = (LiaisonsEntrees->operator *(couchePrec.recupSortiesNeurones())).operator +(*biais);
 	return res;
 }
 
