@@ -5,7 +5,7 @@
 
 /*!
  * \file CoucheCachee.hpp
- * \brief C'est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais
+ * \brief C'est une classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais
  * \author Groupe projet A1
  * \version 0.1
  */

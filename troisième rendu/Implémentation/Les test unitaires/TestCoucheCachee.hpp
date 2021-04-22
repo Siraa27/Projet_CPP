@@ -25,10 +25,26 @@
 using namespace CppUnit;
 using namespace std;
 
+
+/*!
+ * \file TestCoucheCachee.cpp
+ * \brief C'est une classe qui permet de vérifier que les méthodes utilisées dans CoucheCachee renvoie bien le résultat attendu. 
+ * \author Groupe projet A1
+ * \version 0.1
+ */
+/*! \namespace Les_tests_unitaires
+ */
+
+
+   /*! \class TestCoucheCachee
+   * \brief Classe pour les tests 
+   *
+   */
+
 // La classe qui va faire le test 
 class TestCoucheCachee : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche);
+    CPPUNIT_TEST_SUITE(TestCouche); /*!< La suite des test que nous allons effectuer  */
     CPPUNIT_TEST(testCalculSortie);
 	CPPUNIT_TEST(testPreActivation);
     CPPUNIT_TEST(testActivation);
