@@ -1,4 +1,6 @@
 #include "Couche.hpp"
+#include "Neurone.hpp"
+#include "Matrice.hpp"
 #include <stdlib.h>
 //using namespace Les_couches_du_reseau;
 
@@ -26,4 +28,14 @@ int Couche::getNbNeurones() const
 Neurone Couche::getNeurone(int i) const
 {
 	return Neurones[i];
+}
+
+Matrice Couche::recupSortiesNeurones()
+{
+	int nbLig = getNbNeurones();
+	Matrice res = new Matrice(nbLig, 1)
+	for (i=0; i<nbLig; i++)
+	{
+		setCoefMatrice(i, 1, getNeurone(i).getSortie());
+	}
 }

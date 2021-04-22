@@ -27,6 +27,8 @@
              *  \brief Constructeur Matrice
              */
           Matrice (const int nbLignes, const int nbColonnes);
+          Matrice(const int nbLignes, const int nbColonnes, double coef);
+
              /*!
              *  \brief Constructeur Matrice par recopie
              */
@@ -70,6 +72,12 @@
           *
           */
           double** getMatrice();
+          /*!
+          *  \fn setCoefMatrice
+          *  \brief Set un coefficient de la matrice
+          *
+          */
+          void setCoefMatrice(int i, int j, double coef);
     };
 //};
 #endif

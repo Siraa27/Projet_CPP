@@ -12,6 +12,24 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes)
 	}
 }
 
+Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef)
+{
+	nbLig = nbLignes;
+	nbCol = nbColonnes;
+	matrice = new double*[nbLignes];
+	for(int i = 0;i < nbLignes;++i) 
+	{
+		matrice[i] = new double[nbColonnes];
+	}
+	for(int i = 0;i < nbLignes;++i) 
+	{
+		for (int j = 0;j < nbColonnes;++j)
+		{
+			matrice[i][j] = coef;
+		}
+	}
+}
+
 Matrice::~Matrice()
 {
     for(int i = 0;i < nbLig;++i) delete [] matrice[i];
@@ -41,6 +59,11 @@ Matrice::Matrice (const Matrice & mat)
 			matrice[i][j] = mat.matrice[i][j];
 		}
 	}
+}
+
+void Matrice::setCoefMatrice(int i, int j, double coef)
+{
+	matrice[i][j] = coef;
 }
 
 void Matrice::initAleatoire()

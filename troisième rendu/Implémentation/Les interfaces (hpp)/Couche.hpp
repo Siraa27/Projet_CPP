@@ -1,6 +1,7 @@
 #ifndef COUCHE_HPP
 #define COUCHE_HPP
 #include "Neurone.hpp"
+#include "Matrice"
 #include <vector>
 
 /*!
@@ -43,7 +44,13 @@
              *  \brief 
 			 *  Retourne le ieme neurone
 			 */
-		    Neurone getNeurone(int i) const;   
+		    Neurone getNeurone(int i) const;
+           /*! \fn recupSortiesNeurones
+             *  \brief 
+			 *  recupere la sorties de tous les neurones d'une couche
+			 */
+		    Matrice recupSortiesNeurones();
+          
     };
 //};
 #endif
