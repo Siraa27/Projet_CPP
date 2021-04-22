@@ -25,9 +25,9 @@
         public :
              /*!
              *  \brief Constructeur de la classe CoucheEntrees
-             *  \param nbNeurones : nombre de neurones par couche
+             *  \param nbNeurones : nombre de neurones par couche, NomFic : nom du fichier pour initialiser
              */
-		    CoucheEntrees (const int nbNeurones); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
+		    CoucheEntrees (const int nbNeurones, std::string nomFic); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
              
              /*!
              *  \brief Destructeur de la classe CoucheEntrees

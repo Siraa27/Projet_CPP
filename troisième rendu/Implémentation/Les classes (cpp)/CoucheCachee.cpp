@@ -17,7 +17,7 @@ CoucheCachee::~CoucheCachee()
 
 Matrice CoucheCachee::preActivation()
 {
-	Matrice res = LiaisonsEntrees->operator *(*biais);
+	Matrice res = (LiaisonsEntrees->operator *recupSortiesNeurones())->operator +(*biais);
 	return res;
 }
 
