@@ -5,7 +5,7 @@
 
 /*!
  * \file CoucheCachee.hpp
- * \brief C'est un classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais
+ * \brief C'est une classe qui permet de créer les couches cachées du réseau, ainsi que de définir leur biais
  * \author Groupe projet A1
  * \version 0.1
  */
@@ -29,7 +29,8 @@
              /*!
              *  \brief Constructeur de la classe CoucheCachee
              *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"
-             */
+             * \param nbNeuronesCouchePrec : nombre de neurones de la couche précedente (ça nous sert pour faire les liaison)
+             */ 
 		  CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
              
              /*!

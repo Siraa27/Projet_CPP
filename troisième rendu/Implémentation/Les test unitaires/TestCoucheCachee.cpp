@@ -18,20 +18,36 @@
 #include <netinet/in.h>
 
 
-#include "Couche.hpp"
-#include "CoucheCachee.hpp"
+#include "Lib/Couche.hpp"
+#include "Lib/CoucheCachee.hpp"
 
 
 using namespace CppUnit;
 using namespace std;
 
+
+/*!
+ * \file TestCoucheCachee.cpp
+ * \brief C'est une classe qui permet de vérifier que les méthodes utilisées dans CoucheCachee renvoie bien le résultat attendu. 
+ * \author Groupe projet A1
+ * \version 0.1
+ */
+/*! \namespace Les_tests_unitaires
+ */
+
+
+   /*! \class TestCoucheCachee
+   * \brief Classe pour les tests 
+   *
+   */
+
 // La classe qui va faire le test 
 class TestCoucheCachee : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testCalculSortie);
-	CPPUNIT_TEST(testPreActivation);
-    CPPUNIT_TEST(testActivation);
+    CPPUNIT_TEST_SUITE(TestCouche); /*!< La suite des test que nous allons effectuer  */
+	CPPUNIT_TEST(testPreActivation); /*!< Le test qui va vérifier la fonction de PreActivation  */
+    CPPUNIT_TEST(testFoncActivation); /*!< Le test qui va vérifier la fonction d'Activation  */
+	CPPUNIT_TEST(testDerivFoncActivation); /*!< Le test qui va vérifier la fonction la dérivée de la fonction d'activation  */
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -40,22 +56,23 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
-	void testCalculSortie(void);
 	void testPreActivation(void);
 	void testActivation(void);
+	void testDerivFoncActivation(void);
 private:
-	Couche *C1, *C2, *C3;
+	CoucheCachee *C1, *C2;
 
 }
 
 // Les test----------------------------------------------------------------------------------
+
 void TestCoucheCachee::testpreActivation(void) 
 {
     // CPPUNIT_ASSERT() ==> bool
-	Matrice t; // à tester 
-	t = C1->preActivation();
+	Matrice NeuronePreac; // à tester 
+	NeuronePreac = C1->preActivation();
 
-   CPPUNIT_ASSERT( fabs(6.87 - t[1]) < 0.00001 &&  fabs(8.98 - t[2]) < 0.00001) ;
+   CPPUNIT_ASSERT( fabs(6.87 - C1->getNeurone(1)) < 0.00001 &&  fabs(8.98 - C1->getNeurone(2)) < 0.00001) ;
 }
 
 void TestCoucheCachee::testactivation(void)
