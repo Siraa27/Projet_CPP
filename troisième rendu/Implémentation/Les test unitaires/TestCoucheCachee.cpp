@@ -45,9 +45,9 @@ using namespace std;
 class TestCoucheCachee : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
     CPPUNIT_TEST_SUITE(TestCouche); /*!< La suite des test que nous allons effectuer  */
-    CPPUNIT_TEST(testCalculSortie);
-	CPPUNIT_TEST(testPreActivation);
-    CPPUNIT_TEST(testActivation);
+	CPPUNIT_TEST(testPreActivation); /*!< Le test qui va vérifier la fonction de PreActivation  */
+    CPPUNIT_TEST(testFoncActivation); /*!< Le test qui va vérifier la fonction d'Activation  */
+	CPPUNIT_TEST(testDerivFoncActivation); /*!< Le test qui va vérifier la fonction la dérivée de la fonction d'activation  */
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -56,11 +56,11 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
-	void testCalculSortie(void);
 	void testPreActivation(void);
 	void testActivation(void);
+	void testDerivFoncActivation(void);
 private:
-	Couche *C1, *C2, *C3;
+	Couche *C1, *C2;
 
 }
 
