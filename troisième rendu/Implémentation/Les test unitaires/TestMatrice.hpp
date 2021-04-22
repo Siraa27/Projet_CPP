@@ -28,7 +28,7 @@ using namespace std;
 class TestMatrice : public CppUnit::TestFixture{
 
 // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestMatrice);
+    CPPUNIT_TEST_SUITE(TestMatrice); 
     CPPUNIT_TEST(testProduit);
     CPPUNIT_TEST_SUITE_END();
 
@@ -41,7 +41,7 @@ protected:
 	void testProduit(void);
 private:
 	Matrice *M1, *M2, *M3, *M4, *M5, *M6, *M7; 
-
+}
 // Les tests----------------------------------------------------------------------------------
 
 void TestMatrice::testProduit(void)
