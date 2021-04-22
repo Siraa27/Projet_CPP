@@ -46,7 +46,7 @@
           Matrice preActivation();
             
              /*!
-             *  \fn foncActivation()
+             *  \fn foncActivation(Matrice sum)
              *  \brief La fonction d'activation : méthode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie
              *  \param Matrice resultant de la fonction de pre activation
              *  \return Elle modifie directement la sortie des neurones

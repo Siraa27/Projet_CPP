@@ -56,8 +56,21 @@ public:
 // Pour supprimer une variable et désallouer la mémoire
 	void tearDown(void);
 protected:
+    /*!
+     *  \fn testPreActivation(void)
+     *  \brief qui teste que la fonction de pré activation renvoie bien la somme pondérée des entrées
+    */
 	void testPreActivation(void);
+	/*!
+     *  \fn testActivation(void)
+     *  \brief La fonction d'activation effectue des changement directement sur le tableau de neurones de la couche donc ce test
+	 * \brief  va vérifier que le paramètre a bien était modifié 
+    */
 	void testActivation(void);
+	/*!
+     *  \fn testDerivFoncActivation(void)
+     *  \brief  test que la derivee de la fonction d'activation renvoie bien la bonne valeur
+    */
 	void testDerivFoncActivation(void);
 private:
 	CoucheCachee *C1, *C2;
@@ -65,40 +78,53 @@ private:
 }
 
 // Les test----------------------------------------------------------------------------------
-
-void TestCoucheCachee::testpreActivation(void) 
-{
-    // CPPUNIT_ASSERT() ==> bool
-	Matrice NeuronePreac; // à tester 
-	NeuronePreac = C1->preActivation();
-
-   CPPUNIT_ASSERT( fabs(6.87 - C1->getNeurone(1)) < 0.00001 &&  fabs(8.98 - C1->getNeurone(2)) < 0.00001) ;
-}
-
-void TestCoucheCachee::testactivation(void)
-{
-	C2->activation({6.87});
-	C2->activation({9,98});
-
-   CPPUNIT_ASSERT( fabs(0.001 -  C2->activation(6,87)) < 0.00001 ); 
-   CPPUNIT_ASSERT( fabs( 0.0001258869 - C2->activation(8.98) ) < O.00OO1 ); 
-}
-
 void TestCoucheCachee::setUp(void)
 {
-// un contructeur avec que des zéro pour la matrice de laisiason et que des zéros pour les biais (la couche verte)
-	C1 = new CoucheCachee(4, {6.3, 3.3, 6.0, 2,5}, {0,0},  { {0, 0} , {0, 0}, {0, 0}, {0, 0} });
-// à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone], double biais[], double MatriceLiaison [][])
-	C2 = new CoucheCachee(2, {6.87, 8.98}, {0.5,0.8}, { {0.1, 0.2} , {0.3, 0.4}, {0.5, 0.6}, {0.7, 0.8} });
-	C3 = new CoucheCachee(2, {0.001, 0.0001258869}, {0,0}, { {0, 0} , {0, 0}, {0, 0}, {0, 0} });
+	// Pour faire ce test on a besoin d'un objet couEntrée avec lee tableau de neurones initialisés avec 
+	//les valeurs données dans le rapport
+	// Comment faire ça ?
+	// Dans les tests peut-on accéder à des attributs private
+	// Est ce que je peux créer un objet coucheEntrée et l'initialiser comme je veux 
+	// Notre constructeur coucheEntrée initialise le tableau de neurones avec un fichier comment faire ?  
+    // CPPUNIT_ASSERT() ==> bool
+
+	// Dans coucheCachee.hpp j'ai un attribut Matrice* LiaisonsEntrees; est ce que je peux faire 
+	// C1->LiaisonEntrees.setCoefMatrice(i,j,coef)
+    // un contructeur avec que des zéro pour la matrice de laisiason et que des zéros pour les biais (la couche verte)
+	C1 = new CoucheCachee (2, 4); // dans l'exemple qu'on a pris la couche d'entrée contient 4 neurones
+	C2 = new CoucheCachee (2, 4); // idem
 }
 void TestCoucheCachee::tearDown(void)
 {
 	delete C1;
 	delete C2;
-	delete C3;
 }
 // 
+
+void TestCoucheCachee::testpreActivation(void) 
+{
+   Matrice Somme; // à tester 
+   Somme = C1->preActivation();
+
+   CPPUNIT_ASSERT( fabs(6.87 - C1->getNeurone(1).getSortie()) < 0.00001 &&  fabs(8.98 - C1->getNeurone(2).getSortie()) < 0.00001) ;
+}
+
+void TestCoucheCachee::testactivation(void)
+{
+	C1->foncActivation(Somme);
+	C2->getNeurone(1).setSortie(0.001); // getNeurone(1) nous donne le premier neurone de la couche et 
+	                                    //setSortie(double) nous permet de lui attribuer une valeur
+	C2->getNeurone(2).setSortie(0.0001258869);
+
+   CPPUNIT_ASSERT( fabs(C2->getNeurone(1).getSortie() -  C1->getNeurone(1).getSortie()) < 0.00001 ); 
+   CPPUNIT_ASSERT( fabs( C2->getNeurone(2).getSortie() - C1->getNeurone(2).getSortie() ) < O.00OO1 ); 
+}
+
+void TestCoucheCachee::testactivation(void)
+{
+	CPPUNIT_ASSERT( (0.0010363235505306467 - derivFoncActivation(6.87)) < 0.00001 );
+}
+
 //-------------------------------------------------------------------------------------------
 
 CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
