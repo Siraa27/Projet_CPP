@@ -18,8 +18,8 @@
 #include <netinet/in.h>
 
 
-#include "Couche.hpp"
-#include "CoucheCachee.hpp"
+#include "Lib/Couche.hpp"
+#include "Lib/CoucheCachee.hpp"
 
 
 using namespace CppUnit;
@@ -60,18 +60,19 @@ protected:
 	void testActivation(void);
 	void testDerivFoncActivation(void);
 private:
-	Couche *C1, *C2;
+	CoucheCachee *C1, *C2;
 
 }
 
 // Les test----------------------------------------------------------------------------------
+
 void TestCoucheCachee::testpreActivation(void) 
 {
     // CPPUNIT_ASSERT() ==> bool
-	Matrice t; // à tester 
-	t = C1->preActivation();
+	Matrice NeuronePreac; // à tester 
+	NeuronePreac = C1->preActivation();
 
-   CPPUNIT_ASSERT( fabs(6.87 - t[1]) < 0.00001 &&  fabs(8.98 - t[2]) < 0.00001) ;
+   CPPUNIT_ASSERT( fabs(6.87 - C1->getNeurone(1)) < 0.00001 &&  fabs(8.98 - C1->getNeurone(2)) < 0.00001) ;
 }
 
 void TestCoucheCachee::testactivation(void)
