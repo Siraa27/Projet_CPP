@@ -1,7 +1,7 @@
 #ifndef COUCHE_HPP
 #define COUCHE_HPP
 #include "Neurone.hpp"
-#include "Matrice"
+#include "Matrice.hpp"
 #include <vector>
 
 /*!

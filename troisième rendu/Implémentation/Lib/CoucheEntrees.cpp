@@ -5,8 +5,9 @@
 #include <fstream>  
 
 
-CoucheEntrees::CoucheEntrees (const int nbNeurones) : Couche::Couche(nbNeurones)
+CoucheEntrees::CoucheEntrees (const int nbNeurones, std::string nomFic) : Couche::Couche(nbNeurones)
 {
+    constructionSortie(nomFic);
 }
 
 CoucheEntrees::~CoucheEntrees(){}

@@ -1,6 +1,7 @@
 #include "Matrice.hpp"
 #include <stdexcept>
 
+//Constructeurs
 Matrice::Matrice(const int nbLignes, const int nbColonnes)
 {
 	nbLig = nbLignes;
@@ -10,6 +11,18 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes)
 	{
 		matrice[i] = new double[nbColonnes];
 	}
+}
+
+Matrice::Matrice(const int nbLignes, const int nbColonnes, double** t)
+{
+	nbLig = nbLignes;
+	nbCol = nbColonnes;
+	matrice = new double*[nbLignes];
+	for(int i = 0;i < nbLignes;++i) 
+	{
+		matrice[i] = new double[nbColonnes];
+	}
+	t = {{1, 2, 3} , {4, 5, 6}, {7, 8, 9}};
 }
 
 Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef)
@@ -30,19 +43,7 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef)
 	}
 }
 
-Matrice::~Matrice()
-{
-    for(int i = 0;i < nbLig;++i) delete [] matrice[i];
-    delete [] matrice;
-    nbLig=0;
-    nbCol=0;
-}
-
-double** Matrice::getMatrice()
-{
-	return matrice;
-}
-
+//Constructeur par recopie
 Matrice::Matrice (const Matrice & mat)
 {
 	nbLig = mat.nbLig;
@@ -61,11 +62,27 @@ Matrice::Matrice (const Matrice & mat)
 	}
 }
 
+//Destructeur
+Matrice::~Matrice()
+{
+    for(int i = 0;i < nbLig;++i) delete [] matrice[i];
+    delete [] matrice;
+    nbLig=0;
+    nbCol=0;
+}
+
+double** Matrice::getMatrice()
+{
+	return matrice;
+}
+
+//Set le coefficient (i,j) de la matrice
 void Matrice::setCoefMatrice(int i, int j, double coef)
 {
 	matrice[i][j] = coef;
 }
 
+//initialise alétatoirement la matrices
 void Matrice::initAleatoire()
 {
 		for (int i=0; i< nbLig; i++)
@@ -86,6 +103,7 @@ Matrice Matrice::operator *(const Matrice &m)
 	
     Matrice mat = Matrice(nbLig, m.nbCol);
 
+	//Produit matricielle
 	for (int i=0;i<nbLig;i++)
 	{
 		for (int j=0;j<m.nbCol;j++)
@@ -115,7 +133,7 @@ Matrice Matrice::operator +(const Matrice &m)
 	{
 		for (int j=0;j<nbCol;j++)
 		{
-			mat.matrice[i][j]= matrice[i][j] + m.matrice[i][j];
+			mat.matrice[i][j]= matrice[i][j] + m.matrice[i][j]; //Somme coef par coef
 		}
 	}
     return mat;
@@ -136,7 +154,7 @@ Matrice Matrice::operator -(const Matrice &m)
 	{
 		for (int j=0;j<nbCol;j++)
 		{
-			mat.matrice[i][j]= matrice[i][j] - m.matrice[i][j];
+			mat.matrice[i][j]= matrice[i][j] - m.matrice[i][j]; //Soustraction coef par coef
 		}
 	}
     return mat;

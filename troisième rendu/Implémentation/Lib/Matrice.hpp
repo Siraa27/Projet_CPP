@@ -28,6 +28,7 @@
              */
           Matrice (const int nbLignes, const int nbColonnes);
           Matrice(const int nbLignes, const int nbColonnes, double coef);
+          Matrice(const int nbLignes, const int nbColonnes, double** t);
 
              /*!
              *  \brief Constructeur Matrice par recopie

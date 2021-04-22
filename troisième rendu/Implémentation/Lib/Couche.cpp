@@ -2,8 +2,8 @@
 #include "Neurone.hpp"
 #include "Matrice.hpp"
 #include <stdlib.h>
-//using namespace Les_couches_du_reseau;
 
+//Constructeur
 Couche::Couche (const int nbN)
 {
 	nbNeurones = nbN;
@@ -14,12 +14,14 @@ Couche::Couche (const int nbN)
 	}
 }
 		
+//destructeur
 Couche::~Couche()
 {
 	nbNeurones = 0;
 	Neurones.clear();
 }
 
+//getters
 int Couche::getNbNeurones() const
 {
 	return nbNeurones;
@@ -30,12 +32,13 @@ Neurone Couche::getNeurone(int i) const
 	return Neurones[i];
 }
 
+//Recupere les sorties de neurones de la couche et les stock dans une matrice
 Matrice Couche::recupSortiesNeurones()
 {
 	int nbLig = getNbNeurones();
-	Matrice res = new Matrice(nbLig, 1)
-	for (i=0; i<nbLig; i++)
+	Matrice* res = new Matrice(nbLig, 1);
+	for (int i=0; i<nbLig; i++)
 	{
-		setCoefMatrice(i, 1, getNeurone(i).getSortie());
+		(*res).setCoefMatrice(i, 1, getNeurone(i).getSortie());
 	}
 }
