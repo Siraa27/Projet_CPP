@@ -43,7 +43,7 @@
              *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
              *  \return matrice des sommes pondérées des entrées pour chaque neurone
              */
-          Matrice preActivation();
+          Matrice preActivation(Couche couchePrec);
             
              /*!
              *  \fn foncActivation(Matrice sum)

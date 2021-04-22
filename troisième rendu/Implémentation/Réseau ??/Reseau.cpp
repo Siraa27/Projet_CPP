@@ -3,9 +3,10 @@
 
 #include "Couche.hpp"
 #include "CoucheCachee.hpp"
-#include "Entrees.hpp"
-#include "Sortie.hpp"
+#include "CoucheEntrees.hpp"
+#include "CoucheSorties.hpp"
 #include "Matrice.hpp"
+#include "Neurone.hpp"
 
 #include <iostream>
 #include <stdlib.h>
@@ -16,8 +17,8 @@
   class Reseau {
     // Les attributs
     protected:
-      Entrees entrees;
-      Sorties sorties;
+      CoucheEntrees entrees;
+      CoucheSorties sorties;
       std::vector<CoucheCachee> couches; //ATTENTION : j'ai enlevé un static => faire pareil dans le hpp
       int nbCouchesCachees;
       std::vector<Matrice> gradientErr;  //Contient une matrice deltaw et une matrice deltab pour chaque couche
@@ -25,8 +26,8 @@
 
     //Constructeur plus adapté
     Reseau::Reseau(int nbCouchesCachees, int nbNeuronesParCouches[], int choixPoids, String nomFichEntrees, int nbNeuronesSorties){
-      this.entrees = new Entrees(nomFichEntrees);
-      this.sorties = new Sorties(nbNeuronesSorties);
+      this.entrees = new CoucheEntrees(nomFichEntrees);
+      this.sorties = new CoucheSorties(nbNeuronesSorties);
       this.nbCouchesCachees = nbCouchesCachees;
       this.gradientErr = new Matrice[2 * this.nbCouchesCachees];
 
@@ -60,7 +61,7 @@
 
     //Retourne la norme au carré de l'erreur sur un seul exemple
     double erreur(String nomFichSorties){  //ATTENTION : je suppose que le constructeur Sortie(String nomFich) existe
-      Sorties sAttendues = new Sorties(nomFichSorties);
+      CoucheSorties sAttendues = new CoucheSorties(nomFichSorties);
       double res = 0;
       int nbrNeurones = this.sorties.nbNeurones;
       if(nbrNeurones==sAttendues.nbNeurones){
@@ -145,11 +146,18 @@
       
     }
     //(x,y) est un sous-echantillon de l'echantillon d'apprentissage,
-    void BackPropagation(std::vector<Entrees> x, std::vector<Sortie> y)
-    moyenne =0
+    void BackPropagation(std::vector<CoucheEntrees> x, std::vector<CoucheSorties> y)
+    {
+      Matrice moyenne = new Matrice(size(x), 1, 0);
+      for (i=0; i<size(x); i++)
+      {
+        this.calcSorties(x[i]);
+        this.calcGradErr(y[i]);
+      }
+      
+    }
     pour i=1 a taille x faire
-      this.calcSorties(x[i]);
-      this.calcGradErr(y[i]);
+
       moyenne[i] =  gradErr[i] + moyenne[i];
 
     moyenne = moyenne/taille
