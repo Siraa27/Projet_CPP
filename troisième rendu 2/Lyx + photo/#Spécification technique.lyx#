@@ -1,0 +1,870 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass report
+\begin_preamble
+\usepackage{minted, xcolor}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language french
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor = marineblue, linkcolor = black"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Spécification technique
+\begin_inset Newline newline
+\end_inset
+
+Implémentation d'un réseau de neurones
+\end_layout
+
+\begin_layout Author
+Amina El Bachari, Camille Goujet, Mehdi Helal
+\begin_inset Newline newline
+\end_inset
+
+Rafael Quilbier et Israa Ben Sassi
+\end_layout
+
+\begin_layout Chapter
+Documentation des interface de chaque module
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+Les tests unitaires
+\end_layout
+
+\begin_layout Section
+module Interface:
+\end_layout
+
+\begin_layout Standard
+Cette classe a deux méthode imprtante, qui peuvent génerer des eurreus donc
+ il y a deux test à effectuer: 
+\end_layout
+
+\begin_layout Subsection
+testLectureFichier
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: listeParamètres lectureFichier(String 'nomFich.csv')
+\end_layout
+
+\begin_layout Standard
+Nous allons tester la fonction lectureFichier().
+ Pour cela nous allons définir les jeu de données que nous allons utiliser
+ ainsi que les résultats attendus.
+ 
+\end_layout
+
+\begin_layout Standard
+Tout d'abord faisons un point sur la manière de remplir un fichier des paramètre
+s du futur réseau à construire:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le premier paramètre
+\series bold
+\emph default
+ 
+\series default
+du fichier sera le type de réseau.
+ Dans notre projet seul le réseau forwarded sera fonctionel.
+ Il sera représenté par l'entier 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le second paramètre 
+\emph default
+du fichier est le cas d'utilisation du réseau (
+\begin_inset Formula $1:$
+\end_inset
+
+classification, 
+\begin_inset Formula $2:$
+\end_inset
+
+prédiction, 
+\begin_inset Formula $3:$
+\end_inset
+
+identification des objets et 
+\begin_inset Formula $4:$
+\end_inset
+
+ reconnaissance d'image).
+ Rappelons que seule le choix 
+\begin_inset Formula $1$
+\end_inset
+
+ et potentiellement 
+\begin_inset Formula $2$
+\end_inset
+
+ seront implémentés.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le troisième paramètre
+\emph default
+ compte le nombre de couches, nbCouche, le quatrième compte le nombre de
+ neurones par CoucheCachée.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le quatrième paramètre
+\emph default
+ du fichier est 0 ou 
+\begin_inset Formula $x$
+\end_inset
+
+ un entier positif non nul.
+ 0 si l'initialisation de la matrice de poids initiaux est tirées aléatoirement.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ si l'utilisateur choisit d'initaliser tous les poids à 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier vide:
+\series default
+ entrer en paramétres d'entrée un fichier en format .txt vide.
+ La méthode doit renvoyer un message d'erreur sur la console pour prévenir
+ l'utilisateur, puis revenir sur le menu précédent.
+ Renvoie 
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier au mauvais format:
+\series default
+ réalisation sur un fichier binaire.
+ La méthode doit renvoyer un message d'erreur sur la console pour prévenir
+ l'utilisateur, puis revenir sur le menu précédent (ainsi l'utilisateur
+ pourra entrer manuellement les paramètres si son fichier n'est pas au bon
+ format).
+ Renvoi 
+\begin_inset Formula $-2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier mal rempli:
+\series default
+ plusieurs tests sont envisageables.
+ Voyons en détails:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Fichier test 1: 
+\begin_inset Formula $\left(2\text{ }1\text{ }3\text{ }2\text{ }5\text{ }2\text{ }0\right)$
+\end_inset
+
+ renvoie un message pour dire que le fichier est mal rempli (problème type
+ de réseau non implémenter).
+ Retourne une liste avec la valeur 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier bien écrit: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Fichier test 1: 
+\begin_inset Formula $\left(1\text{ }1\text{ }3\text{ }2\text{ }5\text{ }2\text{ }0\right)$
+\end_inset
+
+ renvoie une liste de paramètres=
+\begin_inset Formula $\left(1\text{ }1\text{ }3\text{ }2\text{ }5\text{ }2\text{ }0\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+testlectureParam();
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: listeParamètres lectureParam()
+\end_layout
+
+\begin_layout Standard
+Tout d'abord faisons un point sur la manière dont l'utilisateur va saisir
+ les paramètres, soit comment va fonctionner la fonction listeParametreslectureP
+aram().
+ L'utilisateur entrera à la suite les différents paramètres dans l'odre
+ suivant (il sera guider par le programme):
+\begin_inset Formula $param1:$
+\end_inset
+
+ type de réseau,
+\begin_inset Formula $param2:$
+\end_inset
+
+ cas d'utilisation du réseau (rappel: 
+\begin_inset Formula $1:$
+\end_inset
+
+classification, 
+\begin_inset Formula $2:$
+\end_inset
+
+prédiction, 
+\begin_inset Formula $3:$
+\end_inset
+
+identification des objets et 
+\begin_inset Formula $4:$
+\end_inset
+
+ reconnaissance d'image), 
+\begin_inset Formula $param3:$
+\end_inset
+
+ nbCouche, 
+\begin_inset Formula $param4:$
+\end_inset
+
+ nombre de neurones par couches (une suite d'entiers séparé par des espaces),
+ 
+\begin_inset Formula $param5:$
+\end_inset
+
+ choix de la matrice de poids initiaux.
+\end_layout
+
+\begin_layout Enumerate
+Test quand l'utilisateur entre de mauvais paramètres (par exemple entre
+ des string au lieu d'entier etc..
+ problème de type)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Test 1: saisie du premier paramètre: si 
+\begin_inset Formula $param1=a$
+\end_inset
+
+ erreur de type, si 
+\begin_inset Formula $param1=4$
+\end_inset
+
+ erreur réseau non implémenté, (propose une resaisie, ou quitter).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Test 2: saisie du second paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+ si 
+\begin_inset Formula $param2=a$
+\end_inset
+
+ erreur de type, si 
+\begin_inset Formula $param2=4$
+\end_inset
+
+ erreur cas d'utilisation non implémenté, (propose une resaisie, ou quitter).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Test 3: saisie du troisième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, si 
+\begin_inset Formula $param3=a$
+\end_inset
+
+ erreur de type.
+\end_layout
+
+\begin_layout Enumerate
+Test 4: saisie du quatrième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, si 
+\begin_inset Formula $param4=4\text{ }5\text{ }6\text{ }9\text{ }5\text{ }7$
+\end_inset
+
+, le programme ne sauvegarde que les 4 premier entiers.
+\end_layout
+
+\begin_layout Enumerate
+Test 5: saisie du quatrième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, si 
+\begin_inset Formula $param4=4\text{ }5$
+\end_inset
+
+, erreur trop couches sans neurones.
+\end_layout
+
+\begin_layout Enumerate
+Test 6: saisie du quatrième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, 
+\begin_inset Formula $param4=4\text{ }5\text{ }6\text{ }1$
+\end_inset
+
+, si 
+\begin_inset Formula $param5=a$
+\end_inset
+
+ erreur de type.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test quand l'utilisateur entre de bons paramètres:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Test 1: saisie suivante: 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=1$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, 
+\begin_inset Formula $param4=4\text{ }5\text{ }6\text{ }1$
+\end_inset
+
+, 
+\begin_inset Formula $param5=0$
+\end_inset
+
+ renvoie la liste: 
+\begin_inset Formula $\left(1\text{ }1\text{ }4\text{ }4\text{ }5\text{ }6\text{ }1\text{ }0\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+ajouter -lcCppUnit
+\end_layout
+
+\begin_layout Section
+module Couche
+\end_layout
+
+\begin_layout Standard
+Cette classe a deux méthode imprtante, qui peuvent génerer des eurreus donc
+ il y a deux test à effectuer: 
+\end_layout
+
+\begin_layout Subsection
+testPreactivation
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: double preActivation()
+\end_layout
+
+\begin_layout Standard
+Il faut tester si elle renvoie bien la somme des produits de l'entrée du
+ neurone et le poids plus le biais de la couche.
+ 
+\end_layout
+
+\begin_layout Standard
+Pour l'exemple des iris de fisher
+\end_layout
+
+\begin_layout Itemize
+une couche d’entrée qui comprend 4 entrées x1, x2, x3 et x4 
+\end_layout
+
+\begin_layout Itemize
+une couche cachée qui comprend 2 neurones n1 et n2
+\end_layout
+
+\begin_layout Standard
+⇒ il y a alors 8 poids et 2 biais 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemple des iris de Fisher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La fonction de préactivation doit donnée comme valeur pour n1 : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x1\times0,1+x2\times0,3+x3\times0,5+x4\times0,7+b1=0,63+0,99+3+1,75+0,5=\mathbf{{\color{purple}6,87}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+testActivation 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: double activation(double)
+\end_layout
+
+\begin_layout Standard
+Nous allons considérer le cas de la fonction sigmoïde donnée par 
+\begin_inset Formula 
+\[
+f(x)=\frac{1}{1+e^{x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il faut tester si elle renvoie bien la bonne valeur, reprenons le résultat
+ de la fonction de préactivation, on a 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(6,87)=0.001
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+module CoucheEntree
+\end_layout
+
+\begin_layout Standard
+Cette classe a une seule méthode imprtante, qui peuvent génerer des eurreus
+ donc le seul test à effectuer est :
+\end_layout
+
+\begin_layout Subsection
+testConstructionSortie
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: void constructionSortie()
+\end_layout
+
+\begin_layout Standard
+Soit un fichier de données test qui contient les 4 valeurs utilisées dans
+ l’exemple précédent.
+ 
+\end_layout
+
+\begin_layout Standard
+il faut vérifier que la fonction constructionSorite remplit un tableau de
+ neurone de dimension 4 comme suit : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3,3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2,5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donc il faut créer un objet coucheEntrée qu’on initialise à l’aide d’un
+ constructeur avec les valeurs du tableau et vérifier que le tableau de
+ neurone de cet objet est égal au tableau de neurone de notre fonction test
+ 
+\end_layout
+
+\begin_layout Section
+module CoucheCachee
+\end_layout
+
+\begin_layout Subsection
+testCalculSortie
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: void calculSortie(CoucheEntree ) 
+\end_layout
+
+\begin_layout Standard
+à demander ce que ça renvoie 
+\end_layout
+
+\begin_layout Section
+module CoucheSortie
+\end_layout
+
+\begin_layout Subsection
+testConstructionSortie
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: void constructionSortie(CoucheEntree ) [0,2 0,8
+ 0,1] == [0 1 0]
+\end_layout
+
+\begin_layout Standard
+j'ai une idée de test mais il faut qu'on change le type de retour de la
+ fonction 
+\end_layout
+
+\begin_layout Standard
+on peut mettre que ça renvoie un tableau comme j'ai expliquée dans le point
+ 4 de la spécification détailler 
+\end_layout
+
+\begin_layout Section
+Module Reseau
+\end_layout
+
+\begin_layout Section
+Module ResForwarded
+\end_layout
+
+\begin_layout Section
+Module ResRecurrent
+\end_layout
+
+\begin_layout Section
+Module Matrice
+\end_layout
+
+\begin_layout Section
+Module Neurone
+\end_layout
+
+\begin_layout Standard
+Pas de test à effectuer 
+\end_layout
+
+\end_body
+\end_document
