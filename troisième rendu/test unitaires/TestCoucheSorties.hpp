@@ -122,6 +122,3 @@ int main(int argc, char* argv[])
 	// return 0 if tests were successful
 	return collectedresults.wasSuccessful() ? 0 : 1;
 }
-
-
-
