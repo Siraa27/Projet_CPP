@@ -26,11 +26,27 @@
 using namespace CppUnit;
 using namespace std;
 
+/*!
+ * \file TestCoucheSortie.cpp
+ * \brief C'est une classe qui permet de vérifier que les méthodes utilisées dans CoucheSortie renvoie bien le résultat attendu. 
+ * \author Groupe projet A1
+ * \version 0.1
+ */
+/*! \namespace Les_tests_unitaires
+ */
+
+
+   /*! \class TestCoucheSortie
+   * \brief Classe pour les tests 
+   *
+   */
+
+
 // La classe qui va faire le test 
 class TestCoucheSorties : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testConstructionSortie);
+    CPPUNIT_TEST_SUITE(TestCouche); /*!< La suite des test que nous allons effectuer  */
+    CPPUNIT_TEST(testConstructionSortie); /*!< Le test qui va vérifier la méthode ConstructionSortie  */
     CPPUNIT_TEST_SUITE_END();
 
 public:

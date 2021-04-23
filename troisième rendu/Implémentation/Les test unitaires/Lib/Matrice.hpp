@@ -71,7 +71,14 @@ class Matrice{
       *
       */
       double** getMatrice();
-      
+
+      /*!
+      *  \fn getCoefMatrice
+      *  \brief retourne matrice[i][j]
+      *
+      */
+      double Matrice::getCoefMatrice(int i, int j)
+
       /*!
       *  \fn setCoefMatrice
       *  \brief Set un coefficient de la matrice
