@@ -17,10 +17,14 @@ CoucheCachee::~CoucheCachee()
 	(*LiaisonsEntrees).~Matrice();
 }
 
-// Accesseur
+// Accesseurs
 Matrice CoucheCachee::getLiaisonEntrees(){
-	return *LiaisonsEntrees; // ça me semble bizarre de retourner le pointeur !!
-};
+	return (*LiaisonsEntrees);
+}
+
+Matrice CoucheCachee::getBiais(){
+	return (*biais);
+}
 
 //-----------------------------------Les Méthodes-----------------------------------
 //Fontion de pre activation 

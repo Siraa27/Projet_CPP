@@ -17,10 +17,14 @@ CoucheSorties::~CoucheSorties()
 	(*LiaisonsEntrees).~Matrice();
 }
 
-// Accesseurs 
+// Accesseurs
 Matrice CoucheSorties::getLiaisonEntrees(){
-	return *LiaisonsEntrees; // ça me semble bizarre de retourner le pointeur !!
-};
+	return (*LiaisonsEntrees);
+}
+
+Matrice CoucheSorties::getBiais(){
+	return (*biais);
+}
 
 //Fontion de pre activation 
 Matrice CoucheSorties::preActivation(Couche couchePrec)
