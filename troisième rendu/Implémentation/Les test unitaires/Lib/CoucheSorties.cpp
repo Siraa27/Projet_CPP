@@ -26,6 +26,10 @@ Matrice CoucheSorties::getBiais(){
 	return (*biais);
 }
 
+
+//-----------------------------------Les Méthodes-----------------------------------
+//-----------------------------------------------------------------------------------
+
 //Fontion de pre activation 
 Matrice CoucheSorties::preActivation(Couche couchePrec)
 {
@@ -48,3 +52,5 @@ double CoucheSorties::derivFoncActivation(double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }
+
+//-----------------------------------------------------------------------------------

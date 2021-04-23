@@ -18,8 +18,9 @@
 #include <netinet/in.h>
 
 
-#include "Couche.hpp"
-#include "CoucheEntrees.hpp"
+#include "Lib/Couche.hpp"
+#include "Lib/CoucheEntrees.hpp"
+#include "Lib/Matrice.hpp"
 
 
 using namespace CppUnit;
@@ -42,7 +43,7 @@ using namespace std;
 // La classe qui va faire le test 
 class TestCoucheEntrees : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche);
+    CPPUNIT_TEST_SUITE(TestCoucheEntrees);
     CPPUNIT_TEST(testConstructionSortie); /*!< Le test qui va vérifier la méthode constructionSortie  */
     CPPUNIT_TEST_SUITE_END();
 
@@ -67,29 +68,28 @@ protected:
     */
 	void testConstructionSortie(void);
 private:
-	Couche *C2;
-	double TableauTest[4];
-}
+	CoucheEntrees *C;
+
+};
 
 // Les test----------------------------------------------------------------------------------
 void TestCoucheEntrees::setUp(void)
 {
 // à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone])
+    C = new CoucheEntrees(4,"FichTestcsv"); //le fichier test contiendra la ligne suivante 6.3,3.3,6.0,2.5
 	
-    C1 = new CoucheEntree(4,'FichTest.csv'); //le fichier test contiendra la ligne suivante 6.3,3.3,6.0,2.5
-	TableauTest = { 6.3, 3.3, 6.0, 2.5 } ; // ce qu'on veut en entree 
 }
 void TestCoucheEntrees::tearDown(void)
 {
-	delete C1;
-    delete TableauTest;
+	delete C;
 }
 
 void TestCoucheEntrees::testConstructionSortie(void)
 {   
-	C1->constructionSortie();
+	double TableauTest[4] = { 6.3, 3.3, 6.0, 2.5 } ; // ce qu'on veut en entree 
+	C->constructionSortie("FichTestcsv");
 	for (int i = 0; i < 4; i++){
-		CPPUNIT_ASSERT( fabs(TableauTest[i] - C1->getNeurone(i).getSortie()) < 0.00001);
+		CPPUNIT_ASSERT( fabs(TableauTest[i] - C->getNeurone(i).getSortie()) < 0.00001);
 	}
 	// Deuxième façon de faire je sais pas laquelle est mieux !!!
 	/*
@@ -108,7 +108,7 @@ void TestCoucheEntrees::testConstructionSortie(void)
 //--------------------------------------------------------------------------------------------------
 
 //------------------------------------------LE MAIN-------------------------------------------------
-CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
+CPPUNIT_TEST_SUITE_REGISTRATION( TestCoucheEntrees );
 int main(int argc, char* argv[])
 {
     // informs test-listener about testresults

@@ -18,7 +18,8 @@ Dans Couche.cpp :
 Matrice Couche::recupSortiesNeurones() 
 ou est le return ?? et à quoi sert cette méthode 
 
-
+Dans Matrice.cpp : 
+Peut on mettre en paramètre dans les fonctions d'activation les adresses des matrices ?? 
 
 Les idées multiples :
 void TestCoucheCachee::testactivation(void) 

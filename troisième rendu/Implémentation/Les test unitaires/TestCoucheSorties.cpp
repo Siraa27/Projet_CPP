@@ -19,9 +19,9 @@
 #include <netinet/in.h>
 
 
-#include "Couche.hpp"
-#include "CoucheSorties.hpp"
-
+#include "Lib/Couche.hpp"
+#include "Lib/CoucheSorties.hpp"
+#include "Lib/Matrice.hpp"
 
 using namespace CppUnit;
 using namespace std;
@@ -73,34 +73,34 @@ protected:
      *  \brief La fonction d'activation effectue des changement directement sur le tableau de neurones de la couche donc ce test
 	 * \brief  va vérifier que le paramètre a bien était modifié 
     */
-	void testActivation(void);
+	void testFoncActivation(void);
 	/*!
      *  \fn testDerivFoncActivation(void)
      *  \brief  test que la derivee de la fonction d'activation renvoie bien la bonne valeur
     */
 	void testDerivFoncActivation(void);
 private:
-	Couche  *C0, *C1, *C2;
-}
+	CoucheSorties   *C1, *C2;
+	Couche *C0 ;
+};
 
 // Les test----------------------------------------------------------------------------------
 
-void TestCoucheSortie::setUp(void)
+void TestCoucheSorties::setUp(void)
 {
 // ça me parait bizarre de construire une coucheSortie vaec un tableau de neurone qui a comme valeur ceux  d'une coucheCachee
-	C1 = new CoucheSortie(3,2);
-	C2 = new CoucheSortie(3,2);
-	C0 = new Couche(int );
-
+	C1 = new CoucheSorties(3,2);
+	C2 = new CoucheSorties(3,2);
+	C0 = new Couche(2 );
 }
-void TestCouche::tearDown(void)
+void TestCoucheSorties::tearDown(void)
 {
 	delete C0;
 	delete C1;
 	delete C2;
 }
 
-void TestCoucheSortie::testPreActivation(void)
+void TestCoucheSorties::testPreActivation(void)
 {
 	// Ma matrice liaison
     // 0.3 | 0.2 | 
@@ -108,32 +108,32 @@ void TestCoucheSortie::testPreActivation(void)
 	// 0.7 | 0.6 |
 	// Remplissage de la matrice liaison 
 	// Ligne I
-	C1->getLiaisonEntrees()->setCoefMatrice( 0, 0, 0.3 );
-	C1->getLiaisonEntrees()->setCoefMatrice( 0, 1, 0.2 );
+	C1->getLiaisonEntrees().setCoefMatrice( 0, 0, 0.3 );
+	C1->getLiaisonEntrees().setCoefMatrice( 0, 1, 0.2 );
 	// Ligne II
-	C1->getLiaisonEntrees()->setCoefMatrice( 1, 0, 0.5 );
-	C1->getLiaisonEntrees()->setCoefMatrice( 1, 1, 0.4 );
+	C1->getLiaisonEntrees().setCoefMatrice( 1, 0, 0.5 );
+	C1->getLiaisonEntrees().setCoefMatrice( 1, 1, 0.4 );
 	// Ligne III
-	C1->getLiaisonEntrees()->setCoefMatrice( 2, 0, 0.7);
-	C1->getLiaisonEntrees()->setCoefMatrice( 2, 1, 0.6 );
+	C1->getLiaisonEntrees().setCoefMatrice( 2, 0, 0.7);
+	C1->getLiaisonEntrees().setCoefMatrice( 2, 1, 0.6 );
 
 	// Ma matrice biais est égale à 
     // 0 | 0 | 0 |
 	// Remplissage de la matrice biais
 	for (int i = 0 ; i < 2 ; i++){
-		C1->getbiais()->setCoefMatrice( 0, i, 0 );
+		C1->getBiais().setCoefMatrice( 0, i, 0 );
 	}
 	
 	// Création des matrices pour les tests
-   Matrice Resultat = new Matrice (1,3); 
-   Matrice TestResultat = new Matrice (1,3);
+   Matrice* Resultat = new Matrice (1,3); 
+   Matrice* TestResultat = new Matrice (1,3);
 
 	// Ma matrice TestResultat est égale à :
 	// 3.857 | 7.027 | 10.197
 	// Remplissage de la matrice de TestResultat avec les valeurs souhaitees
-   TestResultat.setCoefMatrice( 0, 0, 3.857);
-   TestResultat.setCoefMatrice( 0, 1, 7.027); 
-   TestResultat.setCoefMatrice( 0, 2, 10.197); 
+   TestResultat->setCoefMatrice( 0, 0, 3.857);
+   TestResultat->setCoefMatrice( 0, 1, 7.027); 
+   TestResultat->setCoefMatrice( 0, 2, 10.197); 
 
 	// Création du Bouchon 
 	// Le tableau de neurone de La couche precedente est égale à : 
@@ -144,21 +144,21 @@ void TestCoucheSortie::testPreActivation(void)
 	Resultat = C1->preActivation(C0);
 
 	for (int i = 0 ; i < 3; i++){
-		CPPUNIT_ASSERT( fabs(TestResultat.getCoefMatrice(0,i) - Resultat.getCoefMatrice(0,i)) < 0.00001 ) ;
+		CPPUNIT_ASSERT( fabs(TestResultat->getCoefMatrice(0,i) - Resultat->getCoefMatrice(0,i)) < 0.00001 ) ;
 	}
     
 }
 
 
-void TestCoucheSortie::testFoncActivation(void)
+void TestCoucheSorties::testFoncActivation(void)
 {
 	// Comme la matrice résultat etait variable local au test précédent on la rerempli !!
     // La matrice résultat trouvé à l'aide de la methode preactivation est égale à :
 	// 3.857 | 7.027 | 10.197
-	Matrice SommePond = new Matrice (1,3); 	
-    SommePond.setCoefMatrice( 0, 0, 3.857);
-    SommePond.setCoefMatrice( 0, 1, 7.027); 
-    SommePond.setCoefMatrice( 0, 2, 10.197); 
+	Matrice* SommePond = new Matrice (1,3); 	
+    SommePond->setCoefMatrice( 0, 0, 3.857);
+    SommePond->setCoefMatrice( 0, 1, 7.027); 
+    SommePond->setCoefMatrice( 0, 2, 10.197); 
 
 	// On veut que le tableau de neurone dans la couche C1 soit égale à :
 	// val1 | val2 | val3
@@ -178,18 +178,24 @@ void TestCoucheSortie::testFoncActivation(void)
 	C2->getNeurone(1).setSortie(2); // C2->Couche::getNeurone(2).setSortie(0.0001258869); ???s
 	C2->getNeurone(2).setSortie(3); 
 
-	C1->activation(SommePond);
-    CPPUNIT_ASSERT ( fabs(C2->getNeurone[i].getSortie() - C1->getNeurone[i].getSortie() )< 0.00001 )  
+	C1->foncActivation(SommePond);
+	for (int i = 0; i < 3 ; i++){
+		CPPUNIT_ASSERT ( fabs(C2->getNeurone(i).getSortie() - C1->getNeurone(i).getSortie() )< 0.00001 ) ; 
+	}
+    
         
 
 }
 
-
+void TestCoucheSorties::testDerivFoncActivation(void)
+{
+	CPPUNIT_ASSERT( (0.0010363235505306467 - C1->derivFoncActivation(6.87)) < 0.00001 );
+};
 
 
 //-------------------------------------------------------------------------------------------
 
-CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
+CPPUNIT_TEST_SUITE_REGISTRATION( TestCoucheSorties );
 int main(int argc, char* argv[])
 {
     // informs test-listener about testresults

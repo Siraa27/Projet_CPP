@@ -130,8 +130,8 @@ void TestCoucheCachee::testPreActivation(void)
 	// Ma matrice TestResultat est égale à :
 	// 6.87 | 8.98 |
 	// Remplissage de la matrice de TestResultat avec les valeurs souhaitees
-   TestResultat.setCoefMatrice( 0, 0, 6.87 );
-   TestResultat.setCoefMatrice( 0, 1, 8.98 );
+   TestResultat->setCoefMatrice( 0, 0, 6.87 );
+   TestResultat->setCoefMatrice( 0, 1, 8.98 );
 
 	// Création du Bouchon 
 	// Le tableau de neurone de La couche precedente est égale à : 
@@ -143,7 +143,7 @@ void TestCoucheCachee::testPreActivation(void)
 	// preActivation renvoie une (Matrice) donc elle va cracher les valeurs dans la matrice Resultat 
    Resultat = C1->preActivation(C0);
 
-   CPPUNIT_ASSERT( fabs( TestResultat.getCoefMatrice(0,0) - Resultat.getCoefMatrice(0,0) ) < 0.00001 &&  fabs( TestResultat.getCoefMatrice(0,1) - Resultat.getCoefMatrice(0,1) ) < 0.00001 ) ;
+   CPPUNIT_ASSERT( fabs( TestResultat->getCoefMatrice(0,0) - Resultat->getCoefMatrice(0,0) ) < 0.00001 &&  fabs( TestResultat->getCoefMatrice(0,1) - Resultat->getCoefMatrice(0,1) ) < 0.00001 ) ;
 };
 
 void TestCoucheCachee::testFoncActivation(void)
@@ -151,9 +151,9 @@ void TestCoucheCachee::testFoncActivation(void)
 	// Comme la matrice résultat etait variable local au test précédent on la rerempli !!
     // La matrice résultat trouvé à l'aide de la methode preactivation est égale à :
 	// 6.87 | 8.98 |
-	Matrice SommePond = new Matrice (1,2); 	
-	SommePond.setCoefMatrice( 0, 0, 6.87 );
-    SommePond.setCoefMatrice( 0, 1, 8.98 );
+	Matrice* SommePond = new Matrice (1,2); 	
+	SommePond->setCoefMatrice( 0, 0, 6.87 );
+    SommePond->setCoefMatrice( 0, 1, 8.98 );
 	// On veut que le tableau de neurone dans la couche C1 soit égale à :
 	// 0.001 | 0.0001258869
 
@@ -172,7 +172,7 @@ void TestCoucheCachee::testFoncActivation(void)
 	C2->getNeurone(1).setSortie(0.0001258869); // C2->Couche::getNeurone(2).setSortie(0.0001258869); ???s
 
    C1->foncActivation(SommePond);	
-   CPPUNIT_ASSERT( fabs(C2->getNeurone(0).getSortie() -  C1->getNeurone(0).getSortie()) < 0.00001 && fabs( C2->getNeurone(1).getSortie() - C1->getNeurone(1).getSortie() ) < O.00OO1); 
+   CPPUNIT_ASSERT( fabs(C2->getNeurone(0).getSortie() -  C1->getNeurone(0).getSortie()) < 0.00001 && fabs( C2->getNeurone(1).getSortie() - C1->getNeurone(1).getSortie() ) < 0.00001); 
 	//}
 
 
@@ -180,13 +180,13 @@ void TestCoucheCachee::testFoncActivation(void)
 
 void TestCoucheCachee::testDerivFoncActivation(void)
 {
-	CPPUNIT_ASSERT( (0.0010363235505306467 - derivFoncActivation(6.87)) < 0.00001 );
+	CPPUNIT_ASSERT( (0.0010363235505306467 - C1->derivFoncActivation(6.87)) < 0.00001 );
 };
 //--------------------------------------------------------------------------------------------------
 
 //------------------------------------------LE MAIN-------------------------------------------------
 
-CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
+CPPUNIT_TEST_SUITE_REGISTRATION( TestCoucheCachee );
 int main(int argc, char* argv[])
 {
     // informs test-listener about testresults

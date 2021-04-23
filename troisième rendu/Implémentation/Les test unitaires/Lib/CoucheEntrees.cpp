@@ -14,6 +14,10 @@ CoucheEntrees::CoucheEntrees (const int nbNeurones, std::string nomFic) : Couche
 //Destructeur
 CoucheEntrees::~CoucheEntrees(){}
 
+
+//-----------------------------------Les Méthodes-----------------------------------
+//-----------------------------------------------------------------------------------
+
 //On initialise les sorties des neurones de la couche d'entree avec le fichier nomFic
 void CoucheEntrees::constructionSortie(std::string nomFic)
 { 
@@ -33,3 +37,5 @@ void CoucheEntrees::constructionSortie(std::string nomFic)
         } 
     } 
 }
+
+//-----------------------------------------------------------------------------------

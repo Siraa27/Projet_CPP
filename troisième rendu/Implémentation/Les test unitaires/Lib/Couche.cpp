@@ -32,6 +32,9 @@ Neurone Couche::getNeurone(int i) const
 	return Neurones[i];
 }
 
+//-----------------------------------Les Méthodes-----------------------------------
+//-----------------------------------------------------------------------------------
+
 //Recupere les sorties des neurones de la couche et les stock dans une matrice
 Matrice Couche::recupSortiesNeurones()
 {
@@ -43,3 +46,5 @@ Matrice Couche::recupSortiesNeurones()
 	}
 	return res;
 }
+
+//-----------------------------------------------------------------------------------

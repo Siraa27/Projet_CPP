@@ -73,6 +73,7 @@ Matrice::~Matrice()
     nbCol=0;
 }
 
+// Accesseurs
 double** Matrice::getMatrice()
 {
 	return matrice;
@@ -97,6 +98,10 @@ void Matrice::setCoefMatrice(int i, int j, double coef)
 	}
 	matrice[i][j] = coef;
 }
+
+
+//-----------------------------------Les Méthodes-----------------------------------
+//-----------------------------------------------------------------------------------
 
 //initialise alétatoirement la matrices
 void Matrice::initAleatoire()
@@ -179,3 +184,5 @@ Matrice Matrice::operator -(const Matrice &m)
 	}
     return mat;
 }
+
+//-----------------------------------------------------------------------------------
