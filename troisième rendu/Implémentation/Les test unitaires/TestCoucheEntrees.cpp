@@ -72,16 +72,6 @@ private:
 }
 
 // Les test----------------------------------------------------------------------------------
-
-void TestCoucheEntrees::testConstructionSortie(void)
-{   
-	C1->constructionSortie();
-	for (int i = 0; i < 4; i++){
-		CPPUNIT_ASSERT( fabs(TableauTest[i] - C1->getNeurone(i).getSortie()) < 0.00001);
-	}
-
-}
-
 void TestCoucheEntrees::setUp(void)
 {
 // à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone])
@@ -94,8 +84,30 @@ void TestCoucheEntrees::tearDown(void)
 	delete C1;
     delete TableauTest;
 }
-//-------------------------------------------------------------------------------------------
 
+void TestCoucheEntrees::testConstructionSortie(void)
+{   
+	C1->constructionSortie();
+	for (int i = 0; i < 4; i++){
+		CPPUNIT_ASSERT( fabs(TableauTest[i] - C1->getNeurone(i).getSortie()) < 0.00001);
+	}
+	// Deuxième façon de faire je sais pas laquelle est mieux !!!
+	/*
+	Matrice NeuroneVerif ; 
+	C1->constructionSortie();
+	NeuroneVerif = new Matrice (1,4);
+	NeuroneVerif = C1->recupSortiesNeurones();
+	for (int i = 0; i < 4; i++){
+		CPPUNIT_ASSERT( fabs(TableauTest[i] - NeuroneVerif.getCoefMatrice(0,i)) < 0.00001);
+	}
+
+	*/
+}
+
+
+//--------------------------------------------------------------------------------------------------
+
+//------------------------------------------LE MAIN-------------------------------------------------
 CPPUNIT_TEST_SUITE_REGISTRATION( TestCouche );
 int main(int argc, char* argv[])
 {
@@ -121,3 +133,4 @@ int main(int argc, char* argv[])
 	// return 0 if tests were successful
 	return collectedresults.wasSuccessful() ? 0 : 1;
 }
+//--------------------------------------------------------------------------------------------------

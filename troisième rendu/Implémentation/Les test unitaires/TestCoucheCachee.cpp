@@ -20,6 +20,7 @@
 
 #include "Lib/Couche.hpp"
 #include "Lib/CoucheCachee.hpp"
+#include "Lib/Matrice.hpp"
 
 ///opt/homebrew/opt/cppunit/include/ /// ne me supprimez pas pleaaase 
 
@@ -45,7 +46,7 @@ using namespace std;
 // La classe qui va faire le test 
 class TestCoucheCachee : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche); /*!< La suite des test que nous allons effectuer  */
+    CPPUNIT_TEST_SUITE(TestCoucheCachee); /*!< La suite des test que nous allons effectuer  */
 	CPPUNIT_TEST(testPreActivation); /*!< Le test qui va vérifier la méthode de PreActivation  */
     CPPUNIT_TEST(testFoncActivation); /*!< Le test qui va vérifier la méthode d'Activation  */
 	CPPUNIT_TEST(testDerivFoncActivation); /*!< Le test qui va vérifier la méthode la dérivée de la méthode d'activation  */
@@ -59,7 +60,7 @@ public:
 	void setUp(void);
 
 	/*!
-     *  \fn setUp(void)
+     *  \fn tearDown(void)
      *  \brief  Pour supprimer une variable et désallouer la mémoire
     */
 	void tearDown(void);
@@ -67,37 +68,28 @@ protected:
     /*!
      *  \fn testPreActivation(void)
      *  \brief qui teste que la fonction de pré activation renvoie bien la somme pondérée des entrées
-    */derivFoncActivation
+    */
 	void testPreActivation(void);
 	/*!
      *  \fn testActivation(void)
      *  \brief La fonction d'activation effectue des changement directement sur le tableau de neurones de la couche donc ce test
 	 * \brief  va vérifier que le paramètre a bien était modifié 
     */
-	void testActivation(void);
+	void testFoncActivation(void);
 	/*!
      *  \fn testDerivFoncActivation(void)
      *  \brief  test que la derivee de la fonction d'activation renvoie bien la bonne valeur
     */
 	void testDerivFoncActivation(void);
 private:
-	CoucheCachee *C1, *C2, *C0;
+	CoucheCachee *C1, *C2;
+	Couche *C0;
 
-}
+};
 
 // Les test----------------------------------------------------------------------------------
 void TestCoucheCachee::setUp(void)
 {
-	// Pour faire ce test on a besoin d'un objet couEntrée avec lee tableau de neurones initialises avec 
-	//les valeurs donnees dans le rapport
-	// Comment faire ça ?
-	// Dans les tests peut-on acceder à des attributs private
-	// Est ce que je peux créer un objet coucheEntrée et l'initialiser comme je veux 
-	// Notre constructeur coucheEntrée initialise le tableau de neurones avec un fichier comment faire ?  
-
-	// Dans coucheCachee.hpp j'ai un attribut Matrice* LiaisonsEntrees; est ce que je peux faire 
-	// C1->LiaisonEntrees.setCoefMatrice(i,j,coef)
-    // un contructeur avec que des zero pour la matrice de laisiason et que des zeros pour les biais (la couche verte)
 	C0 = new Couche (4);
 	C1 = new CoucheCachee (2, 4); // dans l'exemple qu'on a pris la couche d'entrée contient 4 neurones
 	C2 = new CoucheCachee (2, 4); // idem
@@ -110,7 +102,7 @@ void TestCoucheCachee::tearDown(void)
 }
 // 
 
-void TestCoucheCachee::testpreActivation(void) 
+void TestCoucheCachee::testPreActivation(void) 
 {
 	// Ma matrice liaison
     // 0.1 | 0.3 | 0.5 | 0.7 |
@@ -118,8 +110,8 @@ void TestCoucheCachee::testpreActivation(void)
 	// Remplissage de la matrice liaison 
 	int k = 1;
     for (int j = 0; j < 4; j++ ){ // Je fixe d'abords la colonne c'est plus simple pour l'incrementation de k 
-	   for (int i = O; i < 2 ; i++){
-		   C1->getLiaisonEntrees()->setCoefMatrice( i, j, k * 0.1 );
+	   for (int i = 0; i < 2 ; i++){
+		   C1->getLiaisonEntrees().setCoefMatrice( i, j, k * 0.1 );
 		   k = k + 1;
 	    }
     }
@@ -127,13 +119,13 @@ void TestCoucheCachee::testpreActivation(void)
     // Ma matrice biais est égale à 
     // 0.5 | 0.8 |
 	// Remplissage de la matrice biais
-	C1->getbiais()->setCoefMatrice( 0, 0, 0.5 );
-	C1->getbiais()->setCoefMatrice( 0, 1, 0.8 );
+	C1->getBiais().setCoefMatrice( 0, 0, 0.5 );
+	C1->getBiais().setCoefMatrice( 0, 1, 0.8 );
 
 
 	// Création des matrices pour les tests
-   Matrice Resultat = new Matrice (1,2); 
-   Matrice TestResultat = new Matrice (1,2); 
+   Matrice* Resultat = new Matrice (1,2); 
+   Matrice* TestResultat = new Matrice (1,2); 
 
 	// Ma matrice TestResultat est égale à :
 	// 6.87 | 8.98 |
@@ -154,9 +146,11 @@ void TestCoucheCachee::testpreActivation(void)
    CPPUNIT_ASSERT( fabs( TestResultat.getCoefMatrice(0,0) - Resultat.getCoefMatrice(0,0) ) < 0.00001 &&  fabs( TestResultat.getCoefMatrice(0,1) - Resultat.getCoefMatrice(0,1) ) < 0.00001 ) ;
 };
 
-void TestCoucheCachee::testactivation(void)
-{
-    
+void TestCoucheCachee::testFoncActivation(void)
+{	
+	// Comme la matrice résultat etait variable local au test précédent on la rerempli !!
+    // La matrice résultat trouvé à l'aide de la methode preactivation est égale à :
+	// 6.87 | 8.98 |
 	Matrice SommePond = new Matrice (1,2); 	
 	SommePond.setCoefMatrice( 0, 0, 6.87 );
     SommePond.setCoefMatrice( 0, 1, 8.98 );
@@ -168,26 +162,27 @@ void TestCoucheCachee::testactivation(void)
 		//j'ai deux idée pour faire les tests je sais pas laquelle est mieux ou laquelle marche 
 
 	/*Matrice NeuroneTest = new Matrice (1,2); 	
-	NeuroneTest.setCoefMatrice( 0, 0, 6.87 );
-    NeuroneTest.setCoefMatrice( 0, 1, 8.98 );
+	NeuroneTest.setCoefMatrice( 0, 0, 0.001);
+    NeuroneTest.setCoefMatrice( 0, 1, 0.0001258869);
 	CPPUNIT_ASSERT( fabs(NeuroneTest.getCoefMatrice(0,0) -  C1->getNeurone(1).getSortie()) < 0.00001 && fabs( NeuroneTest.getCoefMatrice(0,1)- C1->getNeurone(2).getSortie() ) < O.00OO1); 
 	*/
 	
-	C2->getNeurone(1).setSortie(0.001); // getNeurone(1) nous donne le premier neurone de la couche et 
+	C2->getNeurone(0).setSortie(0.001); // getNeurone(1) nous donne le premier neurone de la couche et 
 	                                    //setSortie(double) nous permet de lui attribuer une valeur
-	C2->getNeurone(2).setSortie(0.0001258869); // C2->Couche::getNeurone(2).setSortie(0.0001258869); ???s
+	C2->getNeurone(1).setSortie(0.0001258869); // C2->Couche::getNeurone(2).setSortie(0.0001258869); ???s
 
    C1->foncActivation(SommePond);	
-   CPPUNIT_ASSERT( fabs(C2->getNeurone(1).getSortie() -  C1->getNeurone(1).getSortie()) < 0.00001 && fabs( C2->getNeurone(2).getSortie() - C1->getNeurone(2).getSortie() ) < O.00OO1); 
+   CPPUNIT_ASSERT( fabs(C2->getNeurone(0).getSortie() -  C1->getNeurone(0).getSortie()) < 0.00001 && fabs( C2->getNeurone(1).getSortie() - C1->getNeurone(1).getSortie() ) < O.00OO1); 
 	//}
 
 
 };
 
-void TestCoucheCachee::testactivation(void)
+void TestCoucheCachee::testDerivFoncActivation(void)
 {
 	CPPUNIT_ASSERT( (0.0010363235505306467 - derivFoncActivation(6.87)) < 0.00001 );
 };
+//--------------------------------------------------------------------------------------------------
 
 //------------------------------------------LE MAIN-------------------------------------------------
 
@@ -216,5 +211,4 @@ int main(int argc, char* argv[])
 	// return 0 if tests were successful
 	return collectedresults.wasSuccessful() ? 0 : 1;
 }
-
-//-----------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
