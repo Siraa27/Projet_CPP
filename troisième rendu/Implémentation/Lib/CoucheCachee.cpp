@@ -20,20 +20,22 @@ CoucheCachee::~CoucheCachee()
 //Fontion de pre activation 
 Matrice CoucheCachee::preActivation(Couche couchePrec)
 {
-	//(Produit matriciel Liaison 
+	//(Matrice Liaison * Sorties neurones couche precedente) + biais
+	//Nous manipulons des matrices 
 	Matrice res = (LiaisonsEntrees->operator *(couchePrec.recupSortiesNeurones())).operator +(*biais);
 	return res;
 }
 
-void CoucheCachee::foncActivation(Matrice sum)
+void CoucheCachee::foncActivation(Matrice sum) //sigmoid
 {
 	for (int i=0; i<getNbNeurones(); i++)
 	{
+		//On modifie directement la sortie des neurones de la couche
 		getNeurone(i).setSortie(1/(1+exp(sum.getMatrice()[i][1])));
 	}
 }
 
-double CoucheCachee::derivFoncActivation(double x)
+double CoucheCachee::derivFoncActivation(double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }

@@ -12,7 +12,7 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes)
 		matrice[i] = new double[nbColonnes];
 	}
 }
-
+/*
 Matrice::Matrice(const int nbLignes, const int nbColonnes, double** t)
 {
 	nbLig = nbLignes;
@@ -22,9 +22,9 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes, double** t)
 	{
 		matrice[i] = new double[nbColonnes];
 	}
-	t = {{1, 2, 3} , {4, 5, 6}, {7, 8, 9}};
+	t = {{1, 2, 3}{4, 5, 6}{7, 8, 9}};
 }
-
+*/
 Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef)
 {
 	nbLig = nbLignes;
