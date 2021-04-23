@@ -44,7 +44,7 @@ using namespace std;
 // La classe qui va faire le test 
 class TestCoucheCachee : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
-    CPPUNIT_TEST_SUITE(TestCouche); /*!< La suite des test que nous allons effectuer  */
+    CPPUNIT_TEST_SUITE(TestCoucheCachee); /*!< La suite des test que nous allons effectuer  */
 	CPPUNIT_TEST(testPreActivation); /*!< Le test qui va vérifier la fonction de PreActivation  */
     CPPUNIT_TEST(testFoncActivation); /*!< Le test qui va vérifier la fonction d'Activation  */
 	CPPUNIT_TEST(testDerivFoncActivation); /*!< Le test qui va vérifier la fonction la dérivée de la fonction d'activation  */
@@ -66,7 +66,7 @@ protected:
      *  \brief La fonction d'activation effectue des changement directement sur le tableau de neurones de la couche donc ce test
 	 * \brief  va vérifier que le paramètre a bien était modifié 
     */
-	void testActivation(void);
+	void testFoncActivation(void);
 	/*!
      *  \fn testDerivFoncActivation(void)
      *  \brief  test que la derivee de la fonction d'activation renvoie bien la bonne valeur
@@ -75,7 +75,7 @@ protected:
 private:
 	CoucheCachee *C1, *C2;
 
-}
+};
 
 // Les test----------------------------------------------------------------------------------
 void TestCoucheCachee::setUp(void)
@@ -108,7 +108,7 @@ void TestCoucheCachee::testpreActivation(void)
    CPPUNIT_ASSERT( fabs(6.87 - C1->getNeurone(1).getSortie()) < 0.00001 &&  fabs(8.98 - C1->getNeurone(2).getSortie()) < 0.00001) ;
 }
 
-void TestCoucheCachee::testactivation(void)
+void TestCoucheCachee::testFoncActivation(void)
 {
 	C1->foncActivation(Somme);
 	C2->getNeurone(1).setSortie(0.001); // getNeurone(1) nous donne le premier neurone de la couche et 
@@ -119,7 +119,7 @@ void TestCoucheCachee::testactivation(void)
    CPPUNIT_ASSERT( fabs( C2->getNeurone(2).getSortie() - C1->getNeurone(2).getSortie() ) < O.00OO1 ); 
 }
 
-void TestCoucheCachee::testactivation(void)
+void TestCoucheCachee::testDerivFoncActivation(void)
 {
 	CPPUNIT_ASSERT( (0.0010363235505306467 - derivFoncActivation(6.87)) < 0.00001 );
 }
