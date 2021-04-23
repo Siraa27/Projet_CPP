@@ -102,10 +102,36 @@ void TestCoucheCachee::tearDown(void)
 
 void TestCoucheCachee::testpreActivation(void) 
 {
-   Matrice Somme; // à tester 
-   Somme = C1->preActivation();
+	// Ma matrice liaison
+    // 0.1 | 0.3 | 0.5 | 0.7 |
+    // 0.2 | 0.4 | 0.6 | 0.8 |
+    // Ma matrice biais 
+    // 0.5 | 0.8 |
+	// Ma matrice résultat 
+	// 6.87 | 8.98 |
 
-   CPPUNIT_ASSERT( fabs(6.87 - C1->getNeurone(1).getSortie()) < 0.00001 &&  fabs(8.98 - C1->getNeurone(2).getSortie()) < 0.00001) ;
+	// Remplissage de la matrice liaison 
+	int k = 1;
+    for (int j = 0; j < 4; j++ ){ // Je fixe d'abords la colonne c'est plus simple pour l'incrémentation de k 
+	   for (int i = O; i < 2 ; i++){
+		   C1->LiaisonEntrees->setCoefMatrice( i, j, k * 0.1 );
+		   k = k + 1;
+	    }
+    }
+
+	// Remplissage de la matrice biais
+	C1->biais->setCoefMatrice( 0, 0, 0.5 );
+	C1->biais->setCoefMatrice( 0, 1, 0.8 );
+	// Création des matrices pour les tests
+   Matrice Resultat = new Matrice (1,2); 
+   Matrice TestResultat = new Matrice (1,2); 
+
+   TestResultat.setCoefMatrice( 0, 0, 6.87 );
+   TestResultat.setCoefMatrice( 0, 1, 8.98 );
+
+   Resultat = C1->preActivation();
+
+   CPPUNIT_ASSERT( fabs( TestResultat.getCoefMatrice(0,0) - Resultat.getCoefMatrice(0,0) ) < 0.00001 &&  fabs( TestResultat.getCoefMatrice(0,1) - Resultat.getCoefMatrice(0,1) ) < 0.00001 ) ;
 }
 
 void TestCoucheCachee::testactivation(void)

@@ -13,6 +13,7 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes)
 		matrice[i] = new double[nbColonnes];
 	}
 }
+
 /*
 Matrice::Matrice(const int nbLignes, const int nbColonnes, double** t)
 {
@@ -75,6 +76,16 @@ Matrice::~Matrice()
 double** Matrice::getMatrice()
 {
 	return matrice;
+}
+
+// Retourne l'élément ij de la matrice
+double Matrice::getCoefMatrice(int i, int j)
+{
+	if (i>=nbLig || (j>=nbCol)) 
+	{
+		throw std::length_error("Erreur indices");
+	}
+	return matrice[i][j];
 }
 
 //Set le coefficient (i,j) de la matrice
