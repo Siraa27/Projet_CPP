@@ -18,7 +18,7 @@ CoucheCachee::~CoucheCachee()
 }
 
 //Fontion de pre activation 
-Matrice CoucheCachee::preActivation(Couche couchePrec)
+Matrice CoucheCachee::preActivation(Couche couchePrec) // preActivation( Matrice   ) // Matrice NeuronePrec va être passé en paramètre dans le main
 {
 	//(Matrice Liaison * Sorties neurones couche precedente) + biais
 	//Nous manipulons des matrices 

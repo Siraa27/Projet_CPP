@@ -25,22 +25,50 @@
 using namespace CppUnit;
 using namespace std;
 
+/*!
+ * \file TestEntree.cpp
+ * \brief C'est une classe qui permet de vérifier que les méthodes utilisées dans CoucheEntree renvoie bien le résultat attendu. 
+ * \author Groupe projet A1
+ * \version 0.1
+ */
+/*! \namespace Les_tests_unitaires
+ */
+
+
+   /*! \class TestCoucheEntree
+   * \brief Classe pour les tests 
+   */
+
 // La classe qui va faire le test 
 class TestCoucheEntrees : public CppUnit::TestFixture{
     // Pour pouvoir tourner plusieurs tests aux même temps
     CPPUNIT_TEST_SUITE(TestCouche);
-    CPPUNIT_TEST(testConstructionSortie);
+    CPPUNIT_TEST(testConstructionSortie); /*!< Le test qui va vérifier la méthode constructionSortie  */
     CPPUNIT_TEST_SUITE_END();
 
 public:
-// Pour initialiser les variables et allouer de la mémoire
+    /*!
+     *  \fn setUp(void)
+     *  \brief  Pour initialiser les variables et allouer de la mémoire
+    */
 	void setUp(void);
-// Pour supprimer une variable et désallouer la mémoire
+
+
+	/*!
+     *  \fn setUp(void)
+     *  \brief  Pour supprimer une variable et désallouer la mémoire
+    */
 	void tearDown(void);
+
 protected:
+    /*!
+     *  \fn testConstructionSortie(void)
+     *  \brief ume méthode qui teste que la méthode constructionSortie initialise bien les données en entrée
+    */
 	void testConstructionSortie(void);
 private:
-	Couche *C1, *C2;
+	Couche *C2;
+	double TableauTest[4];
 }
 
 // Les test----------------------------------------------------------------------------------
@@ -48,25 +76,23 @@ private:
 void TestCoucheEntrees::testConstructionSortie(void)
 {   
 	C1->constructionSortie();
-	C2->constructionSortie();
-   if ( CPPUNIT_ASSERT( C2->nbNeurone ==4 ) ){
-        int i = 0 ; 
-        while ( CPPUNIT_ASSERT( C1->Neurone[i] == C2->Neurone[i] ) && i<4 ) {
-            i=i+1; 
-        }  
-   } 
+	for (int i = 0; i < 4; i++){
+		CPPUNIT_ASSERT( fabs(TableauTest[i] - C1->getNeurone(i).getSortie()) < 0.00001);
+	}
+
 }
 
 void TestCoucheEntrees::setUp(void)
 {
 // à l'aide du constructeur Couche(int nbNeurone, double ValeurEntree[nbNeurone])
-	C1 = new CoucheEntree(4,{6.3, 3.3, 6.0, 2,5});
-    C2 = new CoucheEntree('FichDonnee.csv');
+	
+    C1 = new CoucheEntree(4,'FichTest.csv'); //le fichier test contiendra la ligne suivante 6.3,3.3,6.0,2.5
+	TableauTest = { 6.3, 3.3, 6.0, 2.5 } ; // ce qu'on veut en entree 
 }
 void TestCoucheEntrees::tearDown(void)
 {
 	delete C1;
-    delete C2;
+    delete TableauTest;
 }
 //-------------------------------------------------------------------------------------------
 
