@@ -67,7 +67,7 @@ protected:
     /*!
      *  \fn testPreActivation(void)
      *  \brief qui teste que la fonction de pré activation renvoie bien la somme pondérée des entrées
-    */
+    */derivFoncActivation
 	void testPreActivation(void);
 	/*!
      *  \fn testActivation(void)
