@@ -1,0 +1,102 @@
+\hypertarget{class_les__couches__du__reseau_1_1_couche}{}\doxysection{Les\+\_\+couches\+\_\+du\+\_\+reseau\+::Couche Class Reference}
+\label{class_les__couches__du__reseau_1_1_couche}\index{Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}}
+
+
+Classe représentant une couche.  
+
+
+
+
+{\ttfamily \#include $<$Couche.\+hpp$>$}
+
+Inheritance diagram for Les\+\_\+couches\+\_\+du\+\_\+reseau\+::Couche\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.458333cm]{class_les__couches__du__reseau_1_1_couche}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_af564932d3de118cead9fcc504e237285}{Couche}} (const int nb\+Neurones)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche}{Couche}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_ad6b0be0bb3de03b0364a23cd64cfc052}{$\sim$\+Couche}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche}{Couche}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_adf4750f513cd1235edfdadb97db4f749}{pre\+Activation}} ()
+\begin{DoxyCompactList}\small\item\em La fonction de pré activation \+: méthode qui permet de faire la somme pondérée des entrées. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche_a9b51a1bfb515f466695e1f512da418e6}{fonc\+Activation}} (const double sum)
+\begin{DoxyCompactList}\small\item\em La fonction d\textquotesingle{}activation \+: méthode qui permet d\textquotesingle{}activer les neurones afin d\textquotesingle{}optimiser le biais et avoir le bon résultat en sortie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant une couche. 
+
+Definition at line 18 of file Couche.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_les__couches__du__reseau_1_1_couche_af564932d3de118cead9fcc504e237285}\label{class_les__couches__du__reseau_1_1_couche_af564932d3de118cead9fcc504e237285}} 
+\index{Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}!Couche@{Couche}}
+\index{Couche@{Couche}!Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}}
+\doxysubsubsection{\texorpdfstring{Couche()}{Couche()}}
+{\footnotesize\ttfamily Les\+\_\+couches\+\_\+du\+\_\+reseau\+::\+Couche\+::\+Couche (\begin{DoxyParamCaption}\item[{const int}]{nb\+Neurones }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche}{Couche}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & int nb\+Neurones \+: entier représentant le nombre de neurones d\textquotesingle{}une couche ne change pas une fois choisi au cours du programme \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_les__couches__du__reseau_1_1_couche_ad6b0be0bb3de03b0364a23cd64cfc052}\label{class_les__couches__du__reseau_1_1_couche_ad6b0be0bb3de03b0364a23cd64cfc052}} 
+\index{Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}!````~Couche@{$\sim$Couche}}
+\index{````~Couche@{$\sim$Couche}!Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}}
+\doxysubsubsection{\texorpdfstring{$\sim$Couche()}{~Couche()}}
+{\footnotesize\ttfamily virtual Les\+\_\+couches\+\_\+du\+\_\+reseau\+::\+Couche\+::$\sim$\+Couche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructeur de la classe \mbox{\hyperlink{class_les__couches__du__reseau_1_1_couche}{Couche}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_les__couches__du__reseau_1_1_couche_a9b51a1bfb515f466695e1f512da418e6}\label{class_les__couches__du__reseau_1_1_couche_a9b51a1bfb515f466695e1f512da418e6}} 
+\index{Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}!foncActivation@{foncActivation}}
+\index{foncActivation@{foncActivation}!Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}}
+\doxysubsubsection{\texorpdfstring{foncActivation()}{foncActivation()}}
+{\footnotesize\ttfamily Les\+\_\+couches\+\_\+du\+\_\+reseau\+::\+Couche\+::fonc\+Activation (\begin{DoxyParamCaption}\item[{const double}]{sum }\end{DoxyParamCaption})}
+
+
+
+La fonction d\textquotesingle{}activation \+: méthode qui permet d\textquotesingle{}activer les neurones afin d\textquotesingle{}optimiser le biais et avoir le bon résultat en sortie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & double sum \+: résultat de la fonction de pré-\/activation qui calcule la somme de tous les neurones de la couche précédente pondérée avec leur poids respectif et du biais associé au neurone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la valeur du neurone après l\textquotesingle{}activation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_les__couches__du__reseau_1_1_couche_adf4750f513cd1235edfdadb97db4f749}\label{class_les__couches__du__reseau_1_1_couche_adf4750f513cd1235edfdadb97db4f749}} 
+\index{Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}!preActivation@{preActivation}}
+\index{preActivation@{preActivation}!Les\_couches\_du\_reseau::Couche@{Les\_couches\_du\_reseau::Couche}}
+\doxysubsubsection{\texorpdfstring{preActivation()}{preActivation()}}
+{\footnotesize\ttfamily Les\+\_\+couches\+\_\+du\+\_\+reseau\+::\+Couche\+::pre\+Activation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+La fonction de pré activation \+: méthode qui permet de faire la somme pondérée des entrées. 
+
+\begin{DoxyReturn}{Returns}
+Somme pondérée des entrées. Le résultat est passé en paramètre de la fonction d\textquotesingle{}activation 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_couche_8hpp}{Couche.\+hpp}}\end{DoxyCompactItemize}

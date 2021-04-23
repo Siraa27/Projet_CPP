@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
+<TestRun>
+  <FailedTests>
+    <FailedTest id="1">
+      <Name>TestCoucheCachee::testPreActivation</Name>
+      <FailureType>Error</FailureType>
+      <Message>uncaught exception of type std::exception (or derived).
+- Erreur indices
+</Message>
+    </FailedTest>
+    <FailedTest id="2">
+      <Name>TestCoucheCachee::testFoncActivation</Name>
+      <FailureType>Error</FailureType>
+      <Message>uncaught exception of type std::exception (or derived).
+- Erreur indices
+</Message>
+    </FailedTest>
+  </FailedTests>
+  <SuccessfulTests>
+    <Test id="3">
+      <Name>TestCoucheCachee::testDerivFoncActivation</Name>
+    </Test>
+  </SuccessfulTests>
+  <Statistics>
+    <Tests>3</Tests>
+    <FailuresTotal>2</FailuresTotal>
+    <Errors>2</Errors>
+    <Failures>0</Failures>
+  </Statistics>
+</TestRun>

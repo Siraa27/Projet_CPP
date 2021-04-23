@@ -1,0 +1,3 @@
+On a ajouté une classe Interface qui demande à l'utilisateur de fournir les parametres (soit à la main, soit fournir fichier). Et dans l'interface utilisateur : 2 méthodes de lecture des données (en fonction de si on a choisi à la main ou fichier). Ces 2 methodes, elles retournent une liste de params qui va servir à la création du reseau. Avec tout ça, on va créer les couches cachées. 
+
+La 2eme question c'était Entrées et Sorties : le nombre de neurones de ces 2 couches va dépendre de la requete de la personne. 

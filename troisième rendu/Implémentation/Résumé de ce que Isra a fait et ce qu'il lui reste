@@ -1,0 +1,51 @@
+TestCoucheCachee : check (doxygen)
+TestCoucheEntree : check (doxygen)
+TestCoucheSortie : check (doxygen)
+
+Les accesseurs à rajouter 
+double getCoefMatrice(int i, int j) : check (doxygen)
+Matrice getLiaisonEntrees() : check (doxygen)
+Matrice getBiais(); check (doxygen)
+
+les mutateurs à rajouter
+
+
+
+/opt/homebrew/opt/cppunit/include/
+
+Dans Couche.cpp : 
+//Recupere les sorties des neurones de la couche et les stock dans une matrice
+Matrice Couche::recupSortiesNeurones() 
+ou est le return ?? et à quoi sert cette méthode 
+
+Dans Matrice.cpp : 
+Peut on mettre en paramètre dans les fonctions d'activation les adresses des matrices ?? 
+
+Les idées multiples :
+void TestCoucheCachee::testactivation(void) 
+void TestCoucheEntrees::testConstructionSortie(void)
+i=i+1
+while ( CPPUNIT_ASSERT( C2->Neurone[i] == C1->Neurone[i] )  && i<3 ) {
+        i=i+1; 
+}  
+
+
+
+
+Question prof 
+	// Pour faire ce test on a besoin d'un objet couEntrée avec lee tableau de neurones initialises avec 
+	//les valeurs donnees dans le rapport
+	// Comment faire ça ?
+	// Dans les tests peut-on acceder à des attributs private
+	// Est ce que je peux créer un objet coucheEntrée et l'initialiser comme je veux 
+	// Notre constructeur coucheEntrée initialise le tableau de neurones avec un fichier comment faire ?  
+
+	// Dans coucheCachee.hpp j'ai un attribut Matrice* LiaisonsEntrees; est ce que je peux faire 
+	// C1->LiaisonEntrees.setCoefMatrice(i,j,coef)
+ 
+    // un contructeur avec que des zero pour la matrice de laisiason et que des zeros pour les biais (la couche verte)
+    
+    
+    
+Erreur de segmentation bizare sinon tous les tests sont fails sauf les dérivé ( je sais pas comment faire le test avec le fichier Amina help me)
+
