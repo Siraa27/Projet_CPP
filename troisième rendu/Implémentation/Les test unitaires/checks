@@ -1,3 +1,20 @@
 TestCoucheCachee : check (doxygen)
 TestCoucheEntree : check (doxygen)
 TestCoucheSortie : 
+
+Les accesseurs à rajouter 
+double getCoefMatrice(int i, int j) : check (doxygen)
+Matrice getLiaisonEntrees() : check (doxygen)
+Matrice getBiais(); // couchCachee et Sortie
+
+les mutateurs à rajouter
+
+
+
+
+
+Dans Couche.cpp : 
+//Recupere les sorties des neurones de la couche et les stock dans une matrice
+Matrice Couche::recupSortiesNeurones() 
+
+ou est le return ?? et à quoi sert cette méthode 

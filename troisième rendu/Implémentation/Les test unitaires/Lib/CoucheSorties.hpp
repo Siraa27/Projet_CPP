@@ -36,6 +36,12 @@ class CoucheSorties: public Couche{
       ~CoucheSorties();
       
       /*!
+      *  \fn getLiaisonEntrees()
+      *  \brief Ce qui nous permet a acceder a la matrice LiaisonEntrees de la couche
+      *  \return matrice des liaisons
+      */
+      Matrice getLiaisonEntrees();
+      /*!
       *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
       *  \return matrice des sommes pondérées des entrées pour chaque neurone

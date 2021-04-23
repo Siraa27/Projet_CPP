@@ -17,8 +17,14 @@ CoucheCachee::~CoucheCachee()
 	(*LiaisonsEntrees).~Matrice();
 }
 
+// Accesseur
+Matrice CoucheCachee::getLiaisonEntrees(){
+	return *LiaisonsEntrees; // ça me semble bizarre de retourner le pointeur !!
+};
+
+//-----------------------------------Les Méthodes-----------------------------------
 //Fontion de pre activation 
-Matrice CoucheCachee::preActivation(Couche couchePrec) // preActivation( Matrice   ) // Matrice NeuronePrec va être passé en paramètre dans le main
+Matrice CoucheCachee::preActivation(Couche couchePrec) 
 {
 	//(Matrice Liaison * Sorties neurones couche precedente) + biais
 	//Nous manipulons des matrices 
@@ -39,3 +45,4 @@ double CoucheCachee::derivFoncActivation(double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }
+//-----------------------------------------------------------------------------------

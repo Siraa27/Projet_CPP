@@ -36,7 +36,13 @@ class CoucheCachee : public Couche{
       *  \brief Destructeur de la classe CoucheCachee
       */
       ~CoucheCachee();
-        
+
+      /*!
+      *  \fn getLiaisonEntrees()
+      *  \brief Ce qui nous permet a acceder a la matrice LiaisonEntrees de la couche
+      *  \return matrice des liaisons
+      */
+      Matrice getLiaisonEntrees();
       /*!
       *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
