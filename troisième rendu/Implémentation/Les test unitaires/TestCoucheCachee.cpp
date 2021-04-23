@@ -141,7 +141,7 @@ void TestCoucheCachee::testPreActivation(void)
 	C0->getNeurone(2).setSortie(6.0);
 	C0->getNeurone(3).setSortie(2.5);
 	// preActivation renvoie une (Matrice) donc elle va cracher les valeurs dans la matrice Resultat 
-   Resultat = C1->preActivation(C0);
+   Resultat = C1->preActivation(*C0);
 
    CPPUNIT_ASSERT( fabs( TestResultat->getCoefMatrice(0,0) - Resultat->getCoefMatrice(0,0) ) < 0.00001 &&  fabs( TestResultat->getCoefMatrice(0,1) - Resultat->getCoefMatrice(0,1) ) < 0.00001 ) ;
 };
