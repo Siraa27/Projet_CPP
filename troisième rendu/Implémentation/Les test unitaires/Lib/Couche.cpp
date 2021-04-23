@@ -36,9 +36,10 @@ Neurone Couche::getNeurone(int i) const
 Matrice Couche::recupSortiesNeurones()
 {
 	int nbLig = getNbNeurones();
-	Matrice* res = new Matrice(nbLig, 1);
+	Matrice res = Matrice(nbLig, 1);
 	for (int i=0; i<nbLig; i++)
 	{
-		(*res).setCoefMatrice(i, 1, getNeurone(i).getSortie());
+		(res).setCoefMatrice(i, 1, getNeurone(i).getSortie());
 	}
+	return res;
 }
