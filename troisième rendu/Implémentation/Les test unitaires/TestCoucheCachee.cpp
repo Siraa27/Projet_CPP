@@ -86,7 +86,6 @@ void TestCoucheCachee::setUp(void)
 	// Dans les tests peut-on accéder à des attributs private
 	// Est ce que je peux créer un objet coucheEntrée et l'initialiser comme je veux 
 	// Notre constructeur coucheEntrée initialise le tableau de neurones avec un fichier comment faire ?  
-    // CPPUNIT_ASSERT() ==> bool
 
 	// Dans coucheCachee.hpp j'ai un attribut Matrice* LiaisonsEntrees; est ce que je peux faire 
 	// C1->LiaisonEntrees.setCoefMatrice(i,j,coef)
