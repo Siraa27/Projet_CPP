@@ -1,5 +1,6 @@
 #include "Matrice.hpp"
 #include <stdexcept>
+#include <random>
 
 //Constructeurs
 Matrice::Matrice(const int nbLignes, const int nbColonnes)
@@ -79,6 +80,10 @@ double** Matrice::getMatrice()
 //Set le coefficient (i,j) de la matrice
 void Matrice::setCoefMatrice(int i, int j, double coef)
 {
+	if (i>=nbLig || (j>=nbCol)) 
+	{
+		throw std::length_error("Erreur indices");
+	}
 	matrice[i][j] = coef;
 }
 
@@ -87,7 +92,11 @@ void Matrice::initAleatoire()
 {
 		for (int i=0; i< nbLig; i++)
 		{
-			
+			for (int j=0; j< nbCol; j++)
+			{
+				double coef = (double) rand()/RAND_MAX;
+				setCoefMatrice(i, j, coef);
+			}
 		}
 }
 
