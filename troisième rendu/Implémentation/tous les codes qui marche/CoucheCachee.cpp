@@ -29,7 +29,7 @@ Matrice CoucheCachee::getBiais(){
 //-----------------------------------Les Méthodes-----------------------------------
 //-----------------------------------------------------------------------------------
 
-//Fontion de pre activation 
+//Fonction de pre activation 
 Matrice CoucheCachee::preActivation(Couche couchePrec) 
 {
 	//(Matrice Liaison * Sorties neurones couche precedente) + biais
@@ -37,7 +37,7 @@ Matrice CoucheCachee::preActivation(Couche couchePrec)
 	Matrice res = (LiaisonsEntrees->operator *(couchePrec.recupSortiesNeurones())).operator +(*biais);
 	return res;
 }
-
+//Fonction de activation 
 void CoucheCachee::foncActivation(Matrice sum) //sigmoid
 {
 	for (int i=0; i<getNbNeurones(); i++)

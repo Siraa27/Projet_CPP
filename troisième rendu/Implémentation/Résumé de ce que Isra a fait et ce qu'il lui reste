@@ -49,3 +49,8 @@ Question prof
     
 Erreur de segmentation bizare sinon tous les tests sont fails sauf les dérivé ( je sais pas comment faire le test avec le fichier Amina help me)
 
+
+Pour le biais :
+il faut changer l'attribut biais et le mettre dans interface utilisateurs 
+car il faut l'initialiser au début soit à la main soit à partir d'un fichier de données 
+( c'est peut être pour cette raison que les tests sont des failures car les biais sont vides ils ne conctiennent pas de valeurs)
