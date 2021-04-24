@@ -85,5 +85,13 @@ class Matrice{
       *
       */
       void setCoefMatrice(int i, int j, double coef);
+
+      /*!
+      *  \fn setCoefs
+      *  \brief Set tous les coefs de la matrice à coef
+      *
+      */
+      void setCoefs(double coef);
+
 };
 #endif
