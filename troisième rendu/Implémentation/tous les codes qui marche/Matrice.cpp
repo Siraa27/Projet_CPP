@@ -103,7 +103,6 @@ void Matrice::setCoefMatrice(int i, int j, double coef)
 	matrice[i][j] = coef;
 }
 
-
 //initialise alétatoirement la matrices
 void Matrice::initAleatoire()
 {

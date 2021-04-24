@@ -39,14 +39,14 @@ class CoucheCachee : public Couche{
 
       /*!
       *  \fn getLiaisonEntrees()
-      *  \brief Ce qui nous permet a acceder a la matrice LiaisonEntrees de la couche
+      *  \brief Permet a acceder a la matrice LiaisonEntrees de la couche
       *  \return matrice des liaisons
       */
       Matrice getLiaisonEntrees();
       
       /*!
       *  \fn getBiais()
-      *  \brief Ce qui nous permet a acceder a la matrice biais de la couche
+      *  \brief Permet a acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
       Matrice getBiais();
