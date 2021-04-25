@@ -52,6 +52,12 @@ class CoucheCachee : public Couche{
       Matrice getBiais();
       
       /*!
+      *  \fn setBiais()
+      *  \brief Permet de set un coef de la matrice biais de la couche
+      */
+      void setBiais(int i, int j, double coef );
+
+      /*!
       *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
       *  \return matrice des sommes pondérées des entrées pour chaque neurone

@@ -18,12 +18,19 @@ CoucheCachee::~CoucheCachee()
 }
 
 // Accesseurs
-Matrice CoucheCachee::getLiaisonEntrees(){
+Matrice CoucheCachee::getLiaisonEntrees()
+{
 	return (*LiaisonsEntrees);
 }
 
-Matrice CoucheCachee::getBiais(){
+Matrice CoucheCachee::getBiais()
+{
 	return (*biais);
+}
+
+void CoucheCachee::setBiais(int i, int j, double coef )
+{
+	biais->setCoefMatrice(i,j,coef);
 }
 
 //-----------------------------------Les Méthodes-----------------------------------
