@@ -53,4 +53,8 @@ double CoucheSorties::derivFoncActivation(double x) //Derivee de la sigmoid
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }
 
+void CoucheSorties::initBiaisAleatoire()
+{
+	biais->initAleatoire();
+}
 //-----------------------------------------------------------------------------------

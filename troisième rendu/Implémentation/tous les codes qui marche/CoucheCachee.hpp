@@ -78,6 +78,13 @@ class CoucheCachee : public Couche{
       *  \return valeur de la derivee evaluee en x
       */
       double derivFoncActivation(double x);
+
+      /*!
+      *  \fn initBiaisAleatoire()
+      *  \brief Initialise aleatoirement la matrice des biais
+      */
+      void initBiaisAleatoire();
+
 };
 
 #endif
