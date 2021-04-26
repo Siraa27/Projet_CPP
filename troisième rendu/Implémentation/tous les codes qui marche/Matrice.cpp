@@ -73,6 +73,10 @@ Matrice::~Matrice()
     nbCol=0;
 }
 
+
+//-----------------------------------Les Méthodes-----------------------------------
+//-----------------------------------------------------------------------------------
+
 // Accesseurs
 double** Matrice::getMatrice()
 {
@@ -99,10 +103,6 @@ void Matrice::setCoefMatrice(int i, int j, double coef)
 	matrice[i][j] = coef;
 }
 
-
-//-----------------------------------Les Méthodes-----------------------------------
-//-----------------------------------------------------------------------------------
-
 //initialise alétatoirement la matrices
 void Matrice::initAleatoire()
 {
@@ -111,6 +111,18 @@ void Matrice::initAleatoire()
 			for (int j=0; j< nbCol; j++)
 			{
 				double coef = (double) rand()/RAND_MAX;
+				setCoefMatrice(i, j, coef);
+			}
+		}
+}
+
+//Initialise tous les coefs
+void Matrice::setCoefs(double coef)
+{
+		for (int i=0; i< nbLig; i++)
+		{
+			for (int j=0; j< nbCol; j++)
+			{
 				setCoefMatrice(i, j, coef);
 			}
 		}

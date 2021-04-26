@@ -39,18 +39,24 @@ class CoucheCachee : public Couche{
 
       /*!
       *  \fn getLiaisonEntrees()
-      *  \brief Ce qui nous permet a acceder a la matrice LiaisonEntrees de la couche
+      *  \brief Permet a acceder a la matrice LiaisonEntrees de la couche
       *  \return matrice des liaisons
       */
       Matrice getLiaisonEntrees();
       
       /*!
       *  \fn getBiais()
-      *  \brief Ce qui nous permet a acceder a la matrice biais de la couche
+      *  \brief Permet a acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
       Matrice getBiais();
       
+      /*!
+      *  \fn setBiais()
+      *  \brief Permet de set un coef de la matrice biais de la couche
+      */
+      void setBiais(int i, int j, double coef );
+
       /*!
       *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées

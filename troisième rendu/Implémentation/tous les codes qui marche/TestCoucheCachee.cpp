@@ -121,18 +121,18 @@ void TestCoucheCachee::testPreActivation(void)
     // 0.5 | 0.8 |
 	// Remplissage de la matrice biais
 	C1->getBiais().setCoefMatrice( 0, 0, 0.5 );
-	C1->getBiais().setCoefMatrice( 0, 1, 0.8 );
+	C1->getBiais().setCoefMatrice( 1, 0, 0.8 );
 
 
 	// Création des matrices pour les tests
-   Matrice* Resultat = new Matrice (1,2); 
-   Matrice* TestResultat = new Matrice (1,2); 
+   Matrice* Resultat = new Matrice (2,1); 
+   Matrice* TestResultat = new Matrice (2,1); 
 
 	// Ma matrice TestResultat est égale à :
 	// 6.87 | 8.98 |
 	// Remplissage de la matrice de TestResultat avec les valeurs souhaitees
    TestResultat->setCoefMatrice( 0, 0, 6.87 );
-   TestResultat->setCoefMatrice( 0, 1, 8.98 );
+   TestResultat->setCoefMatrice( 1, 0, 8.98 );
 
 	// Création du Bouchon 
 	// Le tableau de neurone de La couche precedente est égale à : 
