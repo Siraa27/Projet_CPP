@@ -130,7 +130,8 @@ void TestCoucheCachee::testPreActivation(void)
    Matrice* TestResultat = new Matrice (2,1); 
 
 	// Ma matrice TestResultat est égale à :
-	// 6.87 | 8.98 |
+	// 6.87 | 
+	// 8.98 |
 	// Remplissage de la matrice de TestResultat avec les valeurs souhaitees
    TestResultat->setCoefMatrice( 0, 0, 6.87 );
    TestResultat->setCoefMatrice( 1, 0, 8.98 );
