@@ -118,7 +118,8 @@ void TestCoucheCachee::testPreActivation(void)
     }
 
     // Ma matrice biais est égale à 
-    // 0.5 | 0.8 |
+    // 0.5 | 
+	// 0.8 |
 	// Remplissage de la matrice biais
 	C1->getBiais().setCoefMatrice( 0, 0, 0.5 );
 	C1->getBiais().setCoefMatrice( 1, 0, 0.8 );
