@@ -59,4 +59,9 @@ double CoucheCachee::derivFoncActivation(double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }
+
+void CoucheCachee::initBiaisAleatoire()
+{
+	biais->initAleatoire();
+}
 //-----------------------------------------------------------------------------------

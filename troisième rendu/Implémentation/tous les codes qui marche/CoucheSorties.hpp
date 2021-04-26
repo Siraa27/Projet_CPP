@@ -76,6 +76,12 @@ class CoucheSorties: public Couche{
       *  \return résultat du reseau
       */
       void constructionSorties(); //Pas encore implémentée
+
+      /*!
+      *  \fn initBiaisAleatoire()
+      *  \brief Initialise aleatoirement la matrice des biais
+      */
+      void initBiaisAleatoire();
 };
 
 #endif
