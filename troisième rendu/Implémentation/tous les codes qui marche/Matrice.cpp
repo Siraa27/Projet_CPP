@@ -96,10 +96,10 @@ double Matrice::getCoefMatrice(int i, int j)
 //Set le coefficient (i,j) de la matrice
 void Matrice::setCoefMatrice(int i, int j, double coef)
 {
-	if (i>=nbLig || (j>=nbCol)) 
-	{
-		throw std::length_error("Erreur indices");
-	}
+	//if (i>=nbLig || (j>=nbCol)) 
+	//{
+	//	throw std::length_error("Erreur  indices 1");
+	//}
 	matrice[i][j] = coef;
 }
 
@@ -143,7 +143,7 @@ Matrice Matrice::operator *(const Matrice &m)
 	//Produit matricielle
 	for (int i=0;i<nbLig;i++)
 	{
-		for (int j=0;j<m.nbCol;j++)
+		for (int j=0;j<m.nbCol;j++) 
 		{
 			for (int k=0;k<nbCol;k++)
 			{

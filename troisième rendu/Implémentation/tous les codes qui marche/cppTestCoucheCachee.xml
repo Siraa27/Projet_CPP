@@ -3,28 +3,28 @@
   <FailedTests>
     <FailedTest id="1">
       <Name>TestCoucheCachee::testPreActivation</Name>
-      <FailureType>Error</FailureType>
-      <Message>uncaught exception of type std::exception (or derived).
-- Erreur indices
-</Message>
-    </FailedTest>
-    <FailedTest id="2">
-      <Name>TestCoucheCachee::testFoncActivation</Name>
-      <FailureType>Error</FailureType>
-      <Message>uncaught exception of type std::exception (or derived).
-- Erreur indices
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestCoucheCachee.cpp</File>
+        <Line>166</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: abs( TestResultat-&gt;getCoefMatrice(i,0) - Resultat-&gt;getCoefMatrice(i,0) ) &lt; 0.01
 </Message>
     </FailedTest>
   </FailedTests>
   <SuccessfulTests>
+    <Test id="2">
+      <Name>TestCoucheCachee::testFoncActivation</Name>
+    </Test>
     <Test id="3">
       <Name>TestCoucheCachee::testDerivFoncActivation</Name>
     </Test>
   </SuccessfulTests>
   <Statistics>
     <Tests>3</Tests>
-    <FailuresTotal>2</FailuresTotal>
-    <Errors>2</Errors>
-    <Failures>0</Failures>
+    <FailuresTotal>1</FailuresTotal>
+    <Errors>0</Errors>
+    <Failures>1</Failures>
   </Statistics>
 </TestRun>

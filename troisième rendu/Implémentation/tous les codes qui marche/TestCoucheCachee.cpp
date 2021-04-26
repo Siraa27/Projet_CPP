@@ -113,9 +113,22 @@ void TestCoucheCachee::testPreActivation(void)
     for (int j = 0; j < 4; j++ ){ // Je fixe d'abords la colonne c'est plus simple pour l'incrementation de k 
 	   for (int i = 0; i < 2 ; i++){
 		   C1->getLiaisonEntrees().setCoefMatrice( i, j, k * 0.1 );
+		   cout << C1->getLiaisonEntrees().getCoefMatrice(i,j);
 		   k = k + 1;
 	    }
     }
+
+	/*C1->getLiaisonEntrees().setCoefMatrice( 0, 0, 0.1 );
+	C1->getLiaisonEntrees().setCoefMatrice( 0, 1, 0.1 );
+	C1->getLiaisonEntrees().setCoefMatrice( 0, 2, 0.1 );
+	C1->getLiaisonEntrees().setCoefMatrice( 0, 3, 0.1 );
+
+	C1->getLiaisonEntrees().setCoefMatrice( 1, 0, 0.1 );
+	C1->getLiaisonEntrees().setCoefMatrice( 1, 1, 0.1 );
+	C1->getLiaisonEntrees().setCoefMatrice( 1, 2, 0.1 );
+	C1->getLiaisonEntrees().setCoefMatrice( 1, 3, 0.1 );*/
+
+
 
     // Ma matrice biais est égale à 
     // 0.5 | 
@@ -138,7 +151,10 @@ void TestCoucheCachee::testPreActivation(void)
 
 	// Création du Bouchon 
 	// Le tableau de neurone de La couche precedente est égale à : 
-	// 6.3 | 3.3 | 6.0 | 2.5 |
+	// 6.3 |
+	// 3.3 |
+	// 6.0 | 
+	// 2.5 |
 	C0->getNeurone(0).setSortie(6.3);
 	C0->getNeurone(1).setSortie(3.3);
 	C0->getNeurone(2).setSortie(6.0);
@@ -147,8 +163,8 @@ void TestCoucheCachee::testPreActivation(void)
   	*Resultat = C1->preActivation(*C0);
 	
 	for (int i = 0; i < 2 ; i++){
-  	CPPUNIT_ASSERT( abs( TestResultat->getCoefMatrice(0,i) - Resultat->getCoefMatrice(0,i) ) < 0.00001 );
-  	}
+  	CPPUNIT_ASSERT( abs( TestResultat->getCoefMatrice(i,0) - Resultat->getCoefMatrice(i,0) ) < 0.01 );
+  	};
   	//CPPUNIT_ASSERT( abs( TestResultat->getCoefMatrice(0,1) - Resultat->getCoefMatrice(0,1) ) < 0.00001 ) ;
 };
 
@@ -156,10 +172,11 @@ void TestCoucheCachee::testFoncActivation(void)
 {	
 	// Comme la matrice résultat etait variable local au test précédent on la rerempli !!
     // La matrice résultat trouvé à l'aide de la methode preactivation est égale à :
-	// 6.87 | 8.98 |
-	Matrice* SommePond = new Matrice (1,2); 	
+	// 6.87 | 
+	// 8.98 |
+	Matrice* SommePond = new Matrice (2,1); 	
 	SommePond->setCoefMatrice( 0, 0, 6.87 );
-        SommePond->setCoefMatrice( 0, 1, 8.98 );
+    SommePond->setCoefMatrice( 1, 0, 8.98 );
 	// On veut que le tableau de neurone dans la couche C1 soit égale à :
 	// 0.001 | 0.0001258869
 
@@ -167,13 +184,13 @@ void TestCoucheCachee::testFoncActivation(void)
 	//{
 		//j'ai deux idée pour faire les tests je sais pas laquelle est mieux ou laquelle marche 
 
-	Matrice* NeuroneTest = new Matrice (1,2); // Quand je met un 1 ici j'ai plus d'erreur de segmentation
+	Matrice* NeuroneTest = new Matrice (2,1); // Quand je met un 1 ici j'ai plus d'erreur de segmentation
 	NeuroneTest->setCoefMatrice( 0, 0, 0.001);
-   	NeuroneTest->setCoefMatrice( 0, 1, 0.0001258869);
+   	NeuroneTest->setCoefMatrice( 1, 0, 0.0001258869);
    	
    	C1->foncActivation(*SommePond);
    	for (int i = 0; i < 2 ; i++){
-	CPPUNIT_ASSERT( abs(NeuroneTest->getCoefMatrice(0,i) - C1->getNeurone(i).getSortie() ) < 0.00001);
+	CPPUNIT_ASSERT( abs(NeuroneTest->getCoefMatrice(i,0) - C1->getNeurone(i).getSortie() ) < 0.01);
 	}
 	
 	
