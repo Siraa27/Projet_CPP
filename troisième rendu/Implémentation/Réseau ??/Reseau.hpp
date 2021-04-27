@@ -5,92 +5,86 @@
 using namespace std;
 /*!
  * \file Reseau.hpp
- * \brief Les propriétés d'un réseau : le nombre de couches qui le compose, ses couches, et sa matrice de liaison
+ * \brief Les proprietes d'un reseau : le nombre de couches qui le compose, ses couches, et sa matrice de liaison
  * \author Groupe projet A1
  * \version 0.1
  */
 /*! \namespace Les_types_de_reseaux
- * Permet de créer un certain type de réseau
+ * Permet de creer un certain type de reseau
  */
-namespace Les_types_de_reseaux 
-{
-   /*! \class Reseau
-   * \brief Classe représentant un réseau
+
+
+ /*! \class Reseau
+ * \brief Classe representant un reseau
+ */
+class Reseau {
+
+
+// Les attributs
+protected: 	 /*! < Pour que les classes filles aient egalement acces a ces attributs */
+  CoucheEntrees entrees;
+  CoucheSorties sorties;
+  vector<CoucheCachee> couches;
+  int nbCouchesCachees;
+  vector<Matrice> gradientErr;
+  /*! gradient Err contient une matrice deltaw (pour les poids) et une matrice deltab (pour les biais) pour chaque couche
+  deltaw et deltab representent les quantites incrementees lors de l'apprentissage  */
+
+  // Les constructeurs
+  /*!
+  *  \brief Constructeur prenant en compte les parametres fourni par l'utilisateur via un fichier ou non
+  */
+  Reseau(int nbCouchesCachees, vector<int> nbNeuronesParCouches, int choixPoids, string nomFichEntrees, int nbNeuronesSorties);
+
+  /*!
+  *  \brief Destructeur de Reseau
+  */
+  ~Reseau();
+
+  /*!
+  *  \fn double erreur(string nomFichSorties)
+  *  \brief La fonction calcule la norme au carre de l'erreur commise par le reseau sur un seul exemple
+  *  \param Fichier SortiesAttendues
+  *  \return valeur de la mesure de l'erreur a l'instant t
+  *
+  */
+  double erreur(string nomFichSorties);
+
+  /*!
+   *  \fn CalcGradC(CoucheSorties sAttendues);
+   *  \brief La fonction qui calcule les valeurs a incrementer dans les biais et les poids en utilisant le principe de la descente du gradient dans gradientErr.
+   *  \param CoucheSorties sAttendues
    */
-  class Reseau { 
- 
+  void calcGradErr(CoucheSorties sAttendues);
 
-	// Les attributs
-	protected: 	 /*! < Pour que les classes filles aient également accès à ces attributs */
-		Couche Couches[];
-		int nbCouche;
-	
-	// Les constructeurs
-	/*!
-             *  \brief Constructeur sans argument
-             *
-             *  Constructeurs de la classe Reseau
-             *
-             */
-          Reseau();
-             /*! 
-             *  \brief Constructeur prenant en compte les paramètres fourni par l'utilisateur via un fichier ou non 
-             *  \param listeParametres : liste introduite par le biais de la classe InterfaceUtilisateur fournissant les parametres nécessaires à la construction du réseau
-             */
-          Reseau(Liste listeParametres); 
-             /*!
-             *  \brief Destructeur de Reseau
-             */
-          ~Reseau();
-          
-              /*!
-             *  \fn ajouterCouche(Couche c, int numCouche)
-             *  \brief La fonction permet d'ajouter une couche au réseau.
-             *  \param Couche c : Objet de la classe Couche
-             *  \param int numCouche : entier indiquant l'indice de la couche c.
-             *  \return Rien mais modifie le réseau
-             */
-          void ajouterCouche(Couche c,int numCouche);
-             
-             /*!
-             *  \fn double erreur(Fichier SortiesAttendues)
-             *  \brief La fonction calcule l'erreur commise par le réseau à l'aide de l'algorithme de descente de gradient et donc indique sa précision.
-             *  \param Fichier SortiesAttendues
-             *  \return valeur de la mesure de l'erreur à l'instant t
-             * 
-             */
-	      double erreur(Fichier SortiesAttendues)
-          
-             /*!
-             *  \fn Apprentissage(Fichier Données);
-             *  \brief La fonction permet l'apprentissage du réseau de neurone en prenant en argument les données fournis en entrée
-             *  \param Fichier Données
-             *
-             *  \return Rien mais modifie le réseau
-             * 
-             */
-	      void Apprentissage(Fichier Données);
-          
-            /*!
-             *  \fn backPropagation(Liste Entrées x, Liste Sorties y);
-             *  \brief applique la méthode essentielle de la backPropagation
-             *  \param Liste Entrées x, Liste Sorties y
-             *
-             *  \return Rien mais modifie le réseau
-             * 
-             */
-	  void backPropagation(Liste Entrées x, Liste Sorties y);
-	  /*!
-             *  \fn CalcGradC(Sorties sAttendues, Sorties sCalculées);
-             *  \brief La fonction est celle de descente du gradient.
-             *  \param Sorties sAttendues, Sorties sCalculées
-             *
-             *  \return le vecteur correspondant au gradient de l'erreur par rapport à tous les poids et les biais à l'étape p+1
-             * 
-             */
-	  tableau CalcGradC(Sorties sAttendues, Sorties sCalculées);
-	}; 
+  /*!
+  *   \fn calcSorties(CoucheEntrees e);
+  *   \brief calcule les sorties obtenues avec les entrees e
+  *   \param CoucheEntrees e
+  */
+  void calcSorties(CoucheEntrees e);
 
-	  
+  /*!
+   *  \fn backPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y);
+   *  \brief modifie les poids et les biais en utilisant le sous-echantillon d'apprentissage (x,y)
+   *  \param vector<CoucheEntrees> x, vector<CoucheSorties> y
+   */
+  void BackPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y);
+
+  /*!
+   *  \fn Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic);
+   *  \brief Construit le sous-echantillon d'apprentissage a l'aide du fichier nomFich
+   *  \param vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic
+   */
+  void Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic);
+
+  /*!
+  *  \fn Apprentissage(string Donnees);
+  *  \brief Apprentissage du reseau de neurone en se basant sur l'echantillon d'apprentissage Donnees
+  *  \param string Donnees
+  */
+  void Apprentissage(string Donnees);
 };
+
 #endif
+
