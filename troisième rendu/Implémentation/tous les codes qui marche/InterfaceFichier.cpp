@@ -26,7 +26,7 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 			switch (indice)
 			{
 				case 1://chargement du type de réseau
-					if (static_cast<int>(nombre)==1)//Nous avons implémenté que réseau Forwarded
+					if (static_cast<int>(nombre)==1)//Nous n'avons implémenté que réseau Forwarded
 					{	
 						settypeReseau(static_cast<int>(nombre));
 					}
@@ -36,7 +36,7 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 					}
 					break;
 				case 2://chargement du cas d'utilisation
-					if (static_cast<int>(nombre)==1)//Nous avons implémenté que la classification
+					if (static_cast<int>(nombre)==1)//Nous n'avons implémenté que la classification
 					{	
 						setcasUtilisation(static_cast<int>(nombre));
 					}
@@ -46,37 +46,37 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 					}
 					break;
 				case 3://Chargement du nombre de couches cachees
-					if (static_cast<int>(nombre)>=0)//Nombre de neurones doit etre positif
+					if (static_cast<int>(nombre)>=0)//Nombre de couches doit etre positif
 					{	
 						setnbCouchesCachees(static_cast<int>(nombre));
 					}
 					else 
 					{
-						cout<<"ERREUR: Nombre de couche négative\n";
+						cout<<"ERREUR: Nombre de couches negatif\n";
 					}
 					break;
 				default:
 					if((indice>=4)&&(indice<=(getnbCouchesCachees()+3))||(getnbCouchesCachees()<0))
 					{//chargement du nombre de neurones par couches cachees
-						if (static_cast<int>(nombre)>0)//Nombre de neurone dans une couche est superieure a 0
+						if (static_cast<int>(nombre)>0)//Nombre de neurones dans une couche est superieure a 0
 						{	
 							setnbNeuronesParCouches(static_cast<int>(nombre), indice-4);
 						}
 						else 
 						{
 							setnbNeuronesParCouches(-1, 0);
-							cout<<"ERREUR: Nombre de neurones négatif ou probleme de couche cachee\n";
+							cout<<"ERREUR: Nombre de neurones negatif ou probleme de couche cachee\n";
 						}
 					}
 					else if (indice==(getnbCouchesCachees()+4))
-					{//chargement de l'initialisation de la matrice de poid
-						if (static_cast<int>(nombre)>=0)//Poid non négatif
+					{//chargement de l'initialisation de la matrice de poids
+						if (static_cast<int>(nombre)>=0)//Poids non negatif
 						{	
 							setchoixPoid(nombre);
 						}
 						else 
 						{
-							cout<<"ERREUR: Initialisation de la matrice de Poid avec des valeurs negatives\n";
+							cout<<"ERREUR: Initialisation de la matrice de Poids avec des valeurs negatives\n";
 						}
 						setchoixPoid(nombre);
 					}
