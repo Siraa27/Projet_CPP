@@ -76,9 +76,9 @@ void TestMatrice::setUp(void)
 {
 // à l'aide du constructeur Matrice
     //les matrices M1, M2 et M6 servent pour le premier test
-	Matrice* M1 = new Matrice(3, 3);
-    Matrice* M2 = new Matrice(3, 3); //on choisit de ne creer que des matrices particulieres pour simplifier la comprehension
-	Matrice* M6 = new Matrice(3,3); //Matrice résultat du produit de matrices M1*M2 : M6={{6,9,12},{6,9,12},{6,9,12}}
+	M1 = new Matrice(3, 3);
+    M2 = new Matrice(3, 3); //on choisit de ne creer que des matrices particulieres pour simplifier la comprehension
+	M6 = new Matrice(3, 3); //Matrice résultat du produit de matrices M1*M2 : M6={{6,9,12},{6,9,12},{6,9,12}}
 
     for (int i=0; i<3 ; i++)
     {
@@ -98,9 +98,9 @@ void TestMatrice::setUp(void)
         }
     }
     //les matrices M4, M5 et M7 servent pour le 3e test, celui avec des matrices non carrées
-    Matrice* M4 = new Matrice(1,2);  // M4= {{3, 1}}
-    Matrice* M5 = new Matrice(2, 3); // M5={{1, 8, 4} , {7, 1, 6}}
-	Matrice* M7 = new Matrice(1, 3); //Matrice résultat du produit de matrices M4*M5 : M7={22, 11, 22}
+    M4 = new Matrice(1,2);  // M4= {{3, 1}}
+    M5 = new Matrice(2, 3); // M5={{1, 8, 4} , {7, 1, 6}}
+	M7 = new Matrice(1, 3); //Matrice résultat du produit de matrices M4*M5 : M7={22, 11, 22}
     //On initialise les coefficients manuellement
     M4->setCoefMatrice(0,0,3);
     M4->setCoefMatrice(0,1,1);
@@ -140,7 +140,7 @@ void TestMatrice::testProduit(void)
    //test matrices non carrées mais bon format:  M1(nxp)*M2(pxq) == M(nxq)
    for (int i=0; i<=0; i++) {//le zero correspond à l'unique indice ligne pour la matrice résultat M7 à 1 ligne
 		for (int j=0; j<=2; j++) {//le 2 correspond aux indices colonnes pour la matrice résultat M7 à 3 colonnes
-   			CPPUNIT_ASSERT( M7->getCoefMatrice(i, j) == (*M4->operator *(M5)->getCoefMatrice(i, j))); 
+   			CPPUNIT_ASSERT( M7->getCoefMatrice(i, j) == (M4->operator *(M5)->getCoefMatrice(i, j))); 
         }
    }
 
