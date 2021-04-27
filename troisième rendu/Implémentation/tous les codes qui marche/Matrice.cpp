@@ -197,15 +197,4 @@ Matrice Matrice::operator -(const Matrice &m)
     return mat;
 }
 
-void Matrice::divMatrice(double coef)
-{
-	for (int i=0;i<nbLig;i++)
-	{
-		for (int j=0;j<nbCol;j++)
-		{
-			matrice[i][j] =  matrice[i][j] /coef; 
-		}
-	}
-}
-
 //-----------------------------------------------------------------------------------

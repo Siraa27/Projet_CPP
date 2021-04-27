@@ -131,7 +131,7 @@ void TestMatrice::testProduit(void)
     //test matrices carrées :
    for (int i=0; i<=2; i++) //le 2 correspond aux indices ligne pour la matrice résultat M6 à 3 lignes
 		for (int j=0; j<=2; j++) //le 2 correspond aux indices colonnes pour la matrice résultat M6 à 3 colonnes
-   			CPPUNIT_ASSERT( M6->getCoefMatrice(i,j) == (M1->operator *(M2))->getCoefMatrice(i, j));
+   			CPPUNIT_ASSERT( M6->getCoefMatrice(i,j) == (M1->operator *(*M2)).getCoefMatrice(i, j));
 
     //EN SUSPENS 		   
 	//test mauvais format de matrices 
@@ -140,7 +140,7 @@ void TestMatrice::testProduit(void)
    //test matrices non carrées mais bon format:  M1(nxp)*M2(pxq) == M(nxq)
    for (int i=0; i<=0; i++) {//le zero correspond à l'unique indice ligne pour la matrice résultat M7 à 1 ligne
 		for (int j=0; j<=2; j++) {//le 2 correspond aux indices colonnes pour la matrice résultat M7 à 3 colonnes
-   			CPPUNIT_ASSERT( M7->getCoefMatrice(i, j) == (M4->operator *(M5)->getCoefMatrice(i, j))); 
+   			CPPUNIT_ASSERT( M7->getCoefMatrice(i, j) == (M4->operator *(*M5).getCoefMatrice(i, j))); 
         }
    }
 
