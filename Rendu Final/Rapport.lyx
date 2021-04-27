@@ -1188,7 +1188,7 @@ Diagramme de cas d’utilisation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1235,7 +1235,7 @@ Diagramme de classe
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1313,7 +1313,7 @@ Nous commençons avec un diagramme de séquence assez général :
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1351,7 +1351,7 @@ Notamment, pour la création d'un réseau :
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1384,7 +1384,7 @@ Diagramme de séquence
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1423,7 +1423,7 @@ Finalement, nous avons réalisé un diagramme de séquence lorsqu'un utilisateur
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1551,7 +1551,7 @@ Le fichier va être sous la forme suivante :
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1670,7 +1670,7 @@ Donc notre réseau, cela ressemblera à quelque chose comme ça :
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -1948,7 +1948,7 @@ me, on implémente la méthode de descente du gradient.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
