@@ -58,7 +58,7 @@ class CoucheCachee : public Couche{
       void setBiais(int i, int j, double coef );
 
       /*!
-      *  \fn preActivation()
+      *  \fn preActivation(Couche couchePrec)
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
       *  \return matrice des sommes pondérées des entrées pour chaque neurone
       */

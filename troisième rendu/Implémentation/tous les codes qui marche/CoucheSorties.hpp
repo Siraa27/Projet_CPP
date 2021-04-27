@@ -2,6 +2,8 @@
 #define COUCHESORTIES_HPP
 #include "Couche.hpp"
 #include "Matrice.hpp"
+#include <iostream>
+#include <stdlib.h>
 
 /*!
  * \file CoucheSorties.hpp
@@ -30,6 +32,8 @@ class CoucheSorties: public Couche{
       */
 		CoucheSorties(const int nbNeurones, const int nbNeuronesCouchePrec); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
       
+      CoucheSorties(const int nbNeuronesCouchePrec, std::string nomFic);
+
       /*!
       *  \brief Destructeur de la classe CoucheSorties
       */

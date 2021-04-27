@@ -53,5 +53,8 @@ class Couche{
 		*  recupere la sorties de tous les neurones d'une couche
 		*/
 		Matrice recupSortiesNeurones();
+
+      void modifNeurone(int i, double s);
+
 };
 #endif
