@@ -47,4 +47,9 @@ Matrice Couche::recupSortiesNeurones()
 	return res;
 }
 
+void Couche::modifNeurone(int i, double s)
+{
+    Neurones[i].setSortie(s);
+}
+
 //-----------------------------------------------------------------------------------

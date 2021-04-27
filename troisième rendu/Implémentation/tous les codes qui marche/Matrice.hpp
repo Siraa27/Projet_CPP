@@ -93,5 +93,7 @@ class Matrice{
       */
       void setCoefs(double coef);
 
+      void divMatrice(double coef);
+
 };
 #endif

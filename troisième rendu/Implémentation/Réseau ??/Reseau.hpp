@@ -1,6 +1,12 @@
 #ifndef RESEAU_HPP
 #define RESEAU_HPP
 #include "Couche.hpp"
+#include "CoucheCachee.hpp"
+#include "CoucheEntrees.hpp"
+#include "CoucheSorties.hpp"
+#include "Matrice.hpp"
+#include <vector>
+
 
 using namespace std;
 /*!
