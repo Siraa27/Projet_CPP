@@ -48,10 +48,10 @@ Matrice CoucheCachee::preActivation(Couche couchePrec)
 //Fonction de activation 
 void CoucheCachee::foncActivation(Matrice sum) //sigmoid
 {
-	for (int i=0; i<getNbNeurones(); i++)
+	for (int i=0; i<Couche::getNbNeurones(); i++)
 	{
 		//On modifie directement la sortie des neurones de la couche
-		getNeurone(i).setSortie(1/(1+exp(sum.getMatrice()[i][1])));
+		Couche::getNeurone(i).setSortie(1/(1+exp(sum.getMatrice()[i][1])));
 	}
 }
 
