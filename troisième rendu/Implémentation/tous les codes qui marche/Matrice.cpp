@@ -103,7 +103,7 @@ void Matrice::setCoefMatrice(int i, int j, double coef)
 	matrice[i][j] = coef;
 }
 
-//initialise alétatoirement la matrices
+//initialise alétatoirement la matrice
 void Matrice::initAleatoire()
 {
 		for (int i=0; i< nbLig; i++)
@@ -140,7 +140,7 @@ Matrice Matrice::operator *(const Matrice &m)
 	
     Matrice mat = Matrice(nbLig, m.nbCol);
 
-	//Produit matricielle
+	//Produit matriciel
 	for (int i=0;i<nbLig;i++)
 	{
 		for (int j=0;j<m.nbCol;j++) 

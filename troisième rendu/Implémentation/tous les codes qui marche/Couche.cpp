@@ -32,10 +32,10 @@ Neurone Couche::getNeurone(int i) const
 	return Neurones[i];
 }
 
-//-----------------------------------Les Méthodes-----------------------------------
+//-----------------------------------Les Methodes-----------------------------------
 //-----------------------------------------------------------------------------------
 
-//Recupere les sorties des neurones de la couche et les stock dans une matrice
+//Recupere les sorties des neurones de la couche et les stocks dans une matrice
 Matrice Couche::recupSortiesNeurones()
 {
 	int nbLig = getNbNeurones();

@@ -19,7 +19,7 @@ void InterfaceManuelle::lectureParam(){//fournir le chemin absolu ou
 	cout<<"2: reseau recurent\n";
 	cout<<"0:quitter\n";
 	cin>> typeReseau;
-	if (typeReseau!=1)//Nous avons implémenté que réseau Forwarded
+	if (typeReseau!=1)//Nous n'avons implémenté que le type réseau Forwarded
 	{	
 		typeReseau=-1;
 		cout<<"ERREUR: Type reseau non disponible ou non conforme\n";
@@ -29,14 +29,14 @@ void InterfaceManuelle::lectureParam(){//fournir le chemin absolu ou
 	cout<<"1: classification\n";
 	cout<<"2: prediction\n";
 	cin>> casUtilisation;
-	if (casUtilisation!=1)//Nous avons implémenté que la classification
+	if (casUtilisation!=1)//Nous n'avons implémenté que la classification
 	{	
 		casUtilisation=-1;
 		cout<<"ERREUR: Cas d'utilisation non disponible ou non conforme\n";
 	}
 	cout<<"Saisir l'entier correspondant au nombre de couches cachees du reseau\n";
 	cin>> nbCouchesCachees;
-	if (nbCouchesCachees<0)//Nous avons implémenté que la classification
+	if (nbCouchesCachees<0)//Nous n'avons implémenté que la classification
 	{	
 		nbCouchesCachees=-1;
 		cout<<"ERREUR: Nombre de couches cachees negatif\n";
@@ -44,13 +44,13 @@ void InterfaceManuelle::lectureParam(){//fournir le chemin absolu ou
 	cout<<"Saisir un a un le nombre de neurones dans chaques couches cachees\n";
 	for (int i=0;i<nbCouchesCachees;i++){ 
 		cin>>nombre;
-		if (nombre<=0)//Nombre de neurone dans une couche est superieure a 0
+		if (nombre<=0)//Nombre de neurones dans une couche est superieure a 0
 		{	
 			nombre=0;
 			cout<<"ERREUR: Nombre de neurones négatif\n";
 		}
 		setnbNeuronesParCouches(nombre, i);}
-	cout<<"Comment voulez vous intisaliser votre matrice de poid ?\n";	
+	cout<<"Comment voulez vous initialiser votre matrice de poids ?\n";	
 	cout<<"0: aleatoirement\n";
 	cout<<"x un double: tous à x\n";
 	cin>>choixPoid;
