@@ -64,4 +64,5 @@ void CoucheCachee::initBiaisAleatoire()
 {
 	biais->initAleatoire();
 }
+
 //-----------------------------------------------------------------------------------
