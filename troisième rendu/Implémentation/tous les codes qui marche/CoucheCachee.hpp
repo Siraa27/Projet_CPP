@@ -25,6 +25,7 @@ class CoucheCachee : public Couche{
         
    //Les méthodes
    public :
+      CoucheCachee ();
       /*!
       *  \brief Constructeur de la classe CoucheCachee
       *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"

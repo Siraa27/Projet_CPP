@@ -25,12 +25,18 @@ class Couche{
    
    //Les méthodes
    public :
+      Couche();
       /*!
       *  \brief Constructeur de la classe Couche
       *  \param const int nbNeurones : entier représentant le nombre de neurones d'une couche ne change pas une fois choisi au cours du programme
       */
 	   Couche (const int nbN); 
       
+      /*!
+      *  \brief Constructeur par recopie
+      */
+      Couche(Couche &c);
+
       /*!
       *  \brief Destructeur de la classe Couche 
       */

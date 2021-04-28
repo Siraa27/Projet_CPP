@@ -93,5 +93,11 @@ class Matrice{
       */
       void setCoefs(double coef);
 
+      /*!
+      *  \fn divMatrice
+      *  \brief divise tous les coefs de la matrice par coef
+      *
+      */
+      void divMatrice(double coef);
 };
 #endif

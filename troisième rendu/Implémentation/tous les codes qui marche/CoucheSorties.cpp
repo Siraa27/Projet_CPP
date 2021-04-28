@@ -5,6 +5,10 @@
 #include <math.h> 
 
 //Constructeur
+CoucheSorties::CoucheSorties()
+{
+}
+
 CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones)
 {
 	biais = new Matrice(nbNeurones, 1);

@@ -1,5 +1,4 @@
 #include "Reseau.hpp"
-#include "Couche.hpp"
 #include "CoucheCachee.hpp"
 #include "CoucheEntrees.hpp"
 #include "CoucheSorties.hpp"
@@ -52,9 +51,18 @@ Reseau::~Reseau(){
 }
 
 //Retourne la norme au carre de l'erreur sur un seul exemple
-double Reseau::erreur(string nomFichSorties){
-  CoucheSorties sAttendues(couches[nbCouchesCachees-1].getNbNeurones(), nomFichSorties);
+double Reseau::erreur(int classeSolution){
+  CoucheSorties sAttendues(sorties.getNbNeurones(), couches[nbCouchesCachees-1].getNbNeurones());
   double res = 0;
+  
+  for (int i = 0; i < sAttendues.getNbNeurones(); i++)
+  {
+    if (classeSolution==i)
+      sAttendues.modifNeurone(i,1);
+    else
+      sAttendues.modifNeurone(i,0);
+  }
+
   int nbrNeurones = sorties.getNbNeurones();
   if(nbrNeurones==sAttendues.getNbNeurones()){
     for(int i=0;i<nbrNeurones;i++){

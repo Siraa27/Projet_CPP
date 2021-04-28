@@ -5,6 +5,10 @@
 #include <fstream>  
 
 //Constructeur
+CoucheEntrees::CoucheEntrees()
+{
+}
+
 //NomFic est le nom du fichier contenant les sorties des neurones de la couche d'entree
 CoucheEntrees::CoucheEntrees (const int nbNeurones, std::string nomFic) : Couche::Couche(nbNeurones)
 {

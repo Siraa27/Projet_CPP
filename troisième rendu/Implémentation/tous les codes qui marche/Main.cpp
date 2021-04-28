@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     n.setSortie(8);
     std::cout << "testNeuroneSansPasséParCouche" << n.getSortie() << std::endl ;
 
-    CoucheSorties CS = CoucheSorties(3,2);
+    CoucheSorties CS(3,2);
     CS.getLiaisonEntrees().setCoefMatrice( 0, 0, 0.3 );
 	CS.getLiaisonEntrees().setCoefMatrice( 0, 1, 0.2 );
 	// Ligne II

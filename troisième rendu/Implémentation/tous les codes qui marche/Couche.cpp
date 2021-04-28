@@ -4,6 +4,10 @@
 #include <stdlib.h>
 
 //Constructeur
+Couche::Couche()
+{
+	
+}
 Couche::Couche (const int nbN)
 {
 	nbNeurones = nbN;
@@ -13,7 +17,18 @@ Couche::Couche (const int nbN)
 		Neurones.push_back(Neurone()) ;
 	}
 }
-		
+
+//Constructeur par recopie
+Couche::Couche(Couche &c)
+{
+	nbNeurones = c.getNbNeurones();
+	Neurones = std::vector<Neurone>(nbNeurones);
+	for(int i=0; i<nbNeurones; i++)
+	{
+		Neurones.push_back(c.getNeurone(i)) ;
+	}
+}
+
 //destructeur
 Couche::~Couche()
 {

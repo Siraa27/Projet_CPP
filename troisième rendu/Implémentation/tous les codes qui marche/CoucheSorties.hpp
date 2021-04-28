@@ -26,6 +26,7 @@ class CoucheSorties: public Couche{
 
       //Les méthodes
       public :
+      CoucheSorties();
       /*!
       *  \brief Constructeur de la classe CoucheSorties
       */

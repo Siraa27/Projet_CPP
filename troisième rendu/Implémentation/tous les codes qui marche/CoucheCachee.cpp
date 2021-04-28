@@ -4,6 +4,11 @@
 #include <math.h> 
 
 //Constructeur
+
+CoucheCachee ::CoucheCachee ()
+{
+}
+
 CoucheCachee::CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones)
 {
 	biais = new Matrice(nbNeurones, 1);
