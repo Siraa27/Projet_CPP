@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <cmath>
 
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
@@ -22,6 +23,7 @@
 #include "Couche.hpp"
 #include "CoucheSorties.hpp"
 #include "Matrice.hpp"
+#include "Neurone.hpp"
 
 using namespace CppUnit;
 using namespace std;
@@ -93,7 +95,7 @@ void TestCoucheSorties::setUp(void)
 // ça me parait bizarre de construire une coucheSortie vaec un tableau de neurone qui a comme valeur ceux  d'une coucheCachee
 	C1 = new CoucheSorties(3,2);
 	C2 = new CoucheSorties(3,2);
-	C0 = new Couche(2 );
+	C0 = new Couche(2); //Couche (const int nbN)
 }
 void TestCoucheSorties::tearDown(void)
 {
@@ -120,34 +122,40 @@ void TestCoucheSorties::testPreActivation(void)
 	C1->getLiaisonEntrees().setCoefMatrice( 2, 1, 0.6 );
 
 	// Ma matrice biais est égale à 
-    // 0 | 0 | 0 |
+    // 0 |
+	// 0 |
+	// 0 |
 	// Remplissage de la matrice biais
-	for (int i = 0 ; i < 2 ; i++){
-		C1->getBiais().setCoefMatrice( 0, i, 0 );
-	}
+	C1->getBiais().setCoefMatrice( 0, 0, 0 );
+	C1->getBiais().setCoefMatrice( 1, 0, 0 );
+	C1->getBiais().setCoefMatrice( 2, 0, 0 );
+
 	
 	// Création des matrices pour les tests
-   Matrice* Resultat = new Matrice (1,3); 
-   Matrice* TestResultat = new Matrice (1,3);
+   Matrice* Resultat = new Matrice (3,1); 
+   Matrice* TestResultat = new Matrice (3,1);
 
 	// Ma matrice TestResultat est égale à :
-	// 3.857 | 7.027 | 10.197
+	// 0.00032517738 |
+	// 0.000550354376|
+	// 0.00077553214 |
 	// Remplissage de la matrice de TestResultat avec les valeurs souhaitees
-   TestResultat->setCoefMatrice( 0, 0, 3.857);
-   TestResultat->setCoefMatrice( 0, 1, 7.027); 
-   TestResultat->setCoefMatrice( 0, 2, 10.197); 
+   TestResultat->setCoefMatrice( 0, 0, 0.00032517738);
+   TestResultat->setCoefMatrice( 1, 0, 0.000550354376); 
+   TestResultat->setCoefMatrice( 2, 0, 0.00077553214); 
 
 	// Création du Bouchon 
 	// Le tableau de neurone de La couche precedente est égale à : 
-	// 0.001 | 0.0001258869
+	// 0.001 |
+	// 0.0001258869 |
 	C0->getNeurone(0).setSortie(0.001);
 	C0->getNeurone(1).setSortie(0.0001258869);
 
 	*Resultat = C1->preActivation(*C0);
 
 	for (int i = 0 ; i < 3; i++){
-		CPPUNIT_ASSERT( abs(TestResultat->getCoefMatrice(0,i) - Resultat->getCoefMatrice(0,i)) < 0.00001 ) ;
-	}
+		CPPUNIT_ASSERT( fabs(TestResultat->getCoefMatrice(i,0) - Resultat->getCoefMatrice(i,0)) < 0.01 ) ;
+	};
     
 }
 
@@ -156,27 +164,31 @@ void TestCoucheSorties::testFoncActivation(void)
 {
 	// Comme la matrice résultat etait variable local au test précédent on la rerempli !!
     // La matrice résultat trouvé à l'aide de la methode preactivation est égale à :
-	// 3.857 | 7.027 | 10.197
-	Matrice* SommePond = new Matrice (1,3); 	
-    SommePond->setCoefMatrice( 0, 0, 3.857);
-    SommePond->setCoefMatrice( 0, 1, 7.027); 
-    SommePond->setCoefMatrice( 0, 2, 10.197); 
+	// 0.00032517738 |
+	// 0.000550354376|
+	// 0.00077553214 |
+	Matrice* SommePond = new Matrice (3,1); 	
+    SommePond->setCoefMatrice( 0, 0, 0.00032517738);
+    SommePond->setCoefMatrice( 1, 0, 0.000550354376); 
+    SommePond->setCoefMatrice( 2, 0, 0.00077553214); 
 
 	// On veut que le tableau de neurone dans la couche C1 soit égale à :
-	// 0.20694007181183 | 0.00886803443749 | 3.72806071785174E-05
+	// 0,499918705655716 |
+	// 0,499862411409473 | 
+	// 0,499806116974718 |
 
 	
 		//{
 		//j'ai deux idée pour faire les tests je sais pas laquelle est mieux ou laquelle marche 
 
-	Matrice* NeuroneTest = new Matrice (1,2); 	// Quand je met 2 ici j'ai plus d'erreur de segmentation !!!
-	NeuroneTest->setCoefMatrice( 0, 0, 0.020694007181183);
-    	NeuroneTest->setCoefMatrice( 0, 1, 0.000886803443749);
-    	NeuroneTest->setCoefMatrice( 0, 2, 3.72806071785174E-05);
+	Matrice* NeuroneTest = new Matrice (3,1); 
+	NeuroneTest->setCoefMatrice( 0, 0, 0.499918705655716);
+    NeuroneTest->setCoefMatrice( 1, 0, 0.499862411409473);
+    NeuroneTest->setCoefMatrice( 2, 0, 0.499806116974718);
     	
-    	C1->foncActivation(*SommePond);
+    C1->foncActivation(*SommePond);
 	for (int i = 0; i < 3 ; i++){
-		CPPUNIT_ASSERT ( abs(NeuroneTest->getCoefMatrice(0,i) - C1->getNeurone(i).getSortie() )< 0.00001 ) ; 
+		CPPUNIT_ASSERT ( fabs(NeuroneTest->getCoefMatrice(i,0) - C1->getNeurone(i).getSortie() )< 0.01 ) ; 
 	}
 	/*CPPUNIT_ASSERT( abs( NeuroneTest->getCoefMatrice(0,0) -C1->getNeurone(0).getSortie()) < 0.00001 );
 	CPPUNIT_ASSERT( abs( NeuroneTest->getCoefMatrice(0,1)- C1->getNeurone(1).getSortie()) < 0.00001); */

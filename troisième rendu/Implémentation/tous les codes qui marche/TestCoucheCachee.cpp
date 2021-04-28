@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <list>
-
+#include <cmath>
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
 
@@ -113,22 +113,10 @@ void TestCoucheCachee::testPreActivation(void)
     for (int j = 0; j < 4; j++ ){ // Je fixe d'abords la colonne c'est plus simple pour l'incrementation de k 
 	   for (int i = 0; i < 2 ; i++){
 		   C1->getLiaisonEntrees().setCoefMatrice( i, j, k * 0.1 );
-		   cout << C1->getLiaisonEntrees().getCoefMatrice(i,j);
+		   //cout << C1->getLiaisonEntrees().getCoefMatrice(i,j);
 		   k = k + 1;
 	    }
     }
-
-	/*C1->getLiaisonEntrees().setCoefMatrice( 0, 0, 0.1 );
-	C1->getLiaisonEntrees().setCoefMatrice( 0, 1, 0.1 );
-	C1->getLiaisonEntrees().setCoefMatrice( 0, 2, 0.1 );
-	C1->getLiaisonEntrees().setCoefMatrice( 0, 3, 0.1 );
-
-	C1->getLiaisonEntrees().setCoefMatrice( 1, 0, 0.1 );
-	C1->getLiaisonEntrees().setCoefMatrice( 1, 1, 0.1 );
-	C1->getLiaisonEntrees().setCoefMatrice( 1, 2, 0.1 );
-	C1->getLiaisonEntrees().setCoefMatrice( 1, 3, 0.1 );*/
-
-
 
     // Ma matrice biais est égale à 
     // 0.5 | 
@@ -139,8 +127,8 @@ void TestCoucheCachee::testPreActivation(void)
 
 
 	// Création des matrices pour les tests
-   Matrice* Resultat = new Matrice (2,1); 
-   Matrice* TestResultat = new Matrice (2,1); 
+    Matrice* Resultat = new Matrice (2,1); 
+    Matrice* TestResultat = new Matrice (2,1); 
 
 	// Ma matrice TestResultat est égale à :
 	// 6.87 | 
@@ -155,15 +143,17 @@ void TestCoucheCachee::testPreActivation(void)
 	// 3.3 |
 	// 6.0 | 
 	// 2.5 |
-	C0->getNeurone(0).setSortie(6.3);
-	C0->getNeurone(1).setSortie(3.3);
-	C0->getNeurone(2).setSortie(6.0);
-	C0->getNeurone(3).setSortie(2.5);
+	C0->modifNeurone(0,6.3);
+	C0->modifNeurone(1,3.3);
+	C0->modifNeurone(2,6.0);
+	C0->modifNeurone(3,2.5);
+	
 	// preActivation renvoie une (Matrice) donc elle va cracher les valeurs dans la matrice Resultat 
   	*Resultat = C1->preActivation(*C0);
 	
+	cout << Resultat->getCoefMatrice(0,0) << Resultat->getCoefMatrice(1,0); 
 	for (int i = 0; i < 2 ; i++){
-  	CPPUNIT_ASSERT( abs( TestResultat->getCoefMatrice(i,0) - Resultat->getCoefMatrice(i,0) ) < 0.01 );
+  	CPPUNIT_ASSERT( fabs( TestResultat->getCoefMatrice(i,0) - Resultat->getCoefMatrice(i,0) ) < 0.01 );
   	};
   	//CPPUNIT_ASSERT( abs( TestResultat->getCoefMatrice(0,1) - Resultat->getCoefMatrice(0,1) ) < 0.00001 ) ;
 };
@@ -190,7 +180,7 @@ void TestCoucheCachee::testFoncActivation(void)
    	
    	C1->foncActivation(*SommePond);
    	for (int i = 0; i < 2 ; i++){
-	CPPUNIT_ASSERT( abs(NeuroneTest->getCoefMatrice(i,0) - C1->getNeurone(i).getSortie() ) < 0.01);
+	CPPUNIT_ASSERT( fabs(NeuroneTest->getCoefMatrice(i,0) - C1->getNeurone(i).getSortie() ) < 0.01);
 	}
 	
 	

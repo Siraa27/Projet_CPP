@@ -52,9 +52,12 @@ class Couche{
       *  \brief 
 		*  recupere la sorties de tous les neurones d'une couche
 		*/
-		Matrice recupSortiesNeurones();
+		Matrice recupSortiesNeurones() const;
 
+      /*! \fn modifNeurones
+      *  \brief 
+		*  modifie le neurone i de la couche 
+		*/
       void modifNeurone(int i, double s);
-
 };
 #endif

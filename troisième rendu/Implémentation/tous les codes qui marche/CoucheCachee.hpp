@@ -58,7 +58,7 @@ class CoucheCachee : public Couche{
       void setBiais(int i, int j, double coef );
 
       /*!
-      *  \fn preActivation(Couche couchePrec)
+      *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
       *  \return matrice des sommes pondérées des entrées pour chaque neurone
       */
@@ -78,13 +78,6 @@ class CoucheCachee : public Couche{
       *  \return valeur de la derivee evaluee en x
       */
       double derivFoncActivation(double x);
-
-      /*!
-      *  \fn initBiaisAleatoire()
-      *  \brief Initialise aleatoirement la matrice des biais
-      */
-      void initBiaisAleatoire();
-
 };
 
 #endif

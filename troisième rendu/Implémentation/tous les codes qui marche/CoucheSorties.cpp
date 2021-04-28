@@ -1,6 +1,7 @@
 #include "CoucheSorties.hpp"
 #include "Couche.hpp"
 #include "Matrice.hpp"
+#include <iostream>
 #include <math.h> 
 
 //Constructeur
@@ -41,10 +42,13 @@ Matrice CoucheSorties::preActivation(Couche couchePrec)
 
 void CoucheSorties::foncActivation(Matrice sum) //sigmoid
 {
-	for (int i=0; i<Couche::getNbNeurones(); i++)
+	for (int i=0; i<getNbNeurones(); i++)
 	{
 		//On modifie directement la sortie des neurones de la couche
-		Couche::getNeurone(i).setSortie(1/(1+exp(sum.getMatrice()[i][1])));
+		double res ;
+		res = 1./(1+exp(sum.getCoefMatrice(i,0))) ;
+		modifNeurone(i, res);
+		//getNeurone(i).setSortie(1./(1+exp(sum.getCoefMatrice(i,0))));
 	}
 }
 
@@ -53,8 +57,4 @@ double CoucheSorties::derivFoncActivation(double x) //Derivee de la sigmoid
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }
 
-void CoucheSorties::initBiaisAleatoire()
-{
-	biais->initAleatoire();
-}
 //-----------------------------------------------------------------------------------

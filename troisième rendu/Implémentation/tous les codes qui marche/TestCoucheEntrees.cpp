@@ -88,10 +88,19 @@ void TestCoucheEntrees::tearDown(void)
 
 void TestCoucheEntrees::testConstructionSortie(void)
 {   
-	double TableauTest[4] = { 6.3, 3.3, 6.0, 2.5 } ; // ce qu'on veut en entree 
-	C->constructionSortie("FichTest");
+
+	std::vector<double> TableauTest;
+	TableauTest.push_back(6.3);
+	TableauTest.push_back(3.3);
+	TableauTest.push_back(6.0);
+	TableauTest.push_back(2.5);
+	
+	cout << "\n E" << TableauTest[2];
+	C->constructionSortie("FichTest.txt");
+
 	for (int i = 0; i < 4; i++){
-		CPPUNIT_ASSERT( abs(TableauTest[i] - C->getNeurone(i).getSortie()) < 0.00001);
+		
+		CPPUNIT_ASSERT( abs(TableauTest[i] - C->getNeurone(i).getSortie()) < 0.01);
 	}
 	// Deuxième façon de faire je sais pas laquelle est mieux !!!
 	/*

@@ -10,7 +10,7 @@ Couche::Couche (const int nbN)
 	Neurones = std::vector<Neurone>(nbN);
 	for(int i=0; i<nbN; i++)
 	{
-		Neurones[i] = Neurone();
+		Neurones.push_back(Neurone()) ;
 	}
 }
 		
@@ -32,17 +32,17 @@ Neurone Couche::getNeurone(int i) const
 	return Neurones[i];
 }
 
-//-----------------------------------Les Methodes-----------------------------------
+//-----------------------------------Les Méthodes-----------------------------------
 //-----------------------------------------------------------------------------------
 
-//Recupere les sorties des neurones de la couche et les stocks dans une matrice
-Matrice Couche::recupSortiesNeurones()
+//Recupere les sorties des neurones de la couche et les stock dans une matrice
+Matrice Couche::recupSortiesNeurones() const
 {
 	int nbLig = getNbNeurones();
-	Matrice res = Matrice(nbLig, 1);
+	Matrice res(nbLig,1);
 	for (int i=0; i<nbLig; i++)
 	{
-		(res).setCoefMatrice(i, 1, getNeurone(i).getSortie());
+		(res).setCoefMatrice(i, 0, getNeurone(i).getSortie());
 	}
 	return res;
 }
@@ -51,5 +51,6 @@ void Couche::modifNeurone(int i, double s)
 {
     Neurones[i].setSortie(s);
 }
+
 
 //-----------------------------------------------------------------------------------

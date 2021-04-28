@@ -2,8 +2,7 @@
 #define COUCHESORTIES_HPP
 #include "Couche.hpp"
 #include "Matrice.hpp"
-#include <iostream>
-#include <stdlib.h>
+#include "Neurone.hpp"
 
 /*!
  * \file CoucheSorties.hpp
@@ -32,8 +31,6 @@ class CoucheSorties: public Couche{
       */
 		CoucheSorties(const int nbNeurones, const int nbNeuronesCouchePrec); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
       
-      CoucheSorties(const int nbNeuronesCouchePrec, std::string nomFic);
-
       /*!
       *  \brief Destructeur de la classe CoucheSorties
       */
@@ -80,12 +77,6 @@ class CoucheSorties: public Couche{
       *  \return résultat du reseau
       */
       void constructionSorties(); //Pas encore implémentée
-
-      /*!
-      *  \fn initBiaisAleatoire()
-      *  \brief Initialise aleatoirement la matrice des biais
-      */
-      void initBiaisAleatoire();
 };
 
 #endif
