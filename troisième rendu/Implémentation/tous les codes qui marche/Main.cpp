@@ -39,9 +39,4 @@ int main(int argc, char* argv[])
     Matrice Resultat = Matrice(3,1);
     Resultat = CS.preActivation(C0);
     for (int i = 0 ; i < 3; i++) std::cout << "res" << Resultat.getCoefMatrice(i,0) << std::endl ;
-
-
-    
-
-
 }
