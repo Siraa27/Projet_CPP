@@ -26,8 +26,8 @@ class Reseau {
 
     // Les attributs
     protected: 	 /*! < Pour que les classes filles aient egalement acces a ces attributs */
-    CoucheSorties sorties;
     CoucheEntrees entrees;
+    CoucheSorties sorties;
     vector<CoucheCachee> couches;
     int nbCouchesCachees;
     vector<Matrice> gradientErr;

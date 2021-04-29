@@ -3,11 +3,7 @@
 #include "Matrice.hpp"
 #include <stdlib.h>
 
-//Constructeur
-Couche::Couche()
-{
-	
-}
+//Constructeurs
 Couche::Couche (const int nbN)
 {
 	nbNeurones = nbN;

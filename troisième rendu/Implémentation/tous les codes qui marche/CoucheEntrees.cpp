@@ -5,9 +5,9 @@
 #include <fstream>  
 
 //Constructeur
-CoucheEntrees::CoucheEntrees()
-{
-}
+
+CoucheEntrees::CoucheEntrees(const CoucheEntrees& C) : Couche::Couche(C.getNbNeurones())
+{}
 
 //NomFic est le nom du fichier contenant les sorties des neurones de la couche d'entree
 CoucheEntrees::CoucheEntrees (const int nbNeurones, std::string nomFic) : Couche::Couche(nbNeurones)
@@ -25,7 +25,7 @@ CoucheEntrees::~CoucheEntrees(){}
 //On initialise les sorties des neurones de la couche d'entree avec le fichier nomFic
 void CoucheEntrees::constructionSortie(std::string nomFic)
 { 
-    std::ifstream fichier( "nomFic.txt" ); //Ouverture en lecture
+    std::ifstream fichier(nomFic); //Ouverture en lecture
 
     if ( fichier ) 
     { 

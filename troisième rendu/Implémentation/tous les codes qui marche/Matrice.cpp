@@ -14,19 +14,6 @@ Matrice::Matrice(const int nbLignes, const int nbColonnes)
 	}
 }
 
-/*
-Matrice::Matrice(const int nbLignes, const int nbColonnes, double** t)
-{
-	nbLig = nbLignes;
-	nbCol = nbColonnes;
-	matrice = new double*[nbLignes];
-	for(int i = 0;i < nbLignes;++i) 
-	{
-		matrice[i] = new double[nbColonnes];
-	}
-	t = {{1, 2, 3}{4, 5, 6}{7, 8, 9}};
-}
-*/
 Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef)
 {
 	nbLig = nbLignes;

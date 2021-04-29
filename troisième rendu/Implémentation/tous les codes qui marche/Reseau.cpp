@@ -12,15 +12,11 @@
 using namespace std;
 
 //Constructeur
-
-
-Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, int choixPoids, const string nomFichEntrees, int nbNeuronesSorties, int nbNeuroneEntrees)
+Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, int choixPoids, const string nomFichEntrees, int nbNeuronesSorties, int nbNeuroneEntrees) : entrees(nbNeuroneEntrees, nomFichEntrees), sorties(nbNeuronesSorties, nbNeuronesParCouches[nbCouchesCachees-1])
 {
-  entrees = CoucheEntrees(nbNeuroneEntrees, nomFichEntrees);
   couches.push_back(CoucheCachee(nbNeuronesParCouches[0], nbNeuroneEntrees));
   couches[0].getLiaisonEntrees().initAleatoire();
   couches[0].getBiais().initAleatoire();
-  sorties = CoucheSorties(nbNeuronesSorties, nbNeuronesParCouches[nbCouchesCachees-1]);
   nbCouchesCachees = nbCouchesCach;
 
   //Poids initialiser aleatoirement

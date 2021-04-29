@@ -5,30 +5,28 @@
 #include <math.h> 
 
 //Constructeur
-CoucheSorties::CoucheSorties()
-{
-}
 
-CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones)
-{
-	biais = new Matrice(nbNeurones, 1);
-	LiaisonsEntrees = new Matrice(nbNeurones, nbNeuronesCouchePrec); //nb colonnes = nb neuronnes couche precedentes et nb lignes = nb neurones de notre coucheCachee
-}
+CoucheSorties::CoucheSorties(const CoucheSorties& C) : Couche::Couche(C.getNbNeurones()), biais(C.biais), LiaisonsEntrees(C.LiaisonsEntrees)
+{}
+
+//nb colonnes = nb neuronnes couche precedentes et nb lignes = nb neurones de notre coucheCachee
+CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones), biais(nbNeurones, 1), LiaisonsEntrees(nbNeurones, nbNeuronesCouchePrec)
+{}
 
 //destructeur
 CoucheSorties::~CoucheSorties() 
 {
-	(*biais).~Matrice();
-	(*LiaisonsEntrees).~Matrice();
+	(biais).~Matrice();
+	(LiaisonsEntrees).~Matrice();
 }
 
 // Accesseurs
 Matrice CoucheSorties::getLiaisonEntrees(){
-	return (*LiaisonsEntrees);
+	return (LiaisonsEntrees);
 }
 
 Matrice CoucheSorties::getBiais(){
-	return (*biais);
+	return (biais);
 }
 
 
@@ -40,7 +38,7 @@ Matrice CoucheSorties::preActivation(Couche couchePrec)
 {
 	//(Matrice Liaison * Sorties neurones couche precedente) + biais
 	//Nous manipulons des matrices 
-	Matrice res = (LiaisonsEntrees->operator *(couchePrec.recupSortiesNeurones())).operator +(*biais);
+	Matrice res = (LiaisonsEntrees.operator *(couchePrec.recupSortiesNeurones())).operator +(biais);
 	return res;
 }
 
@@ -52,7 +50,6 @@ void CoucheSorties::foncActivation(Matrice sum) //sigmoid
 		double res ;
 		res = 1./(1+exp(sum.getCoefMatrice(i,0))) ;
 		modifNeurone(i, res);
-		//getNeurone(i).setSortie(1./(1+exp(sum.getCoefMatrice(i,0))));
 	}
 }
 
