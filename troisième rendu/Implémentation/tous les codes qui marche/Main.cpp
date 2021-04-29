@@ -1,10 +1,10 @@
+/*
 #include <iostream>
 #include "Reseau.hpp"
 #include "Interface.hpp"
 #include "InterfaceFichier.hpp"
 #include "InterfaceManuelle.hpp"
 #include <string.h>
-
 int main(int argc, char* argv[])
 {
     int choix;
@@ -28,17 +28,16 @@ int main(int argc, char* argv[])
             cout<<"Entrez le nom du fichier ou 0 pour sortir\n";
             cin>>nomFic;
             //cin.clear();
-            interfaceFic.n(nomFic);
+            interfaceFic.(nomFic);
         }while(interfaceFic.validationReseau()==0 || nomFic.compare("0"));
     }
-}
+}*/
 
 
 
 
 
 
-/*
 #include <iostream>
 #include <string>
 #include <list>
@@ -79,4 +78,3 @@ int main(int argc, char* argv[])
     Resultat = CS.preActivation(C0);
     for (int i = 0 ; i < 3; i++) std::cout << "res" << Resultat.getCoefMatrice(i,0) << std::endl ;
 }
-*/
