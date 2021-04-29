@@ -44,7 +44,7 @@ public:
 protected:
 	void testLectureFichier(void);
 private:
-	InterfaceFichier *I1,*I2,*I31,*I32,*I33,*I34,*I4,*I5,*I7;
+	InterfaceFichier *I1,*I2,*I31,*I32,*I33,*I34,*I4,*I5,*I6,*I7;
 };
 
 ///////////////////////////////////////////////////////// Les tests///////////////////////////////////////////////////////////////////////////////////
@@ -75,15 +75,31 @@ void TestInterfaceFichier::testLectureFichier(void)
 
 	I5->lectureFichier("TestFichierMauvaisFormat.pdf");
     CPPUNIT_ASSERT (-1 == I5->getchoixPoid() );
-
+    
+    
+    
+    cout<<"Fichier conforme sans couche cachée\n";
+	I6->lectureFichier("TestBonFichierSansCC.csv");
+    CPPUNIT_ASSERT (1 == I6->gettypeReseau() );
+    CPPUNIT_ASSERT (1 == I6->getcasUtilisation() );
+    CPPUNIT_ASSERT (0 == I6->getnbCouchesCachees() );
+	CPPUNIT_ASSERT (8 == I6->getnbNeuronesEntree() );
+	CPPUNIT_ASSERT (3 == I6->getnbNeuronesSortie() );
+    CPPUNIT_ASSERT (0 == I6->getnbNeuronesParCouches(0) );
+    CPPUNIT_ASSERT (0 == I6->getchoixPoid() );
+    
+    
 	cout<<"Fichier conforme\n";
 	I7->lectureFichier("TestBonFichier.csv");
     CPPUNIT_ASSERT (1 == I7->gettypeReseau() );
     CPPUNIT_ASSERT (1 == I7->getcasUtilisation() );
-    CPPUNIT_ASSERT (3 == I7->getnbCouchesCachees() );
-    CPPUNIT_ASSERT (7 == I7->getnbNeuronesParCouches(0) );
+    CPPUNIT_ASSERT (4 == I7->getnbCouchesCachees() );
+	CPPUNIT_ASSERT (8 == I7->getnbNeuronesEntree() );
+	CPPUNIT_ASSERT (3 == I7->getnbNeuronesSortie() );
+    CPPUNIT_ASSERT (2 == I7->getnbNeuronesParCouches(0) );
     CPPUNIT_ASSERT (4 == I7->getnbNeuronesParCouches(1) );
     CPPUNIT_ASSERT (6 == I7->getnbNeuronesParCouches(2) );
+	CPPUNIT_ASSERT (5 == I7->getnbNeuronesParCouches(3) );
     CPPUNIT_ASSERT (0 == I7->getchoixPoid() );
 }
 
@@ -98,6 +114,7 @@ void TestInterfaceFichier::setUp(void)
 	I34 = new InterfaceFichier();
 	I4 = new InterfaceFichier();
 	I5 = new InterfaceFichier();
+	I6 = new InterfaceFichier();
     I7 = new InterfaceFichier();
 }
 void TestInterfaceFichier::tearDown(void)
@@ -110,6 +127,7 @@ void TestInterfaceFichier::tearDown(void)
 	delete I34;
 	delete I4;
 	delete I5;
+	delete I6;
     delete I7;
 }
 

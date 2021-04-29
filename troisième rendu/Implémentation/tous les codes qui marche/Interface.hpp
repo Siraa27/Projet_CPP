@@ -16,6 +16,8 @@
         //Les attributs
 	protected : //accés aussi pour les classes filles
 	int nbCouchesCachees;
+	int nbNeuronesEntree;
+	int nbNeuronesSortie;
 	std::vector<int>nbNeuronesParCouches;
 	double choixPoid;
 	int typeReseau;
@@ -30,6 +32,10 @@
         *
         */
 	Interface();
+        /*! \fn lectureFichier(Fichier f)
+        *   \brief  Importation des paramètres par un fichier de données et convertion en liste et lecture des paramètre du futur réseau de neurone dans un fichier  
+        *   \return une liste des paramètres du futur réseau de neurone
+        */
 
 	//Getters
 	int getnbCouchesCachees();
@@ -37,17 +43,19 @@
 	int gettypeReseau();
 	int getcasUtilisation();
 	int getnbNeuronesParCouches(int ind);
+	int getnbNeuronesEntree();
+	int getnbNeuronesSortie();
+
 	//Setters
 	void setnbCouchesCachees(int nbCouchesCachees);
 	void setchoixPoid(double choixPoid);	
 	void settypeReseau(int typeReseau);
 	void setcasUtilisation(int casUtilisation);
 	void setnbNeuronesParCouches(int nbNeuronesParCouches, int ind);
-
-	//Methode de Validation des parametres reseau
+	void setnbNeuronesEntree(int nbNeuronesEntree);
+	void setnbNeuronesSortie(int nbNeuronesSortie);
+	//
 	int validationReseau();
-
-
 //    };
  };
  #endif
