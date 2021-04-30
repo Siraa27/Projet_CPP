@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
             interfaceMan.lectureParam();
         }while(interfaceMan.validationReseau()==0 || interfaceMan.gettypeReseau()==-1);
         Reseau reseau(interfaceMan.getnbCouchesCachees(), interfaceMan.getnbNeuronesCouches(), interfaceMan.getchoixPoid(), interfaceMan.getnbNeuronesSortie(), interfaceMan.getnbNeuronesEntree());
-        //manipReseau(reseau);
+        manipReseau(reseau);
     }
     else
     {
@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
             interfaceFic.lectureFichier(nomFic);
         }while(interfaceFic.validationReseau()==0 || nomFic.compare("0"));
         Reseau reseau(interfaceFic.getnbCouchesCachees(), interfaceFic.getnbNeuronesCouches(), interfaceFic.getchoixPoid(), interfaceFic.getnbNeuronesSortie(), interfaceFic.getnbNeuronesEntree());
-        //manipReseau(reseau);
+        manipReseau(reseau);
     }
     
 }
