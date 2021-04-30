@@ -42,18 +42,19 @@
 	double getchoixPoid();	
 	int gettypeReseau();
 	int getcasUtilisation();
+	std::vector<int> getnbNeuronesCouches(); 
 	int getnbNeuronesParCouches(int ind);
 	int getnbNeuronesEntree();
 	int getnbNeuronesSortie();
 
 	//Setters
-	void setnbCouchesCachees(int nbCouchesCachees);
-	void setchoixPoid(double choixPoid);	
-	void settypeReseau(int typeReseau);
-	void setcasUtilisation(int casUtilisation);
-	void setnbNeuronesParCouches(int nbNeuronesParCouches, int ind);
-	void setnbNeuronesEntree(int nbNeuronesEntree);
-	void setnbNeuronesSortie(int nbNeuronesSortie);
+	void setnbCouchesCachees(const int nbCouchesCachees);
+	void setchoixPoid(const double choixPoid);	
+	void settypeReseau(const int typeReseau);
+	void setcasUtilisation(const int casUtilisation);
+	void setnbNeuronesParCouches(const int nbNeuronesParCouches,const int ind);
+	void setnbNeuronesEntree(const int nbNeuronesEntree);
+	void setnbNeuronesSortie(const int nbNeuronesSortie);
 	//
 	int validationReseau();
 //    };

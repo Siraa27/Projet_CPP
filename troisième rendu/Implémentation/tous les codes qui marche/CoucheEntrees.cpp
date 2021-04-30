@@ -9,6 +9,10 @@
 CoucheEntrees::CoucheEntrees(const CoucheEntrees& C) : Couche::Couche(C.getNbNeurones())
 {}
 
+CoucheEntrees::CoucheEntrees (const int nbNeurones) : Couche::Couche(nbNeurones)
+{}
+
+
 //NomFic est le nom du fichier contenant les sorties des neurones de la couche d'entree
 CoucheEntrees::CoucheEntrees (const int nbNeurones, std::string nomFic) : Couche::Couche(nbNeurones)
 {

@@ -56,6 +56,7 @@ int Interface::getnbNeuronesSortie(){return (nbNeuronesSortie);}
 double Interface::getchoixPoid(){ return(choixPoid);}	
 int Interface::gettypeReseau(){ return(typeReseau);}
 int Interface::getcasUtilisation(){ return(casUtilisation);}
-int Interface::getnbNeuronesParCouches(int ind){ return(nbNeuronesParCouches[ind]);}
+std::vector<int> Interface::getnbNeuronesCouches(){return nbNeuronesParCouches;}
+int Interface::getnbNeuronesParCouches(int i){return nbNeuronesParCouches[i];}
 
 

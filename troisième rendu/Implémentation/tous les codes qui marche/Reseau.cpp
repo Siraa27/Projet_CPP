@@ -12,7 +12,7 @@
 using namespace std;
 
 //Constructeur
-Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, int choixPoids, const string nomFichEntrees, int nbNeuronesSorties, int nbNeuroneEntrees) : entrees(nbNeuroneEntrees, nomFichEntrees), sorties(nbNeuronesSorties, nbNeuronesParCouches[nbCouchesCachees-1])
+Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choixPoids, int nbNeuronesSorties, int nbNeuroneEntrees) : entrees(nbNeuroneEntrees), sorties(nbNeuronesSorties, nbNeuronesParCouches[nbCouchesCachees-1])
 {
   couches.push_back(CoucheCachee(nbNeuronesParCouches[0], nbNeuroneEntrees));
   couches[0].getLiaisonEntrees().initAleatoire();
@@ -20,7 +20,7 @@ Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, int choixPoi
   nbCouchesCachees = nbCouchesCach;
 
   //Poids initialiser aleatoirement
-  if(choixPoids==0){
+  if(abs(choixPoids)<= 0.0001 ){
     for(int i=1;i<nbCouchesCachees;i++){
       couches.push_back(CoucheCachee(nbNeuronesParCouches[i], nbNeuronesParCouches[i-1]));
       couches[i].getLiaisonEntrees().initAleatoire();
@@ -29,6 +29,8 @@ Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, int choixPoi
   }else{
     for(int i=0;i<nbCouchesCachees;i++){
       couches.push_back(CoucheCachee(nbNeuronesParCouches[i], nbNeuronesParCouches[i-1]));
+      couches[i].getLiaisonEntrees().setCoefs(choixPoids);
+      couches[i].getBiais().initAleatoire();
     }
   }
   gradientErr.push_back(Matrice(couches[0].getNbNeurones(), entrees.getNbNeurones()));
@@ -44,6 +46,11 @@ Reseau::~Reseau(){
   couches.clear();
   gradientErr.clear();
   nbCouchesCachees=0;
+}
+
+CoucheSorties Reseau::getSorties()
+{
+  return sorties;
 }
 
 //Retourne la norme au carre de l'erreur sur un seul exemple
@@ -225,4 +232,9 @@ void Reseau::Apprentissage(string Donnees){
       BackPropagation(EntreesSousEchan, SortiesSousEchan);
     }
   }
+}
+
+int Reseau::getNbNeuronesEntree()
+{
+  return entrees.getNbNeurones();
 }

@@ -39,12 +39,14 @@ class Reseau {
     *  \brief Constructeur prenant en compte les parametres fourni par l'utilisateur via un fichier ou non
     */
     public : 
-    Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, int choixPoids, const string nomFichEntrees, int nbNeuronesSorties, int nbNeuroneEntrees);
+    Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choixPoids, int nbNeuronesSorties, int nbNeuroneEntrees);
 
     /*!
     *  \brief Destructeur de Reseau
     */
     ~Reseau();
+
+    CoucheSorties getSorties();
 
     /*!
     *  \fn double erreur(int classeSolution)
@@ -89,6 +91,8 @@ class Reseau {
     *  \param string Donnees
     */
     void Apprentissage(string Donnees);
+
+    int getNbNeuronesEntree();
 };
 
 

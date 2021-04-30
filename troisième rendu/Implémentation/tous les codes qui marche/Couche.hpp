@@ -2,6 +2,7 @@
 #define COUCHE_HPP
 #include "Neurone.hpp"
 #include "Matrice.hpp"
+#include <ostream> 
 #include <vector>
 
 /*!
@@ -64,5 +65,7 @@ class Couche{
 		*  modifie le neurone i de la couche 
 		*/
       void modifNeurone(int i, double s);
+
+      friend std::ostream & operator <<(std::ostream & flux, const Couche& C);
 };
 #endif

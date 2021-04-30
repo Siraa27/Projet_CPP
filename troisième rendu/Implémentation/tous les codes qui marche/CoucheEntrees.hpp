@@ -22,6 +22,7 @@ class CoucheEntrees : public Couche{
    //Les méthodes
    public :
       CoucheEntrees(const CoucheEntrees&);
+      CoucheEntrees (const int nbNeurones); 
       /*!
       *  \brief Constructeur de la classe CoucheEntrees
       *  \param nbNeurones : nombre de neurones par couche, NomFic : nom du fichier pour initialiser

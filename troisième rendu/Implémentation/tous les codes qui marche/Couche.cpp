@@ -63,5 +63,13 @@ void Couche::modifNeurone(int i, double s)
     Neurones[i].setSortie(s);
 }
 
+std::ostream & operator <<(std::ostream & flux, const Couche& C)
+{
+	for(int i=0; i<C.getNbNeurones(); i++)
+	{
+		flux<<"Sortie du "<<i<<" eme neurone : "<<C.getNeurone(i).getSortie()<<"\n";
+	}
+	return flux;
+}
 
 //-----------------------------------------------------------------------------------
