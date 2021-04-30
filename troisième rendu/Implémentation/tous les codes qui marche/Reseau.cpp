@@ -74,6 +74,7 @@ double Reseau::erreur(int classeSolution){
     return res;
   }else{
     cout << "erreur : les nombres de neurones de la couche de sortie du reseau et du fichier sont differents\n";
+    return 0;
   }
 }
 
