@@ -26,6 +26,12 @@
          *  \param indice : le libellé d'un neurone dans une couche 
          */
         Neurone (double out=0); // le libellé d'un neurone dans une couche ne change pas une fois choisi au cours du programme
+
+         /*! \fn Neurone(Neurone &n)
+         *  \brief Constructeur par recopie
+         */
+        //Neurone (Neurone &n);
+         
          /*! \fn setSortie
          *  \brief 
          *  elle modifie la valeur du neurone après application des fonctions de pré-activation et d'activation (présentes dans la fonction calculSortie() de la classe CoucheCachée)

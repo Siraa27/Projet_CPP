@@ -32,6 +32,11 @@ class Couche{
 	   Couche (const int nbN); 
       
       /*!
+      *  \brief Constructeur par recopie
+      */
+      Couche(Couche &c);
+
+      /*!
       *  \brief Destructeur de la classe Couche 
       */
       virtual ~Couche();

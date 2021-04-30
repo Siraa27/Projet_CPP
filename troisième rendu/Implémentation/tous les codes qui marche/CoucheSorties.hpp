@@ -21,15 +21,16 @@
 class CoucheSorties: public Couche{
    // Les attributs 
    private : 
-      Matrice* biais; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
-      Matrice* LiaisonsEntrees; /*!< Matrice des poids */
+      Matrice biais; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
+      Matrice LiaisonsEntrees; /*!< Matrice des poids */
 
       //Les méthodes
       public :
+      CoucheSorties(const CoucheSorties&);
       /*!
       *  \brief Constructeur de la classe CoucheSorties
       */
-		CoucheSorties(const int nbNeurones, const int nbNeuronesCouchePrec); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
+		CoucheSorties(const int nbNeurones=0, const int nbNeuronesCouchePrec=0); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
       
       /*!
       *  \brief Destructeur de la classe CoucheSorties

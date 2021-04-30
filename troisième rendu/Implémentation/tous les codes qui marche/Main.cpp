@@ -1,18 +1,56 @@
+/*
+#include <iostream>
+#include "Reseau.hpp"
+#include "Interface.hpp"
+#include "InterfaceFichier.hpp"
+#include "InterfaceManuelle.hpp"
+#include <string.h>
+int main(int argc, char* argv[])
+{
+    int choix;
+    cout<<"Voulez-vous entrer votre reseau : \n\t 1) Manuellement \n\t2) Avec un fichier\n";
+    cin>>choix;
+
+    if(choix==1)
+    {
+        InterfaceManuelle interfaceMan;
+        do
+        {
+            interfaceMan.lectureParam();
+        }while(interfaceMan.validationReseau()==0 || interfaceMan.gettypeReseau()==-1);
+    }
+    else
+    {
+        InterfaceFichier interfaceFic;
+        std::string nomFic;
+        do
+        {
+            cout<<"Entrez le nom du fichier ou 0 pour sortir\n";
+            cin>>nomFic;
+            //cin.clear();
+            interfaceFic.(nomFic);
+        }while(interfaceFic.validationReseau()==0 || nomFic.compare("0"));
+    }
+}*/
+
+
+
+
+
+
 #include <iostream>
 #include <string>
 #include <list>
 #include <cmath>
-
 #include "Couche.hpp"
 #include "CoucheSorties.hpp"
-
 int main(int argc, char* argv[])
 {
     Neurone n = Neurone();
     n.setSortie(8);
     std::cout << "testNeuroneSansPasséParCouche" << n.getSortie() << std::endl ;
 
-    CoucheSorties CS = CoucheSorties(3,2);
+    CoucheSorties CS(3,2);
     CS.getLiaisonEntrees().setCoefMatrice( 0, 0, 0.3 );
 	CS.getLiaisonEntrees().setCoefMatrice( 0, 1, 0.2 );
 	// Ligne II
@@ -39,9 +77,4 @@ int main(int argc, char* argv[])
     Matrice Resultat = Matrice(3,1);
     Resultat = CS.preActivation(C0);
     for (int i = 0 ; i < 3; i++) std::cout << "res" << Resultat.getCoefMatrice(i,0) << std::endl ;
-
-
-    
-
-
 }

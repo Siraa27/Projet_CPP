@@ -9,8 +9,6 @@
 
 using namespace std;
 
-//------------------------------------------Les Méthodes-----------------------------------------------
-//------------------------------------------------------------------------------------------------------
 
 void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin absolu ou relatif
 //pourquoi on utilise pas string ? 
@@ -26,7 +24,7 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 			switch (indice)
 			{
 				case 1://chargement du type de réseau
-					if (static_cast<int>(nombre)==1)//Nous n'avons implémenté que réseau Forwarded
+					if (static_cast<int>(nombre)==1)//Nous avons implémenté que réseau Forwarded
 					{	
 						settypeReseau(static_cast<int>(nombre));
 					}
@@ -36,7 +34,7 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 					}
 					break;
 				case 2://chargement du cas d'utilisation
-					if (static_cast<int>(nombre)==1)//Nous n'avons implémenté que la classification
+					if (static_cast<int>(nombre)==1)//Nous avons implémenté que la classification
 					{	
 						setcasUtilisation(static_cast<int>(nombre));
 					}
@@ -46,48 +44,70 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 					}
 					break;
 				case 3://Chargement du nombre de couches cachees
-					if (static_cast<int>(nombre)>=0)//Nombre de couches doit etre positif
+					if (static_cast<int>(nombre)>=0)//Nombre de neurones doit etre positif
 					{	
 						setnbCouchesCachees(static_cast<int>(nombre));
 					}
 					else 
 					{
-						cout<<"ERREUR: Nombre de couches negatif\n";
+						cout<<"ERREUR: Nombre de couche négative\n";
 					}
 					break;
-				default:
-					if((indice>=4)&&(indice<=(getnbCouchesCachees()+3))||(getnbCouchesCachees()<0))
-					{//chargement du nombre de neurones par couches cachees
-						if (static_cast<int>(nombre)>0)//Nombre de neurones dans une couche est superieure a 0
+				case 4:
+						if (static_cast<int>(nombre)>0)//Nombre de couches doit etre positif
 						{	
-							setnbNeuronesParCouches(static_cast<int>(nombre), indice-4);
+							setnbNeuronesEntree(static_cast<int>(nombre));
+						}
+						else 
+						{
+							cout<<"ERREUR: Nombre de neurones en entree nul ou negatif\n";
+						}
+					
+					break;
+				case 5:
+						if (static_cast<int>(nombre)>0)//Nombre de couches doit etre positif
+						{	
+							setnbNeuronesSortie(static_cast<int>(nombre));
+						}
+						else 
+						{
+							cout<<"ERREUR: Nombre de neurones en sortie nul ou negatif\n";
+						}
+					
+					break;
+				default:
+					if((indice>=5)&&(indice<=(getnbCouchesCachees()+5))||(getnbCouchesCachees()<0))
+					{//chargement du nombre de neurones par couches cachees
+						if (static_cast<int>(nombre)>0)//Nombre de neurone dans une couche est superieure a 0
+						{	
+							setnbNeuronesParCouches(static_cast<int>(nombre), indice-6);
 						}
 						else 
 						{
 							setnbNeuronesParCouches(-1, 0);
-							cout<<"ERREUR: Nombre de neurones negatif ou probleme de couche cachee\n";
+							cout<<"ERREUR: Nombre de neurones négatif ou probleme de couche cachee\n";
 						}
 					}
-					else if (indice==(getnbCouchesCachees()+4))
-					{//chargement de l'initialisation de la matrice de poids
-						if (static_cast<int>(nombre)>=0)//Poids non negatif
+					else if (indice==(getnbCouchesCachees()+6))
+					{//chargement de l'initialisation de la matrice de poid
+						if (static_cast<int>(nombre)>=0)//Poid non négatif
 						{	
 							setchoixPoid(nombre);
 						}
 						else 
 						{
-							cout<<"ERREUR: Initialisation de la matrice de Poids avec des valeurs negatives\n";
+							cout<<"ERREUR: Initialisation de la matrice de Poid avec des valeurs negatives\n";
 						}
 						setchoixPoid(nombre);
 					}
 			}
 			indice++;
 		}			
-		if (indice>(getnbCouchesCachees()+5))//Surcharge de donnees
+		if (indice>(getnbCouchesCachees()+7))//Surcharge de donnees
 		{
-			cout<<"ERREUR: Le fichier de donnees contient "<< (indice - (getnbCouchesCachees()+5)) <<" donnees supplementaire\n" <<"Nous retiendrons les "<<(getnbCouchesCachees()+4)<<" premieres pour la creation du reseau\n";
+			cout<<"ERREUR: Le fichier de donnees contient "<< (indice - (getnbCouchesCachees()+7)) <<" donnees supplementaire\n" <<"Nous retiendrons les "<<(getnbCouchesCachees()+6)<<" premieres pour la creation du reseau\n";
 		}
-		else if (indice<(getnbCouchesCachees()+3))//Peu de donnees
+		else if (indice<(getnbCouchesCachees()+5))//Peu de donnees
 		{
 			cout<<"ERREUR: Le fichier contient un nombre de donnees insuffisant\n "<< " ERREUR: Impossible de construire le réseau associe\n";
 		settypeReseau(-1);
@@ -100,4 +120,3 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 	}
 }
 
-//------------------------------------------------------------------------------------------------------

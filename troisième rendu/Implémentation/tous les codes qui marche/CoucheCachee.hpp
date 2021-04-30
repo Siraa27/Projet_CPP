@@ -20,11 +20,12 @@ class CoucheCachee : public Couche{
    
    // Les attributs 
    private : 
-      Matrice* biais; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
-      Matrice* LiaisonsEntrees; /*!< Matrice des poids initialisée en entrée via l'InterfaceUtilisateur */
+      Matrice biais; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
+      Matrice LiaisonsEntrees; /*!< Matrice des poids initialisée en entrée via l'InterfaceUtilisateur */
         
    //Les méthodes
    public :
+      CoucheCachee(const CoucheCachee&);
       /*!
       *  \brief Constructeur de la classe CoucheCachee
       *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"

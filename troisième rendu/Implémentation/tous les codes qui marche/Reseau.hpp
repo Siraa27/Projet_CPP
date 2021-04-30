@@ -47,13 +47,13 @@ class Reseau {
     ~Reseau();
 
     /*!
-    *  \fn double erreur(string nomFichSorties)
+    *  \fn double erreur(int classeSolution)
     *  \brief La fonction calcule la norme au carre de l'erreur commise par le reseau sur un seul exemple
-    *  \param Fichier SortiesAttendues
+    *  \param La classe solution
     *  \return valeur de la mesure de l'erreur a l'instant t
     *
     */
-    double erreur(string nomFichSorties);
+    double erreur(int classeSolution);
 
     /*!
       *  \fn CalcGradC(CoucheSorties sAttendues);
