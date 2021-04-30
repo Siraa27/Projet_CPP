@@ -148,8 +148,8 @@ void TestCoucheSorties::testPreActivation(void)
 	// Le tableau de neurone de La couche precedente est égale à : 
 	// 0.001 |
 	// 0.0001258869 |
-	C0->getNeurone(0).setSortie(0.001);
-	C0->getNeurone(1).setSortie(0.0001258869);
+	C0->modifNeurone(0,0.001);
+	C0->modifNeurone(1,0.0001258869);
 
 	*Resultat = C1->preActivation(*C0);
 

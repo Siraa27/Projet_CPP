@@ -95,7 +95,6 @@ void TestCoucheEntrees::testConstructionSortie(void)
 	TableauTest.push_back(6.0);
 	TableauTest.push_back(2.5);
 	
-	cout << "\n E" << TableauTest[2];
 	C->constructionSortie("FichTest.txt");
 
 	for (int i = 0; i < 4; i++){
