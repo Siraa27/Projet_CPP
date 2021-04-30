@@ -166,6 +166,45 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Abstract
+De nos jours, les réseaux de neurones sont au cœur de l’intelligence artificiell
+e.
+ Ils sont désormais un enjeu majeur pour de nombreux secteurs (santé, énergie
+ & environnement, mobilité, industries...) malgré que cela n'ait pas toujours
+ été le cas...
+\begin_inset Newline newline
+\end_inset
+
+En effet, il aura fallu attendre deux hivers de l'IA pour que celle-ci connaisse
+ enfin l'essor qu'elle mérite ces dernières années grâce à l'amélioration
+ de la puissance de calcul des machines et aux résultats spectaculaires
+ offert par le deep learning que l'on a pu, par exemple, constaté en 2012
+ quand un réseau de neurones artificiels à plusieurs couches a écrasé toutes
+ les autres IA à un concours de reconnaissance d'images.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+PAS FINI 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Pour toutes ces raisons, vous trouverez dans le présent rapport, une description
+ détaillée d'un réseau de neurones, l'explication de chacun des modules
+ qui le composent et finalement, l'implémentation de notre propre réseau
+ de neurones que nous .
+ PAS FINI 
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
@@ -247,13 +286,17 @@ Schématisation algorithmique d’un neurone artificiel
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Cette représentation est appelée le perceptron, un algorithme d’apprentissage
  supervisé pour les classifications binaires linéaires.
  Cela fait beaucoup de mots inconnus alors arrêtons nous un instant sur
  chacun de ces termes car ils seront importants pour la suite ! 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -261,6 +304,10 @@ Algorithme : le perceptron est une suite d’opérations et de calcul = la
  somme des entrées, leur pondération, la vérification d’une condition et
  la production d’un résultat d’activation.
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -268,6 +315,10 @@ Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu�
  d’une prédiction voulue, le poids des différentes entrées va évoluer et
  il faudra trouver une valeur optimale pour chacune.
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -277,6 +328,10 @@ Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
  notre algorithme jusqu’à ce que chaque photo (ou presque) soit classé comme
  banane.
  
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1019,10 +1074,6 @@ Illustration avec le classifieur
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1146,7 +1197,57 @@ Donner le nom de fichier de données
 \end_layout
 
 \begin_layout Standard
-######## rajout de figure comme le point 4 de specif
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename diagramme des choix.png
+	lyxscale 50
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+Diagramme des choix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1157,7 +1258,10 @@ Donner le nom de fichier de données
 \end_layout
 
 \begin_layout Paragraph
-Paragraphe transition : nous allons passer du côte théorique au côté technique
+Maintenant que nous nous sommes familiariser avec toutes les notions que
+ peuvent avoir leur importance dans la compréhension d'un réseau de neurones,
+ nous allons à présent étudier les côtés plus techniques de ces objets afin
+ de mener à bien l'implémentation de notre propre réseau.
 \end_layout
 
 \begin_layout Part
@@ -1191,20 +1295,30 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
 
-\lang english
-\begin_inset Graphics
-	filename ../deuxième rendu/DiagrammeCasUtilisation2.png
-	scale 30
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-
 \lang english
+
+\begin_inset Graphics
+	filename DiagrammeCasUtilisation.png
+	lyxscale 50
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1238,7 +1352,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
+METTRE LE DERNIER DIAGRAMME DE CLASSE !!!!!!
 \end_layout
 
 \begin_layout Plain Layout
@@ -1308,7 +1422,15 @@ Afin de visualiser les interactions entre les composants, nous avons réalisé
 \begin_inset Newline newline
 \end_inset
 
+
+\begin_inset Newline newline
+\end_inset
+
 Nous commençons avec un diagramme de séquence assez général :
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Float figure
 placement H
 wide false
@@ -1317,11 +1439,26 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/General.png
+	filename General.png
+	lyxscale 30
 	scale 55
+	rotateOrigin center
 
 \end_inset
 
@@ -1355,11 +1492,26 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/CreationReseau.png
+	filename CreationReseau.png
+	lyxscale 30
 	scale 55
+	rotateOrigin center
 
 \end_inset
 
@@ -1388,11 +1540,26 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/ChoisiPredef.png
+	filename ChoisiPredef.png
+	lyxscale 30
 	scale 55
+	rotateOrigin center
 
 \end_inset
 
@@ -1427,11 +1594,26 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/FormulerRequete.png
+	filename FormulerRequete.png
+	lyxscale 30
 	scale 55
+	rotateOrigin center
 
 \end_inset
 
@@ -1554,11 +1736,26 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/Fichier données iris.png
+	filename Fichier données iris.png
+	lyxscale 30
 	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -1673,11 +1870,25 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/reseau neuronne Fisher.png
+	filename reseau neuronne Fisher.png
 	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -1951,11 +2162,25 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
 
 \lang english
+
 \begin_inset Graphics
-	filename ../deuxième rendu/Courbe erreur poids.png
-	scale 60
+	filename Courbe erreur poids.png
+	scale 80
+	rotateOrigin center
 
 \end_inset
 
@@ -2106,6 +2331,23 @@ Dans le cas d’une prédiction, nous considérons une unique modélisation.
 Conception détaillée
 \end_layout
 
+\begin_layout Standard
+
+\lang english
+Dans cette partie, nous expliquons en détail chaque module/classe composant
+ notre code et les tests unitaires qui lui sont associés.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Cela permet d'avoir une vision précis, exhaustive et claire de l'implémentation
+ produite.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 
 \lang english
@@ -2115,7 +2357,242 @@ Classe Réseau
 \begin_layout Standard
 
 \lang english
-Ses variables d’instances seront : 
+Ses variables d’instances seront : A REMPLIR 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+testConstructeurReseau :
+\end_layout
+
+\begin_layout Standard
+Pour créer un réseau, les choix sont multiples.
+ Comme on l'a vu plus haut dans la partie InterfaceUtilisateur, c'est par
+ le biais d'un fichier au bon format que l'utilisateur peut obtenir un type
+ de réseau particulier.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Réseau(Liste listeParametres) est le constructeur de la classe Reseau et
+ prend en paramètres la liste 
+\emph on
+listeParametres
+\emph default
+ qui contient :
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le premier paramètre
+\series bold
+\emph default
+ 
+\series default
+du fichier sera le 
+\series bold
+type de réseau
+\series default
+.
+ Dans notre projet, seul le réseau forwarded sera fonctionel (représenté
+ par l'entier 
+\begin_inset Formula $1$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le second paramètre 
+\emph default
+du fichier est le 
+\series bold
+cas d'utilisation du réseau
+\series default
+ (
+\begin_inset Formula $1:$
+\end_inset
+
+classification, 
+\begin_inset Formula $2:$
+\end_inset
+
+prédiction, 
+\begin_inset Formula $3:$
+\end_inset
+
+identification des objets et 
+\begin_inset Formula $4:$
+\end_inset
+
+ reconnaissance d'image).
+ Rappelons que seule le choix 
+\begin_inset Formula $1$
+\end_inset
+
+ et potentiellement 
+\begin_inset Formula $2$
+\end_inset
+
+ seront implémentés.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le troisième paramètre
+\emph default
+ compte le 
+\series bold
+nombre de couches cachées
+\series default
+, nbCouche.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le 
+\emph on
+quatrième paramètre
+\emph default
+ compte le 
+\series bold
+nombre de neurones par couche cachée
+\series default
+ (classe CoucheCachée).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le cinquième paramètre
+\emph default
+ du fichier est 0 ou 
+\begin_inset Formula $x$
+\end_inset
+
+ un entier positif non nul :
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+- 0 si l'initialisation de la matrice de poids initiaux est faite 
+\emph on
+aléatoirement
+\emph default
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+- 
+\begin_inset Formula $x$
+\end_inset
+
+ si l'utilisateur choisit d'initaliser tous les poids à 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On prend alors 2 exemples :
+\begin_inset Newline newline
+\end_inset
+
+Un réseau R1 de type Forwarded avec 3 couches cachées, 2 neurones par couches
+ et des poids initialisés aléatoirement.
+\begin_inset Newline newline
+\end_inset
+
+Un réseau R2 de type Forwarded avec 1 couches cachées, 4 neurones par couches
+ et des poids initialisés à 0.5.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Remarque
+\emph default
+ : Il est impossible de calculer l'égalité entre 2 flottants en machine.
+ 
+\begin_inset Newline newline
+\end_inset
+
+On utilise pour parer cela : la norme de la différence entre la valeur attendue
+ et la valeur recupérée dans le fichier pour obtenir le booléen qui indique
+ si le test est réussi ou non.
+\begin_inset Newline newline
+\end_inset
+
+C'est cette technique que l'on utilise ici pour le test concernant les poids
+ initialisés à 0.5.
 \end_layout
 
 \begin_layout Subsection
@@ -2128,18 +2605,400 @@ Classe Couche
 
 \lang english
 Ses variables d’instances seront : 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La fonction Couche a pour unique but de construire les objets Couche peu
+ importe leur type (entrée, cachée, sortie).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Pour notre implémentation, nous avons choisi de coder les méthodes utiles
+ dans les classes CoucheCachée et CoucheSorties uniquement puisqu'elles
+ sont inutiles dans CoucheEntrées.
+ 
 \end_layout
 
 \begin_layout Subsection
 
 \lang english
-Classes Entrées/Sorties/CoucheCachée
+Classe 
+\lang french
+CoucheEntree
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-Ce sont des classes qui héritent de la classe Couche 
+Ses variables d’instances seront : 
+\end_layout
+
+\begin_layout Standard
+Cette classe a une seule méthode importante, qui peut générer des erreurs
+ donc le seul test à effectuer est :
+\end_layout
+
+\begin_layout Subsection*
+testConstructionSortie :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: void constructionSortie()
+\end_layout
+
+\begin_layout Standard
+Soit un fichier de données test qui contient les 4 valeurs utilisées dans
+ l’exemple précédent.
+ 
+\end_layout
+
+\begin_layout Standard
+il faut vérifier que la fonction constructionSorite remplit un tableau de
+ neurone de dimension 4 comme suit : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3,3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2,5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donc il faut créer un objet coucheEntrée qu’on initialise à l’aide d’un
+ constructeur avec les valeurs du tableau et vérifier que le tableau de
+ neurone de cet objet est égal au tableau de neurone de notre fonction test
+ 
+\end_layout
+
+\begin_layout Subsection
+Classes CoucheSortie et CoucheCachee
+\end_layout
+
+\begin_layout Standard
+Comme vous allez le constater, nous avons fait le choix d'implémenter les
+ fonctions preActivation() et activation() dans la classe CoucheCachée mais
+ aussi dans CoucheSortie.
+ Cela nous permet en fait de pouvoir modifier la fonction activation qui,
+ bien souvent n'est pas la même selon si c'est une couche cachée ou de sortie.
+\end_layout
+
+\begin_layout Subsection*
+testPreactivation :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: double[] preActivation()
+\end_layout
+
+\begin_layout Standard
+Il faut tester si elle renvoie bien la somme des produits de la valeur du
+ neurone avec le poids qui le relie au neurone étudié ajouté au biais de
+ ce neurone.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour l'exemple des iris de Fisher :
+\end_layout
+
+\begin_layout Itemize
+une couche d’entrée qui comprend 4 entrées x1, x2, x3 et x4 
+\end_layout
+
+\begin_layout Itemize
+une couche cachée qui comprend 2 neurones n1 et n2
+\end_layout
+
+\begin_layout Standard
+⇒ Il y a alors 8 poids et 2 biais 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Lyx + photo/TEST.png
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemple des iris de Fisher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La fonction de préactivation doit donnée comme valeur pour n1 : 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x1\times0,1+x2\times0,3+x3\times0,5+x4\times0,7+b1=0,63+0,99+3+1,75+0,5=\mathbf{{\color{purple}6,87}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour n2 : 
+\begin_inset Formula ${\color{purple}\mathbf{8,98}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donc on doit avoir 
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6,87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8,98
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+testActivation :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: double activation(double[])
+\end_layout
+
+\begin_layout Standard
+Nous allons considérer le cas de la fonction sigmoïde donnée par :
+\begin_inset Formula 
+\[
+f(x)=\frac{1}{1+e^{x}}
+\]
+
+\end_inset
+
+Il faut tester si elle renvoie la bonne valeur.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Pour cela, reprenons le résultat de la fonction de préactivation, on a alors
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(6,87)=0.001
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+testConstructionSortie :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: void constructionSortie( ) 
+\end_layout
+
+\begin_layout Subsection
+testAjouterCouche
+\end_layout
+
+\begin_layout Subsection
+testErreur
+\end_layout
+
+\begin_layout Subsection
+calcGradC
+\end_layout
+
+\begin_layout Subsection
+testApprentissage
+\end_layout
+
+\begin_layout Subsection
+testBackPropagation
 \end_layout
 
 \begin_layout Subsection
@@ -2152,6 +3011,803 @@ Classe Neurone
 
 \lang english
 Ses variables d’instances seront : 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Documentation des interfaces de chaque module
+\end_layout
+
+\begin_layout Standard
+(voir les .html pour l'interface graphique dans le dossier 
+\emph on
+DOXYGEN HTML
+\emph default
+ et les .hpp dans le dossier 
+\emph on
+CodeDoxygen.hpp
+\emph default
+ pour l'implémentation des codes)
+\end_layout
+
+\begin_layout Chapter
+Les tests unitaires
+\end_layout
+
+\begin_layout Subsection
+Classe Interface:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Ses variables d’instances seront : 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette classe a deux méthodes importantes, qui peuvent générer des erreurs
+ donc il y a deux tests à effectuer :
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+testLectureFichier :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: listeParamètres lectureFichier(String 'nomFich.csv')
+\end_layout
+
+\begin_layout Standard
+Nous allons d'abord tester la fonction lectureFichier().
+ Pour cela, nous allons définir le jeu de données que nous allons utiliser
+ ainsi que les résultats attendus.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tout d'abord, faisons un point sur la manière de remplir un fichier des
+ paramètres du futur réseau à construire :
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le premier paramètre
+\series bold
+\emph default
+ 
+\series default
+du fichier sera le type de réseau.
+ Dans notre projet, seul le réseau forwarded sera fonctionel.
+ Il sera représenté par l'entier 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le second paramètre 
+\emph default
+du fichier est le cas d'utilisation du réseau (
+\begin_inset Formula $1:$
+\end_inset
+
+classification, 
+\begin_inset Formula $2:$
+\end_inset
+
+prédiction, 
+\begin_inset Formula $3:$
+\end_inset
+
+identification des objets et 
+\begin_inset Formula $4:$
+\end_inset
+
+ reconnaissance d'image).
+ Rappelons que seule le choix 
+\begin_inset Formula $1$
+\end_inset
+
+ et potentiellement 
+\begin_inset Formula $2$
+\end_inset
+
+ seront implémentés.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le troisième paramètre
+\emph default
+ compte le nombre de couches cachées, nbCouche.
+ 
+\end_layout
+
+\begin_layout Itemize
+Le 
+\emph on
+quatrième paramètre
+\emph default
+ compte le nombre de neurones par couche cachée (classe CoucheCachée).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Le cinquième paramètre
+\emph default
+ du fichier est 0 ou 
+\begin_inset Formula $x$
+\end_inset
+
+ un entier positif non nul :
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+- 0 si l'initialisation de la matrice de poids initiaux est faite 
+\emph on
+aléatoirement
+\emph default
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+- 
+\begin_inset Formula $x$
+\end_inset
+
+ si l'utilisateur choisit d'initaliser tous les poids à 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier vide:
+\series default
+ Entrer en paramétres un fichier en format .txt vide.
+ 
+\begin_inset Newline newline
+\end_inset
+
+La méthode doit renvoyer un message d'erreur sur la console pour prévenir
+ l'utilisateur, puis revenir sur le menu précédent.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Renvoie 
+\begin_inset Formula $0$
+\end_inset
+
+ comme message d'erreur.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier au mauvais format:
+\series default
+ Entrer en paramètres un fichier en binaire, donc illisible par notre programme.
+ 
+\begin_inset Newline newline
+\end_inset
+
+La méthode doit renvoyer un message d'erreur sur la console pour prévenir
+ l'utilisateur, puis revenir sur le menu précédent (ainsi l'utilisateur
+ pourra entrer manuellement les paramètres si son fichier n'est pas au bon
+ format).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Renvoie 
+\begin_inset Formula $-2$
+\end_inset
+
+ comme message d'erreur.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier mal rempli:
+\series default
+ Plusieurs tests sont envisageables.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Voyons en détails :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Fichier test 1: 
+\begin_inset Formula $\left(2\text{ }1\text{ }3\text{ }2\text{ }5\text{ }2\text{ }0\right)$
+\end_inset
+
+ renvoie un message pour dire que le fichier est mal rempli (exemple : réseau
+ non implémenté).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Retourne une liste avec la valeur 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Test avec un fichier bien écrit: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Fichier test 1: 
+\begin_inset Formula $\left(1\text{ }1\text{ }3\text{ }2\text{ }5\text{ }2\text{ }0\right)$
+\end_inset
+
+ renvoie une liste de paramètres=
+\begin_inset Formula $\left(1\text{ }1\text{ }3\text{ }2\text{ }5\text{ }2\text{ }0\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+testlectureParam() :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode: listeParamètres lectureParam()
+\end_layout
+
+\begin_layout Standard
+Tout d'abord, faisons un point sur la manière dont l'utilisateur va saisir
+ les paramètres, soit comment va fonctionner la fonction listeParametreslectureP
+aram().
+ 
+\begin_inset Newline newline
+\end_inset
+
+L'utilisateur entrera à la suite les différents paramètres dans l'ordre
+ suivant (il sera guidé par le programme 
+\begin_inset Formula $param1:$
+\end_inset
+
+ type de réseau, 
+\begin_inset Formula $param2:$
+\end_inset
+
+ cas d'utilisation du réseau (rappel: 
+\begin_inset Formula $1:$
+\end_inset
+
+classification, 
+\begin_inset Formula $2:$
+\end_inset
+
+prédiction, 
+\begin_inset Formula $3:$
+\end_inset
+
+identification des objets et 
+\begin_inset Formula $4:$
+\end_inset
+
+ reconnaissance d'image), 
+\begin_inset Formula $param3:$
+\end_inset
+
+ nombre de couches cachées, 
+\begin_inset Formula $param4:$
+\end_inset
+
+ nombre de neurones par couche (une suite d'entiers séparés par des espaces),
+ 
+\begin_inset Formula $param5:$
+\end_inset
+
+ choix de la matrice de poids initiaux.)
+\end_layout
+
+\begin_layout Enumerate
+Test quand l'utilisateur entre de mauvais paramètres (par exemple entre
+ des string au lieu d'entier etc..
+ problème de type)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Test 1: saisie du premier paramètre: si 
+\begin_inset Formula $param1=a$
+\end_inset
+
+ erreur de type, si 
+\begin_inset Formula $param1=4$
+\end_inset
+
+ erreur réseau non implémenté, (propose une resaisie, ou quitter).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Test 2: saisie du second paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+ si 
+\begin_inset Formula $param2=a$
+\end_inset
+
+ erreur de type, si 
+\begin_inset Formula $param2=4$
+\end_inset
+
+ erreur cas d'utilisation non implémenté, (propose une resaisie, ou quitter).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Test 3: saisie du troisième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, si 
+\begin_inset Formula $param3=a$
+\end_inset
+
+ erreur de type.
+\end_layout
+
+\begin_layout Enumerate
+Test 4: saisie du quatrième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, si 
+\begin_inset Formula $param4=4\text{ }5\text{ }6\text{ }9\text{ }5\text{ }7$
+\end_inset
+
+, le programme ne sauvegarde que les 4 premier entiers.
+\end_layout
+
+\begin_layout Enumerate
+Test 5: saisie du quatrième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, si 
+\begin_inset Formula $param4=4\text{ }5$
+\end_inset
+
+, erreur trop couches sans neurones.
+\end_layout
+
+\begin_layout Enumerate
+Test 6: saisie du quatrième paramètre: avec 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=2$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, 
+\begin_inset Formula $param4=4\text{ }5\text{ }6\text{ }1$
+\end_inset
+
+, si 
+\begin_inset Formula $param5=a$
+\end_inset
+
+ erreur de type.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test quand l'utilisateur entre de bons paramètres:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Test 1: saisie suivante: 
+\begin_inset Formula $param1=1$
+\end_inset
+
+, 
+\begin_inset Formula $param2=1$
+\end_inset
+
+, 
+\begin_inset Formula $param3=4$
+\end_inset
+
+, 
+\begin_inset Formula $param4=4\text{ }5\text{ }6\text{ }1$
+\end_inset
+
+, 
+\begin_inset Formula $param5=0$
+\end_inset
+
+ renvoie la liste: 
+\begin_inset Formula $\left(1\text{ }1\text{ }4\text{ }4\text{ }5\text{ }6\text{ }1\text{ }0\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+ajouter -lcCppUnit
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+******************************************************************je sais
+ pas encore ou mettre
+\end_layout
+
+\begin_layout Section
+Module ResForwarded
+\end_layout
+
+\begin_layout Standard
+Pas de test à effectuer
+\end_layout
+
+\begin_layout Section
+Module ResRecurrent
+\end_layout
+
+\begin_layout Standard
+Pas de test à effectuer
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+********************************************************************************
+********
+\end_layout
+
+\begin_layout Subsection
+Classe Matrice
+\end_layout
+
+\begin_layout Standard
+Les tests sur la classe Matrice sont de 2 types :
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+- Fournit le bon résultat 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+- Traite le cas où les matrices ne sont pas de la même taille et vérifie
+ si le nombre colonne est égal au nombre de lignes de la matrice passé en
+ paramètre.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+testProduit :
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+prototype de la méthode testProduit(Matrice)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.
+ Test pour 2 matrices 3x3 quelconques et retourne le bon résultat
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Lyx + photo/prodmatrice.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1ère partie de test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ Test pour 2 matrices de taille différentes (1x2 et 2x3) et retourne le
+ bon résultat (une matrice 1x3) 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Lyx + photo/prodmatrice2.png
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2ème partie de test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ Test pour 2 matrices de tailles incompatibles pour un produit matriciel
+ et retourner erreur.
+ 
 \end_layout
 
 \begin_layout Standard
