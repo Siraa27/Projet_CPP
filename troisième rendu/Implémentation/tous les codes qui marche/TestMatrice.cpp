@@ -79,31 +79,50 @@ void TestMatrice::setUp(void)
 {
 // à l'aide du constructeur Matrice
     //les matrices M1, M2 et M6 servent pour le premier test
-	M1 = new Matrice(3, 3);
+    M1 = new Matrice(3, 3);
     M2 = new Matrice(3, 3); //on choisit de ne creer que des matrices particulieres pour simplifier la comprehension
-	M6 = new Matrice(3, 3); //Matrice résultat du produit de matrices M1*M2 : M6={{6,9,12},{6,9,12},{6,9,12}}
+    M6 = new Matrice(3, 3); //Matrice résultat du produit de matrices M1*M2 : M6={{6,9,12},{6,9,12},{6,9,12}}
+    M4 = new Matrice(1,2);  // M4= {{3, 1}}
+    M5 = new Matrice(2, 3); // M5={{1, 8, 4} , {7, 1, 6}}
+    M7 = new Matrice(1, 3); //Matrice résultat du produit de matrices M4*M5 : M7={22, 11, 22}
 
+
+}
+
+void TestMatrice::tearDown(void)
+{
+	delete M1;
+    delete M2;
+    delete M4;
+    delete M5;
+    delete M6;
+    delete M7;
+
+}
+void TestMatrice::testProduit(void)
+{
     for (int i=0; i<3 ; i++)
     {
         for (int j=0; j<3 ; j++)
         {
             M1->setCoefMatrice(i,j,1); //Matrice ou tous les coeff =1
             M2->setCoefMatrice(i,j,i+j+1); //M2={{1,2,3},{2,3,4},{3,4,5}}
-            if (j=0){
-                M6->setCoefMatrice(i,j,6);
-            }
-            else if (j=1){
-                M6->setCoefMatrice(i,j,9);
-            }
-            else if (j=2){
-                M6->setCoefMatrice(i,j,12);
-            }
+            
         }
     }
+    M6->setCoefMatrice(0,0,6);
+    M6->setCoefMatrice(1,0,6);
+    M6->setCoefMatrice(2,0,6);
+    M6->setCoefMatrice(0,1,9);
+    M6->setCoefMatrice(1,1,9);
+    M6->setCoefMatrice(2,1,9);
+    M6->setCoefMatrice(0,2,12);
+    M6->setCoefMatrice(1,2,12);
+    M6->setCoefMatrice(2,2,12);
+
+    
     //les matrices M4, M5 et M7 servent pour le 3e test, celui avec des matrices non carrées
-    M4 = new Matrice(1,2);  // M4= {{3, 1}}
-    M5 = new Matrice(2, 3); // M5={{1, 8, 4} , {7, 1, 6}}
-	M7 = new Matrice(1, 3); //Matrice résultat du produit de matrices M4*M5 : M7={22, 11, 22}
+    
     //On initialise les coefficients manuellement
     M4->setCoefMatrice(0,0,3);
     M4->setCoefMatrice(0,1,1);
@@ -113,38 +132,44 @@ void TestMatrice::setUp(void)
     M5->setCoefMatrice(1,0,7);
     M5->setCoefMatrice(1,1,1);
     M5->setCoefMatrice(1,2,6);
-    M7->setCoefMatrice(0,0,22);
-    M7->setCoefMatrice(0,1,11);
-    M7->setCoefMatrice(0,2,22);
-}
+    M7->setCoefMatrice(0,0,10);
+    M7->setCoefMatrice(0,1,25);
+    M7->setCoefMatrice(0,2,18);
+    
 
-void TestMatrice::tearDown(void)
-{
-	delete M1;
-    delete M2;
-    delete M4;
-    delete M5;
-	delete M6;
-    delete M7;
-
-}
-void TestMatrice::testProduit(void)
-{
+    Matrice *test2 ;
+    test2 = new Matrice(3,3);
+    for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+    //(10,25,18)
+                test2->setCoefMatrice(i,j, M1->operator *(*M2).getCoefMatrice(i,j));
+               //std::cout << "test2 " << j << " " << test2->getMatrice()[i][j] << std::endl ;
+        }
+    }
     //test matrices carrées :
-   for (int i=0; i<=2; i++) //le 2 correspond aux indices ligne pour la matrice résultat M6 à 3 lignes
-		for (int j=0; j<=2; j++) //le 2 correspond aux indices colonnes pour la matrice résultat M6 à 3 colonnes
-   			CPPUNIT_ASSERT( fabs(M6->getCoefMatrice(i,j) - (M1->operator *(*M2)).getCoefMatrice(i, j))<0.0001);
+  for (int i=0; i<=2; i++) {//le 2 correspond aux indices ligne pour la matrice résultat M6 à 3 lignes
+		for (int j=0; j<=2; j++){ //le 2 correspond aux indices colonnes pour la matrice résultat M6 à 3 colonnes
+   			CPPUNIT_ASSERT( fabs( M6->getMatrice()[i][j] - test2->getMatrice()[i][j])<0.01);
+   		}
+  }
 
-    //EN SUSPENS 		   
-	//test mauvais format de matrices 
-    //CPPUNIT_ASSERT ( {-1} == M1*(M3) ); //la fonction produit renvoie -1 si on a une erreur de format : M1(nxp)*M2(pxq) == M(nxq)
 
    //test matrices non carrées mais bon format:  M1(nxp)*M2(pxq) == M(nxq)
-   for (int i=0; i<=0; i++) {//le zero correspond à l'unique indice ligne pour la matrice résultat M7 à 1 ligne
-		for (int j=0; j<=2; j++) {//le 2 correspond aux indices colonnes pour la matrice résultat M7 à 3 colonnes
-   			CPPUNIT_ASSERT((fabs( M7->getCoefMatrice(i, j) - (M4->operator *(*M5).getCoefMatrice(i, j)))<0.0001)); 
-        }
-   }
+    Matrice *test ;
+    test = new Matrice(1,3);
+
+    for (int j=0; j<3; j++){
+    //(10,25,18)
+    test->setCoefMatrice(0,j, M4->operator *(*M5).getCoefMatrice(0,j));
+    //std::cout << "test " << j << " " << test->getMatrice()[0][j] << std::endl ;
+    
+    }
+   
+		for (int j=0; j<3; j++) {
+		       
+   			CPPUNIT_ASSERT(fabs( M7->getMatrice()[0][j] - test->getMatrice()[0][j])<0.01); 
+        } 
+   
 
 }
 
