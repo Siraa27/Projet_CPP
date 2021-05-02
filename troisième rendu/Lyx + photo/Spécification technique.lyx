@@ -936,6 +936,10 @@ Donc on doit avoir
 
 \end_layout
 
+\begin_layout Standard
+SETOSA : 1 VIRGINICA : 2 VERSICOLOR : 3
+\end_layout
+
 \begin_layout Subsection
 testActivation 
 \end_layout

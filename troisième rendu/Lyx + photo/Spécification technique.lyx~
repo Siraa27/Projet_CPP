@@ -856,12 +856,13 @@ une couche cachée qui comprend 2 neurones n1 et n2
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /Users/israbensassi/Documents/GM4/Semestre8/Projet Semestriel/Projet_CPP/troisième rendu/Lyx + photo/TEST.png
-	scale 60
+	filename TEST.png
+	scale 50
+	rotateOrigin center
 
 \end_inset
 
