@@ -62,10 +62,10 @@ int main(int argc, char* argv[])
     if(choix==1)
     {
         InterfaceManuelle interfaceMan;
-        do
-        {
+        //do
+        //{
             interfaceMan.lectureParam();
-        }while(interfaceMan.validationReseau()==0 || interfaceMan.gettypeReseau()==-1);
+        //}while(interfaceMan.validationReseau()==0 || interfaceMan.gettypeReseau()==-1);
         Reseau reseau(interfaceMan.getnbCouchesCachees(), interfaceMan.getnbNeuronesCouches(), interfaceMan.getchoixPoid(), interfaceMan.getnbNeuronesSortie(), interfaceMan.getnbNeuronesEntree());
         manipReseau(reseau);
     }

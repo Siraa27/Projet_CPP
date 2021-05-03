@@ -1,7 +1,7 @@
 CC = g++
 OPT = -c 
 
-OBJ = main.o Matrice.o Couche.o CoucheEntrees.o CoucheSorties.o CoucheSorties.o CoucheCachee.o Neurone.o Reseau.o InterfaceManuelle.o InterfaceFichier.o Interface.o 
+OBJ = Main.o Matrice.o Couche.o CoucheEntrees.o CoucheSorties.o CoucheCachee.o Neurone.o Reseau.o InterfaceManuelle.o InterfaceFichier.o Interface.o 
 #*.o
 
 # Création des executables
@@ -42,7 +42,7 @@ Couche.o : Couche.cpp Couche.hpp Matrice.hpp Neurone.hpp
 CoucheEntrees.o : CoucheEntrees.cpp CoucheEntrees.hpp Couche.hpp Neurone.hpp 
 	$(CC) $(OPT) CoucheEntrees.cpp
 
-CoucheSorties.o : CoucheSorties.cpp CoucheSorties.hpp Couche.hpp Neurone.hpp Matrice.hpp
+CoucheSorties.o : CoucheSorties.cpp CoucheSorties.hpp Couche.hpp Matrice.hpp Neurone.hpp
 	$(CC) $(OPT) CoucheSorties.cpp
 	
 CoucheCachees.o : CoucheCachee.cpp CoucheCachee.hpp Couche.hpp Couche.hpp Neurone.hpp Matrice.hpp
