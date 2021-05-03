@@ -1,12 +1,9 @@
 CC = g++
 OPT = -c 
 
-OBJ = main.o Matrice.o Couche.o CoucheEntree.o CoucheSorties.o CoucheCachee.o Neurone.o Reseau.o InterfaceManuelle.o InterfaceFichier.o Interface.o ReseauForwarded.o
+OBJ = main.o Matrice.o Couche.o CoucheEntrees.o CoucheSorties.o CoucheSorties.o CoucheCachee.o Neurone.o Reseau.o InterfaceManuelle.o InterfaceFichier.o Interface.o 
+#*.o
 
-
-
-
-	
 # Création des executables
 # editon des liens ( on rassemble les objets) 
 
