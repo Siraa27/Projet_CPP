@@ -174,8 +174,10 @@ void Reseau::Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, strin
       istringstream iss(ligne); // creer un flux a partir de la chaîne donnee
       string str;
       while (getline(iss, str, ' ')) //Le separateur est un espace
+      {  
+        cout<<str<<"Test\n";
         result.push_back(str); //On stock les elements de chaque ligne dans un vector result
-
+      }
     //Premiere ligne : nbLignes, nbColonnes, et nbNeurones d'entree
     int nbLignes = stoi(result[0]);
     int nbColonnes = stoi(result[1]);
@@ -191,11 +193,13 @@ void Reseau::Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, strin
             result.push_back(str);
 
           //Set les entrees
-          for(int i=0; i<nbColonnes-2; i++)
+          for(int i=0; i<nbColonnes-1; i++)
           {
             buffer = stod(result[i]);
+                  cout<<i<<std::endl;
                   x[ind].modifNeurone(i,buffer); //On set la sortie du neurone
           }
+          cout<<"Test2\n";
           //Set les sorties
           for (int i = 0; i < y[ind].getNbNeurones(); i++)
           {

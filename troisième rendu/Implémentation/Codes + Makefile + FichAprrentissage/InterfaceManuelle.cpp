@@ -26,14 +26,14 @@ void InterfaceManuelle::lectureParam(){//fournir le chemin absolu ou
 	cout<<"1: classification\n";
 	cout<<"2: prediction\n";
 	cin>> casUtilisation;
-	if (casUtilisation!=1)//Nous avons implémenté que la classification
+	if (casUtilisation!=2)//Nous avons implémenté que la prediction
 	{	
 		casUtilisation=-1;
 		cout<<"ERREUR: Cas d'utilisation non disponible ou non conforme\n";
 	}
 	cout<<"Saisir l'entier correspondant au nombre de couches cachees du reseau\n";
 	cin>> nbCouchesCachees;
-	if (nbCouchesCachees<0)//Nous avons implémenté que la classification
+	if (nbCouchesCachees<0)//Nous avons implémenté que la prediction
 	{	
 		nbCouchesCachees=-1;
 		cout<<"ERREUR: Nombre de couches cachees negatif\n";

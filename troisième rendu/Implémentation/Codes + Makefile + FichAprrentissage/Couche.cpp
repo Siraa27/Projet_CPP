@@ -2,6 +2,7 @@
 #include "Neurone.hpp"
 #include "Matrice.hpp"
 #include <stdlib.h>
+#include <iostream>
 
 //Constructeurs
 Couche::Couche (const int nbN)

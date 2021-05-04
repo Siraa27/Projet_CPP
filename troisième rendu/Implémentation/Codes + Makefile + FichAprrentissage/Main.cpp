@@ -66,9 +66,7 @@ int main(int argc, char* argv[])
         {
             interfaceMan.lectureParam();
         }while(interfaceMan.validationReseau()==0 && interfaceMan.gettypeReseau()==-1);
-        cout<<"Test1\n";
         Reseau reseau(interfaceMan.getnbCouchesCachees(), interfaceMan.getnbNeuronesCouches(), interfaceMan.getchoixPoid(), interfaceMan.getnbNeuronesSortie(), interfaceMan.getnbNeuronesEntree());
-        cout<<"Test2\n";
         manipReseau(reseau);
     }
     else

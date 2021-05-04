@@ -16,8 +16,8 @@ CoucheCachee::CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec
 //destructeur
 CoucheCachee::~CoucheCachee()
 {
-	biais.~Matrice();
-	LiaisonsEntrees.~Matrice();
+	//biais.~Matrice();
+	//LiaisonsEntrees.~Matrice();
 }
 
 // Accesseurs

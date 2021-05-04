@@ -34,7 +34,7 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 					}
 					break;
 				case 2://chargement du cas d'utilisation
-					if (static_cast<int>(nombre)==1)//Nous avons implémenté que la classification
+					if (static_cast<int>(nombre)==2)//Nous avons implémenté que la classification
 					{	
 						setcasUtilisation(static_cast<int>(nombre));
 					}
