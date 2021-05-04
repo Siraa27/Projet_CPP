@@ -76,7 +76,7 @@ class Reseau {
       *  \brief modifie les poids et les biais en utilisant le sous-echantillon d'apprentissage (x,y)
       *  \param vector<CoucheEntrees> x, vector<CoucheSorties> y
       */
-    void BackPropagation(vector<CoucheEntrees>& x, vector<CoucheSorties>& y);
+    void BackPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y);
 
     /*!
       *  \fn Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic);

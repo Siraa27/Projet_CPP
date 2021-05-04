@@ -1,0 +1,204 @@
+@startuml
+
+
+
+
+
+/' Objects '/
+
+class Couche {
+	+Couche(const int nbN)
+	+Couche(Couche& c)
+	+~Couche()
+	+recupSortiesNeurones() : Matrice {query}
+	+getNeurone(int i) : Neurone {query}
+	+getNbNeurones() : int {query}
+	-nbNeurones : int
+	+operator<<(std::ostream& flux, const Couche& C) : std :: ostream&
+	-Neurones : std::vector<Neurone>
+	+modifNeurone(int i, double s) : void
+}
+
+
+class CoucheCachee {
+	+CoucheCachee(const CoucheCachee &)
+	+CoucheCachee(const int nbNeurones, const int nbNeuronesCouchePrec)
+	+~CoucheCachee()
+	-LiaisonsEntrees : Matrice
+	-biais : Matrice
+	+getBiais() : Matrice
+	+getLiaisonEntrees() : Matrice
+	+preActivation(Couche couchePrec) : Matrice
+	+derivFoncActivation(double x) : double
+	+foncActivation(Matrice sum) : void
+	+setBiais(int i, int j, double coef) : void
+}
+
+
+class CoucheEntrees {
+	+CoucheEntrees(const CoucheEntrees &)
+	+CoucheEntrees(const int nbNeurones)
+	+CoucheEntrees(const int nbNeurones, std::string nomFic)
+	+~CoucheEntrees()
+	+constructionSortie(std::string nomFic) : void
+}
+
+
+class CoucheSorties {
+	+CoucheSorties(const CoucheSorties &)
+	+CoucheSorties(const int nbNeurones, const int nbNeuronesCouchePrec)
+	+~CoucheSorties()
+	-LiaisonsEntrees : Matrice
+	-biais : Matrice
+	+getBiais() : Matrice
+	+getLiaisonEntrees() : Matrice
+	+preActivation(Couche couchePrec) : Matrice
+	+derivFoncActivation(double x) : double
+	+constructionSorties() : void
+	+foncActivation(Matrice sum) : void
+}
+
+
+class Interface {
+	+Interface()
+	#choixPoid : double
+	+getchoixPoid() : double
+	#casUtilisation : int
+	+getcasUtilisation() : int
+	+getnbCouchesCachees() : int
+	+getnbNeuronesEntree() : int
+	+getnbNeuronesParCouches(int ind) : int
+	+getnbNeuronesSortie() : int
+	+gettypeReseau() : int
+	#nbCouchesCachees : int
+	#nbNeuronesEntree : int
+	#nbNeuronesSortie : int
+	#typeReseau : int
+	+validationReseau() : int
+	+getnbNeuronesCouches() : std::vector<int>
+	#nbNeuronesParCouches : std::vector<int>
+	+setcasUtilisation(const int casUtilisation) : void
+	+setchoixPoid(const double choixPoid) : void
+	+setnbCouchesCachees(const int nbCouchesCachees) : void
+	+setnbNeuronesEntree(const int nbNeuronesEntree) : void
+	+setnbNeuronesParCouches(const int nbNeuronesParCouches, const int ind) : void
+	+setnbNeuronesSortie(const int nbNeuronesSortie) : void
+	+settypeReseau(const int typeReseau) : void
+}
+
+
+class InterfaceFichier {
+	+lectureFichier(std::string nomFic) : void
+}
+
+
+class InterfaceManuelle {
+	+lectureParam() : void
+}
+
+
+class Matrice {
+	+Matrice(const int nbLignes, const int nbColonnes)
+	+Matrice(const int nbLignes, const int nbColonnes, double coef)
+	+Matrice(const int nbLignes, const int nbColonnes, double** t)
+	+Matrice(const Matrice &)
+	+~Matrice()
+	+operator*(const Matrice &) : Matrice
+	+operator+(const Matrice &) : Matrice
+	+operator-(const Matrice &) : Matrice
+	+getCoefMatrice(int i, int j) : double
+	+getMatrice() : double*
+	-matrice : double**
+	+getnbCol() : int
+	+getnbLig() : int
+	-nbCol : int
+	-nbLig : int
+	+divMatrice(double coef) : void
+	+initAleatoire() : void
+	+setCoefMatrice(int i, int j, double coef) : void
+	+setCoefs(double coef) : void
+}
+
+
+class Neurone {
+	+Neurone(double out)
+	+getSortie() : double {query}
+	-sortie : double
+	+setSortie(double S) : void
+}
+
+
+class Reseau {
+	+Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choixPoids, int nbNeuronesSorties, int nbNeuroneEntrees)
+	+~Reseau()
+	#entrees : CoucheEntrees
+	+getSorties() : CoucheSorties
+	#sorties : CoucheSorties
+	+erreur(int classeSolution) : double
+	+getNbNeuronesEntree() : int
+	#nbCouchesCachees : int
+	#couches : vector<CoucheCachee>
+	#gradientErr : vector<Matrice>
+	+Apprentissage(string Donnees) : void
+	+BackPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y) : void
+	+Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic) : void
+	+calcGradErr(CoucheSorties sAttendues) : void
+	+calcSorties(CoucheEntrees e) : void
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+.Couche <|-- .CoucheCachee
+
+
+.Couche <|-- .CoucheEntrees
+
+
+.Couche <|-- .CoucheSorties
+
+
+.Interface <|-- .InterfaceFichier
+
+
+.Interface <|-- .InterfaceManuelle
+
+
+
+
+
+/' Aggregation relationships '/
+
+.Couche *-- .Neurone
+
+
+.CoucheCachee "2" *-- .Matrice
+
+
+.CoucheSorties "2" *-- .Matrice
+
+
+.Reseau *-- .CoucheCachee
+
+
+.Reseau *-- .CoucheEntrees
+
+
+.Reseau *-- .CoucheSorties
+
+
+.Reseau *-- .Matrice
+
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml

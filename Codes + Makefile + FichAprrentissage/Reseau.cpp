@@ -126,7 +126,7 @@ void Reseau::calcSorties(CoucheEntrees e){
 }
 
 //modifie les poids et les biais en utilisant le sous-echantillon d'apprentissage (x,y)
-void Reseau::BackPropagation(vector<CoucheEntrees>& x, vector<CoucheSorties>& y){
+void Reseau::BackPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y){
   if(x.size() != y.size()){
     cout << "erreur : le nombre d''entrees et de sorties du sous-echantillon sont differents\n";
   }else{
