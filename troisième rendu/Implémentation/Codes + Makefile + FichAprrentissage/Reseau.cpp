@@ -182,8 +182,14 @@ void Reseau::Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, strin
     int nbLignes = stoi(result[0]);
     int nbColonnes = stoi(result[1]);
     int nbNeurones = stoi(result[2]);
-
     int ind = 0; //indice des individus
+
+    //Construction de nos vectors
+    for(int i=0;i<nbLignes;i++)
+    {
+        x.push_back(CoucheEntrees(nbNeurones));
+        y.push_back(CoucheSorties(nbColonnes-nbNeurones, couches[nbCouchesCachees-1].getNbNeurones()));
+    }
 
         while ( getline( fichier, ligne ) && (ind<nbLignes))
         {
