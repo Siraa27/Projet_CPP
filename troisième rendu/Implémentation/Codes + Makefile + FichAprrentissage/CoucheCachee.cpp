@@ -1,6 +1,7 @@
 #include "CoucheCachee.hpp"
 #include "Couche.hpp"
 #include "Matrice.hpp"
+#include <iostream>
 #include <math.h> 
 
 //Constructeur

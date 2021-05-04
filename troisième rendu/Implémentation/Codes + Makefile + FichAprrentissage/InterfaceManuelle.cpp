@@ -16,7 +16,7 @@ void InterfaceManuelle::lectureParam(){//fournir le chemin absolu ou
 	cout<<"2: reseau recurent\n";
 	cout<<"0:quitter\n";
 	cin>> typeReseau;
-	if (typeReseau!=1 || typeReseau!=0)//Nous avons implémenté que réseau Forwarded
+	if (typeReseau!=1 && typeReseau!=0)//Nous avons implémenté que réseau Forwarded
 	{	
 		typeReseau=-1;
 		cout<<"ERREUR: Type reseau non disponible ou non conforme\n";

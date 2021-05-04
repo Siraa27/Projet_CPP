@@ -14,7 +14,8 @@ using namespace std;
 //Constructeur
 Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choixPoids, int nbNeuronesSorties, int nbNeuroneEntrees) : entrees(nbNeuroneEntrees), sorties(nbNeuronesSorties, nbNeuronesParCouches[nbCouchesCachees-1])
 {
-  couches.push_back(CoucheCachee(nbNeuronesParCouches[0], nbNeuroneEntrees));
+  CoucheCachee C1(nbNeuronesParCouches[0], nbNeuroneEntrees);
+  couches.push_back(C1);
   couches[0].getLiaisonEntrees().initAleatoire();
   couches[0].getBiais().initAleatoire();
   nbCouchesCachees = nbCouchesCach;
@@ -22,24 +23,29 @@ Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choix
   //Poids initialiser aleatoirement
   if(abs(choixPoids)<= 0.0001 ){
     for(int i=1;i<nbCouchesCachees;i++){
-      couches.push_back(CoucheCachee(nbNeuronesParCouches[i], nbNeuronesParCouches[i-1]));
+      CoucheCachee C2(nbNeuronesParCouches[i], nbNeuronesParCouches[i-1]);
+      couches.push_back(C2);
       couches[i].getLiaisonEntrees().initAleatoire();
       couches[i].getBiais().initAleatoire();
     }
   }else{
-    for(int i=0;i<nbCouchesCachees;i++){
+    for(int i=1;i<nbCouchesCachees;i++){
       couches.push_back(CoucheCachee(nbNeuronesParCouches[i], nbNeuronesParCouches[i-1]));
       couches[i].getLiaisonEntrees().setCoefs(choixPoids);
       couches[i].getBiais().initAleatoire();
     }
   }
-  gradientErr.push_back(Matrice(couches[0].getNbNeurones(), entrees.getNbNeurones()));
+  
+  Matrice M1(couches[0].getNbNeurones(), entrees.getNbNeurones());
+  gradientErr.push_back(M1);
+  
   gradientErr.push_back(Matrice(couches[0].getNbNeurones(), 1));
   for(int i=1;i<nbCouchesCachees;i++){
-    gradientErr.push_back(Matrice(couches[i].getNbNeurones(), couches[i-1].getNbNeurones()));
-    gradientErr.push_back(Matrice(couches[i].getNbNeurones(), 1));
+    Matrice M2(couches[i].getNbNeurones(), couches[i-1].getNbNeurones());
+    gradientErr.push_back(M2);
+    Matrice M3(couches[i].getNbNeurones(), 1);
+    gradientErr.push_back(M3);
   }
-
 }
 
 Reseau::~Reseau(){
