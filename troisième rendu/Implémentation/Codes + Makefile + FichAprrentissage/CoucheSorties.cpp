@@ -16,8 +16,8 @@ CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePr
 //destructeur
 CoucheSorties::~CoucheSorties() 
 {
-	(biais).~Matrice();
-	(LiaisonsEntrees).~Matrice();
+	//(biais).~Matrice();
+	//(LiaisonsEntrees).~Matrice();
 }
 
 // Accesseurs

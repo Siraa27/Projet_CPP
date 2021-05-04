@@ -32,7 +32,9 @@ void manipReseau(Reseau R)
             std::string nomFic;
             cin>>nomFic;
             CoucheEntrees E(R.getNbNeuronesEntree(), nomFic);
+            cout<<"YO\n";
             R.calcSorties(E);
+            cout<<"YO2\n";
             std::cout<<R.getSorties();
 
             int rep;
