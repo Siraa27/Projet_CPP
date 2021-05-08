@@ -14,13 +14,13 @@ TestMatrice: Matrice.o TestMatrice.o
 	$(CC) -o TestMatrice Matrice.cpp TestMatrice.cpp -lcppunit
 
 TestCoucheEntrees: CoucheEntrees.o TestCoucheEntrees.o Couche.o Matrice.o Neurone.o
-	$(CC) -o TestCoucheEntrees Matrice.cpp Neurone.cpp Couche.cpp CoucheEntrees.cpp TestCoucheEntrees.cpp -lcppunit
+	$(CC) -o TestCoucheEntrees CoucheEntrees.cpp TestCoucheEntrees.cpp -lcppunit
 
 TestCoucheSorties: CoucheSorties.o TestCoucheSorties.o Couche.o Matrice.o Neurone.o
-	$(CC) -o TestCoucheSorties Matrice.cpp Neurone.cpp Couche.cpp CoucheSorties.cpp TestCoucheSorties.cpp -lcppunit
+	$(CC) -o TestCoucheSorties CoucheSorties.cpp TestCoucheSorties.cpp -lcppunit
 	
 TestCoucheCachees: CoucheCachees.o TestCoucheCachees.o Couche.o Matrice.o Neurone.o
-	$(CC) -o TestCoucheCachees Matrice.cpp Neurone.cpp Couche.cpp CoucheCachee.cpp TestCoucheCachees.cpp -lcppunit
+	$(CC) -o TestCoucheCachees CoucheCachees.cpp TestCoucheCachees.cpp -lcppunit
 	
 TestReseau : Reseau.o TestReseau.o
 	$(CC) -o TestReseau Reseau.cpp TestReseau.cpp -lcppunit
@@ -46,7 +46,7 @@ CoucheSorties.o : CoucheSorties.cpp CoucheSorties.hpp Couche.hpp Matrice.hpp Neu
 	$(CC) $(OPT) CoucheSorties.cpp
 	
 CoucheCachees.o : CoucheCachee.cpp CoucheCachee.hpp Couche.hpp Couche.hpp Neurone.hpp Matrice.hpp
-	$(CC) $(OPT) CoucheCachee.cpp
+	$(CC) $(OPT) CoucheCachees.cpp
 	
 Neurone.o : Neurone.cpp Neurone.hpp 
 	$(CC) $(OPT) Neurone.cpp

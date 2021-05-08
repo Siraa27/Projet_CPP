@@ -17,12 +17,12 @@
 *
 */
 class CoucheCachee : public Couche{
-   
-   // Les attributs 
-   private : 
+
+   // Les attributs
+   private :
       Matrice biais; /*!< Le biais qui va être optimisé lorsque le programme va tourner pour */
       Matrice LiaisonsEntrees; /*!< Matrice des poids initialisée en entrée via l'InterfaceUtilisateur */
-        
+
    //Les méthodes
    public :
       CoucheCachee(const CoucheCachee&);
@@ -30,9 +30,9 @@ class CoucheCachee : public Couche{
       *  \brief Constructeur de la classe CoucheCachee
       *  \param nbNeurones : nombre de neurones par couche, fixe d'où le "const"
       * \param nbNeuronesCouchePrec : nombre de neurones de la couche précedente (ça nous sert pour faire les liaison)
-      */ 
+      */
 	   CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
-       
+
       /*!
       *  \brief Destructeur de la classe CoucheCachee
       */
@@ -44,14 +44,14 @@ class CoucheCachee : public Couche{
       *  \return matrice des liaisons
       */
       Matrice getLiaisonEntrees();
-      
+
       /*!
       *  \fn getBiais()
       *  \brief Permet a acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
       Matrice getBiais();
-      
+
       /*!
       *  \fn setBiais()
       *  \brief Permet de set un coef de la matrice biais de la couche
@@ -64,7 +64,7 @@ class CoucheCachee : public Couche{
       *  \return matrice des sommes pondérées des entrées pour chaque neurone
       */
       Matrice preActivation(Couche couchePrec);
-      
+
       /*!
       *  \fn foncActivation(Matrice sum)
       *  \brief La fonction d'activation : méthode qui permet d'activer les neurones afin d'optimiser le biais et avoir le bon résultat en sortie
@@ -72,13 +72,15 @@ class CoucheCachee : public Couche{
       *  \return Elle modifie directement la sortie des neurones
       */
       void foncActivation(Matrice sum);
-       
+
       /*!
       *  \fn derivFoncActivation()
       *  \brief Derivee de la fonction d'activatino
       *  \return valeur de la derivee evaluee en x
       */
       double derivFoncActivation(double x);
+
+      void afficheMatrices();
 };
 
 #endif

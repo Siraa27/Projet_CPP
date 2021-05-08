@@ -38,7 +38,7 @@ class Reseau {
     /*!
     *  \brief Constructeur prenant en compte les parametres fourni par l'utilisateur via un fichier ou non
     */
-    public : 
+    public :
     Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choixPoids, int nbNeuronesSorties, int nbNeuroneEntrees);
 
     /*!
@@ -76,14 +76,14 @@ class Reseau {
       *  \brief modifie les poids et les biais en utilisant le sous-echantillon d'apprentissage (x,y)
       *  \param vector<CoucheEntrees> x, vector<CoucheSorties> y
       */
-    void BackPropagation(vector<CoucheEntrees>& x, vector<CoucheSorties>& y);
+    void BackPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y);
 
     /*!
       *  \fn Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic);
       *  \brief Construit le sous-echantillon d'apprentissage a l'aide du fichier nomFich
       *  \param vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic
       */
-    void Remplissage(vector<CoucheEntrees> x, vector<CoucheSorties> y, string nomFic);
+    void Remplissage(vector<CoucheEntrees>& x, vector<CoucheSorties>& y, string nomFic);
 
     /*!
     *  \fn Apprentissage(string Donnees);
@@ -97,4 +97,3 @@ class Reseau {
 
 
 #endif
-

@@ -1,6 +1,9 @@
 #include "Matrice.hpp"
 #include <stdexcept>
 #include <random>
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
 
 //Constructeurs
 Matrice::Matrice(const int nbLignes, const int nbColonnes)
@@ -132,7 +135,7 @@ Matrice Matrice::operator *(const Matrice &m)
 	//avec nbCol = m.nbLig
 	if (nbCol != m.nbLig)
 	{
-		throw std::length_error("Erreur taille matrice");
+		throw std::length_error("Erreur taille matrice : operation *");
 	}
 
     Matrice mat = Matrice(nbLig, m.nbCol);
@@ -158,7 +161,7 @@ Matrice Matrice::operator +(const Matrice &m)
 	//avec nbCol = m.nbLig
 	if ((nbCol != m.nbCol) || (nbLig != m.nbLig))
 	{
-		throw std::length_error("Erreur taille matrice");
+		throw std::length_error("Erreur taille matrice : operation + ");
 	}
 
     Matrice mat = Matrice(nbLig, nbCol);
@@ -179,7 +182,7 @@ Matrice Matrice::operator -(const Matrice &m)
 	//avec nbCol = m.nbLig
 	if ((nbCol != m.nbCol) || (nbLig != m.nbLig))
 	{
-		throw std::length_error("Erreur taille matrice");
+		throw std::length_error("Erreur taille matrice : operation -");
 	}
 
     Matrice mat = Matrice(nbLig, nbCol);
@@ -202,6 +205,19 @@ void Matrice::divMatrice(double coef)
 		{
 			matrice[i][j] =  matrice[i][j] /coef;
 		}
+	}
+}
+
+void Matrice::afficheMatrice()
+{
+	std::cout.precision(2);
+	for (int i=0;i<nbLig;i++)
+	{
+		for (int j=0;j<nbCol;j++)
+		{
+			std::cout<<matrice[i][j]<<" ";
+		}
+		std::cout<<"\n";
 	}
 }
 
