@@ -42,14 +42,14 @@ class CoucheSorties: public Couche{
       *  \brief Ce qui nous permet a acceder a la matrice LiaisonEntrees de la couche
       *  \return matrice des liaisons
       */
-      Matrice getLiaisonEntrees();
+      Matrice& getLiaisonEntrees();
       
       /*!
       *  \fn getBiais()
       *  \brief Ce qui nous permet a acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
-      Matrice getBiais();
+      Matrice& getBiais();
 
       /*!
       *  \fn preActivation()

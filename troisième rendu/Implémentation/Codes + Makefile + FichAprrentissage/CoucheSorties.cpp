@@ -21,11 +21,11 @@ CoucheSorties::~CoucheSorties()
 }
 
 // Accesseurs
-Matrice CoucheSorties::getLiaisonEntrees(){
+Matrice& CoucheSorties::getLiaisonEntrees(){
 	return (LiaisonsEntrees);
 }
 
-Matrice CoucheSorties::getBiais(){
+Matrice& CoucheSorties::getBiais(){
 	return (biais);
 }
 

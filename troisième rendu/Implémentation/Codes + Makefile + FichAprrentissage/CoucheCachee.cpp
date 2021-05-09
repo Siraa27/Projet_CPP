@@ -21,12 +21,12 @@ CoucheCachee::~CoucheCachee()
 }
 
 // Accesseurs
-Matrice CoucheCachee::getLiaisonEntrees()
+Matrice& CoucheCachee::getLiaisonEntrees()
 {
 	return LiaisonsEntrees;
 }
 
-Matrice CoucheCachee::getBiais()
+Matrice& CoucheCachee::getBiais()
 {
 	return biais;
 }
