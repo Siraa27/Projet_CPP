@@ -7,7 +7,12 @@
 //Constructeur
 
 CoucheEntrees::CoucheEntrees(const CoucheEntrees& C) : Couche::Couche(C.getNbNeurones())
-{}
+{
+    for(int i=0;i<C.getNbNeurones();i++)
+	{
+		getNeurone(i).setSortie(C.getNeurone(i).getSortie());
+	}
+}
 
 CoucheEntrees::CoucheEntrees (const int nbNeurones) : Couche::Couche(nbNeurones)
 {}

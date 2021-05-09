@@ -7,7 +7,12 @@
 //Constructeur
 
 CoucheSorties::CoucheSorties(const CoucheSorties& C) : Couche::Couche(C.getNbNeurones()), biais(C.biais), LiaisonsEntrees(C.LiaisonsEntrees)
-{}
+{
+	for(int i=0;i<C.getNbNeurones();i++)
+	{
+		getNeurone(i).setSortie(C.getNeurone(i).getSortie());
+	}
+}
 
 //nb colonnes = nb neuronnes couche precedentes et nb lignes = nb neurones de notre coucheCachee
 CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones), biais(nbNeurones, 1), LiaisonsEntrees(nbNeurones, nbNeuronesCouchePrec)
