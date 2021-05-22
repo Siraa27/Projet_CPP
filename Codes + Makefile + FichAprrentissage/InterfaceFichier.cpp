@@ -1,22 +1,11 @@
-#include "Interface.hpp"
 #include "InterfaceFichier.hpp"
-#include "iostream"
-#include <string>
-#include <list>
-#include <fstream>
-#include <vector>
-#include <iterator>
 
 using namespace std;
 
-
-void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin absolu ou relatif
-//pourquoi on utilise pas string ? 
-//obligé de passer le tableau en param sinon pas d'accés
+void InterfaceFichier::lectureFichier(const string nomFic){//fournir le chemin absolu ou relatif
 	ifstream fichier(nomFic, ios::in);  // on ouvre le fichier en lecture
 	if(fichier)
 	{
-		//tout est près
 		int indice=1;
 		double nombre;
 		 for (double nombre; fichier >> nombre; )  //Tant qu'on a pas atteint la fin du fichier
@@ -34,7 +23,7 @@ void InterfaceFichier::lectureFichier(std::string nomFic){//fournir le chemin ab
 					}
 					break;
 				case 2://chargement du cas d'utilisation
-					if (static_cast<int>(nombre)==2)//Nous avons implémenté que la classification
+					if (static_cast<int>(nombre)==2)//Nous avons implémenté que la prediction
 					{	
 						setcasUtilisation(static_cast<int>(nombre));
 					}

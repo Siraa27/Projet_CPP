@@ -1,8 +1,4 @@
 #include "Couche.hpp"
-#include "Neurone.hpp"
-#include "Matrice.hpp"
-#include <stdlib.h>
-#include <iostream>
 
 //Constructeurs
 Couche::Couche (const int nbN)
@@ -16,7 +12,7 @@ Couche::Couche (const int nbN)
 }
 
 //Constructeur par recopie
-Couche::Couche(Couche &c)
+Couche::Couche(const Couche &c)
 {
 	nbNeurones = c.getNbNeurones();
 	Neurones = std::vector<Neurone>(nbNeurones);
@@ -39,7 +35,7 @@ int Couche::getNbNeurones() const
 	return nbNeurones;
 }
 
-Neurone Couche::getNeurone(int i) const
+Neurone Couche::getNeurone(const int i) const
 {
 	return Neurones[i];
 }
@@ -59,7 +55,7 @@ Matrice Couche::recupSortiesNeurones() const
 	return res;
 }
 
-void Couche::modifNeurone(int i, double s)
+void Couche::modifNeurone(const int i,const double s)
 {
     Neurones[i].setSortie(s);
 }

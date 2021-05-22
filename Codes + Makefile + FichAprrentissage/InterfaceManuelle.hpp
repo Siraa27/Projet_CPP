@@ -3,6 +3,8 @@
 #include "Interface.hpp"
 #include <vector>
 #include <string>
+#include <iostream>
+
 /*!
  * \file InterfaceManuelle.hpp
  * \brief Interface Manuelle permet de saisir divers paramètres du futur reseau par le futur utilisateur du reseau. 
@@ -25,6 +27,5 @@ class InterfaceManuelle: public Interface {
         *   Lecture des paramètres du futur réseau de neurone dans le terminal
         *   \return rien
         */
-
  };
  #endif

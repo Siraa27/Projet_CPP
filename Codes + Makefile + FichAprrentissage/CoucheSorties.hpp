@@ -3,6 +3,8 @@
 #include "Couche.hpp"
 #include "Matrice.hpp"
 #include "Neurone.hpp"
+#include <iostream>
+#include <math.h> 
 
 /*!
  * \file CoucheSorties.hpp
@@ -33,30 +35,25 @@ class CoucheSorties: public Couche{
 		CoucheSorties(const int nbNeurones=0, const int nbNeuronesCouchePrec=0); /*!<  nb de Neurones d'une couche ne change pas une fois choisi au cours du programme */
       
       /*!
-      *  \brief Destructeur de la classe CoucheSorties
-      */
-      ~CoucheSorties();
-      
-      /*!
       *  \fn getLiaisonEntrees()
-      *  \brief Ce qui nous permet a acceder a la matrice LiaisonEntrees de la couche
+      *  \brief Ce qui nous permet d'acceder a la matrice LiaisonEntrees de la couche
       *  \return matrice des liaisons
       */
-      Matrice getLiaisonEntrees();
+      Matrice getLiaisonEntrees() const;
       
       /*!
       *  \fn getBiais()
-      *  \brief Ce qui nous permet a acceder a la matrice biais de la couche
+      *  \brief Ce qui nous permet d'acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
-      Matrice getBiais();
+      Matrice getBiais() const;
 
       /*!
       *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
       *  \return matrice des sommes pondérées des entrées pour chaque neurone
       */
-      Matrice preActivation(Couche couchePrec);
+      Matrice preActivation(const Couche couchePrec);
             
       /*!
       *  \fn foncActivation()
@@ -71,7 +68,7 @@ class CoucheSorties: public Couche{
       *  \brief Derivee de la fonction d'activatino
       *  \return valeur de la derivee evaluee en x
       */
-      double derivFoncActivation(double x); //Derivee de la sigmoid
+      double derivFoncActivation(const double x); //Derivee de la sigmoid
           
       /*! \fn constructionSorties 
       *  \brief La fonction calcule la sortie du réseau

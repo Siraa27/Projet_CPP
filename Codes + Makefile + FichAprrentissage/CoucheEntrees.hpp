@@ -1,7 +1,9 @@
 #ifndef COUCHEENTREES_HPP
 #define COUCHEENTREES_HPP
 #include "Couche.hpp"
+#include "Neurone.hpp"
 #include <string> 
+#include <fstream>  
 
 /*!
  * \file CoucheEntrees.hpp
@@ -21,24 +23,27 @@ class CoucheEntrees : public Couche{
         
    //Les méthodes
    public :
+      /*!
+      *  \brief Constructeur par recopie de la classe CoucheEntree
+      */
       CoucheEntrees(const CoucheEntrees&);
+
+      /*!
+      *  \brief Constructeur de la classe CoucheEntrees
+      *  \param nbNeurones : nombre de neurones par couche, NomFic : nom du fichier pour initialiser
+      */
       CoucheEntrees (const int nbNeurones); 
       /*!
       *  \brief Constructeur de la classe CoucheEntrees
       *  \param nbNeurones : nombre de neurones par couche, NomFic : nom du fichier pour initialiser
       */
 	   CoucheEntrees (const int nbNeurones, std::string nomFic); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
-      
-      /*!
-      *  \brief Destructeur de la classe CoucheEntrees
-      */
-      ~CoucheEntrees();
-        
+
       /*! \fn constructionSortie 
       *  \brief La fonction initialise les données en entrée
       *  \return Les entrées du réseau
       */
-      void constructionSortie(std::string nomFic);
+      void constructionSortie(const std::string nomFic);
 };
 
 #endif

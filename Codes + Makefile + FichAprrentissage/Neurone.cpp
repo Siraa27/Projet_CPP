@@ -1,17 +1,10 @@
 #include "Neurone.hpp"
-//using namespace Les_couches_du_reseau;
 
 // Constructeur
-Neurone::Neurone(double out)
+Neurone::Neurone(const double out)
 {
 	sortie = 0;
 }
-
-/*
-Neurone::Neurone (Neurone &n)
-{
-	sortie = n.getSortie();
-}*/
 
 // Mutateur 
 void Neurone::setSortie(const double S)

@@ -1,5 +1,11 @@
 #ifndef Matrice_HPP
 #define Matrice_HPP
+#include <stdexcept>
+#include <random>
+#include <vector>
+
+using namespace std;
+
 /*!
  * \file Matrice.hpp
  * \brief Une classe qui définit quelques opérations Matricericielles
@@ -15,7 +21,7 @@
 class Matrice{
    //Les attributs
    private :
-      double ** matrice; /*!< Tableau dynamique*/
+      vector<vector<double>> matrice; 
       int nbLig;
 		int nbCol;
 
@@ -26,7 +32,7 @@ class Matrice{
       */
       Matrice (const int nbLignes, const int nbColonnes);
       Matrice(const int nbLignes, const int nbColonnes, double coef);
-      Matrice(const int nbLignes, const int nbColonnes, double** t);
+      Matrice(const int nbLignes, const int nbColonnes, vector<vector<double>> m);
 
       /*!
       *  \brief Constructeur Matrice par recopie
@@ -70,38 +76,38 @@ class Matrice{
       *  \brief retourne matrice**
       *
       */
-      double** getMatrice();
+      vector<vector<double>> getMatrice() const;
 
-      int getnbLig();
+      int getnbLig() const;
 
-      int getnbCol();
+      int getnbCol() const; 
 
       /*!
       *  \fn getCoefMatrice
       *  \brief retourne matrice[i][j]
       *
       */
-      double getCoefMatrice(int i, int j);
+      double getCoefMatrice(const int i,const int j) const;
 
       /*!
       *  \fn setCoefMatrice
       *  \brief Set un coefficient de la matrice
       *
       */
-      void setCoefMatrice(int i, int j, double coef);
+      void setCoefMatrice(const int i,const int j,const double coef);
 
       /*!
       *  \fn setCoefs
       *  \brief Set tous les coefs de la matrice à coef
       *
       */
-      void setCoefs(double coef);
+      void setCoefs(const double coef);
 
       /*!
       *  \fn divMatrice
       *  \brief divise tous les coefs de la matrice par coef
       *
       */
-      void divMatrice(double coef);
+      void divMatrice(const double coef);
 };
 #endif

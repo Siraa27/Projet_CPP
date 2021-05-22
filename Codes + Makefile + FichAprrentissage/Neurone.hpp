@@ -10,39 +10,31 @@
 /*! \namespace Les_couches_du_reseau
  * Classe qui permet de créer des neurones
  */
-//namespace Les_couches_du_reseau 
-//{
-    /*! \class Neurone
-   * \brief Classe représentant un neurone
-   */
+/*! \class Neurone
+* \brief Classe représentant un neurone
+*/
     class Neurone{
          //Les attributs
         private : 
-         double sortie ; /*!< Valeur que contient le neurone en sortie (donc après avoir appliqué la pré-activation et l'activation) */
+            double sortie ; /*!< Valeur que contient le neurone en sortie (donc après avoir appliqué la pré-activation et l'activation) */
         // Les méthodes
         public : 
-         /*!
-         *  \brief Constructeur classe Neurone
-         *  \param indice : le libellé d'un neurone dans une couche 
-         */
-        Neurone (double out=0); // le libellé d'un neurone dans une couche ne change pas une fois choisi au cours du programme
-
-         /*! \fn Neurone(Neurone &n)
-         *  \brief Constructeur par recopie
-         */
-        //Neurone (Neurone &n);
-         
-         /*! \fn setSortie
-         *  \brief 
-         *  elle modifie la valeur du neurone après application des fonctions de pré-activation et d'activation (présentes dans la fonction calculSortie() de la classe CoucheCachée)
-         */
-        void setSortie(double S);
-         /*! \fn getSortie
-         *  \brief 
-         *  Renvoie la sortie du neurone
-         */
-        double getSortie() const;
+            /*!
+            *  \brief Constructeur classe Neurone
+            *  \param indice : le libellé d'un neurone dans une couche 
+            */
+            Neurone (const double out=0); // le libellé d'un neurone dans une couche ne change pas une fois choisi au cours du programme
+            
+            /*! \fn setSortie
+            *  \brief 
+            *  elle modifie la valeur du neurone après application des fonctions de pré-activation et d'activation (présentes dans la fonction calculSortie() de la classe CoucheCachée)
+            */
+            void setSortie(double S);
+            
+            /*! \fn getSortie
+            *  \brief 
+            *  Renvoie la sortie du neurone
+            */
+            double getSortie() const;
     };
-    
-//};
 #endif 

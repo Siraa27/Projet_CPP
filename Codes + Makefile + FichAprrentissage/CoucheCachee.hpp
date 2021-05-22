@@ -2,6 +2,8 @@
 #define COUCHE_CACHEE_HPP
 #include "Couche.hpp"
 #include "Matrice.hpp"
+#include <iostream>
+#include <math.h> 
 
 /*!
  * \file CoucheCachee.hpp
@@ -25,6 +27,9 @@ class CoucheCachee : public Couche{
         
    //Les méthodes
    public :
+      /*!
+      *  \brief Constructeur par recopie de la classe CoucheCachee
+      */ 
       CoucheCachee(const CoucheCachee&);
       /*!
       *  \brief Constructeur de la classe CoucheCachee
@@ -32,38 +37,33 @@ class CoucheCachee : public Couche{
       * \param nbNeuronesCouchePrec : nombre de neurones de la couche précedente (ça nous sert pour faire les liaison)
       */ 
 	   CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec); /*!<  Le nombre de neurones d'une couche ne change pas au cours du programme une fois fixé  */
-       
-      /*!
-      *  \brief Destructeur de la classe CoucheCachee
-      */
-      ~CoucheCachee();
 
       /*!
       *  \fn getLiaisonEntrees()
       *  \brief Permet a acceder a la matrice LiaisonEntrees de la couche
       *  \return matrice des liaisons
       */
-      Matrice getLiaisonEntrees();
+      Matrice getLiaisonEntrees() const;
       
       /*!
       *  \fn getBiais()
       *  \brief Permet a acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
-      Matrice getBiais();
+      Matrice getBiais() const;
       
       /*!
       *  \fn setBiais()
       *  \brief Permet de set un coef de la matrice biais de la couche
       */
-      void setBiais(int i, int j, double coef );
+      void setBiais(const int i,const int j,const double coef );
 
       /*!
       *  \fn preActivation()
       *  \brief La fonction de pré activation : méthode qui permet de faire la somme pondérée des entrées
       *  \return matrice des sommes pondérées des entrées pour chaque neurone
       */
-      Matrice preActivation(Couche couchePrec);
+      Matrice preActivation(const Couche couchePrec);
       
       /*!
       *  \fn foncActivation(Matrice sum)
@@ -78,7 +78,7 @@ class CoucheCachee : public Couche{
       *  \brief Derivee de la fonction d'activatino
       *  \return valeur de la derivee evaluee en x
       */
-      double derivFoncActivation(double x);
+      double derivFoncActivation(const double x);
 };
 
 #endif

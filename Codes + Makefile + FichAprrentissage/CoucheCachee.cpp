@@ -1,8 +1,4 @@
 #include "CoucheCachee.hpp"
-#include "Couche.hpp"
-#include "Matrice.hpp"
-#include <iostream>
-#include <math.h> 
 
 //Constructeur
 CoucheCachee::CoucheCachee(const CoucheCachee& C) : Couche::Couche(C.getNbNeurones()), biais(C.biais), LiaisonsEntrees(C.LiaisonsEntrees)
@@ -12,26 +8,18 @@ CoucheCachee::CoucheCachee(const CoucheCachee& C) : Couche::Couche(C.getNbNeuron
 CoucheCachee::CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones), biais(nbNeurones, 1), LiaisonsEntrees(nbNeurones, nbNeuronesCouchePrec)
 {}
 
-
-//destructeur
-CoucheCachee::~CoucheCachee()
-{
-	//biais.~Matrice();
-	//LiaisonsEntrees.~Matrice();
-}
-
 // Accesseurs
-Matrice CoucheCachee::getLiaisonEntrees()
+Matrice CoucheCachee::getLiaisonEntrees() const
 {
 	return LiaisonsEntrees;
 }
 
-Matrice CoucheCachee::getBiais()
+Matrice CoucheCachee::getBiais() const
 {
 	return biais;
 }
 
-void CoucheCachee::setBiais(int i, int j, double coef )
+void CoucheCachee::setBiais(const int i,const int j,const double coef )
 {
 	biais.setCoefMatrice(i,j,coef);
 }
@@ -40,7 +28,7 @@ void CoucheCachee::setBiais(int i, int j, double coef )
 //-----------------------------------------------------------------------------------
 
 //Fonction de pre activation 
-Matrice CoucheCachee::preActivation(Couche couchePrec) 
+Matrice CoucheCachee::preActivation(const Couche couchePrec) 
 {
 	//(Matrice Liaison * Sorties neurones couche precedente) + biais
 	//Nous manipulons des matrices 
@@ -59,7 +47,7 @@ void CoucheCachee::foncActivation(Matrice sum) //sigmoid
 	}
 }
 
-double CoucheCachee::derivFoncActivation(double x) //Derivee de la sigmoid
+double CoucheCachee::derivFoncActivation(const double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }

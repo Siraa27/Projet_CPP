@@ -1,8 +1,11 @@
 #ifndef INTERFACEFICHIER_HPP
 #define INTERFACEFICHIER_HPP
-
-#include <vector>
 #include "Interface.hpp"
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <vector>
+
 /*!
  * \file InterfaceFichier.hpp
  * \brief Interface Fichier permet de recuperer les paramètres du futur reseau dans un fichier
@@ -18,12 +21,10 @@ class InterfaceFichier : public Interface{
         //Les méthodes
 	public:
 
-	void lectureFichier(std::string nomFic);
+	void lectureFichier(const std::string nomFic);
         /*! \fn lectureFichier(std::string nomFic)
         *   \brief  Importation des paramètres par un fichier de données csv et modifiction des attributs du reseau de la classe Interface. Ces attribut son les parametre du futur reseau, si les parametres sont valides.
         *   \return rien
         */
-
-
  };
  #endif

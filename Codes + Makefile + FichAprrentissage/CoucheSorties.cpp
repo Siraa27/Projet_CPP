@@ -1,8 +1,4 @@
 #include "CoucheSorties.hpp"
-#include "Couche.hpp"
-#include "Matrice.hpp"
-#include <iostream>
-#include <math.h> 
 
 //Constructeur
 
@@ -13,19 +9,12 @@ CoucheSorties::CoucheSorties(const CoucheSorties& C) : Couche::Couche(C.getNbNeu
 CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePrec) : Couche::Couche(nbNeurones), biais(nbNeurones, 1), LiaisonsEntrees(nbNeurones, nbNeuronesCouchePrec)
 {}
 
-//destructeur
-CoucheSorties::~CoucheSorties() 
-{
-	//(biais).~Matrice();
-	//(LiaisonsEntrees).~Matrice();
-}
-
 // Accesseurs
-Matrice CoucheSorties::getLiaisonEntrees(){
+Matrice CoucheSorties::getLiaisonEntrees() const{
 	return (LiaisonsEntrees);
 }
 
-Matrice CoucheSorties::getBiais(){
+Matrice CoucheSorties::getBiais() const{
 	return (biais);
 }
 
@@ -34,7 +23,7 @@ Matrice CoucheSorties::getBiais(){
 //-----------------------------------------------------------------------------------
 
 //Fontion de pre activation 
-Matrice CoucheSorties::preActivation(Couche couchePrec)
+Matrice CoucheSorties::preActivation(const Couche couchePrec)
 {
 	//(Matrice Liaison * Sorties neurones couche precedente) + biais
 	//Nous manipulons des matrices 
@@ -53,7 +42,7 @@ void CoucheSorties::foncActivation(Matrice sum) //sigmoid
 	}
 }
 
-double CoucheSorties::derivFoncActivation(double x) //Derivee de la sigmoid
+double CoucheSorties::derivFoncActivation(const double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
 }

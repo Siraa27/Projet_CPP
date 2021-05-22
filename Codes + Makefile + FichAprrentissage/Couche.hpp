@@ -1,8 +1,9 @@
 #ifndef COUCHE_HPP
 #define COUCHE_HPP
+#include "Couche.hpp"
 #include "Neurone.hpp"
 #include "Matrice.hpp"
-#include <ostream> 
+#include <iostream>
 #include <vector>
 
 /*!
@@ -35,12 +36,12 @@ class Couche{
       /*!
       *  \brief Constructeur par recopie
       */
-      Couche(Couche &c);
+      Couche(const Couche &c);
 
       /*!
       *  \brief Destructeur de la classe Couche 
       */
-      virtual ~Couche();
+      ~Couche();
  
       /*! \fn getNbNeurones
       *  \brief 
@@ -52,7 +53,7 @@ class Couche{
       *  \brief 
 		*  Retourne le ieme neurone
 		*/
-		Neurone getNeurone(int i) const;
+		Neurone getNeurone(const int i) const;
      
       /*! \fn recupSortiesNeurones
       *  \brief 
@@ -64,7 +65,7 @@ class Couche{
       *  \brief 
 		*  modifie le neurone i de la couche 
 		*/
-      void modifNeurone(int i, double s);
+      void modifNeurone(const int i,const double s);
 
       friend std::ostream & operator <<(std::ostream & flux, const Couche& C);
 };

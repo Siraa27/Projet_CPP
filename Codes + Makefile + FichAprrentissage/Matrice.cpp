@@ -1,33 +1,21 @@
 #include "Matrice.hpp"
-#include <stdexcept>
-#include <random>
-
+#include <iostream>
 //Constructeurs
 Matrice::Matrice(const int nbLignes, const int nbColonnes)
 {
 	nbLig = nbLignes;
 	nbCol = nbColonnes;
-	matrice = new double*[nbLignes];
-	for(int i = 0;i < nbLignes;++i)
-	{
-		matrice[i] = new double[nbColonnes];
-	}
 }
 
-Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef)
+Matrice::Matrice(const int nbLignes, const int nbColonnes, double coef) : matrice(nbLignes, vector<double> (nbColonnes,0))
 {
 	nbLig = nbLignes;
 	nbCol = nbColonnes;
-	matrice = new double*[nbLignes];
-	for(int i = 0;i < nbLignes;++i)
+	for(int i=0; i<nbLig;i++)
 	{
-		matrice[i] = new double[nbColonnes];
-	}
-	for(int i = 0;i < nbLignes;++i)
-	{
-		for (int j = 0;j < nbColonnes;++j)
+		for (int j =0; j<nbColonnes; j++)
 		{
-			matrice[i][j] = coef;
+			matrice[i][j]=coef;
 		}
 	}
 }
@@ -37,52 +25,35 @@ Matrice::Matrice (const Matrice & mat)
 {
 	nbLig = mat.nbLig;
 	nbCol = mat.nbCol;
-	matrice = new double*[nbLig];
-	for(int i = 0;i < nbLig;++i)
-	{
-		matrice[i] = new double[nbCol];
-	}
-	for(int i=0; i<nbLig;i++)
-	{
-		for(int j=0; j<nbCol; j++)
-		{
-			matrice[i][j] = mat.matrice[i][j];
-		}
-	}
+	matrice = mat.matrice;
 }
 
 //Destructeur
 Matrice::~Matrice()
 {
-    for(int i = 0;i < nbLig;++i) delete [] matrice[i];
-    delete [] matrice;
+	matrice.clear();
     nbLig=0;
     nbCol=0;
 }
-
-
-
 
 //-----------------------------------Les Méthodes-----------------------------------
 //-----------------------------------------------------------------------------------
 
 // Accesseurs
-int Matrice::getnbLig(){
+int Matrice::getnbLig() const{
 	return nbLig;
 }
 
-int Matrice::getnbCol(){
+int Matrice::getnbCol() const{
 	return nbCol;
 }
 
-double** Matrice::getMatrice()
-{
+vector<vector<double>> Matrice::getMatrice() const{
 	return matrice;
 }
 
 // Retourne l'élément ij de la matrice
-double Matrice::getCoefMatrice(int i, int j)
-{
+double Matrice::getCoefMatrice(const int i,const int j) const{
 	if (i>=nbLig || (j>=nbCol))
 	{
 		throw std::length_error("Erreur indices");
@@ -91,13 +62,15 @@ double Matrice::getCoefMatrice(int i, int j)
 }
 
 //Set le coefficient (i,j) de la matrice
-void Matrice::setCoefMatrice(int i, int j, double coef)
+void Matrice::setCoefMatrice(const int i,const int j,const double coef)
 {
-	//if (i>=nbLig || (j>=nbCol))
-	//{
-	//	throw std::length_error("Erreur  indices 1");
-	//}
+	if (i>=nbLig || (j>=nbCol))
+	{
+		throw std::length_error("Erreur  indices 1");
+	}
 	matrice[i][j] = coef;
+		cout<<"Yo\n";
+
 }
 
 //initialise alétatoirement la matrice
@@ -114,7 +87,7 @@ void Matrice::initAleatoire()
 }
 
 //Initialise tous les coefs
-void Matrice::setCoefs(double coef)
+void Matrice::setCoefs(const double coef)
 {
 		for (int i=0; i< nbLig; i++)
 		{
@@ -194,7 +167,7 @@ Matrice Matrice::operator -(const Matrice &m)
     return mat;
 }
 
-void Matrice::divMatrice(double coef)
+void Matrice::divMatrice(const double coef)
 {
 	for (int i=0;i<nbLig;i++)
 	{
@@ -204,5 +177,4 @@ void Matrice::divMatrice(double coef)
 		}
 	}
 }
-
 //-----------------------------------------------------------------------------------
