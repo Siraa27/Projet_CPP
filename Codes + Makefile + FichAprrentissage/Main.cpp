@@ -33,7 +33,7 @@ void manipReseau(Reseau R)
             cin>>nomFic;
             CoucheEntrees E(R.getNbNeuronesEntree(), nomFic);
             R.calcSorties(E);
-
+            cout<<R.getSorties().getNeurone(0)->getSortie()<<endl;
             int rep;
             do
             {
@@ -65,7 +65,6 @@ int main(int argc, char* argv[])
             interfaceMan.lectureParam();
         }while(interfaceMan.validationReseau()==0 && interfaceMan.gettypeReseau()==-1);
         Reseau reseau(interfaceMan.getnbCouchesCachees(), interfaceMan.getnbNeuronesCouches(), interfaceMan.getchoixPoid(), interfaceMan.getnbNeuronesSortie(), interfaceMan.getnbNeuronesEntree());
-        cout<<"nb colonnes "<<reseau.getSorties().getLiaisonEntrees().getnbCol()<<"\n";
         manipReseau(reseau);
     }
     else

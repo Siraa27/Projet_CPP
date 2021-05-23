@@ -10,11 +10,11 @@ CoucheSorties::CoucheSorties (const int nbNeurones, const int nbNeuronesCouchePr
 {}
 
 // Accesseurs
-Matrice CoucheSorties::getLiaisonEntrees() const{
+Matrice& CoucheSorties::getLiaisonEntrees(){
 	return (LiaisonsEntrees);
 }
 
-Matrice CoucheSorties::getBiais() const{
+Matrice& CoucheSorties::getBiais(){
 	return (biais);
 }
 

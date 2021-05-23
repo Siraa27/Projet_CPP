@@ -9,12 +9,12 @@ CoucheCachee::CoucheCachee (const int nbNeurones, const int nbNeuronesCouchePrec
 {}
 
 // Accesseurs
-Matrice CoucheCachee::getLiaisonEntrees() const
+Matrice& CoucheCachee::getLiaisonEntrees() 
 {
 	return LiaisonsEntrees;
 }
 
-Matrice CoucheCachee::getBiais() const
+Matrice& CoucheCachee::getBiais() 
 {
 	return biais;
 }
@@ -50,5 +50,12 @@ void CoucheCachee::foncActivation(Matrice sum) //sigmoid
 double CoucheCachee::derivFoncActivation(const double x) //Derivee de la sigmoid
 {
 	return exp(-x)/((exp(-x) +1)*(exp(-x) +1));
+}
+
+void CoucheCachee::afficheMatrices() const{
+	std::cout<<"Poids : \n";
+	LiaisonsEntrees.afficheMatrice();
+	std::cout<<"Biais : \n";
+	biais.afficheMatrice();
 }
 //-----------------------------------------------------------------------------------

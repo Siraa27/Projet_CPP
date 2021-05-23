@@ -1,14 +1,15 @@
 #include "Reseau.hpp"
-
+#include <iostream>
 using namespace std;
 
 //Constructeur
 Reseau::Reseau(int nbCouchesCach, vector<int> nbNeuronesParCouches, double choixPoids, int nbNeuronesSorties, int nbNeuroneEntrees) : entrees(nbNeuroneEntrees), sorties(nbNeuronesSorties, nbNeuronesParCouches[nbCouchesCach-1])
 {
-  couches.push_back(new CoucheCachee(nbNeuronesParCouches[0], nbNeuroneEntrees));
-  Matrice mat = couches[0]->getLiaisonEntrees();
-  mat.initAleatoire();
+  sorties.getLiaisonEntrees().initAleatoire();
+  sorties.getBiais().initAleatoire();
 
+  couches.push_back(new CoucheCachee(nbNeuronesParCouches[0], nbNeuroneEntrees));
+  couches[0]->getLiaisonEntrees().initAleatoire();
   couches[0]->getBiais().initAleatoire();
   nbCouchesCachees = nbCouchesCach;
 
@@ -77,7 +78,7 @@ double Reseau::erreur(int classeSolution){
   int nbrNeurones = sorties.getNbNeurones();
   if(nbrNeurones==sAttendues.getNbNeurones()){
     for(int i=0;i<nbrNeurones;i++){
-      res = res + (sorties.getNeurone(i).getSortie() - sAttendues.getNeurone(i).getSortie()) * (sorties.getNeurone(i).getSortie() - sAttendues.getNeurone(i).getSortie());
+      res = res + (sorties.getNeurone(i)->getSortie() - sAttendues.getNeurone(i)->getSortie()) * (sorties.getNeurone(i)->getSortie() - sAttendues.getNeurone(i)->getSortie());
     }
     return res;
   }else{
@@ -86,7 +87,7 @@ double Reseau::erreur(int classeSolution){
   }
 }
 
-void Reseau::calcGradErr(const CoucheSorties sAttendues){
+void Reseau::calcGradErr(CoucheSorties sAttendues){
   int i, j;
   vector<Matrice> tempDerivErr; //Variable tampon qui va servir a sotcker les derivees partielles de la fonction erreur par rapport aux sorties des neurones
   for(int i=0;i<nbCouchesCachees;i++){
@@ -95,36 +96,55 @@ void Reseau::calcGradErr(const CoucheSorties sAttendues){
   //Calcul des composantes de gradErr associees a la derniere couche cachee / Initialisation de la BP
   for(i=0;i<sorties.getNbNeurones();i++){
     for(j=0;j<couches[nbCouchesCachees-1]->getNbNeurones();j++){
-      gradientErr[2*nbCouchesCachees-2]->setCoefMatrice(i,j, 2 * couches[nbCouchesCachees-1]->getNeurone(j).getSortie() * couches[nbCouchesCachees-1]->derivFoncActivation(couches[nbCouchesCachees-1]->preActivation(*couches[nbCouchesCachees-2]).getCoefMatrice(i,0)) * (couches[nbCouchesCachees]->getNeurone(i).getSortie() - sAttendues.getNeurone(i).getSortie()));
+      gradientErr[2*nbCouchesCachees-2]->setCoefMatrice(i,j, 2 * couches[nbCouchesCachees-1]->getNeurone(j)->getSortie() * couches[nbCouchesCachees-1]->derivFoncActivation(couches[nbCouchesCachees-1]->preActivation(*couches[nbCouchesCachees-2]).getCoefMatrice(i,0)) * (couches[nbCouchesCachees-1]->getNeurone(i)->getSortie() - sAttendues.getNeurone(i)->getSortie()));
     }
-    tempDerivErr[nbCouchesCachees-1].setCoefMatrice(i,1, 2 * (couches[nbCouchesCachees]->getNeurone(i).getSortie() - sAttendues.getNeurone(i).getSortie()));
-    gradientErr[2 * nbCouchesCachees -1]->setCoefMatrice(i,1, 2 * couches[nbCouchesCachees-1]->derivFoncActivation(couches[nbCouchesCachees-1]->preActivation(*couches[nbCouchesCachees-2]).getCoefMatrice(i,0)) * (couches[nbCouchesCachees]->getNeurone(i).getSortie() - sAttendues.getNeurone(i).getSortie()));
+    tempDerivErr[nbCouchesCachees-1].setCoefMatrice(i,0, 2 * (couches[nbCouchesCachees-1]->getNeurone(i)->getSortie() - sAttendues.getNeurone(i)->getSortie()));
+    gradientErr[2 * nbCouchesCachees -1]->setCoefMatrice(i,0, 2 * couches[nbCouchesCachees-1]->derivFoncActivation(couches[nbCouchesCachees-1]->preActivation(*couches[nbCouchesCachees-2]).getCoefMatrice(i,0)) * (couches[nbCouchesCachees-1]->getNeurone(i)->getSortie() - sAttendues.getNeurone(i)->getSortie()));
   }
 
   //Calcul des autres composantes de gradErr
-  for(int k=nbCouchesCachees-2;k>=0;k--){
+  for(int k=nbCouchesCachees-2;k>0;k--){
     Matrice tempk = couches[k]->preActivation(*couches[k-1]);
     Matrice tempkp1 = couches[k+1]->preActivation(*couches[k]);
     //Initialisation
     for (i = 0; i < couches[k]->getNbNeurones(); i++){
-      tempDerivErr[k].setCoefMatrice(i,1,0);
+      tempDerivErr[k].setCoefMatrice(i,0,0);
     }
     //Calcul des derivees partielles par rapport aux sorties des neurones
     for (i = 0; i < couches[k]->getNbNeurones(); i++){
       for (j = 0; j < couches[k+1]->getNbNeurones(); j++) {
-        tempDerivErr[k].setCoefMatrice(i,1, tempDerivErr[k].getCoefMatrice(i,1) + couches[k+1]->getLiaisonEntrees().getCoefMatrice(i,j) * couches[k+1]->derivFoncActivation(tempkp1.getCoefMatrice(j,0)) * tempDerivErr[k+1].getCoefMatrice(j,1));
+        tempDerivErr[k].setCoefMatrice(i,0, tempDerivErr[k].getCoefMatrice(i,0) + couches[k+1]->getLiaisonEntrees().getCoefMatrice(i,j) * couches[k+1]->derivFoncActivation(tempkp1.getCoefMatrice(j,0)) * tempDerivErr[k+1].getCoefMatrice(j,0));
       }
     }
     for(i=0;i<couches[k]->getNbNeurones();i++){
       for(j=0;j<couches[k-1]->getNbNeurones();j++){
-        gradientErr[2*k]->setCoefMatrice(i,j, couches[k-1]->getNeurone(j).getSortie() * couches[k-1]->derivFoncActivation(tempk.getCoefMatrice(i,0)) * tempDerivErr[k].getCoefMatrice(i,1));
+        gradientErr[2*k]->setCoefMatrice(i,j, couches[k-1]->getNeurone(j)->getSortie() * couches[k-1]->derivFoncActivation(tempk.getCoefMatrice(i,0)) * tempDerivErr[k].getCoefMatrice(i,0));
       }
-      gradientErr[2*k+1]->setCoefMatrice(i,1, couches[k-1]->derivFoncActivation(tempk.getCoefMatrice(i,0)) * tempDerivErr[k].getCoefMatrice(i,1));
+      gradientErr[2*k+1]->setCoefMatrice(i,0, couches[k-1]->derivFoncActivation(tempk.getCoefMatrice(i,0)) * tempDerivErr[k].getCoefMatrice(i,0));
     }
+  }
+
+  Matrice tempk = couches[0]->preActivation(entrees);
+  Matrice tempkp1 = couches[1]->preActivation(*couches[0]);
+  //Initialisation
+  for (i = 0; i < couches[0]->getNbNeurones(); i++){
+    tempDerivErr[0].setCoefMatrice(i,0,0);
+  }
+  //Calcul des derivees partielles par rapport aux sorties des neurones
+  for (i = 0; i < couches[0]->getNbNeurones(); i++){
+    for (j = 0; j < couches[1]->getNbNeurones(); j++) {
+      tempDerivErr[0].setCoefMatrice(i,0, tempDerivErr[0].getCoefMatrice(i,0) + couches[1]->getLiaisonEntrees().getCoefMatrice(i,j) * couches[1]->derivFoncActivation(tempkp1.getCoefMatrice(j,0)) * tempDerivErr[1].getCoefMatrice(j,0));
+    }
+  }
+  for(i=0;i<couches[0]->getNbNeurones();i++){
+    for(j=0;j<entrees.getNbNeurones();j++){
+      gradientErr[0]->setCoefMatrice(i,j, entrees.getNeurone(j)->getSortie() * (tempk.getCoefMatrice(i,0)) * tempDerivErr[0].getCoefMatrice(i,0));
+    }
+    gradientErr[1]->setCoefMatrice(i,0, (tempk.getCoefMatrice(i,0)) * tempDerivErr[0].getCoefMatrice(i,0));
   }
 }
 
-void Reseau::calcSorties(CoucheEntrees e){
+void Reseau::calcSorties(CoucheEntrees& e){
   couches[0]->foncActivation(couches[0]->preActivation(e));
   for(int k=1;k<nbCouchesCachees;k++){
     couches[k]->foncActivation(couches[k]->preActivation(*couches[k-1]));

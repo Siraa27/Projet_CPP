@@ -43,14 +43,14 @@ class CoucheCachee : public Couche{
       *  \brief Permet a acceder a la matrice LiaisonEntrees de la couche
       *  \return matrice des liaisons
       */
-      Matrice getLiaisonEntrees() const;
+      Matrice& getLiaisonEntrees();
       
       /*!
       *  \fn getBiais()
       *  \brief Permet a acceder a la matrice biais de la couche
       *  \return matrice des biais
       */
-      Matrice getBiais() const;
+      Matrice& getBiais();
       
       /*!
       *  \fn setBiais()
@@ -79,6 +79,8 @@ class CoucheCachee : public Couche{
       *  \return valeur de la derivee evaluee en x
       */
       double derivFoncActivation(const double x);
+
+      void afficheMatrices() const;
 };
 
 #endif

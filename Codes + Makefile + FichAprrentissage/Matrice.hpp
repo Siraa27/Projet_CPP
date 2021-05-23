@@ -109,5 +109,8 @@ class Matrice{
       *
       */
       void divMatrice(const double coef);
+
+      void afficheMatrice() const;
+
 };
 #endif

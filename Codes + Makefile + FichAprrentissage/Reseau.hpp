@@ -82,7 +82,7 @@ class Reseau {
       *   \brief calcule les sorties obtenues avec les entrees e
       *   \param CoucheEntrees e
       */
-      void calcSorties(CoucheEntrees e);
+      void calcSorties(CoucheEntrees& e);
 
       /*!
         *  \fn backPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y);
