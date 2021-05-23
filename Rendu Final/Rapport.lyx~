@@ -1340,6 +1340,37 @@ Diagramme des choix
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manuel d'utilisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -4049,7 +4080,45 @@ voir la documentation doxygen
 
 \end_layout
 
+\begin_layout Part
+
+\lang english
+Conclusion
+\end_layout
+
 \begin_layout Standard
+
+\lang english
+Durant ce projet, nous avons pu nous exercer sur l’utilisation de C++ et
+ ce, en élabo-rant un projet qui nous semblait intéressant.
+ En effet, étant tous passionées par la science des données, nous avons
+ pris un réel plaisir à travailler sur ce projet.
+ De plus, cela nous a permis d'approfondir nos connaissances et nos acquis
+ en programmation objet.
+ Ainsi que plusieurs outils de travail en groupes par exemple le Github.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Malheureusement nous avons sous estimer la difficulté d'implémenter un réseau
+ de neurone en cpp.
+ Nous avions plusieurs tâches à faires et même en essayant de garder un
+ bon rythme de travail et une bonne organisation, le sujet est compliqué
+ et pas très simple à réaliser par seulement cinq personnes.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Newpage newpage
+\end_inset
+
 
 \end_layout
 
