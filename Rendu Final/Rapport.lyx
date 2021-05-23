@@ -120,23 +120,19 @@ Implémentation d'un réseau de neurones
 \end_layout
 
 \begin_layout Author
-Amina El Bachari, Camille Goujet, 
+Amina El Bachari, Israa Ben Sassi, Camille Goujet, 
 \begin_inset Newline newline
 \end_inset
 
-Israa Ben Sassi, Rafael Quilbier et Mehdi Helal
-\begin_inset Newline newline
-\end_inset
-
-
+Mehdi Helal et Rafael Quilbier
 \begin_inset Newline newline
 \end_inset
 
 
-\begin_inset space ~
+\begin_inset Newline newline
 \end_inset
 
-à l'attention de Jean-Philippe Kotowizts
+à l'attention de Jean-Philippe Kotowicz
 \end_layout
 
 \begin_layout Author
@@ -187,13 +183,6 @@ centering
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
@@ -214,10 +203,11 @@ centering
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-\begin_inset Newpage newpage
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -230,24 +220,10 @@ LatexCommand tableofcontents
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
+\begin_inset Newline newline
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset FloatList figure
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -338,7 +314,7 @@ Le neurone formel est l'unité élémentaire des réseaux de neurones artificiel
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1337,23 +1313,43 @@ Diagramme des choix
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset Float figure
 wide false
 sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename Capture d’écran 2021-05-23 à 22.56.50.png
+	scale 60
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Manuel d'utilisation
+Manuel d'utilisation manuelle
 \end_layout
 
 \end_inset
@@ -1365,6 +1361,74 @@ Manuel d'utilisation
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Capture d’écran 2021-05-23 à 23.12.51.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manuelle d'utilisation Fichier
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -2434,12 +2498,15 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-METTRE LE DERNIER DIAGRAMME DE CLASSE !!!!!!
-\end_layout
-
-\begin_layout Plain Layout
 
 \lang english
+\begin_inset Graphics
+	filename 189217488_195480449101442_4223601380712545224_n.png
+	scale 60
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2474,290 +2541,6 @@ La classe Réseau
 
 \lang english
 voir la documentation doxygen
-\end_layout
-
-\begin_layout Subsubsection
-
-\lang english
-Les tests de la classe Réseau
-\end_layout
-
-\begin_layout Paragraph
-testConstructeurReseau :
-\end_layout
-
-\begin_layout Standard
-Pour créer un réseau, les choix sont multiples.
- Comme on l'a vu plus haut dans la partie InterfaceUtilisateur, c'est par
- le biais d'un fichier au bon format que l'utilisateur peut obtenir un type
- de réseau particulier.
- 
-\begin_inset Newline newline
-\end_inset
-
-Réseau(Liste listeParametres) est le constructeur de la classe Reseau et
- prend en paramètres la liste 
-\emph on
-listeParametres
-\emph default
- qui contient :
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Le premier paramètre
-\series bold
-\emph default
- 
-\series default
-du fichier sera le 
-\series bold
-type de réseau
-\series default
-.
- Dans notre projet, seul le réseau forwarded sera fonctionel (représenté
- par l'entier 
-\begin_inset Formula $1$
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Le second paramètre 
-\emph default
-du fichier est le 
-\series bold
-cas d'utilisation du réseau
-\series default
- (
-\begin_inset Formula $1:$
-\end_inset
-
-classification, 
-\begin_inset Formula $2:$
-\end_inset
-
-prédiction, 
-\begin_inset Formula $3:$
-\end_inset
-
-identification des objets et 
-\begin_inset Formula $4:$
-\end_inset
-
- reconnaissance d'image).
- Rappelons que seule le choix 
-\begin_inset Formula $1$
-\end_inset
-
- et potentiellement 
-\begin_inset Formula $2$
-\end_inset
-
- seront implémentés.
- 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Le troisième paramètre
-\emph default
- compte le 
-\series bold
-nombre de couches cachées
-\series default
-, nbCouche.
- 
-\end_layout
-
-\begin_layout Itemize
-Le 
-\emph on
-quatrième paramètre
-\emph default
- compte le 
-\series bold
-nombre de neurones par couche cachée
-\series default
- (classe CoucheCachée).
- 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Le cinquième paramètre
-\emph default
- du fichier est 0 ou 
-\begin_inset Formula $x$
-\end_inset
-
- un entier positif non nul :
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-- 0 si l'initialisation de la matrice de poids initiaux est faite 
-\emph on
-aléatoirement
-\emph default
-.
- 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-- 
-\begin_inset Formula $x$
-\end_inset
-
- si l'utilisateur choisit d'initaliser tous les poids à 
-\begin_inset Formula $x$
-\end_inset
-
-.
- 
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-On prend alors 2 exemples :
-\begin_inset Newline newline
-\end_inset
-
-Un réseau R1 de type Forwarded avec 3 couches cachées, 2 neurones par couches
- et des poids initialisés aléatoirement.
-\begin_inset Newline newline
-\end_inset
-
-Un réseau R2 de type Forwarded avec 1 couches cachées, 4 neurones par couches
- et des poids initialisés à 0.5.
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\emph on
-Remarque
-\emph default
- : Il est impossible de calculer l'égalité entre 2 flottants en machine.
- 
-\begin_inset Newline newline
-\end_inset
-
-On utilise pour parer cela : la norme de la différence entre la valeur attendue
- et la valeur recupérée dans le fichier pour obtenir le booléen qui indique
- si le test est réussi ou non.
-\begin_inset Newline newline
-\end_inset
-
-C'est cette technique que l'on utilise ici pour le test concernant les poids
- initialisés à 0.5.
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-testAjouterCouche
-\end_layout
-
-\begin_layout Paragraph
-testErreur
-\end_layout
-
-\begin_layout Paragraph
-calcGradC
-\end_layout
-
-\begin_layout Paragraph
-testApprentissage
-\end_layout
-
-\begin_layout Paragraph
-testBackPropagation
-\end_layout
-
-\begin_layout Paragraph*
-Resultat:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Resultat testConstructeurReseau
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -2971,10 +2754,26 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename TestCoucheEntrees.png
+	scale 60
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3083,6 +2882,19 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename TEST.png
 
@@ -3159,41 +2971,6 @@ Pour n2 :
 
 \end_layout
 
-\begin_layout Paragraph*
-Resultat:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Resultat test Preactivation
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Paragraph
 testActivation :
 \end_layout
@@ -3258,14 +3035,36 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename CoucheSorties.png
 
-\end_layout
+\end_inset
+
+
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename TestCoucheCachees.png
+	scale 60
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat testPreactivation
+Resultat Activation et testPreactivation
 \end_layout
 
 \end_inset
@@ -3808,23 +3607,6 @@ Test 1: saisie suivante:
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-ajouter -lcCppUnit
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-******************************************************************je sais
- pas encore ou mettre
-\end_layout
-
 \begin_layout Subsection
 Matrice
 \end_layout
@@ -3972,6 +3754,19 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename prodmatrice.png
 
@@ -4011,6 +3806,19 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename prodmatrice2.png
 
@@ -4046,6 +3854,57 @@ status collapsed
 
 
 \begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Resultat: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename TestMatrice.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat TestMatrice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
 
@@ -4096,7 +3955,7 @@ Durant ce projet, nous avons pu nous exercer sur l’utilisation de C++ et
  De plus, cela nous a permis d'approfondir nos connaissances et nos acquis
  en programmation objet.
  Ainsi que plusieurs outils de programmation (doxygen, lcppunit) et de travail
- en groupe (Github).
+ en groupe (Github, ).
 \end_layout
 
 \begin_layout Standard
@@ -4108,6 +3967,21 @@ Malheureusement nous avons sous estimer la difficulté d'implémenter un réseau
  bon rythme de travail et une bonne organisation, le sujet est compliqué
  et pas très simple à réaliser par seulement cinq personnes.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
