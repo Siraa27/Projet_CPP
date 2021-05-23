@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <random>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -109,5 +110,8 @@ class Matrice{
       *
       */
       void divMatrice(const double coef);
+
+      void afficheMatrice() const;
+
 };
 #endif

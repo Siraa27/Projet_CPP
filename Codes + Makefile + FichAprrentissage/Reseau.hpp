@@ -82,7 +82,7 @@ class Reseau {
       *   \brief calcule les sorties obtenues avec les entrees e
       *   \param CoucheEntrees e
       */
-      void calcSorties(CoucheEntrees e);
+      void calcSorties(CoucheEntrees& e);
 
       /*!
         *  \fn backPropagation(vector<CoucheEntrees> x, vector<CoucheSorties> y);
@@ -104,6 +104,12 @@ class Reseau {
       *  \param string Donnees
       */
       void Apprentissage(const string Donnees);
+
+      /*!
+      *  \fn afficherResultat();
+      *  \brief Affiche la classe la plus probable
+      */
+     void afficherResultat() const;
 };
 
 

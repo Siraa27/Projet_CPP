@@ -1,7 +1,7 @@
 #include "Matrice.hpp"
-#include <iostream>
+
 //Constructeurs
-Matrice::Matrice(const int nbLignes, const int nbColonnes)
+Matrice::Matrice(const int nbLignes, const int nbColonnes) :  matrice(nbLignes, vector<double> (nbColonnes,0))
 {
 	nbLig = nbLignes;
 	nbCol = nbColonnes;
@@ -31,6 +31,10 @@ Matrice::Matrice (const Matrice & mat)
 //Destructeur
 Matrice::~Matrice()
 {
+	for(int i=0; i<nbLig;i++)
+	{
+		matrice[i].clear();
+	}
 	matrice.clear();
     nbLig=0;
     nbCol=0;
@@ -69,8 +73,6 @@ void Matrice::setCoefMatrice(const int i,const int j,const double coef)
 		throw std::length_error("Erreur  indices 1");
 	}
 	matrice[i][j] = coef;
-		cout<<"Yo\n";
-
 }
 
 //initialise alétatoirement la matrice
@@ -175,6 +177,19 @@ void Matrice::divMatrice(const double coef)
 		{
 			matrice[i][j] =  matrice[i][j] /coef;
 		}
+	}
+}
+
+void Matrice::afficheMatrice() const
+{
+	std::cout.precision(2);
+	for (int i=0;i<nbLig;i++)
+	{
+		for (int j=0;j<nbCol;j++)
+		{
+			std::cout<<matrice[i][j]<<" ";
+		}
+		std::cout<<"\n";
 	}
 }
 //-----------------------------------------------------------------------------------

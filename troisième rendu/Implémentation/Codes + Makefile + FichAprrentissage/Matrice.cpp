@@ -208,17 +208,6 @@ void Matrice::divMatrice(double coef)
 	}
 }
 
-void Matrice::afficheMatrice()
-{
-	std::cout.precision(2);
-	for (int i=0;i<nbLig;i++)
-	{
-		for (int j=0;j<nbCol;j++)
-		{
-			std::cout<<matrice[i][j]<<" ";
-		}
-		std::cout<<"\n";
-	}
-}
+
 
 //-----------------------------------------------------------------------------------

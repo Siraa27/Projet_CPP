@@ -28,7 +28,6 @@ Couche::~Couche()
 	nbNeurones = 0;
 	Neurones.clear();
 }
-
 //getters
 int Couche::getNbNeurones() const
 {

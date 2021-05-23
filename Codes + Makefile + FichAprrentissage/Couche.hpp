@@ -54,7 +54,7 @@ class Couche{
 		*  Retourne le ieme neurone
 		*/
 		Neurone getNeurone(const int i) const;
-     
+
       /*! \fn recupSortiesNeurones
       *  \brief 
 		*  recupere la sorties de tous les neurones d'une couche

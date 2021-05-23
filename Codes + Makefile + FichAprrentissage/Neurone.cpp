@@ -3,7 +3,7 @@
 // Constructeur
 Neurone::Neurone(const double out)
 {
-	sortie = 0;
+	sortie = out;
 }
 
 // Mutateur 
