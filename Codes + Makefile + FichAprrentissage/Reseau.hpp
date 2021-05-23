@@ -104,6 +104,12 @@ class Reseau {
       *  \param string Donnees
       */
       void Apprentissage(const string Donnees);
+
+      /*!
+      *  \fn afficherResultat();
+      *  \brief Affiche la classe la plus probable
+      */
+     void afficherResultat() const;
 };
 
 

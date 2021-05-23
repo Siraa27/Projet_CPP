@@ -23,7 +23,7 @@ class Couche{
    //Les attributs
    private : 
       int nbNeurones; /*!< Le nombre de neurones d'une couche*/
-      std::vector<Neurone*> Neurones; /*!< Le tableau qui contient tous les neurones d'une couche*/
+      std::vector<Neurone> Neurones; /*!< Le tableau qui contient tous les neurones d'une couche*/
    
    //Les méthodes
    public :
@@ -36,7 +36,7 @@ class Couche{
       /*!
       *  \brief Constructeur par recopie
       */
-      Couche(Couche &c);
+      Couche(const Couche &c);
 
       /*!
       *  \brief Destructeur de la classe Couche 
@@ -53,9 +53,7 @@ class Couche{
       *  \brief 
 		*  Retourne le ieme neurone
 		*/
-		Neurone* getNeurone(const int i) const;
-     
-      std::vector<Neurone*> GetNeurones();
+		Neurone getNeurone(const int i) const;
 
       /*! \fn recupSortiesNeurones
       *  \brief 

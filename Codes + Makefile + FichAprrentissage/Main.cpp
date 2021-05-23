@@ -33,7 +33,7 @@ void manipReseau(Reseau R)
             cin>>nomFic;
             CoucheEntrees E(R.getNbNeuronesEntree(), nomFic);
             R.calcSorties(E);
-            cout<<R.getSorties().getNeurone(0)->getSortie()<<endl;
+            R.afficherResultat();
             int rep;
             do
             {

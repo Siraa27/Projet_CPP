@@ -1,5 +1,5 @@
 #include "Matrice.hpp"
-#include <iostream>
+
 //Constructeurs
 Matrice::Matrice(const int nbLignes, const int nbColonnes) :  matrice(nbLignes, vector<double> (nbColonnes,0))
 {
@@ -31,6 +31,10 @@ Matrice::Matrice (const Matrice & mat)
 //Destructeur
 Matrice::~Matrice()
 {
+	for(int i=0; i<nbLig;i++)
+	{
+		matrice[i].clear();
+	}
 	matrice.clear();
     nbLig=0;
     nbCol=0;

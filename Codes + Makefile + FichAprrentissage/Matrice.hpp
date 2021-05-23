@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <random>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
