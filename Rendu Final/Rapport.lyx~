@@ -125,6 +125,95 @@ Amina El Bachari, Camille Goujet,
 \end_inset
 
 Israa Ben Sassi, Rafael Quilbier et Mehdi Helal
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+à l'attention de Jean-Philippe Kotowizts
+\end_layout
+
+\begin_layout Author
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Neurone-©-Fedorov-Oleksiy-Shutterstock.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -358,7 +447,7 @@ Un réseau de neurones est en général composé d'une succession de couches
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -415,7 +504,7 @@ En effet, un réseau de neurones est composé d’une couche d’entrées ( “i
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -489,7 +578,7 @@ La fonction d’activation (ou fonction de seuillage, ou encore fonction de
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -770,7 +859,7 @@ Ces 2 types de réseaux de neurones ont des intérêts différents : le réseau
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -833,7 +922,7 @@ s, l'information circule dans les deux sens.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -993,7 +1082,7 @@ D’autre part, la reconnaissance des émotions, très utilisée sur les réseau
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1040,7 +1129,7 @@ Illustration avec les visages
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1200,7 +1289,7 @@ Donner le nom de fichier de données
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1292,7 +1381,7 @@ Diagramme de cas d’utilisation
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1329,49 +1418,6 @@ Diagramme de cas d'utilisation
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Diagramme de classe
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-METTRE LE DERNIER DIAGRAMME DE CLASSE !!!!!!
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang english
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\lang english
-Diag
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1435,7 +1481,7 @@ Nous commençons avec un diagramme de séquence assez général :
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1488,7 +1534,7 @@ Notamment, pour la création d'un réseau :
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1536,7 +1582,7 @@ Diagramme de séquence
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1590,7 +1636,7 @@ Finalement, nous avons réalisé un diagramme de séquence lorsqu'un utilisateur
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1733,7 +1779,7 @@ Le fichier va être sous la forme suivante :
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1851,23 +1897,16 @@ Il faut donc lire les mesures, les mettre en entrée du réseau, calculer
 \begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\lang english
 Donc notre réseau, cela ressemblera à quelque chose comme ça : 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 
-\lang english
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1913,15 +1952,17 @@ Réseau de neurones appliqué aux iris de Fisher
 
 \end_inset
 
- ## à changer
-\end_layout
 
-\begin_layout Standard
+\begin_inset Newline newline
+\end_inset
 
-\lang english
 Se pose le problème suivant : comment à partir des mesures réalisées sur
  une fleur inconnue trouver le type d’iris à l'aide d’un réseau de neurones
  ? 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2150,16 +2191,15 @@ me, on implémente la méthode de descente du gradient.
 \end_inset
 
  : 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 
-\lang english
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -2351,28 +2391,67 @@ Cela permet d'avoir une vision précis, exhaustive et claire de l'implémentatio
 \begin_layout Subsection
 
 \lang english
-Classe Réseau 
+Diagramme de classe
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-Ses variables d’instances seront : A REMPLIR 
-\begin_inset Newline newline
-\end_inset
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
 
+\begin_layout Plain Layout
+METTRE LE DERNIER DIAGRAMME DE CLASSE !!!!!!
+\end_layout
 
-\begin_inset Newline newline
-\end_inset
+\begin_layout Plain Layout
 
+\lang english
+\begin_inset Caption Standard
 
-\begin_inset Newline newline
+\begin_layout Plain Layout
+
+\lang english
+Diag
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Réseau 
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+La classe Réseau
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+voir la documentation doxygen
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Les tests de la classe Réseau
+\end_layout
+
+\begin_layout Paragraph
 testConstructeurReseau :
 \end_layout
 
@@ -2593,34 +2672,67 @@ On utilise pour parer cela : la norme de la différence entre la valeur attendue
 
 C'est cette technique que l'on utilise ici pour le test concernant les poids
  initialisés à 0.5.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+testAjouterCouche
+\end_layout
+
+\begin_layout Paragraph
+testErreur
+\end_layout
+
+\begin_layout Paragraph
+calcGradC
+\end_layout
+
+\begin_layout Paragraph
+testApprentissage
+\end_layout
+
+\begin_layout Paragraph
+testBackPropagation
+\end_layout
+
+\begin_layout Paragraph*
+Resultat:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat testConstructeurReseau
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 
 \lang english
-Classe Couche
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-Ses variables d’instances seront : 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
+Couche
 \end_layout
 
 \begin_layout Standard
@@ -2634,49 +2746,65 @@ Pour notre implémentation, nous avons choisi de coder les méthodes utiles
  dans les classes CoucheCachée et CoucheSorties uniquement puisqu'elles
  sont inutiles dans CoucheEntrées.
  
+\begin_inset Newline newline
+\end_inset
+
+
+\lang english
+voir la documentation doxygen
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
-Classe 
-\lang french
 CoucheEntree
 \end_layout
 
+\begin_layout Subsubsection
+La classe CoucheEntree
+\end_layout
+
 \begin_layout Standard
 
 \lang english
-Ses variables d’instances seront : 
+voir la documentation doxygen
 \end_layout
 
-\begin_layout Standard
-Cette classe a une seule méthode importante, qui peut générer des erreurs
- donc le seul test à effectuer est :
+\begin_layout Subsubsection
+Les tests de la classe CoucheEntree
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Paragraph
 testConstructionSortie :
 \end_layout
 
 \begin_layout Standard
 
+\bar under
+prototype de la méthode:
+\bar default
+ void constructionSortie()
 \series bold
-prototype de la méthode: void constructionSortie()
-\end_layout
 
-\begin_layout Standard
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
 Soit un fichier de données test qui contient les 4 valeurs utilisées dans
  l’exemple précédent.
  
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 il faut vérifier que la fonction constructionSorite remplit un tableau de
  neurone de dimension 4 comme suit : 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="4">
 <features tabularvalignment="middle">
@@ -2789,20 +2917,78 @@ il faut vérifier que la fonction constructionSorite remplit un tableau de
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+Donc il faut créer un objet coucheEntrée qu’on initialise à l’aide d’un
+ constructeur avec les valeurs du tableau et vérifier que le tableau de
+ neurone de cet objet est égal au tableau de neurone de notre fonction test.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Resultat: 
 \end_layout
 
 \begin_layout Standard
-Donc il faut créer un objet coucheEntrée qu’on initialise à l’aide d’un
- constructeur avec les valeurs du tableau et vérifier que le tableau de
- neurone de cet objet est égal au tableau de neurone de notre fonction test
- 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat testConstructionSortie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Classes CoucheSortie et CoucheCachee
+CoucheSortie et CoucheCachee
+\end_layout
+
+\begin_layout Subsubsection
+La classe CoucheSortie
 \end_layout
 
 \begin_layout Standard
+
+\lang english
+voir la documentation doxygen
+\end_layout
+
+\begin_layout Subsubsection
+La classe CouchCachee
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+voir la documentation doxygen
+\end_layout
+
+\begin_layout Subparagraph*
 Comme vous allez le constater, nous avons fait le choix d'implémenter les
  fonctions preActivation() et activation() dans la classe CoucheCachée mais
  aussi dans CoucheSortie.
@@ -2810,17 +2996,31 @@ Comme vous allez le constater, nous avons fait le choix d'implémenter les
  bien souvent n'est pas la même selon si c'est une couche cachée ou de sortie.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection
+Les tests de la classe CoucheCachee et CoucheSortie
+\end_layout
+
+\begin_layout Paragraph
 testPreactivation :
 \end_layout
 
 \begin_layout Standard
 
+\bar under
+prototype de la méthode: 
+\bar default
+double[] preActivation()
 \series bold
-prototype de la méthode: double[] preActivation()
-\end_layout
 
-\begin_layout Standard
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
 Il faut tester si elle renvoie bien la somme des produits de la valeur du
  neurone avec le poids qui le relie au neurone étudié ajouté au biais de
  ce neurone.
@@ -2828,10 +3028,6 @@ Il faut tester si elle renvoie bien la somme des produits de la valeur du
 \begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Pour l'exemple des iris de Fisher :
 \end_layout
 
@@ -2845,20 +3041,19 @@ une couche cachée qui comprend 2 neurones n1 et n2
 
 \begin_layout Standard
 ⇒ Il y a alors 8 poids et 2 biais 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Lyx + photo/TEST.png
-	scale 50
-	rotateOrigin center
+	filename TEST.png
 
 \end_inset
 
@@ -2877,29 +3072,30 @@ Exemple des iris de Fisher
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 La fonction de préactivation doit donnée comme valeur pour n1 : 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset Formula $x1\times0,1+x2\times0,3+x3\times0,5+x4\times0,7+b1=0,63+0,99+3+1,75+0,5=\mathbf{{\color{purple}6,87}}$
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Pour n2 : 
 \begin_inset Formula ${\color{purple}\mathbf{8,98}}$
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
-Donc on doit avoir 
+⇒ Donc on doit avoir 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
@@ -2932,17 +3128,62 @@ Donc on doit avoir
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Paragraph*
+Resultat:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat test Preactivation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
 testActivation :
 \end_layout
 
 \begin_layout Standard
 
+\bar under
+prototype de la méthode:
+\bar default
+ double activation(double[])
 \series bold
-prototype de la méthode: double activation(double[])
-\end_layout
 
-\begin_layout Standard
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
 Nous allons considérer le cas de la fonction sigmoïde donnée par :
 \begin_inset Formula 
 \[
@@ -2958,6 +3199,10 @@ Il faut tester si elle renvoie la bonne valeur.
 
 Pour cela, reprenons le résultat de la fonction de préactivation, on a alors
  :
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2971,99 +3216,54 @@ f(6,87)=0.001
 
 \end_layout
 
-\begin_layout Subsection*
-testConstructionSortie :
+\begin_layout Paragraph*
+Resultat:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
 
-\series bold
-prototype de la méthode: void constructionSortie( ) 
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Subsection
-testAjouterCouche
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat testPreactivation
 \end_layout
 
-\begin_layout Subsection
-testErreur
-\end_layout
-
-\begin_layout Subsection
-calcGradC
-\end_layout
-
-\begin_layout Subsection
-testApprentissage
-\end_layout
-
-\begin_layout Subsection
-testBackPropagation
-\end_layout
-
-\begin_layout Subsection
-
-\lang english
-Classe Neurone
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-Ses variables d’instances seront : 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 
 \end_layout
 
-\begin_layout Chapter
-Documentation des interfaces de chaque module
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Standard
-(voir les .html pour l'interface graphique dans le dossier 
-\emph on
-DOXYGEN HTML
-\emph default
- et les .hpp dans le dossier 
-\emph on
-CodeDoxygen.hpp
-\emph default
- pour l'implémentation des codes)
-\end_layout
+\end_inset
 
-\begin_layout Chapter
-Les tests unitaires
+
 \end_layout
 
 \begin_layout Subsection
-Classe Interface:
+Interface:
+\end_layout
+
+\begin_layout Subsubsection
+Classe Interface
 \end_layout
 
 \begin_layout Standard
 
 \lang english
-Ses variables d’instances seront : 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
+voir la documentation doxygen
+\lang french
 
 \begin_inset Newline newline
 \end_inset
@@ -3071,26 +3271,31 @@ Ses variables d’instances seront :
 
 \end_layout
 
-\begin_layout Standard
-Cette classe a deux méthodes importantes, qui peuvent générer des erreurs
- donc il y a deux tests à effectuer :
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Subsubsection
+Les tests de la classe Interface
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Paragraph
 testLectureFichier :
 \end_layout
 
 \begin_layout Standard
 
+\bar under
+prototype de la méthode:
+\bar default
+ listeParamètres lectureFichier(String 'nomFich.csv')
 \series bold
-prototype de la méthode: listeParamètres lectureFichier(String 'nomFich.csv')
-\end_layout
 
-\begin_layout Standard
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
 Nous allons d'abord tester la fonction lectureFichier().
  Pour cela, nous allons définir le jeu de données que nous allons utiliser
  ainsi que les résultats attendus.
@@ -3099,9 +3304,9 @@ Nous allons d'abord tester la fonction lectureFichier().
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Tout d'abord, faisons un point sur la manière de remplir un fichier des
  paramètres du futur réseau à construire :
 \end_layout
@@ -3351,17 +3556,27 @@ Fichier test 1:
 \end_layout
 
 \end_deeper
-\begin_layout Subsection*
+\begin_layout Paragraph
 testlectureParam() :
 \end_layout
 
 \begin_layout Standard
 
+\bar under
+prototype de la méthode:
+\bar default
+ listeParamètres lectureParam()
 \series bold
-prototype de la méthode: listeParamètres lectureParam()
-\end_layout
 
-\begin_layout Standard
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
 Tout d'abord, faisons un point sur la manière dont l'utilisateur va saisir
  les paramètres, soit comment va fonctionner la fonction listeParametreslectureP
 aram().
@@ -3564,26 +3779,37 @@ Test 1: saisie suivante:
 \end_deeper
 \begin_layout Standard
 ajouter -lcCppUnit
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+******************************************************************je sais
+ pas encore ou mettre
 \end_layout
 
-\begin_layout Section
-Module ResForwarded
+\begin_layout Subsection
+Matrice
+\end_layout
+
+\begin_layout Subsubsection
+La classe Matrice
 \end_layout
 
 \begin_layout Standard
-Pas de test à effectuer
+
+\lang english
+voir la documentation doxygen
 \end_layout
 
-\begin_layout Section
-Module ResRecurrent
-\end_layout
-
-\begin_layout Standard
-Pas de test à effectuer
-\end_layout
-
-\begin_layout Section
-Module Matrice
+\begin_layout Subsubsection
+Les tests de la classe Matrice
 \end_layout
 
 \begin_layout Standard
@@ -3678,20 +3904,20 @@ Les tests sur la classe Matrice sont de 2 types :
 - Traite le cas où les matrices ne sont pas de la même taille et vérifie
  si le nombre colonne est égal au nombre de lignes de la matrice passé en
  paramètre.
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Subsection
-testProduit
+\begin_layout Paragraph
+testProduit :
 \end_layout
 
 \begin_layout Standard
 
+\bar under
+prototype de la méthode:
+\bar default
+ testProduit(Matrice)
 \series bold
-prototype de la méthode testProduit(Matrice)
+
 \begin_inset Newline newline
 \end_inset
 
@@ -3712,12 +3938,11 @@ prototype de la méthode testProduit(Matrice)
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Lyx + photo/prodmatrice.png
-	rotateOrigin center
+	filename prodmatrice.png
 
 \end_inset
 
@@ -3752,12 +3977,11 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/camille/Bureau/GM4/C++/Projet_CPP/troisième rendu/Lyx + photo/prodmatrice2.png
-	rotateOrigin center
+	filename prodmatrice2.png
 
 \end_inset
 
@@ -3786,14 +4010,34 @@ status open
  Test pour 2 matrices de tailles incompatibles pour un produit matriciel
  et retourner erreur.
  
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
-\begin_layout Section
-Module Neurone
+\begin_layout Subsection
+ResForwarded
 \end_layout
 
 \begin_layout Standard
-Pas de test à effectuer 
+
+\lang english
+voir la documentation doxygen
+\end_layout
+
+\begin_layout Subsection
+Neurone
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+voir la documentation doxygen
 \end_layout
 
 \begin_layout Standard
