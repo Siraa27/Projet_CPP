@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass extarticle
+\textclass extreport
 \begin_preamble
 \usepackage{minted}
 \usepackage[breaklinks,colorlinks=true,linkcolor=black,
@@ -135,81 +135,8 @@ Mehdi Helal et Rafael Quilbier
 à l'attention de Jean-Philippe Kotowicz
 \end_layout
 
-\begin_layout Author
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename Neurone-©-Fedorov-Oleksiy-Shutterstock.jpg
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newpage newpage
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
+\begin_layout Standard
+\SpecialChar softhyphen
 
 \end_layout
 
@@ -217,14 +144,6 @@ centering
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -270,21 +189,10 @@ Pour toutes ces raisons, vous trouverez dans le présent rapport, une descriptio
 \end_inset
 
 
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
-\begin_layout Part
+\begin_layout Chapter
 Introduction
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -348,10 +256,6 @@ Schématisation algorithmique d’un neurone artificiel
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 Cette représentation est appelée le perceptron, un algorithme d’apprentissage
@@ -1313,10 +1217,6 @@ Diagramme des choix
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Float figure
 wide false
 sideways false
@@ -1361,10 +1261,6 @@ Manuel d'utilisation manuelle
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 
@@ -1424,39 +1320,17 @@ centering
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Maintenant que nous nous sommes familiariser avec toutes les notions que
- peuvent avoir leur importance dans la compréhension d'un réseau de neurones,
- nous allons à présent étudier les côtés plus techniques de ces objets afin
- de mener à bien l'implémentation de notre propre réseau.
-\end_layout
-
-\begin_layout Part
+\begin_layout Chapter
 Spécification
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
+Maintenant que nous nous sommes familiariser avec toutes les notions que
+ peuvent avoir leur importance dans la compréhension d'un réseau de neurones,
+ nous allons à présent étudier les côtés plus techniques de ces objets afin
+ de mener à bien l'implémentation de notre propre réseau.
 \end_layout
 
 \begin_layout Section
@@ -1464,14 +1338,10 @@ Conception préliminaire
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Diagramme de cas d’utilisation
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Float figure
 placement H
 wide false
@@ -1491,8 +1361,6 @@ centering
 
 \end_inset
 
-
-\lang english
 
 \begin_inset Graphics
 	filename DiagrammeCasUtilisation.png
@@ -1522,14 +1390,10 @@ Diagramme de cas d'utilisation
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Descriptions des cas d’utilisation
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Fournir les données d’entrées : pour faire ceci, on construit un tableau
  de la dimension adéquate correspondant à celle des données que l’on donne
  au réseau.
@@ -1540,8 +1404,6 @@ Fournir les données d’entrées : pour faire ceci, on construit un tableau
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Choix des fonctionnalités, des paramètres et du type de réseau : Notre programme
  propose les différentes options à l'utilisateur de manière intéractive
  pour lancer la partie du programme correspondant au choix de l’utilisateur.
@@ -1549,14 +1411,10 @@ Choix des fonctionnalités, des paramètres et du type de réseau : Notre progra
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Diagrammes de séquence 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Afin de visualiser les interactions entre les composants, nous avons réalisé
  plusieurs diagrammes de séquence pour chaque phase.
  
@@ -1592,8 +1450,6 @@ centering
 
 \end_inset
 
-
-\lang english
 
 \begin_inset Graphics
 	filename General.png
@@ -1646,8 +1502,6 @@ centering
 \end_inset
 
 
-\lang english
-
 \begin_inset Graphics
 	filename CreationReseau.png
 	lyxscale 30
@@ -1693,8 +1547,6 @@ centering
 
 \end_inset
 
-
-\lang english
 
 \begin_inset Graphics
 	filename ChoisiPredef.png
@@ -1748,8 +1600,6 @@ centering
 \end_inset
 
 
-\lang english
-
 \begin_inset Graphics
 	filename FormulerRequete.png
 	lyxscale 30
@@ -1778,14 +1628,10 @@ Diagramme de séquence
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Le choix des données 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Pour le moment, nous allons se concentrer sur une classification supervisée
  des données.
  Voyons cela sur l’exemple des iris de Fisher.
@@ -1797,39 +1643,27 @@ Pour le moment, nous allons se concentrer sur une classification supervisée
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Les Iris de Fisher correspondent à 150 fleurs décrites par 4 variables quantitat
 ives : 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 longueur du sépale 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 largeur du sépale 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 longueur du pétale 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 largeur du pétale 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Separator plain
 \end_inset
 
@@ -1837,39 +1671,27 @@ largeur du pétale
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Les 150 fleurs sont réparties en 3 différentes espèces : 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 iris setosa 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 iris versicolor 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 iris virginica.
  
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Le fichier va être sous la forme suivante : 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Float figure
 placement H
 wide false
@@ -1890,8 +1712,6 @@ centering
 \end_inset
 
 
-\lang english
-
 \begin_inset Graphics
 	filename Fichier données iris.png
 	lyxscale 30
@@ -1904,8 +1724,6 @@ centering
 \end_layout
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1925,14 +1743,10 @@ exemple du fichier
 \end_layout
 
 \begin_layout Paragraph
-
-\lang english
 On peut donc voir nos données (entrée du programme) comme : 
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Pour une fleur (entrée du réseau) : un vecteur de dimension 4 représentant
  les 4 variables explicatives d'une fleur
 \begin_inset Formula 
@@ -1946,8 +1760,6 @@ f=(x_{1},x_{2},x_{3},x_{4})^{T}
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Pour les classe (la sortie du réseau): un vecteur de dimension 3 représentant
  les probabilités des 3 potentielles classes d'appartenance (setosa, versicolor,
  virginica)
@@ -1970,8 +1782,6 @@ Pour les classe (la sortie du réseau): un vecteur de dimension 3 représentant
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Separator plain
 \end_inset
 
@@ -1979,8 +1789,6 @@ Pour les classe (la sortie du réseau): un vecteur de dimension 3 représentant
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Il faut donc lire les mesures, les mettre en entrée du réseau, calculer
  le résultat en propageant l’information de l’entrée vers la sortie couche
  par couche, prendre la sortie maximale parmi les neurones de sortie et
@@ -2017,8 +1825,6 @@ centering
 \end_inset
 
 
-\lang english
-
 \begin_inset Graphics
 	filename reseau neuronne Fisher.png
 	scale 60
@@ -2030,8 +1836,6 @@ centering
 \end_layout
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2047,10 +1851,6 @@ Réseau de neurones appliqué aux iris de Fisher
 
 \end_inset
 
-
-\begin_inset Newline newline
-\end_inset
-
 Se pose le problème suivant : comment à partir des mesures réalisées sur
  une fleur inconnue trouver le type d’iris à l'aide d’un réseau de neurones
  ? 
@@ -2061,14 +1861,10 @@ Se pose le problème suivant : comment à partir des mesures réalisées sur
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Tests d’intégration
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Ici, on explicite tous les différents scénarios possibles engageant un réseau
  de neurones.
  Cela nous permettra de n’oublier aucune fonctionnalité dans notre code
@@ -2079,20 +1875,14 @@ Ici, on explicite tous les différents scénarios possibles engageant un réseau
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Scénarios de création d’un réseau : 
 \end_layout
 
 \begin_layout Paragraph
-
-\lang english
 Réseau vide :
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Si dans le choix des paramètres, on choisit 0 neurone et donc 0 couche,
  les utilisations que l’on pourra faire de ce réseau seront très limitées
  pour ne pas dire inexistantes.
@@ -2102,14 +1892,10 @@ Si dans le choix des paramètres, on choisit 0 neurone et donc 0 couche,
 \end_layout
 
 \begin_layout Paragraph
-
-\lang english
 Perceptron simple : 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 On entre en machine : 2 pour le nombre de couches, autant de neurones que
  l’on veut pour la couche d’entrée et un seul neurone sur la couche de sortie.
  Le perceptron simple est un modèle de prédiction (supervisé) linéaire.
@@ -2119,14 +1905,10 @@ On entre en machine : 2 pour le nombre de couches, autant de neurones que
 \end_layout
 
 \begin_layout Paragraph
-
-\lang english
 Perceptron multicouche : 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 L’utilisateur entre en machine un nombre de couches supérieures à 2.
  Notons tout de même que choisir au dela de 6 à 10 couches entraine très
  souvent des problèmes d’overfitting, aussi appelée surapprentissage (le
@@ -2143,14 +1925,10 @@ L’utilisateur entre en machine un nombre de couches supérieures à 2.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Scénarios relatifs aux fonctions d’activation : 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Ici, il est très difficile de délimiter notre projet puisqu’il n’existe
  pas de règles propres au choix de la fonction d’activation utilisée pour
  telle couche, tel réseau ou telle fonctionnalité de ce réseau.
@@ -2162,8 +1940,6 @@ On peut tout de même émettre quelques pistes :
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Dans le cas d'un problème de 
 \emph on
 régression
@@ -2175,8 +1951,6 @@ régression
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Dans le cas d'un problème de 
 \emph on
 classification binaire
@@ -2209,8 +1983,6 @@ sigmoïde
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Dans le cas d'un problème de 
 \emph on
 classification multi-classe,
@@ -2256,14 +2028,10 @@ Si la sortie pour la classe
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Scénarios relatifs aux poids :
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Pour entraîner un perceptron, c'est-à-dire apprendre les poids de connexion,
  nous allons chercher à minimiser l'erreur de prédiction sur le jeu d'entraîneme
 nt.
@@ -2310,8 +2078,6 @@ centering
 \end_inset
 
 
-\lang english
-
 \begin_inset Graphics
 	filename Courbe erreur poids.png
 	scale 80
@@ -2343,14 +2109,10 @@ où ɳ est la vitesse d’apprentissage.
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 Scénarios relatifs aux utilisations : 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 On compte 4 cas d’utilisations pour un réseau de neurones.
  Nous nous sommes limités à proposer la prédiction de données et la classificati
 on.
@@ -2360,22 +2122,16 @@ on.
 \end_layout
 
 \begin_layout Paragraph
-
-\lang english
 Classification 
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Il est recommandé à l’utilisateur d’utiliser un perceptron multi-couches.
  Puis deux modélisations lui sont proposées.
  
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Soit l’utilisateur saisit le nombre 
 \begin_inset Formula $K$
 \end_inset
@@ -2392,8 +2148,6 @@ Soit l’utilisateur saisit le nombre
 \end_layout
 
 \begin_layout Itemize
-
-\lang english
 Soit l’utilisateur choisit de modéliser un réseau pour chaque classe 
 \begin_inset Formula $n=1..K$
 \end_inset
@@ -2421,8 +2175,6 @@ nées et le nombre de neurones de la couche de sortie égale à
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Ensuite, l'utilisateur peut choisir un apprentissage supervisé ou non du
  réseau.
  S'il choisit un apprentissage supervisé il devra importer les données nécessair
@@ -2433,14 +2185,10 @@ e (toujours au bon format et organisé).
 \end_layout
 
 \begin_layout Paragraph
-
-\lang english
 Prédiction
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Dans le cas d’une prédiction, nous considérons une unique modélisation.
  La couche d’entrée comporte 
 \begin_inset Formula $n$
@@ -2461,14 +2209,10 @@ Dans le cas d’une prédiction, nous considérons une unique modélisation.
 \end_layout
 
 \begin_layout Section
-
-\lang english
 Conception détaillée
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Dans cette partie, nous expliquons en détail chaque module/classe composant
  notre code et les tests unitaires qui lui sont associés.
  
@@ -2484,22 +2228,16 @@ Cela permet d'avoir une vision précis, exhaustive et claire de l'implémentatio
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Diagramme de classe
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Float figure
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\lang english
 \begin_inset Graphics
 	filename 189217488_195480449101442_4223601380712545224_n.png
 	scale 60
@@ -2526,26 +2264,18 @@ Diag
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Réseau 
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang english
 La classe Réseau
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
 \begin_layout Subsection
-
-\lang english
 Couche
 \end_layout
 
@@ -2563,8 +2293,6 @@ Pour notre implémentation, nous avons choisi de coder les méthodes utiles
 \begin_inset Newline newline
 \end_inset
 
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
@@ -2577,8 +2305,6 @@ La classe CoucheEntree
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
@@ -2803,8 +2529,6 @@ La classe CoucheSortie
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
@@ -2813,8 +2537,6 @@ La classe CouchCachee
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
@@ -2912,10 +2634,6 @@ Exemple des iris de Fisher
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 La fonction de préactivation doit donnée comme valeur pour n1 : 
@@ -3090,11 +2808,7 @@ Classe Interface
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
-\lang french
-
 \begin_inset Newline newline
 \end_inset
 
@@ -3616,8 +3330,6 @@ La classe Matrice
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
@@ -3915,8 +3627,6 @@ ResForwarded
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
@@ -3925,29 +3635,21 @@ Neurone
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 voir la documentation doxygen
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
-\begin_layout Part
-
-\lang english
+\begin_layout Chapter
 Conclusion
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Durant ce projet, nous avons pu nous exercer sur l’utilisation de C++ et
  ce, en élabo-rant un projet qui nous semblait intéressant.
  En effet, étant tous passionées par la science des données, nous avons
@@ -3959,8 +3661,6 @@ Durant ce projet, nous avons pu nous exercer sur l’utilisation de C++ et
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 Malheureusement nous avons sous estimer la difficulté d'implémenter un réseau
  de neurone en cpp.
  Nous avions plusieurs tâches à faires et même en essayant de garder un
@@ -3985,8 +3685,6 @@ Malheureusement nous avons sous estimer la difficulté d'implémenter un réseau
 \end_layout
 
 \begin_layout Standard
-
-\lang english
 \begin_inset Newpage newpage
 \end_inset
 
