@@ -136,23 +136,7 @@ Mehdi Helal et Rafael Quilbier
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
+\SpecialChar softhyphen
 
 \end_layout
 
@@ -166,29 +150,14 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Abstract
-De nos jours, les réseaux de neurones sont au cœur de l’intelligence artificiell
-e.
- Ils sont désormais un enjeu majeur pour de nombreux secteurs (santé, énergie
- & environnement, mobilité, industries...) malgré que cela n'ait pas toujours
- été le cas...
+Depuis une dizaine d'années, les réseaux de neurones sont au cœur de l’intellige
+nce artificielle et sont désormais un enjeu majeur dans de nombreux secteurs
+ tels que la santé, l'énergie, les industries....
 \begin_inset Newline newline
 \end_inset
 
-En effet, il aura fallu attendre deux hivers de l'IA pour que celle-ci connaisse
- enfin l'essor qu'elle mérite ces dernières années grâce à l'amélioration
- de la puissance de calcul des machines et aux résultats spectaculaires
- offert par le deep learning que l'on a pu, par exemple, constaté en 2012
- quand un réseau de neurones artificiels à plusieurs couches a écrasé toutes
- les autres IA à un concours de reconnaissance d'images.
- 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-PAS FINI 
+Avec l'amélioration de la puissance de calcul des machines et des résultats
+ spectaculaires obtenus avec le deep learning, 
 \begin_inset Newline newline
 \end_inset
 
@@ -201,10 +170,6 @@ Pour toutes ces raisons, vous trouverez dans le présent rapport, une descriptio
  qui le composent et finalement, l'implémentation de notre propre réseau
  de neurones que nous .
  PAS FINI 
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
@@ -238,7 +203,7 @@ Le neurone formel est l'unité élémentaire des réseaux de neurones artificiel
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -256,7 +221,7 @@ centering
 
 \begin_inset Graphics
 	filename Neurone.png
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -278,48 +243,36 @@ Cette représentation est appelée le perceptron, un algorithme d’apprentissag
  supervisé pour les classifications binaires linéaires.
  Cela fait beaucoup de mots inconnus alors arrêtons nous un instant sur
  chacun de ces termes car ils seront importants pour la suite ! 
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 Algorithme : le perceptron est une suite d’opérations et de calcul = la
  somme des entrées, leur pondération, la vérification d’une condition et
  la production d’un résultat d’activation.
  
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 Apprentissage : l’algorithme doit être “entraîné”, c’est à dire qu’en fonction
  d’une prédiction voulue, le poids des différentes entrées va évoluer et
  il faudra trouver une valeur optimale pour chacune.
  
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 Supervisé : l’algorithme trouve les valeurs optimales de ses poids à partir
  d’une base de données d’exemples dont on connaît déjà la prédiction.
  Par exemple on a une base de données de photos de banane et on “règle”
  notre algorithme jusqu’à ce que chaque photo (ou presque) soit classé comme
  banane.
  
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 Classification : l’algorithme permet de prédire une caractéristique en sortie
  et cette caractéristique sert à classer les différentes entrées entre elles.
  Par exemple, trouver toutes les bananes dans un panel de photos de fruits.
@@ -660,11 +613,7 @@ Architecture des réseaux de neurones
 
 \begin_layout Standard
 On appelle architecture d'un réseau de neurones sa forme.
- 
-\begin_inset Newline newline
-\end_inset
-
-On distingue 4 types de réseaux de neurones :
+ On distingue 4 types de réseaux de neurones :
 \end_layout
 
 \begin_layout Standard
@@ -1023,6 +972,7 @@ Illustration avec les visages
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1183,9 +1133,10 @@ Donner le nom de fichier de données
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1212,28 +1163,11 @@ centering
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\lang english
-Diagramme des choix
-\end_layout
-
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+En pratique, voici ce que nous obtenons : 
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1281,9 +1215,10 @@ Manuel d'utilisation manuelle
 
 
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1358,11 +1293,15 @@ Diagramme de cas d’utilisation
 \end_layout
 
 \begin_layout Standard
+Voici notre diagramme de cas d'utilisation final : 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -1381,7 +1320,7 @@ centering
 \begin_inset Graphics
 	filename DiagrammeCasUtilisation.png
 	lyxscale 50
-	scale 50
+	scale 28
 	rotateOrigin center
 
 \end_inset
@@ -1420,7 +1359,7 @@ Fournir les données d’entrées : pour faire ceci, on construit un tableau
 \end_layout
 
 \begin_layout Itemize
-Choix des fonctionnalités, des paramètres et du type de réseau : Notre programme
+Choix des fonctionnalités, des paramètres et du type de réseau : notre programme
  propose les différentes options à l'utilisateur de manière intéractive
  pour lancer la partie du programme correspondant au choix de l’utilisateur.
  
@@ -1433,19 +1372,10 @@ Diagrammes de séquence
 \begin_layout Standard
 Afin de visualiser les interactions entre les composants, nous avons réalisé
  plusieurs diagrammes de séquence pour chaque phase.
- 
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
 Nous commençons avec un diagramme de séquence assez général :
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Float figure
 placement H
 wide false
@@ -1492,11 +1422,7 @@ Diagramme de séquence
 \end_inset
 
  Ensuite, nous avons détaillé les différentes phases du premier diagramme.
- 
-\begin_inset Newline newline
-\end_inset
-
-Notamment, pour la création d'un réseau : 
+ Notamment, pour la création d'un réseau : 
 \begin_inset Float figure
 placement H
 wide false
@@ -1589,11 +1515,7 @@ Diagramme de séquence
 \end_inset
 
 .
- 
-\begin_inset Newline newline
-\end_inset
-
-Finalement, nous avons réalisé un diagramme de séquence lorsqu'un utilisateur
+ Finalement, nous avons réalisé un diagramme de séquence lorsqu'un utilisateur
  formule sa requête : 
 \begin_inset Float figure
 placement H
@@ -1655,10 +1577,6 @@ Pour le moment, nous allons se concentrer sur une classification supervisée
 \begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Les Iris de Fisher correspondent à 150 fleurs décrites par 4 variables quantitat
 ives : 
 \end_layout
@@ -1812,15 +1730,7 @@ Il faut donc lire les mesures, les mettre en entrée du réseau, calculer
 \begin_inset Newline newline
 \end_inset
 
-
-\begin_inset Newline newline
-\end_inset
-
 Donc notre réseau, cela ressemblera à quelque chose comme ça : 
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Float figure
 placement H
 wide false
@@ -1870,10 +1780,6 @@ Réseau de neurones appliqué aux iris de Fisher
 Se pose le problème suivant : comment à partir des mesures réalisées sur
  une fleur inconnue trouver le type d’iris à l'aide d’un réseau de neurones
  ? 
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -2248,7 +2154,12 @@ Diagramme de classe
 \end_layout
 
 \begin_layout Standard
+Voici notre diagrammde de classe :
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -2256,7 +2167,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename 189217488_195480449101442_4223601380712545224_n.png
-	scale 60
+	scale 22
 
 \end_inset
 
@@ -2264,9 +2175,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang english
-Diag
+Diagramme de classe
 \end_layout
 
 \end_inset
@@ -2288,7 +2197,341 @@ La classe Réseau
 \end_layout
 
 \begin_layout Standard
-voir la documentation doxygen
+Dans cette classe, on retrouve les méthodes qui permettent de manipuler
+ un réseau de neurones, de sa création à sa destruction.
+ Une première remarque importante sur ces codes : nous avons souvent été
+ obligés de “dupliquer” certains codes car certaines couches cachées sont
+ liées à la couche d’entrée ou bien à la couche de sortie, ce qui veut dire
+ que les codes de la forme : 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{couchecachee[i] = f(couchecachee[i-1], couchecachee[i+1])}
+\end_layout
+
+\end_inset
+
+ ne fonctionne pas dans ce cas particulier.
+ Par exemple, dans le constructeur de Réseau, nous avons traité le cas de
+ la première couche cachée 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{couches[0]}
+\end_layout
+
+\end_inset
+
+ à part.
+ La fonction 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{erreur(int classeSolution)}
+\end_layout
+
+\end_inset
+
+ calcule la norme au carré de la différence entre la sortie attendue (qui
+ est donc fournie par l’utilisateur) et la sortie calculée par le réseau.
+ Ensuite, la méthode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{Apprentissage(string Donnees)}
+\end_layout
+
+\end_inset
+
+ est une méthode qui modifie les poids et les biais du réseau à l’aide du
+ fichier Donnees qui est un échantillon d’apprentissage.
+ Elle construit l’échantillon d’apprentissage complet composé de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{lesEntrees}
+\end_layout
+
+\end_inset
+
+ et de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{lesSorties}
+\end_layout
+
+\end_inset
+
+ en faisant appel à la méthode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{Remplissage(lesEntrees, lesSorties, Donnees)}
+\end_layout
+
+\end_inset
+
+.
+ Ensuite, elle divise cet échantillon en sous-échantillons appelés 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{EntreesSousEchan}
+\end_layout
+
+\end_inset
+
+ et 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{SortiesSousEchan}
+\end_layout
+
+\end_inset
+
+ puis elle appelle la méthode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{BackPropagation(vector<CoucheEntrees*>& x, vector<CoucheSorties*
+>& y)}
+\end_layout
+
+\end_inset
+
+ sur chaque sous-échantillon.
+ Cette dernière méthode va calculer le gradient de l’erreur moyen sur le
+ sous-échantillon qui lui est donné en paramètres et modifier les poids
+ et les biais en conséquences.
+ C’est la stratégie de modification par lots ou batch.
+ Pour être plus précis, la méthode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{Backpropagation()}
+\end_layout
+
+\end_inset
+
+ appelle la méthode 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{calcGradErr(CoucheSorties sAttendues)}
+\end_layout
+
+\end_inset
+
+ qui permet de calculer le gradient de l’erreur sur un seul exemple sur
+ chaque élément du sous-échantillon d’apprentissage, puis elle fait la moyenne
+ des gradients obtenus et elle modifie les poids et les biais.
+ Cette méthode 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{calcGradErr(CoucheSorties sAttendues)}
+\end_layout
+
+\end_inset
+
+ est la plus compliquée.
+ Pour faire simple, elle utilise le principe de la rétropropagation du gradient
+ : elle calcule en premier les derniers termes du gradient de l’erreur,
+ c’est-à-dire les dérivées partielles de la fonction d’erreur par rapport
+ aux poids et aux biais de la dernière couche du réseau (donc la couche
+ de sortie).
+ Une fois ces termes calculés, on en déduit la valeur des dérivées partielles
+ par rapport aux poids et aux biais de la couche précédente, et ainsi de
+ suite jusqu’à avoir calculé les dérivées partielles par rapport à tous
+ les poids et tous les biais.
+ À chaque étape, on stocke les dérivées partielles par rapport aux poids
+ de la i-ème couche dans la variable 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{gradientErr[2*i]}
+\end_layout
+
+\end_inset
+
+ et les dérivées partielles par rapport aux biais de la i-ème couche dans
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mintinline{c++}{gradientErr[2*i+1]}
+\end_layout
+
+\end_inset
+
+.
+ Enfin, chaque dérivée partielle est calculée en utilisant la formule suivante
+ obtenue à l’aide de la chain rule : 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chainRule.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Chain rule
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+avec 
+\begin_inset Formula $C$
+\end_inset
+
+ qui désigne la fonction d’erreur, 
+\begin_inset Formula $w_{ij}{}^{l}$
+\end_inset
+
+ qui est le poids reliant le i-ème neurone de la couche 
+\begin_inset Formula $l$
+\end_inset
+
+ au 
+\begin_inset Formula $j$
+\end_inset
+
+-ème neurone de la couche 
+\begin_inset Formula $l-1$
+\end_inset
+
+, 
+\begin_inset Formula $z_{i}^{l}$
+\end_inset
+
+ est le résultat de la pré-activation du 
+\begin_inset Formula $i$
+\end_inset
+
+-ème neurone de la couche 
+\begin_inset Formula $l$
+\end_inset
+
+ et 
+\begin_inset Formula $a_{i}^{l}$
+\end_inset
+
+ est la fonction d’activation du 
+\begin_inset Formula $i$
+\end_inset
+
+-ème neurone de la couche 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ On cacule de la même manière les dérivées partielles par rapport aux biais
+ en remplaçant les poids 
+\begin_inset Formula $w_{ij}{}^{l}$
+\end_inset
+
+ par 
+\begin_inset Formula $b_{i}^{l}$
+\end_inset
+
+ qui désigne le biais du 
+\begin_inset Formula $i$
+\end_inset
+
+-ème neurone de la couche 
+\begin_inset Formula $l$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Voir documentation doxygen.
 \end_layout
 
 \begin_layout Subsection
@@ -2545,7 +2788,7 @@ La classe CoucheSortie
 \end_layout
 
 \begin_layout Standard
-voir la documentation doxygen
+voir la documentation doxygen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2553,10 +2796,10 @@ La classe CouchCachee
 \end_layout
 
 \begin_layout Standard
-voir la documentation doxygen
-\end_layout
+voir la documentation doxygen.
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Subparagraph*
 Comme vous allez le constater, nous avons fait le choix d'implémenter les
  fonctions preActivation() et activation() dans la classe CoucheCachée mais
  aussi dans CoucheSortie.
@@ -2617,7 +2860,7 @@ une couche cachée qui comprend 2 neurones n1 et n2
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -2635,6 +2878,7 @@ centering
 
 \begin_inset Graphics
 	filename TEST.png
+	scale 70
 
 \end_inset
 
@@ -2722,10 +2966,6 @@ prototype de la méthode:
 
 
 \series default
-
-\begin_inset Newline newline
-\end_inset
-
 Nous allons considérer le cas de la fonction sigmoïde donnée par :
 \begin_inset Formula 
 \[
@@ -2741,10 +2981,6 @@ Il faut tester si elle renvoie la bonne valeur.
 
 Pour cela, reprenons le résultat de la fonction de préactivation, on a alors
  :
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2764,17 +3000,12 @@ Resultat:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename CoucheSorties.png
-
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -2789,8 +3020,19 @@ centering
 
 
 \begin_inset Graphics
+	filename CoucheSorties.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
 	filename TestCoucheCachees.png
-	scale 60
+	scale 70
 
 \end_inset
 
@@ -2824,11 +3066,7 @@ Classe Interface
 \end_layout
 
 \begin_layout Standard
-voir la documentation doxygen
-\begin_inset Newline newline
-\end_inset
-
-
+voir la documentation doxygen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2852,18 +3090,10 @@ prototype de la méthode:
 
 
 \series default
-
-\begin_inset Newline newline
-\end_inset
-
 Nous allons d'abord tester la fonction lectureFichier().
  Pour cela, nous allons définir le jeu de données que nous allons utiliser
  ainsi que les résultats attendus.
  
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Newline newline
 \end_inset
 
@@ -3334,9 +3564,58 @@ Test 1: saisie suivante:
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_deeper
+\begin_layout Subparagraph*
+Résultat:
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Testinterfaceuti.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat TestMatrice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
 \begin_layout Subsection
 Matrice
 \end_layout
@@ -3355,96 +3634,15 @@ Les tests de la classe Matrice
 
 \begin_layout Standard
 Les tests sur la classe Matrice sont de 2 types :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Enumerate
+Fournit le bon résultat 
+\end_layout
 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-- Fournit le bon résultat 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-- Traite le cas où les matrices ne sont pas de la même taille et vérifie
- si le nombre colonne est égal au nombre de lignes de la matrice passé en
- paramètre.
+\begin_layout Enumerate
+Traite le cas où les matrices ne sont pas de la même taille et vérifie si
+ le nombre colonne est égal au nombre de lignes de la matrice passé en paramètre.
 \end_layout
 
 \begin_layout Paragraph
@@ -3457,26 +3655,12 @@ testProduit :
 prototype de la méthode:
 \bar default
  testProduit(Matrice)
-\series bold
-
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
-\begin_layout Standard
-1.
- Test pour 2 matrices 3x3 quelconques et retourne le bon résultat
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Enumerate
+Test pour 2 matrices 3x3 quelconques et retourne le bon résultat
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -3520,15 +3704,11 @@ centering
 
 \end_layout
 
-\begin_layout Standard
-2.
- Test pour 2 matrices de taille différentes (1x2 et 2x3) et retourne le
- bon résultat (une matrice 1x3) 
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Enumerate
+Test pour 2 matrices de taille différentes (1x2 et 2x3) et retourne le bon
+ résultat (une matrice 1x3) 
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -3572,19 +3752,10 @@ centering
 
 \end_layout
 
-\begin_layout Standard
-3.
- Test pour 2 matrices de tailles incompatibles pour un produit matriciel
+\begin_layout Enumerate
+Test pour 2 matrices de tailles incompatibles pour un produit matriciel
  et retourner erreur.
  
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Paragraph
@@ -3593,6 +3764,7 @@ Resultat:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -3654,54 +3826,48 @@ Neurone
 voir la documentation doxygen
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Conclusion
 \end_layout
 
 \begin_layout Standard
-Durant ce projet, nous avons pu nous exercer sur l’utilisation de C++ et
- ce, en élabo-rant un projet qui nous semblait intéressant.
- En effet, étant tous passionées par la science des données, nous avons
- pris un réel plaisir à travailler sur ce projet.
- De plus, cela nous a permis d'approfondir nos connaissances et nos acquis
- en programmation objet.
- Ainsi que plusieurs outils de programmation (doxygen, lcppunit) et de travail
- en groupe (Github, ).
-\end_layout
-
-\begin_layout Standard
-Malheureusement nous avons sous estimer la difficulté d'implémenter un réseau
- de neurone en cpp.
- Nous avions plusieurs tâches à faires et même en essayant de garder un
- bon rythme de travail et une bonne organisation, le sujet est compliqué
- et pas très simple à réaliser par seulement cinq personnes.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
+Ce projet nous a d'abord permis d'appliquer et d'appronfondir nos connaissances
+ en 
+\begin_inset Formula $C++$
 \end_inset
 
+ et en génie logiciel (
+\emph on
+Github, Agile...
+\emph default
+).
+ Nous avons pris conscience de la nécessité de mettre en oeuvre des tests
+ unitaires, nottament avec 
+\emph on
+cppunit
+\emph default
+, afin de vérifier au fur et à mesure le bon fonctionnement des différentes
+ parties de notre code.
+\begin_inset Newline newline
+\end_inset
 
+Attirés par la science des données, nous avons également pris plaisir à
+ découvrir les réseaux de neurones et leur implémentation.
+ Cependant, malgré un long travail, nous avons manqué de temps pour terminer
+ notre projet.
+ Un travail préliminaire important était nécessaire pour maitriser le sujet.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Enfin, nous avons su nous organiser afin de répartir la charge de travail
+ et mettre à profit les qualités de chacun.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset FloatList figure
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
